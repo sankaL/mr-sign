@@ -1,0 +1,433 @@
+# Mr. Sign and Print — Tech Stack and Monorepo Recommendation
+
+## 1. Purpose
+
+This document summarizes the recommended technology stack and high-level monorepo structure for the Mr. Sign and Print website redesign MVP.
+
+The MVP is a modern customer-facing website with a custom admin portal. It supports service browsing, quote requests, order requests, contact inquiries, admin service and pricing management, request tracking, email notifications, and basic user analytics.
+
+The MVP does not include online payments, customer accounts, customer login, customer file uploads, admin image uploads, inventory management, CRM integration, or production workflow automation.
+
+---
+
+## 2. Confirmed Decisions
+
+| Area | Decision |
+|---|---|
+| App architecture | Full-stack app |
+| Framework | Next.js |
+| Language | TypeScript |
+| Existing frontend | React, Vite, Tailwind CSS, Lucide React, Motion / Framer Motion |
+| Migration direction | Move from Vite to Next.js where needed |
+| Admin portal | Custom admin portal |
+| Hosting | Railway |
+| Database | Railway PostgreSQL |
+| ORM | Prisma |
+| Authentication | Auth.js / NextAuth |
+| Admin login | Passwordless magic-link login using Resend |
+| Email service | Resend |
+| Analytics | PostHog |
+| Styling | Preserve the existing Tailwind-based frontend direction |
+| Images | Codebase-managed static images |
+| CMS | No broad CMS in MVP |
+| Admin image uploads | Not included in MVP |
+| Priority | Lowest monthly cost, fastest build, easiest maintenance |
+
+---
+
+## 3. Recommended Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Full-stack framework | Next.js | Public website, admin portal, routing, SEO, form handling, backend logic |
+| Language | TypeScript | Type safety across the app |
+| UI | Existing React components | Preserve the current frontend work where possible |
+| Styling | Tailwind CSS | Fast, responsive styling |
+| Icons | Lucide React | Modern icon system already used by the frontend |
+| Animation | Motion / Framer Motion | Keep existing animation approach |
+| Hosting | Railway | Host the app and database in one platform |
+| Database | Railway PostgreSQL | Store services, pricing, requests, admins, notes, and auth data |
+| ORM | Prisma | Database schema, migrations, and type-safe database access |
+| Auth | Auth.js / NextAuth | Admin authentication and session management |
+| Email | Resend | Admin login links, customer confirmations, and admin notifications |
+| Analytics | PostHog | Page views, CTA tracking, form funnel tracking, and service interest tracking |
+| Images | Static assets in the codebase | Simple MVP image management without upload infrastructure |
+
+---
+
+## 4. Why This Stack Fits
+
+## 4.1 Next.js
+
+Next.js is the best fit because the product needs both public SEO-friendly pages and backend logic in one application.
+
+It supports:
+
+- Public service pages
+- Service detail pages
+- Quote, order, and contact forms
+- SEO metadata
+- Protected admin pages
+- Backend form handling
+- Railway deployment
+
+This avoids maintaining a separate frontend and backend for a lightweight MVP.
+
+---
+
+## 4.2 Railway PostgreSQL
+
+Railway PostgreSQL should be the primary database because the app is already planned to be hosted on Railway.
+
+It will store:
+
+- Service categories
+- Services
+- Pricing configuration
+- Quote requests
+- Order requests
+- Contact messages
+- Request statuses
+- Internal notes
+- Admin users
+- Authentication/session data
+
+Keeping the app and database in Railway keeps infrastructure simple and easier to maintain.
+
+---
+
+## 4.3 Prisma
+
+Prisma should be used as the database access layer.
+
+In simple terms, Prisma is what the app uses to communicate with PostgreSQL. It helps define the database structure, run database migrations, and safely read/write data from the Next.js app.
+
+Prisma is recommended over Drizzle for this project because it is easier to understand, faster to build with, and well suited for a small business admin app.
+
+---
+
+## 4.4 Auth.js / NextAuth
+
+Admin authentication should use passwordless magic-link login through Resend.
+
+The account setup and login model should be:
+
+- Developer manually creates the first admin for launch.
+- Admin enters their email on the admin login page.
+- Resend sends a secure login link.
+- Admin clicks the link and gets access to the admin portal.
+- The session remains active for a configured period, such as 14–30 days.
+- Existing admins can add future admins from the admin portal.
+
+This avoids password management, password resets, and unnecessary complexity.
+
+---
+
+## 4.5 Resend
+
+Resend should be used for all outgoing emails.
+
+Required emails:
+
+| Event | Email Sent |
+|---|---|
+| Admin login | Magic-link login email |
+| Quote request submitted | Customer confirmation and admin notification |
+| Order request submitted | Customer confirmation and admin notification |
+| Contact form submitted | Customer confirmation and admin notification |
+
+Admin notifications should go to `order@mrsignandprint.net`.
+
+---
+
+## 4.6 PostHog
+
+PostHog should be used for lightweight product analytics.
+
+Recommended tracking areas:
+
+| Area | Examples |
+|---|---|
+| Page views | Home, category pages, service pages, location page |
+| Services | Service views, featured service clicks, category views |
+| CTAs | Request quote, order online, browse services, call now, directions |
+| Forms | Quote form started/submitted, order form started/submitted, contact form submitted |
+| Admin | Login, service updates, request status updates |
+
+PostHog should not receive sensitive customer information.
+
+Do not track:
+
+- Customer names
+- Emails
+- Phone numbers
+- Company names
+- Project descriptions
+- Notes or full form details
+
+---
+
+## 5. Data Model Overview
+
+The database should support the following main entities:
+
+| Entity | Purpose |
+|---|---|
+| Service Category | Top-level public categories: Signs, Printing, Design |
+| Service | Individual services under each category |
+| Pricing | Pricing type and public pricing display rules |
+| Customer Request | Quote, order, and contact submissions |
+| Request Service | Services selected in a quote/order request |
+| Request Note | Internal admin notes |
+| Admin User | Admin users allowed to access the portal |
+| Audit Log | Optional lightweight record of admin actions |
+
+Top-level public categories should remain controlled in MVP. Admins can add new services under Signs, Printing, and Design, but should not add new public top-level categories in MVP.
+
+---
+
+## 6. Pricing Model
+
+Pricing should support the pricing options from the PRD.
+
+| Pricing Type | Public Display |
+|---|---|
+| Exact Price | Fixed visible price |
+| Starting From | Starting price shown publicly |
+| Tiered Pricing | Pricing varies by size, quantity, or option |
+| Request Quote | No fixed public price shown |
+
+Admins should be able to update pricing and mark services as quote-only.
+
+---
+
+## 7. Request Workflow
+
+Quote requests, order requests, and contact messages should use a simple admin workflow.
+
+Recommended statuses:
+
+| Status | Purpose |
+|---|---|
+| New | Request has been submitted |
+| Under Review | Admin is reviewing the request |
+| Quote Sent | Quote has been sent to the customer |
+| Awaiting Customer Approval | Waiting for customer response |
+| Approved | Customer approved the work |
+| In Production | Work is being completed |
+| Ready for Pickup | Order is ready |
+| Completed | Request is complete |
+| Cancelled | Request was cancelled |
+
+This is enough for MVP. More detailed production workflow tracking should be avoided for launch.
+
+---
+
+## 8. Image and Asset Management
+
+Admin image uploads should not be included in MVP.
+
+Images should be stored in the codebase and referenced by relative path from the database.
+
+Recommended image areas:
+
+| Area | Purpose |
+|---|---|
+| Brand images | Logo, social share images, favicon |
+| Hero images | Homepage and landing visuals |
+| Service images | Images for Signs, Printing, and Design services |
+| Gallery images | Optional gallery assets |
+
+The admin portal can show the image path assigned to a service, but developers will manage the image files for launch.
+
+---
+
+## 9. Recommended Monorepo Structure
+
+Keep the monorepo lightweight. Do not introduce unnecessary complexity.
+
+Recommended structure, limited to two folder levels:
+
+```txt
+mr-sign/
+├── apps/
+│   └── web/
+├── packages/
+│   ├── db/
+│   ├── email/
+│   ├── analytics/
+│   ├── types/
+│   └── config/
+├── docs/
+│   ├── tech-stack.md
+│   ├── deployment.md
+│   └── admin-workflows.md
+├── scripts/
+│   ├── seed-services.ts
+│   └── create-first-admin.ts
+├── .env.example
+├── package.json
+├── pnpm-workspace.yaml
+├── railway.json
+└── README.md
+```
+
+---
+
+## 10. Package Responsibilities
+
+| Area | Responsibility |
+|---|---|
+| `apps/web` | Main Next.js app, public website, admin portal, routing, forms, auth wiring, SEO, static assets |
+| `packages/db` | Prisma schema, database migrations, database client, seed data |
+| `packages/email` | Resend setup and email templates |
+| `packages/analytics` | PostHog setup, event names, safe tracking helpers |
+| `packages/types` | Shared TypeScript types for services, pricing, requests, and users |
+| `packages/config` | Shared TypeScript, ESLint, and formatting configuration |
+| `docs` | Project documentation |
+| `scripts` | Utility scripts such as seeding services and creating the first admin |
+
+If setup speed becomes more important than package separation, `packages/config` and `packages/types` can be skipped at launch.
+
+---
+
+## 11. Public Website Routes
+
+| Route | Purpose |
+|---|---|
+| `/` | Home page |
+| `/signs` | Signs category page |
+| `/signs/[slug]` | Individual sign service page |
+| `/printing` | Printing category page |
+| `/printing/[slug]` | Individual printing service page |
+| `/design` | Design category page |
+| `/design/[slug]` | Individual design service page |
+| `/request-quote` | Quote request form |
+| `/order-online` | Order request form |
+| `/contact` | Contact form |
+| `/location` | Business location and hours |
+| `/gallery` | Optional gallery page |
+
+---
+
+## 12. Admin Portal Routes
+
+| Route | Purpose |
+|---|---|
+| `/admin/login` | Admin login page |
+| `/admin` | Admin dashboard |
+| `/admin/requests` | Request list |
+| `/admin/requests/[requestCode]` | Request detail page |
+| `/admin/services` | Service management |
+| `/admin/services/new` | Add new service |
+| `/admin/services/[id]` | Edit service |
+| `/admin/pricing` | Pricing management |
+| `/admin/users` | Admin user management |
+| `/admin/settings` | Basic admin settings |
+
+---
+
+## 13. Environment Configuration
+
+Production environment variables should be managed in Railway.
+
+Required environment groups:
+
+| Group | Purpose |
+|---|---|
+| App URL | Used by auth, emails, and redirects |
+| Database | Railway PostgreSQL connection |
+| Auth | Auth.js secret and URL settings |
+| Resend | Email sending API key and sender email |
+| Admin email | Admin notification recipient |
+| PostHog | Public analytics key and host |
+| Feature flags | Optional flags such as enabling or disabling gallery |
+
+---
+
+## 14. Railway Deployment
+
+Recommended Railway setup:
+
+| Railway Service | Purpose |
+|---|---|
+| Web service | Next.js application |
+| PostgreSQL service | Application database |
+
+Recommended deployment flow:
+
+1. Push code to GitHub.
+2. Connect the repo to Railway.
+3. Add Railway PostgreSQL.
+4. Configure environment variables.
+5. Run Prisma migrations during deployment.
+6. Deploy the Next.js app.
+7. Add the custom domain.
+8. Verify Resend sender/domain setup.
+9. Verify PostHog tracking.
+
+---
+
+## 15. Initial Build Sequence
+
+| Phase | Focus |
+|---|---|
+| 1 | Create Next.js app and move existing frontend components |
+| 2 | Set up monorepo, Tailwind, linting, and Railway project |
+| 3 | Add Prisma, database schema, and seed service categories/services |
+| 4 | Build public pages and service detail pages |
+| 5 | Build quote, order, and contact forms |
+| 6 | Add Resend email confirmations and admin notifications |
+| 7 | Add Auth.js admin login and protected admin routes |
+| 8 | Build admin dashboard, request management, service management, and pricing management |
+| 9 | Add admin user management |
+| 10 | Add PostHog analytics |
+| 11 | Complete mobile QA, form QA, email QA, auth QA, and SEO checks |
+
+---
+
+## 16. MVP Guardrails
+
+Avoid adding the following in MVP:
+
+- Online payments
+- Customer accounts
+- Customer login
+- Customer file uploads
+- Admin image upload management
+- Full CMS editing
+- CRM integration
+- Live chat
+- Quote PDF generation
+- Invoice generation
+- Advanced quote calculators
+- Internal production workflow management
+- SMS notifications
+
+These can be added later if the business needs them.
+
+---
+
+## 17. Final Recommendation
+
+The recommended MVP stack is:
+
+| Area | Recommended Choice |
+|---|---|
+| Framework | Next.js |
+| Language | TypeScript |
+| UI | Existing React components |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Animation | Motion / Framer Motion |
+| Hosting | Railway |
+| Database | Railway PostgreSQL |
+| ORM | Prisma |
+| Auth | Auth.js / NextAuth |
+| Login | Resend magic links |
+| Email | Resend |
+| Analytics | PostHog |
+| Images | Codebase-managed static images |
+| Monorepo | pnpm workspaces |
+
+This stack gives the project a strong balance of speed, low monthly cost, maintainability, and future flexibility without overbuilding the MVP.
