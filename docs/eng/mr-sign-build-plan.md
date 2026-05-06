@@ -15,18 +15,18 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P0-01 | Confirm final branding direction, logo, and colour palette | To Do |  |  |
-| P0-02 | Confirm final business phone number, email, address, and hours | To Do |  |  |
-| P0-03 | Confirm whether fax should remain visible | To Do |  |  |
-| P0-04 | Confirm whether Concord should be mentioned along with Vaughan and GTA | To Do |  |  |
-| P0-05 | Confirm final list of services from the old website | To Do |  |  |
-| P0-06 | Confirm final service descriptions | To Do |  |  |
-| P0-07 | Confirm final pricing and quote-only services | To Do |  |  |
-| P0-08 | Confirm whether portfolio/gallery is included in MVP | To Do |  |  |
-| P0-09 | Collect approved service images, hero images, gallery images, and brand assets | To Do |  |  |
-| P0-10 | Confirm launch admin users | To Do |  |  |
-| P0-11 | Confirm Resend sender email/domain setup | To Do |  |  |
-| P0-12 | Confirm MVP acceptance criteria and launch checklist with client | To Do |  |  |
+| P0-01 | Confirm final branding direction, logo, and colour palette | Done | Color palette and design branding documented in `docs/DESIGN.md`. Logos are being worked on. | 2026-05-06 |
+| P0-02 | Confirm final business phone number, email, address, and hours | Done | Using existing information from the old website for now. | 2026-05-06 |
+| P0-03 | Confirm whether fax should remain visible | Done | Fax will remain visible for now. | 2026-05-06 |
+| P0-04 | Confirm whether Concord should be mentioned along with Vaughan and GTA | Done | Keep Concord along with Vaughan and GTA. | 2026-05-06 |
+| P0-05 | Confirm final list of services from the old website | Done | Keeping the same list of services from the old website. | 2026-05-06 |
+| P0-06 | Confirm final service descriptions | Done | Service descriptions will be in `docs/copy/` folder. | 2026-05-06 |
+| P0-07 | Confirm final pricing and quote-only services | Done | Get pricing from the old website; admin can change pricing in the admin panel. | 2026-05-06 |
+| P0-08 | Confirm whether portfolio/gallery is included in MVP | Done | Portfolio/gallery will use AI-generated images via OpenAI's image model during frontend build phase. | 2026-05-06 |
+| P0-09 | Collect approved service images, hero images, gallery images, and brand assets | In Progress | Gallery images will be generated using OpenAI's image model during frontend development. Other brand assets pending. | 2026-05-06 |
+| P0-10 | Confirm launch admin users | To Do | Pending decision on who the admin users will be. | 2026-05-06 |
+| P0-11 | Confirm Resend sender email/domain setup | To Do | Pending Resend setup confirmation. | 2026-05-06 |
+| P0-12 | Confirm MVP acceptance criteria and launch checklist with client | Done | MVP acceptance criteria confirmed. | 2026-05-06 |
 
 ---
 
@@ -376,3 +376,4 @@
 | AHT-003 | Add code organization rule to avoid god files | Done | Added root `AGENTS.md` guidance for splitting large mixed-responsibility files into focused modules, keeping orchestration files thin, and refactoring incrementally. | 2026-05-06 |
 | AHT-004 | Add intentional testing guidance to root `AGENTS.md` | Done | Added testing rules that favor risk-based coverage, the smallest useful test scope, and restraint for low-risk copy, styling, docs, and mechanical changes. | 2026-05-06 |
 | AHT-005 | Add frontend shared component reuse guidance to root `AGENTS.md` | Done | Added rules to reuse shared UI patterns for repeated tables, cards, dropdowns, search bars, states, and form controls while allowing unique components when the design context warrants it. | 2026-05-06 |
+| AHT-006 | Update Phase 0 build plan with confirmed decisions | Done | Updated branding, contact info, services, pricing, gallery approach, and MVP confirmation status. Created `docs/copy/` folder for page copy and service descriptions. | 2026-05-06 |
