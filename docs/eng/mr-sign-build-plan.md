@@ -11,6 +11,14 @@
 
 ---
 
+## Ad Hoc Tasks
+
+| Task number | Task | Task status | Comments | Updated date |
+|---|---|---|---|---|
+| AH-2026-05-06-01 | Update planned admin auth stack to Better Auth | Done | Tech stack and build plan updated before implementation. | 2026-05-06 |
+
+---
+
 ## Phase 0 — Project Readiness and Final Inputs
 
 | Task number | Task | Task status | Comments | Updated date |
@@ -90,7 +98,7 @@
 | P3-07 | Define Request Service relationship model | To Do |  |  |
 | P3-08 | Define Request Note model for internal admin notes | To Do |  |  |
 | P3-09 | Define Admin User model | To Do |  |  |
-| P3-10 | Define Auth.js / NextAuth database tables if required | To Do |  |  |
+| P3-10 | Define Better Auth database tables if required | To Do |  |  |
 | P3-11 | Define optional Audit Log model | To Do |  |  |
 | P3-12 | Create first database migration | To Do |  |  |
 | P3-13 | Create seed script for Signs, Printing, and Design categories | To Do |  |  |
@@ -169,7 +177,7 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P7-01 | Set up Auth.js / NextAuth | To Do |  |  |
+| P7-01 | Set up Better Auth | To Do |  |  |
 | P7-02 | Configure passwordless magic-link login through Resend | To Do |  |  |
 | P7-03 | Build admin login page | To Do |  |  |
 | P7-04 | Protect all `/admin` routes | To Do |  |  |
@@ -282,7 +290,7 @@
 | P11-03 | Add Railway PostgreSQL service | To Do |  |  |
 | P11-04 | Configure production environment variables | To Do |  |  |
 | P11-05 | Configure database connection variables | To Do |  |  |
-| P11-06 | Configure Auth.js / NextAuth production variables | To Do |  |  |
+| P11-06 | Configure Better Auth production variables | To Do |  |  |
 | P11-07 | Configure Resend API key and sender email | To Do |  |  |
 | P11-08 | Configure admin notification email | To Do |  |  |
 | P11-09 | Configure PostHog project key and host | To Do |  |  |

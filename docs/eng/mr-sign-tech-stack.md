@@ -23,7 +23,7 @@ The MVP does not include online payments, customer accounts, customer login, cus
 | Hosting | Railway |
 | Database | Railway PostgreSQL |
 | ORM | Prisma |
-| Authentication | Auth.js / NextAuth |
+| Authentication | Better Auth |
 | Admin login | Passwordless magic-link login using Resend |
 | Email service | Resend |
 | Analytics | PostHog |
@@ -66,7 +66,7 @@ After migration, `apps/web` should be the only production frontend unless a temp
 | Hosting | Railway | Host the app and database in one platform |
 | Database | Railway PostgreSQL | Store services, pricing, requests, admins, notes, and auth data |
 | ORM | Prisma | Database schema, migrations, and type-safe database access |
-| Auth | Auth.js / NextAuth | Admin authentication and session management |
+| Auth | Better Auth | Admin authentication and session management |
 | Email | Resend | Admin login links, customer confirmations, and admin notifications |
 | Analytics | PostHog | Page views, CTA tracking, form funnel tracking, and service interest tracking |
 | Images | Static assets in the codebase | Simple MVP image management without upload infrastructure |
@@ -124,9 +124,9 @@ Prisma is recommended over Drizzle for this project because it is easier to unde
 
 ---
 
-## 4.4 Auth.js / NextAuth
+## 4.4 Better Auth
 
-Admin authentication should use passwordless magic-link login through Resend.
+Admin authentication should use Better Auth with passwordless magic-link login through Resend.
 
 The account setup and login model should be:
 
@@ -359,7 +359,7 @@ Required environment groups:
 |---|---|
 | App URL | Used by auth, emails, and redirects |
 | Database | Railway PostgreSQL connection |
-| Auth | Auth.js secret and URL settings |
+| Auth | Better Auth secret and URL settings |
 | Resend | Email sending API key and sender email |
 | Admin email | Admin notification recipient |
 | PostHog | Public analytics key and host |
@@ -400,7 +400,7 @@ Recommended deployment flow:
 | 4 | Build public pages and service detail pages |
 | 5 | Build quote, order, and contact forms |
 | 6 | Add Resend email confirmations and admin notifications |
-| 7 | Add Auth.js admin login and protected admin routes |
+| 7 | Add Better Auth admin login and protected admin routes |
 | 8 | Build admin dashboard, request management, service management, and pricing management |
 | 9 | Add admin user management |
 | 10 | Add PostHog analytics |
@@ -445,7 +445,7 @@ The recommended MVP stack is:
 | Hosting | Railway |
 | Database | Railway PostgreSQL |
 | ORM | Prisma |
-| Auth | Auth.js / NextAuth |
+| Auth | Better Auth |
 | Login | Resend magic links |
 | Email | Resend |
 | Analytics | PostHog |
