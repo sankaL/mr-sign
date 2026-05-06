@@ -27,12 +27,36 @@ Use the docs below as working references when the task needs product, stack, or 
 
 ## Execution Rules
 
-- Check for nested `AGENTS.md` files in `frontend/`, `docs/`, `tests/`, `scripts/`, and any other folder you touch.
+- Check for nested `AGENTS.md` files inany other folder you touch.
 - Use repo paths exactly as they exist.
 - For task summaries, use `docs/eng/task-output/`.
 - For setup, dependency install, environment bring-up/down, build, lint, and standard workflows, prefer root `Makefile` targets and repo scripts when they exist. If no root workflow exists, use the nearest package scripts such as `frontend/package.json`.
 - Keep changes minimal, safe, and aligned with the PRD, tech stack, and build plan.
 - Preserve the existing Tailwind-based frontend direction unless a task explicitly changes the design system or migration plan.
+
+## Frontend Component Reuse Rules
+
+- When changing frontend UI, styling, or interactions, check existing shared components and `frontend/DESIGN.md` before creating a new pattern.
+- Reuse or extend shared components for repeated UI surfaces such as tables, cards, dropdowns, search bars, filters, buttons, form fields, modals, navigation, loading states, empty states, and error states.
+- Keep styling, spacing, interaction states, accessibility behavior, and responsive behavior consistent across repeated UI patterns. Centralize meaningful variants in shared components when the pattern is used in more than one place or is likely to recur.
+- Do not force reuse when a component has a meaningfully different content structure, visual hierarchy, interaction model, or user context. Unique components are acceptable when they make the interface clearer.
+- Avoid over-general components with excessive props just to share code. Prefer small composable primitives, focused shared components, and a limited set of named variants.
+
+## Code Organization Rules
+
+- Avoid "god files": do not let one file become responsible for unrelated concerns such as data access, validation, UI rendering, business rules, routing, and side effects at the same time.
+- Prefer small, purpose-specific modules with clear ownership. Split code by responsibility into components, hooks, utilities, server actions, data access helpers, validation schemas, and configuration files as appropriate for the framework in use.
+- Before adding substantial logic to an already large or mixed-responsibility file, check whether the new code belongs in a focused helper/module instead. As a practical signal, if a file is trending past roughly 300-500 lines or requires multiple unrelated section comments to navigate, consider extracting cohesive pieces before adding more.
+- Keep orchestration files thin. Page, route, and entry files should compose focused modules and handle framework wiring, not contain most of the feature implementation.
+- When refactoring away from a god file, preserve behavior first, extract one coherent responsibility at a time, and add or update focused tests around the moved behavior when risk warrants it.
+
+## Testing Rules
+
+- Do not add a test for every small change by default. Add or update tests intentionally when they reduce real risk, protect business-critical behavior, cover a non-obvious regression, or document behavior that would be costly to verify manually.
+- Prefer the smallest useful test scope: unit tests for pure logic, validation, formatting, request-code generation, and other deterministic helpers; integration tests for database, email, auth, form submission, and cross-module behavior; end-to-end tests only for critical user/admin journeys and launch-blocking smoke coverage.
+- Prefer updating an existing relevant test over adding a new parallel test file. Avoid duplicating coverage across unit, integration, and end-to-end layers unless the behavior is especially critical.
+- For low-risk UI copy, styling-only, documentation, configuration, or mechanical refactor changes, do not add tests unless the change touches a fragile area or a prior regression.
+- When skipping tests for a code change, be ready to state the reason briefly in the task summary or final response.
 
 ## Required Updates
 

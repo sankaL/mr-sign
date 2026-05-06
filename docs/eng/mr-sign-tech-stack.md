@@ -35,6 +35,24 @@ The MVP does not include online payments, customer accounts, customer login, cus
 
 ---
 
+## 2.1 Current Frontend Migration Position
+
+The current `frontend/` app is a Vite, React, TypeScript, Tailwind CSS prototype. It should be treated as the migration source, not the production target.
+
+The production app should live in `apps/web` as the Next.js application. The migration should reuse the existing visual direction, Tailwind styling approach, Lucide React icons, Motion / Framer Motion animations, and reusable React component work where it makes sense, but it should not keep Vite as a second production app.
+
+The build plan must explicitly cover:
+
+- Moving reusable components from `frontend/components` into the Next.js app structure.
+- Replacing Vite entry files such as `index.html`, `src/main.tsx`, and `src/demo.tsx` with Next.js `layout.tsx` and page routes.
+- Migrating global CSS, Tailwind/PostCSS configuration, path aliases, package dependencies, and static asset references.
+- Reviewing client-only animation components for Next.js server/client component boundaries.
+- Verifying visual and responsive parity before retiring or archiving the old `frontend/` folder.
+
+After migration, `apps/web` should be the only production frontend unless a temporary exception is documented.
+
+---
+
 ## 3. Recommended Tech Stack
 
 | Layer | Technology | Purpose |
@@ -246,7 +264,7 @@ The admin portal can show the image path assigned to a service, but developers w
 
 Keep the monorepo lightweight. Do not introduce unnecessary complexity.
 
-Recommended structure, limited to two folder levels:
+Recommended structure:
 
 ```txt
 mr-sign/
@@ -259,9 +277,11 @@ mr-sign/
 │   ├── types/
 │   └── config/
 ├── docs/
-│   ├── tech-stack.md
-│   ├── deployment.md
-│   └── admin-workflows.md
+│   └── eng/
+│       ├── mr-sign-tech-stack.md
+│       ├── mr-sign-build-plan.md
+│       ├── deployment.md
+│       └── admin-workflows.md
 ├── scripts/
 │   ├── seed-services.ts
 │   └── create-first-admin.ts
@@ -271,6 +291,8 @@ mr-sign/
 ├── railway.json
 └── README.md
 ```
+
+The existing `frontend/` folder should be considered a temporary migration input. It should be removed, archived, or clearly marked as non-production after the Next.js app reaches accepted parity.
 
 ---
 
@@ -372,8 +394,8 @@ Recommended deployment flow:
 
 | Phase | Focus |
 |---|---|
-| 1 | Create Next.js app and move existing frontend components |
-| 2 | Set up monorepo, Tailwind, linting, and Railway project |
+| 1 | Set up monorepo, root scripts, and Next.js app foundation |
+| 2 | Refactor/migrate the existing `frontend/` Vite prototype into `apps/web`, including components, CSS, Tailwind config, aliases, assets, and visual parity checks |
 | 3 | Add Prisma, database schema, and seed service categories/services |
 | 4 | Build public pages and service detail pages |
 | 5 | Build quote, order, and contact forms |

@@ -7,6 +7,7 @@
 - **Comments** and **Updated date** are intentionally blank for initial planning.
 - The **Task** column has been included so each task number has a clear description.
 - MVP guardrails: no online payments, no customer accounts, no customer login, no file uploads, and no full e-commerce checkout.
+- The current `frontend/` app is a Vite/React prototype and migration source. The production target is the Next.js app in `apps/web`; Phase 1 and Phase 2 explicitly cover the refactor path.
 
 ---
 
@@ -34,17 +35,19 @@
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
 | P1-01 | Create or finalize GitHub repository | To Do |  |  |
-| P1-02 | Set up pnpm workspace / monorepo structure | To Do |  |  |
-| P1-03 | Create Next.js app using TypeScript | To Do |  |  |
-| P1-04 | Configure app folder structure for public website and admin portal | To Do |  |  |
-| P1-05 | Set up Tailwind CSS | To Do |  |  |
-| P1-06 | Set up shared UI conventions for buttons, cards, forms, sections, and page layouts | To Do |  |  |
-| P1-07 | Add Lucide React icon support | To Do |  |  |
-| P1-08 | Add Motion / Framer Motion support where needed | To Do |  |  |
-| P1-09 | Configure TypeScript, linting, and formatting | To Do |  |  |
-| P1-10 | Create `.env.example` with required environment variables | To Do |  |  |
-| P1-11 | Add basic README with local setup instructions | To Do |  |  |
-| P1-12 | Create base route structure for public and admin pages | To Do |  |  |
+| P1-02 | Add root package manager and workspace files such as `package.json`, `pnpm-workspace.yaml`, and root scripts | To Do |  |  |
+| P1-03 | Set up pnpm workspace / monorepo structure with `apps/web` and only the packages needed for MVP | To Do |  |  |
+| P1-04 | Create Next.js app using TypeScript in `apps/web` | To Do |  |  |
+| P1-05 | Configure app folder structure for public website and admin portal | To Do |  |  |
+| P1-06 | Set up Tailwind CSS in the Next.js app | To Do |  |  |
+| P1-07 | Configure TypeScript path aliases to support migrated component imports | To Do |  |  |
+| P1-08 | Add Lucide React icon support | To Do |  |  |
+| P1-09 | Add Motion / Framer Motion support where needed | To Do |  |  |
+| P1-10 | Configure TypeScript, linting, and formatting | To Do |  |  |
+| P1-11 | Create `.env.example` with required environment variables | To Do |  |  |
+| P1-12 | Add basic README with local setup instructions | To Do |  |  |
+| P1-13 | Create base route structure for public and admin pages | To Do |  |  |
+| P1-14 | Document expected retirement, archival, or temporary non-production status of legacy `frontend/` after Next.js parity | To Do |  |  |
 
 ---
 
@@ -52,17 +55,25 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P2-01 | Review existing React/Vite frontend components | To Do |  |  |
-| P2-02 | Identify reusable components to migrate into Next.js | To Do |  |  |
-| P2-03 | Create global layout, navigation, and footer | To Do |  |  |
-| P2-04 | Create responsive mobile navigation | To Do |  |  |
-| P2-05 | Create reusable page header component | To Do |  |  |
-| P2-06 | Create reusable service card component | To Do |  |  |
-| P2-07 | Create reusable CTA section component | To Do |  |  |
-| P2-08 | Create reusable form field components | To Do |  |  |
-| P2-09 | Create reusable admin layout shell | To Do |  |  |
-| P2-10 | Create loading, empty, and error states | To Do |  |  |
-| P2-11 | Validate responsive layout patterns for mobile, tablet, desktop, and large desktop | To Do |  |  |
+| P2-01 | Audit existing `frontend/` Vite app structure, package dependencies, Tailwind/PostCSS config, path aliases, and `frontend/DESIGN.md` rules | To Do |  |  |
+| P2-02 | Map Vite source files to Next.js App Router destinations in `apps/web` | To Do |  |  |
+| P2-03 | Migrate global CSS, reset styles, and base typography from `frontend/src/index.css` | To Do |  |  |
+| P2-04 | Migrate Tailwind and PostCSS configuration into the Next.js app | To Do |  |  |
+| P2-05 | Port the existing hero/prototype component from `frontend/components/ui/hero.tsx` into the Next.js component structure | To Do |  |  |
+| P2-06 | Replace Vite entry files such as `index.html`, `src/main.tsx`, and `src/demo.tsx` with Next.js `layout.tsx` and page routes | To Do |  |  |
+| P2-07 | Adapt migrated components for Next.js server/client component boundaries and add `use client` only where needed | To Do |  |  |
+| P2-08 | Review external image references and define static codebase-managed asset replacements before production | To Do |  |  |
+| P2-09 | Create global layout, navigation, and footer using the migrated design direction | To Do |  |  |
+| P2-10 | Create responsive mobile navigation | To Do |  |  |
+| P2-11 | Create reusable page header component | To Do |  |  |
+| P2-12 | Create reusable service card component | To Do |  |  |
+| P2-13 | Create reusable CTA section component | To Do |  |  |
+| P2-14 | Create reusable form field components | To Do |  |  |
+| P2-15 | Create reusable admin layout shell | To Do |  |  |
+| P2-16 | Create loading, empty, and error states | To Do |  |  |
+| P2-17 | Validate responsive layout patterns for mobile, tablet, desktop, and large desktop | To Do |  |  |
+| P2-18 | Run side-by-side visual parity checks between the Vite prototype and the migrated Next.js home page | To Do |  |  |
+| P2-19 | Remove or archive legacy `frontend/` after accepted parity, or clearly mark it as non-production if kept temporarily | To Do |  |  |
 
 ---
 
@@ -276,7 +287,7 @@
 | P11-08 | Configure admin notification email | To Do |  |  |
 | P11-09 | Configure PostHog project key and host | To Do |  |  |
 | P11-10 | Add `railway.json` if needed | To Do |  |  |
-| P11-11 | Configure build and start commands | To Do |  |  |
+| P11-11 | Configure Railway build and start commands for the `apps/web` monorepo app | To Do |  |  |
 | P11-12 | Run Prisma migrations during deployment | To Do |  |  |
 | P11-13 | Seed production service categories and services | To Do |  |  |
 | P11-14 | Create first production admin user | To Do |  |  |
@@ -326,6 +337,7 @@
 | P12-28 | Fix launch-blocking issues | To Do |  |  |
 | P12-29 | Final production smoke test | To Do |  |  |
 | P12-30 | Launch website | To Do |  |  |
+| P12-31 | Confirm legacy `frontend/` is not part of the production build or deployment | To Do |  |  |
 
 ---
 
@@ -360,3 +372,7 @@
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
 | AHT-001 | Update root `AGENTS.md` to match the Mr. Sign and Print repository | Done | Replaced copied Wonder Jira references with Mr. Sign and Print docs, paths, stack context, and workflow rules. | 2026-05-05 |
+| AHT-002 | Review tech stack and build plan for frontend migration coverage | Done | Confirmed the proposed stack fits the MVP and added explicit Vite `frontend/` to Next.js `apps/web` migration tasks. | 2026-05-06 |
+| AHT-003 | Add code organization rule to avoid god files | Done | Added root `AGENTS.md` guidance for splitting large mixed-responsibility files into focused modules, keeping orchestration files thin, and refactoring incrementally. | 2026-05-06 |
+| AHT-004 | Add intentional testing guidance to root `AGENTS.md` | Done | Added testing rules that favor risk-based coverage, the smallest useful test scope, and restraint for low-risk copy, styling, docs, and mechanical changes. | 2026-05-06 |
+| AHT-005 | Add frontend shared component reuse guidance to root `AGENTS.md` | Done | Added rules to reuse shared UI patterns for repeated tables, cards, dropdowns, search bars, states, and form controls while allowing unique components when the design context warrants it. | 2026-05-06 |
