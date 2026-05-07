@@ -17,6 +17,7 @@
 |---|---|---|---|---|
 | AH-2026-05-06-01 | Update planned admin auth stack to Better Auth | Done | Tech stack and build plan updated before implementation. | 2026-05-06 |
 | AH-2026-05-06-02 | Pin Phase 1 workspace dependency ranges | Done | Replaced `latest` dependency specifiers with lockfile-resolved versions after review. | 2026-05-06 |
+| AH-2026-05-06-03 | Add copyright to footer | Done | Added dynamic year copyright notice to SiteFooter component. | 2026-05-06 |
 
 ---
 
@@ -90,26 +91,26 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P3-01 | Set up Prisma package/configuration | To Do |  |  |
-| P3-02 | Create PostgreSQL database connection configuration | To Do |  |  |
-| P3-03 | Define Service Category model | To Do |  |  |
-| P3-04 | Define Service model | To Do |  |  |
-| P3-05 | Define Pricing model and pricing type options | To Do |  |  |
-| P3-06 | Define Customer Request model for quote, order, and contact submissions | To Do |  |  |
-| P3-07 | Define Request Service relationship model | To Do |  |  |
-| P3-08 | Define Request Note model for internal admin notes | To Do |  |  |
-| P3-09 | Define Admin User model | To Do |  |  |
-| P3-10 | Define Better Auth database tables if required | To Do |  |  |
-| P3-11 | Define optional Audit Log model | To Do |  |  |
-| P3-12 | Create first database migration | To Do |  |  |
-| P3-13 | Create seed script for Signs, Printing, and Design categories | To Do |  |  |
-| P3-14 | Create seed script for all existing services from old website | To Do |  |  |
-| P3-15 | Create request code generation logic for quote, order, and contact requests | To Do |  |  |
-| P3-16 | Create script to create the first admin user | To Do |  |  |
+| P3-01 | Set up Prisma package/configuration | Done | Added `packages/db` with Prisma 7 config, generated client setup, and root database scripts. | 2026-05-07 |
+| P3-02 | Create PostgreSQL database connection configuration | Done | Added Prisma PostgreSQL datasource configuration and runtime client wiring for `DATABASE_URL`. | 2026-05-07 |
+| P3-03 | Define Service Category model | Done | Added controlled category model for Signs, Printing, and Design. | 2026-05-07 |
+| P3-04 | Define Service model | Done | Added service model with category relation, slugs, image path metadata, display order, active state, and featured state. | 2026-05-07 |
+| P3-05 | Define Pricing model and pricing type options | Done | Added pricing model and pricing type enum for exact, starting from, tiered, and request quote pricing. | 2026-05-07 |
+| P3-06 | Define Customer Request model for quote, order, and contact submissions | Done | Added shared request model for quote, order, and contact intake fields. | 2026-05-07 |
+| P3-07 | Define Request Service relationship model | Done | Added request-service join model for selected services on quote and order requests. | 2026-05-07 |
+| P3-08 | Define Request Note model for internal admin notes | Done | Added internal note model with optional admin author relation. | 2026-05-07 |
+| P3-09 | Define Admin User model | Done | Added admin user model linked to Better Auth user records. | 2026-05-07 |
+| P3-10 | Define Better Auth database tables if required | Done | Added Better Auth core user, session, account, and verification tables. | 2026-05-07 |
+| P3-11 | Define optional Audit Log model | Done | Added lightweight audit log model for future admin actions. | 2026-05-07 |
+| P3-12 | Create first database migration | Done | Added initial SQL migration generated from the Prisma schema. | 2026-05-07 |
+| P3-13 | Create seed script for Signs, Printing, and Design categories | Done | Added seed script for the three MVP service categories. | 2026-05-07 |
+| P3-14 | Create seed script for all existing services from old website | Done | Added seed data for 42 services from the product and copy docs, defaulting pricing to request quote. | 2026-05-07 |
+| P3-15 | Create request code generation logic for quote, order, and contact requests | Done | Added deterministic request-code formatting and transactional per-type yearly counters. | 2026-05-07 |
+| P3-16 | Create script to create the first admin user | Done | Added first-admin upsert script using CLI args or environment variables. | 2026-05-07 |
 
 ---
 
-## Phase 4 — Public Website Pages
+## Phase 4 — Public Website Pages (make sure frontend follows copy and the initial pricing data is seeded from the old website and images are generated using openai image gen 2 using the description in the copy of page)
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
@@ -288,16 +289,16 @@
 |---|---|---|---|---|
 | P11-01 | Create Railway project | To Do |  |  |
 | P11-02 | Connect GitHub repository to Railway | To Do |  |  |
-| P11-03 | Add Railway PostgreSQL service | To Do |  |  |
+| P11-03 | Add Railway Docker PostgreSQL service with persistent volume | To Do | Mount the Railway volume at `/var/lib/postgresql/data`. | 2026-05-07 |
 | P11-04 | Configure production environment variables | To Do |  |  |
-| P11-05 | Configure database connection variables | To Do |  |  |
+| P11-05 | Configure app-to-database connection variables | To Do | App service should connect to the Docker database service through `DATABASE_URL`. | 2026-05-07 |
 | P11-06 | Configure Better Auth production variables | To Do |  |  |
 | P11-07 | Configure Resend API key and sender email | To Do |  |  |
 | P11-08 | Configure admin notification email | To Do |  |  |
 | P11-09 | Configure PostHog project key and host | To Do |  |  |
-| P11-10 | Add `railway.json` if needed | To Do |  |  |
-| P11-11 | Configure Railway build and start commands for the `apps/web` monorepo app | To Do |  |  |
-| P11-12 | Run Prisma migrations during deployment | To Do |  |  |
+| P11-10 | Add `railway.json` if needed | To Do | Prefer the root Dockerfile unless Railway config-as-code is needed later. | 2026-05-07 |
+| P11-11 | Configure Railway app service to build from the root Dockerfile | To Do | The Dockerfile builds and starts the `apps/web` monorepo app. | 2026-05-07 |
+| P11-12 | Run Prisma migrations against the Docker PostgreSQL service during deployment | To Do |  | 2026-05-07 |
 | P11-13 | Seed production service categories and services | To Do |  |  |
 | P11-14 | Create first production admin user | To Do |  |  |
 | P11-15 | Deploy Next.js app to Railway | To Do |  |  |
@@ -386,3 +387,5 @@
 | AHT-004 | Add intentional testing guidance to root `AGENTS.md` | Done | Added testing rules that favor risk-based coverage, the smallest useful test scope, and restraint for low-risk copy, styling, docs, and mechanical changes. | 2026-05-06 |
 | AHT-005 | Add frontend shared component reuse guidance to root `AGENTS.md` | Done | Added rules to reuse shared UI patterns for repeated tables, cards, dropdowns, search bars, states, and form controls while allowing unique components when the design context warrants it. | 2026-05-06 |
 | AHT-006 | Update Phase 0 build plan with confirmed decisions | Done | Updated branding, contact info, services, pricing, gallery approach, and MVP confirmation status. Created `docs/copy/` folder for page copy and service descriptions. | 2026-05-06 |
+| AHT-007 | Dockerize local and Railway app/database services | Done | Added root Dockerfile, Docker Compose, Makefile, local env defaults, and updated Railway deployment docs for a Docker PostgreSQL service with persistent volume. | 2026-05-07 |
+| AHT-008 | Address Dockerization code review findings | Done | Bound local PostgreSQL to loopback, rejected placeholder auth secrets at container startup, exposed deploy-safe migrations, and corrected Docker environment/task summary docs. | 2026-05-07 |

@@ -8,9 +8,14 @@
     "build": "corepack pnpm --filter @mrsign/web build",
     "start": "corepack pnpm --filter @mrsign/web start",
     "lint": "corepack pnpm --filter @mrsign/web lint",
-    "typecheck": "corepack pnpm --filter @mrsign/web typecheck",
+    "typecheck": "corepack pnpm --recursive --if-present typecheck",
     "format": "corepack pnpm --filter @mrsign/web format",
-    "format:check": "corepack pnpm --filter @mrsign/web format:check"
+    "format:check": "corepack pnpm --recursive --if-present format:check",
+    "db:generate": "corepack pnpm --filter @mrsign/db generate",
+    "db:migrate": "corepack pnpm --filter @mrsign/db migrate",
+    "db:migrate:deploy": "corepack pnpm --filter @mrsign/db migrate:deploy",
+    "db:seed": "corepack pnpm --filter @mrsign/db seed",
+    "db:create-admin": "corepack pnpm --filter @mrsign/db create-admin"
   },
   "devDependencies": {
     "prettier": "3.8.3"

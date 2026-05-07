@@ -54,6 +54,10 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
+
+      <div className="mx-auto mt-10 max-w-[1440px] border-t border-white/10 pt-6 text-center text-xs font-semibold text-white/50">
+        &copy; {new Date().getFullYear()} Mr. Sign and Print. All rights reserved.
+      </div>
     </footer>
   );
 }

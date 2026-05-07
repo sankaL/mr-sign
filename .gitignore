@@ -34,6 +34,7 @@ pnpm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
+packages/db/src/generated/prisma/
 
 # Editor / IDE
 .idea/

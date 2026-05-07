@@ -21,7 +21,7 @@ The MVP does not include online payments, customer accounts, customer login, cus
 | Migration direction | Move from Vite to Next.js where needed |
 | Admin portal | Custom admin portal |
 | Hosting | Railway |
-| Database | Railway PostgreSQL |
+| Database | Dockerized PostgreSQL on Railway |
 | ORM | Prisma |
 | Authentication | Better Auth |
 | Admin login | Passwordless magic-link login using Resend |
@@ -63,8 +63,8 @@ After migration, `apps/web` should be the only production frontend unless a temp
 | Styling | Tailwind CSS | Fast, responsive styling |
 | Icons | Lucide React | Modern icon system already used by the frontend |
 | Animation | Motion / Framer Motion | Keep existing animation approach |
-| Hosting | Railway | Host the app and database in one platform |
-| Database | Railway PostgreSQL | Store services, pricing, requests, admins, notes, and auth data |
+| Hosting | Railway | Host the app and database as two services in one platform |
+| Database | Dockerized PostgreSQL 17 on Railway | Store services, pricing, requests, admins, notes, and auth data |
 | ORM | Prisma | Database schema, migrations, and type-safe database access |
 | Auth | Better Auth | Admin authentication and session management |
 | Email | Resend | Admin login links, customer confirmations, and admin notifications |
@@ -93,9 +93,9 @@ This avoids maintaining a separate frontend and backend for a lightweight MVP.
 
 ---
 
-## 4.2 Railway PostgreSQL
+## 4.2 Dockerized PostgreSQL on Railway
 
-Railway PostgreSQL should be the primary database because the app is already planned to be hosted on Railway.
+PostgreSQL 17 should run as a Dockerized Railway database service, not as a separate managed Railway PostgreSQL plugin service.
 
 It will store:
 
@@ -110,7 +110,7 @@ It will store:
 - Admin users
 - Authentication/session data
 
-Keeping the app and database in Railway keeps infrastructure simple and easier to maintain.
+Keeping the app and database as Railway services keeps infrastructure simple while matching the local Docker Compose topology. The Railway database service must use persistent storage by attaching a Railway volume at `/var/lib/postgresql/data`.
 
 ---
 
@@ -358,7 +358,7 @@ Required environment groups:
 | Group | Purpose |
 |---|---|
 | App URL | Used by auth, emails, and redirects |
-| Database | Railway PostgreSQL connection |
+| Database | Docker PostgreSQL service connection |
 | Auth | Better Auth secret and URL settings |
 | Resend | Email sending API key and sender email |
 | Admin email | Admin notification recipient |
@@ -373,20 +373,24 @@ Recommended Railway setup:
 
 | Railway Service | Purpose |
 |---|---|
-| Web service | Next.js application |
-| PostgreSQL service | Application database |
+| App service | Dockerized Next.js application |
+| Docker database service | PostgreSQL database with a Railway volume mounted at `/var/lib/postgresql/data` |
 
 Recommended deployment flow:
 
 1. Push code to GitHub.
 2. Connect the repo to Railway.
-3. Add Railway PostgreSQL.
-4. Configure environment variables.
-5. Run Prisma migrations during deployment.
-6. Deploy the Next.js app.
-7. Add the custom domain.
-8. Verify Resend sender/domain setup.
-9. Verify PostHog tracking.
+3. Create an app service from the repository Dockerfile.
+4. Create a Docker database service from the official PostgreSQL image.
+5. Attach a Railway volume to the database service at `/var/lib/postgresql/data`.
+6. Configure app and database environment variables.
+7. Run Prisma migrations against the Docker database service.
+8. Deploy the Next.js app service.
+9. Add the custom domain.
+10. Verify Resend sender/domain setup.
+11. Verify PostHog tracking.
+
+Local development should use the same two-service shape through Docker Compose: one app container and one PostgreSQL container with a named Docker volume.
 
 ---
 
@@ -443,7 +447,7 @@ The recommended MVP stack is:
 | Icons | Lucide React |
 | Animation | Motion / Framer Motion |
 | Hosting | Railway |
-| Database | Railway PostgreSQL |
+| Database | Dockerized PostgreSQL on Railway |
 | ORM | Prisma |
 | Auth | Better Auth |
 | Login | Resend magic links |

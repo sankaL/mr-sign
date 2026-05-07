@@ -111,6 +111,18 @@ This repository contains the source code for the Mr. Sign and Print website.
 
 This repo uses pnpm through Corepack.
 
+For the Dockerized app and database setup:
+
+```sh
+cp .env.example .env
+# Edit .env and replace BETTER_AUTH_SECRET before starting the app.
+make dev
+```
+
+This starts the Next.js app at [http://localhost:3000](http://localhost:3000) and PostgreSQL at `localhost:5432`.
+
+For direct pnpm development without Docker:
+
 ```sh
 corepack prepare pnpm@10.33.4 --activate
 corepack pnpm install
@@ -123,12 +135,17 @@ The production app runs from `apps/web`. By default, Next.js serves it at [http:
 
 | Command                      | Description           |
 | ---------------------------- | --------------------- |
+| `make dev`                   | Start app and database with Docker Compose |
+| `make dev-down`              | Stop Docker Compose services |
+| `make db-migrate`            | Run Prisma migrations against the Docker database |
+| `make db-migrate-deploy`     | Run deploy-safe Prisma migrations against the Docker database |
+| `make db-seed`               | Seed the Docker database |
 | `corepack pnpm lint`         | Run ESLint            |
 | `corepack pnpm typecheck`    | Run TypeScript checks |
 | `corepack pnpm format:check` | Check code formatting |
 | `corepack pnpm build`        | Build for production  |
 
-Use [`apps/web/.env.example`](apps/web/.env.example) as the starting point for local environment variables.
+Use [`.env.example`](.env.example) for Docker Compose variables and [`apps/web/.env.example`](apps/web/.env.example) for app-only variables.
 
 ---
 
