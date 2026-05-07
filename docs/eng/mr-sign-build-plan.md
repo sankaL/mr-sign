@@ -16,6 +16,7 @@
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
 | AH-2026-05-06-01 | Update planned admin auth stack to Better Auth | Done | Tech stack and build plan updated before implementation. | 2026-05-06 |
+| AH-2026-05-06-02 | Pin Phase 1 workspace dependency ranges | Done | Replaced `latest` dependency specifiers with lockfile-resolved versions after review. | 2026-05-06 |
 
 ---
 
@@ -42,20 +43,20 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P1-01 | Create or finalize GitHub repository | To Do |  |  |
-| P1-02 | Add root package manager and workspace files such as `package.json`, `pnpm-workspace.yaml`, and root scripts | To Do |  |  |
-| P1-03 | Set up pnpm workspace / monorepo structure with `apps/web` and only the packages needed for MVP | To Do |  |  |
-| P1-04 | Create Next.js app using TypeScript in `apps/web` | To Do |  |  |
-| P1-05 | Configure app folder structure for public website and admin portal | To Do |  |  |
-| P1-06 | Set up Tailwind CSS in the Next.js app | To Do |  |  |
-| P1-07 | Configure TypeScript path aliases to support migrated component imports | To Do |  |  |
-| P1-08 | Add Lucide React icon support | To Do |  |  |
-| P1-09 | Add Motion / Framer Motion support where needed | To Do |  |  |
-| P1-10 | Configure TypeScript, linting, and formatting | To Do |  |  |
-| P1-11 | Create `.env.example` with required environment variables | To Do |  |  |
-| P1-12 | Add basic README with local setup instructions | To Do |  |  |
-| P1-13 | Create base route structure for public and admin pages | To Do |  |  |
-| P1-14 | Document expected retirement, archival, or temporary non-production status of legacy `frontend/` after Next.js parity | To Do |  |  |
+| P1-01 | Create or finalize GitHub repository | Done | Existing GitHub remote `https://github.com/sankaL/mr-sign.git` confirmed. | 2026-05-06 |
+| P1-02 | Add root package manager and workspace files such as `package.json`, `pnpm-workspace.yaml`, and root scripts | Done | Added pnpm workspace files and root scripts using Corepack pnpm. | 2026-05-06 |
+| P1-03 | Set up pnpm workspace / monorepo structure with `apps/web` and only the packages needed for MVP | Done | Added `apps/web` as the production Next.js workspace app. | 2026-05-06 |
+| P1-04 | Create Next.js app using TypeScript in `apps/web` | Done | Added Next.js App Router scaffold with TypeScript. | 2026-05-06 |
+| P1-05 | Configure app folder structure for public website and admin portal | Done | Added base public and admin route folders. | 2026-05-06 |
+| P1-06 | Set up Tailwind CSS in the Next.js app | Done | Added Tailwind CSS v4 via `@tailwindcss/postcss` and global CSS import. | 2026-05-06 |
+| P1-07 | Configure TypeScript path aliases to support migrated component imports | Done | Configured `@/*` to resolve to `apps/web/src/*`. | 2026-05-06 |
+| P1-08 | Add Lucide React icon support | Done | Added `lucide-react` dependency. | 2026-05-06 |
+| P1-09 | Add Motion / Framer Motion support where needed | Done | Added `motion` dependency for future migrated animation components. | 2026-05-06 |
+| P1-10 | Configure TypeScript, linting, and formatting | Done | Added TypeScript, Next ESLint config, Prettier, and ignore rules for generated output. | 2026-05-06 |
+| P1-11 | Create `.env.example` with required environment variables | Done | Added `apps/web/.env.example` for database, Better Auth, Resend, admin email, site URL, and PostHog. | 2026-05-06 |
+| P1-12 | Add basic README with local setup instructions | Done | Updated root README with Corepack pnpm setup and standard commands. | 2026-05-06 |
+| P1-13 | Create base route structure for public and admin pages | Done | Added base routes for public pages plus `/admin` and `/admin/login`. | 2026-05-06 |
+| P1-14 | Document expected retirement, archival, or temporary non-production status of legacy `frontend/` after Next.js parity | Done | README documents `frontend/` as a non-production migration source until Phase 2 parity is accepted. | 2026-05-06 |
 
 ---
 
