@@ -64,25 +64,25 @@
 
 | Task number | Task | Task status | Comments | Updated date |
 |---|---|---|---|---|
-| P2-01 | Audit existing `frontend/` Vite app structure, package dependencies, Tailwind/PostCSS config, path aliases, and `frontend/DESIGN.md` rules | To Do |  |  |
-| P2-02 | Map Vite source files to Next.js App Router destinations in `apps/web` | To Do |  |  |
-| P2-03 | Migrate global CSS, reset styles, and base typography from `frontend/src/index.css` | To Do |  |  |
-| P2-04 | Migrate Tailwind and PostCSS configuration into the Next.js app | To Do |  |  |
-| P2-05 | Port the existing hero/prototype component from `frontend/components/ui/hero.tsx` into the Next.js component structure | To Do |  |  |
-| P2-06 | Replace Vite entry files such as `index.html`, `src/main.tsx`, and `src/demo.tsx` with Next.js `layout.tsx` and page routes | To Do |  |  |
-| P2-07 | Adapt migrated components for Next.js server/client component boundaries and add `use client` only where needed | To Do |  |  |
-| P2-08 | Review external image references and define static codebase-managed asset replacements before production | To Do |  |  |
-| P2-09 | Create global layout, navigation, and footer using the migrated design direction | To Do |  |  |
-| P2-10 | Create responsive mobile navigation | To Do |  |  |
-| P2-11 | Create reusable page header component | To Do |  |  |
-| P2-12 | Create reusable service card component | To Do |  |  |
-| P2-13 | Create reusable CTA section component | To Do |  |  |
-| P2-14 | Create reusable form field components | To Do |  |  |
-| P2-15 | Create reusable admin layout shell | To Do |  |  |
-| P2-16 | Create loading, empty, and error states | To Do |  |  |
-| P2-17 | Validate responsive layout patterns for mobile, tablet, desktop, and large desktop | To Do |  |  |
-| P2-18 | Run side-by-side visual parity checks between the Vite prototype and the migrated Next.js home page | To Do |  |  |
-| P2-19 | Remove or archive legacy `frontend/` after accepted parity, or clearly mark it as non-production if kept temporarily | To Do |  |  |
+| P2-01 | Audit existing `frontend/` Vite app structure, package dependencies, Tailwind/PostCSS config, path aliases, and `docs/DESIGN.md` rules | Done | Vite app, prototype hero, Tailwind v4 setup, Motion usage, and design rules reviewed before migration. | 2026-05-07 |
+| P2-02 | Map Vite source files to Next.js App Router destinations in `apps/web` | Done | Prototype home route mapped to `apps/web/src/app/page.tsx` and shared components under `apps/web/src/components`. | 2026-05-07 |
+| P2-03 | Migrate global CSS, reset styles, and base typography from `frontend/src/index.css` | Done | Reset and base typography moved into `apps/web/src/app/globals.css` with project palette defaults. | 2026-05-07 |
+| P2-04 | Migrate Tailwind and PostCSS configuration into the Next.js app | Done | Kept existing Tailwind v4 `@tailwindcss/postcss` setup in `apps/web`; no Vite config copied. | 2026-05-07 |
+| P2-05 | Port the existing hero/prototype component from `frontend/components/ui/hero.tsx` into the Next.js component structure | Done | Migrated the visual hero into server/client Next components with code-native graphic tiles. | 2026-05-07 |
+| P2-06 | Replace Vite entry files such as `index.html`, `src/main.tsx`, and `src/demo.tsx` with Next.js `layout.tsx` and page routes | Done | Public routes now render through App Router pages and shared shells. | 2026-05-07 |
+| P2-07 | Adapt migrated components for Next.js server/client component boundaries and add `use client` only where needed | Done | Motion and mobile navigation are isolated as client components; page composition remains server-rendered. | 2026-05-07 |
+| P2-08 | Review external image references and define static codebase-managed asset replacements before production | Done | Production app uses no remote photo URLs; prototype images replaced with branded graphic panels. | 2026-05-07 |
+| P2-09 | Create global layout, navigation, and footer using the migrated design direction | Done | Added shared site shell, navigation, logo, and footer. | 2026-05-07 |
+| P2-10 | Create responsive mobile navigation | Done | Added menu-based mobile navigation with quote action and route links. | 2026-05-07 |
+| P2-11 | Create reusable page header component | Done | Added shared page header component for public route foundations. | 2026-05-07 |
+| P2-12 | Create reusable service card component | Done | Added service cards backed by shared category configuration. | 2026-05-07 |
+| P2-13 | Create reusable CTA section component | Done | Added reusable quote/call CTA section. | 2026-05-07 |
+| P2-14 | Create reusable form field components | Done | Added accessible text input and textarea primitives for future forms. | 2026-05-07 |
+| P2-15 | Create reusable admin layout shell | Done | Added static admin shell for future dashboard and auth pages. | 2026-05-07 |
+| P2-16 | Create loading, empty, and error states | Done | Added reusable skeleton and state panels. | 2026-05-07 |
+| P2-17 | Validate responsive layout patterns for mobile, tablet, desktop, and large desktop | In Progress | Typecheck, lint, format, production build, and desktop browser checks passed; dedicated mobile/tablet/large-desktop visual QA remains. | 2026-05-07 |
+| P2-18 | Run side-by-side visual parity checks between the Vite prototype and the migrated Next.js home page | In Progress | Migrated the prototype direction and replaced remote photos with graphic panels; final side-by-side parity signoff remains. | 2026-05-07 |
+| P2-19 | Remove or archive legacy `frontend/` after accepted parity, or clearly mark it as non-production if kept temporarily | Done | Added `frontend/README.md` marking the Vite app as a non-production migration source. | 2026-05-07 |
 
 ---
 

@@ -1,0 +1,43 @@
+import type { LucideIcon } from "lucide-react";
+
+import { statusStateContent } from "@/lib/site";
+
+type StatePanelProps = {
+  kind: keyof typeof statusStateContent;
+};
+
+export function StatePanel({ kind }: StatePanelProps) {
+  const content = statusStateContent[kind];
+  const Icon: LucideIcon = content.icon;
+
+  return (
+    <div className="rounded-[2rem] border border-[#151515]/10 bg-white p-6">
+      <div className="flex items-start gap-4">
+        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FFF200] text-[#151515]">
+          <Icon className="h-5 w-5" />
+        </span>
+        <div>
+          <h2 className="text-xl font-black uppercase leading-none">
+            {content.title}
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-[#151515]/65">
+            {content.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function LoadingSkeleton() {
+  return (
+    <div className="rounded-[2rem] border border-[#151515]/10 bg-white p-6">
+      <div className="h-4 w-32 rounded-full bg-[#D8DDE3]" />
+      <div className="mt-6 grid gap-3">
+        <div className="h-12 rounded-2xl bg-[#D8DDE3]" />
+        <div className="h-12 rounded-2xl bg-[#D8DDE3]/70" />
+        <div className="h-12 rounded-2xl bg-[#D8DDE3]/45" />
+      </div>
+    </div>
+  );
+}
