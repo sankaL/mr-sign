@@ -32,3 +32,37 @@ Impact:
 - The Railway database service must attach a persistent volume mounted at `/var/lib/postgresql/data`.
 - Database backups and volume monitoring become part of production operations.
 - The project should not rely on a separate managed Railway PostgreSQL service unless this decision is revisited.
+
+## 2026-05-08: Use built-in image generation and concise legacy pricing summaries for Phase 4
+
+Decision: Use the built-in image generation tool for all Phase 4 public website images, store the selected finals in `apps/web/public/images/generated/`, and normalize old-site pricing into concise public summaries.
+
+Rationale:
+
+- The user requested the built-in image path rather than a CLI or API model-specific workflow.
+- Phase 4 needs complete public-page image coverage, so the asset set includes one home hero, three category heroes, and one image for each of the 42 services.
+- The old website contains a mix of exact prices, starting prices, dense tier tables, and services with no usable price. Concise summaries preserve useful legacy pricing without reproducing large tables in the public UI.
+- Category-scoped service keys avoid slug ambiguity, including repeated slugs such as `menu-boxes`.
+
+Impact:
+
+- Generated images are project assets and are referenced through `next/image`.
+- Seed data now uses the shared content catalog for categories, services, image metadata, SEO metadata, and public pricing.
+- Services with unclear or missing legacy prices remain `REQUEST_QUOTE`.
+- LocalBusiness schema omits geo coordinates until they are confirmed.
+
+## 2026-05-09: Use Request Quote as the only public project intake flow
+
+Decision: Remove Online Order as a separate public website flow for MVP. Customers should use Request Quote for project intake, and `/order-online` should redirect to `/request-quote`.
+
+Rationale:
+
+- The Online Order and Request Quote flows collected the same practical information.
+- A single intake path reduces navigation friction and avoids implying checkout, payment, or confirmed production online.
+- Existing backend order request support can remain for compatibility without being exposed on the public website.
+
+Impact:
+
+- Public navigation, footer links, and content exports should not include Online Order.
+- Product and engineering plans should treat quote and contact submissions as the MVP customer request flows.
+- No Prisma schema or request-code migration is required for this decision.

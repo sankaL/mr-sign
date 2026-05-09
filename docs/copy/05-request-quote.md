@@ -214,7 +214,7 @@ Not sure what to include? Here are a few tips:
 
 - If you do not know your exact size or quantity yet, just leave those fields blank and we will work through it with you.
 - If you have a logo or design file ready, you can email it to us at order@mrsignandprint.net after submitting.
-- If you already know exactly what you need, you can also submit an order request directly.
+- If you already know exactly what you need, include those details in the quote request and we will follow up directly.
 
 **Help Panel CTA:**
 Or call us directly at (416) 512-9353 -- we are happy to answer questions before you submit.

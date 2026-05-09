@@ -17,7 +17,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#FFF200]">
+          <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
             Pages
           </h2>
           <div className="mt-4 grid grid-cols-2 gap-2">
@@ -34,7 +34,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#FFF200]">
+          <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
             Contact
           </h2>
           <div className="mt-4 grid gap-3">
@@ -56,7 +56,8 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto mt-10 max-w-[1440px] border-t border-white/10 pt-6 text-center text-xs font-semibold text-white/50">
-        &copy; {new Date().getFullYear()} Mr. Sign and Print. All rights reserved.
+        &copy; {new Date().getFullYear()} Mr. Sign and Print. All rights
+        reserved.
       </div>
     </footer>
   );

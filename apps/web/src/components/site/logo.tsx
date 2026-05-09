@@ -14,7 +14,7 @@ export function BrandLogo() {
           style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
         />
       </span>
-      <span className="rounded-full border-[1.5px] border-white bg-[#FFF200] px-3 py-1.5 text-xs font-black text-[#151515] shadow-sm md:text-sm">
+      <span className="rounded-full border-[1.5px] border-white bg-[#CCFF00] px-3 py-1.5 text-xs font-black text-[#151515] shadow-sm md:text-sm">
         PRINT
       </span>
     </Link>

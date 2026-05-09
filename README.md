@@ -48,7 +48,7 @@ Need a logo, a website, or custom type setting? Our in-house design services cov
 
 ## 📋 How It Works
 
-1. **📝 Submit Your Request** -- Fill out our online quote or order form. Tell us about your project, size, quantity, and timeline. No account needed.
+1. **📝 Submit Your Request** -- Fill out our online quote form. Tell us about your project, size, quantity, and timeline. No account needed.
 2. **📞 We Follow Up** -- Our team reviews your request and gets back to you by phone or email, usually within one business day.
 3. **✅ We Make It Happen** -- Once approved, we get to work and let you know when your order is ready for pickup.
 
@@ -88,7 +88,6 @@ Need a logo, a website, or custom type setting? Our in-house design services cov
 <div>
 
 [![Request a Quote](https://img.shields.io/badge/Request_a_Quote-Get_Started-blue?style=for-the-badge)](https://mrsignandprint.net/request-quote)
-[![Order Online](https://img.shields.io/badge/Order_Online-Shop_Now-green?style=for-the-badge)](https://mrsignandprint.net/order-online)
 [![Get Directions](https://img.shields.io/badge/Get_Directions-Navigate-red?style=for-the-badge)](https://maps.google.com/?q=399+Four+Valley+Dr+Unit+3+Vaughan+ON+L4K+5X5)
 
 </div>

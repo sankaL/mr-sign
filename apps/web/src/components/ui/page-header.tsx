@@ -14,21 +14,21 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <section className="bg-[#1936D4] px-5 py-16 text-white md:px-10 md:py-24">
-      <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+    <section className="bg-[#1936D4] px-5 py-10 text-white md:px-10 md:py-14">
+      <div className="mx-auto max-w-[1440px]">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#FFF200]">
+          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
             {eyebrow}
           </p>
-          <h1 className="mt-4 max-w-4xl text-[clamp(3.25rem,8vw,7.5rem)] font-black uppercase leading-[0.88] tracking-tight">
+          <h1 className="mt-3 max-w-4xl text-[clamp(2.25rem,5vw,4.25rem)] font-black uppercase leading-[0.92] tracking-tight">
             {title}
           </h1>
         </div>
-        <div className="max-w-xl">
-          <p className="text-base font-semibold leading-7 text-white/80 md:text-lg">
+        <div className="mt-5">
+          <p className="text-sm font-semibold leading-6 text-white/80 md:text-base md:leading-7">
             {description}
           </p>
-          {children ? <div className="mt-6">{children}</div> : null}
+          {children ? <div className="mt-5">{children}</div> : null}
         </div>
       </div>
     </section>
