@@ -1,8 +1,21 @@
+import { getServicesByCategory, serviceCategories } from "@mrsign/content";
+
 import { prisma } from "../src/client.js";
-import { seedCategories } from "./seed-data.js";
+import type { PublicPricing } from "@mrsign/content";
+
+function pricingSeed(pricing: PublicPricing) {
+  return {
+    type: pricing.type,
+    amountCents: pricing.amountCents ?? null,
+    currency: pricing.currency,
+    unitLabel: pricing.unitLabel ?? null,
+    tieredDescription: pricing.tieredDescription ?? null,
+    publicLabel: pricing.publicLabel,
+  };
+}
 
 async function main() {
-  for (const [categoryIndex, categorySeed] of seedCategories.entries()) {
+  for (const [categoryIndex, categorySeed] of serviceCategories.entries()) {
     const category = await prisma.serviceCategory.upsert({
       where: { slug: categorySeed.slug },
       create: {
@@ -18,7 +31,9 @@ async function main() {
       },
     });
 
-    for (const [serviceIndex, serviceSeed] of categorySeed.services.entries()) {
+    const categoryServices = getServicesByCategory(categorySeed.slug);
+
+    for (const [serviceIndex, serviceSeed] of categoryServices.entries()) {
       const service = await prisma.service.upsert({
         where: {
           categoryId_slug: {
@@ -31,25 +46,36 @@ async function main() {
           name: serviceSeed.name,
           slug: serviceSeed.slug,
           shortDescription: serviceSeed.shortDescription,
-          imageAlt: serviceSeed.imageAlt,
+          description: serviceSeed.body.join("\n\n"),
+          imagePath: serviceSeed.image.path,
+          imageAlt: serviceSeed.image.alt,
+          metaTitle: serviceSeed.seo.title,
+          metaDescription: serviceSeed.seo.description,
+          isFeatured: serviceSeed.isFeatured ?? false,
           displayOrder: serviceIndex + 1,
         },
         update: {
           name: serviceSeed.name,
           shortDescription: serviceSeed.shortDescription,
-          imageAlt: serviceSeed.imageAlt,
+          description: serviceSeed.body.join("\n\n"),
+          imagePath: serviceSeed.image.path,
+          imageAlt: serviceSeed.image.alt,
+          metaTitle: serviceSeed.seo.title,
+          metaDescription: serviceSeed.seo.description,
+          isFeatured: serviceSeed.isFeatured ?? false,
           displayOrder: serviceIndex + 1,
         },
       });
+
+      const pricingData = pricingSeed(serviceSeed.pricing);
 
       await prisma.pricing.upsert({
         where: { serviceId: service.id },
         create: {
           serviceId: service.id,
-          type: "REQUEST_QUOTE",
-          publicLabel: "Request Quote",
+          ...pricingData,
         },
-        update: {},
+        update: pricingData,
       });
     }
   }

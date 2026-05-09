@@ -4,7 +4,11 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import { primaryActions, publicNavigation } from "@/lib/site";
+import {
+  primaryActions,
+  primaryNavigation,
+  secondaryNavigation,
+} from "@/lib/site";
 
 type MobileNavProps = {
   variant?: "blue" | "light";
@@ -13,6 +17,11 @@ type MobileNavProps = {
 export function MobileNav({ variant = "blue" }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const isBlue = variant === "blue";
+  const navigationItems = [...primaryNavigation, ...secondaryNavigation];
+
+  const closeNavigation = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className="md:hidden">
@@ -39,16 +48,16 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
           }
         >
           <div className="grid gap-1">
-            {publicNavigation.map((item) => (
+            {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={
                   isBlue
-                    ? "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-white hover:text-[#1936D4]"
-                    : "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-[#1936D4] hover:text-white"
+                    ? "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4]"
+                    : "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white"
                 }
-                onClick={() => setIsOpen(false)}
+                onClick={closeNavigation}
               >
                 {item.label}
               </Link>
@@ -56,8 +65,8 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
           </div>
           <Link
             href={primaryActions.quote.href}
-            className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-[#1936D4] active:scale-[0.98]"
-            onClick={() => setIsOpen(false)}
+            className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4] active:scale-[0.98]"
+            onClick={closeNavigation}
           >
             {primaryActions.quote.label}
           </Link>

@@ -1,3 +1,16 @@
+import {
+  businessHours,
+  contactPage,
+  galleryPage,
+  homePage,
+  locationPage,
+  orderPage,
+  primaryActions,
+  publicNavigation,
+  quotePage,
+  serviceCategories as contentCategories,
+  siteContact,
+} from "@mrsign/content";
 import type { LucideIcon } from "lucide-react";
 import {
   Brush,
@@ -14,35 +27,26 @@ import {
   Sparkles,
 } from "lucide-react";
 
-export const siteContact = {
-  businessName: "Mr. Sign and Print",
-  phone: "(416) 512-9353",
-  phoneHref: "tel:14165129353",
-  secondaryPhone: "(905) 761-8970",
-  secondaryPhoneHref: "tel:19057618970",
-  email: "order@mrsignandprint.net",
-  emailHref: "mailto:order@mrsignandprint.net",
-  address: "399 Four Valley Dr. Unit 3, Vaughan, Ontario L4K 5X5",
-  shortAddress: "399 Four Valley Dr. Unit 3, Vaughan",
-  serviceArea: "Vaughan and the GTA",
+export {
+  businessHours,
+  contactPage,
+  galleryPage,
+  homePage,
+  locationPage,
+  orderPage,
+  primaryActions,
+  publicNavigation,
+  quotePage,
+  siteContact,
 };
 
-export const publicNavigation = [
-  { href: "/signs", label: "Signs" },
-  { href: "/printing", label: "Printing" },
-  { href: "/design", label: "Design" },
-  { href: "/request-quote", label: "Request Quote" },
-  { href: "/order-online", label: "Order Online" },
-  { href: "/location", label: "Location" },
-  { href: "/contact", label: "Contact" },
-] as const;
+export const primaryNavigation = publicNavigation.filter((item) =>
+  ["/signs", "/printing", "/design"].includes(item.href),
+);
 
-export const primaryActions = {
-  quote: { href: "/request-quote", label: "Request Quote" },
-  order: { href: "/order-online", label: "Order Online" },
-  services: { href: "/signs", label: "Browse Services" },
-  call: { href: siteContact.phoneHref, label: "Call for Quote" },
-};
+export const secondaryNavigation = publicNavigation.filter((item) =>
+  ["/order-online", "/gallery", "/location", "/contact"].includes(item.href),
+);
 
 export type ServiceCategory = {
   href: string;
@@ -56,44 +60,44 @@ export type ServiceCategory = {
   samples: string[];
 };
 
-export const serviceCategories: ServiceCategory[] = [
-  {
-    href: "/signs",
-    label: "Signs",
-    eyebrow: "Street visibility",
-    title: "Storefront signs and shop graphics",
-    description:
-      "Channel letters, banners, window lettering, lawn signs, sandwich boards, and exterior sign work for local businesses.",
-    cta: "Plan a sign job",
+const categoryDecor = {
+  signs: {
+    cta: "Explore signs",
     accent: "yellow",
     icon: Megaphone,
     samples: ["Channel Letters", "Window Lettering", "Banners"],
   },
-  {
-    href: "/printing",
-    label: "Printing",
-    eyebrow: "Production print",
-    title: "Printed materials with practical turnaround",
-    description:
-      "Business cards, flyers, brochures, menus, invoices, invitations, postcards, stamps, and large format printing.",
-    cta: "Start a print request",
+  printing: {
+    cta: "Explore printing",
     accent: "blue",
     icon: Printer,
     samples: ["Business Cards", "Flyers", "Large Format"],
   },
-  {
-    href: "/design",
-    label: "Design",
-    eyebrow: "Artwork support",
-    title: "Design help before the job goes to production",
-    description:
-      "Logos, typesetting, layout help, sign-ready artwork, engraving layouts, T-shirt graphics, and production file support.",
-    cta: "Get design help",
+  design: {
+    cta: "Explore design",
     accent: "red",
     icon: Brush,
     samples: ["Logos", "Type Setting", "Silk Screens"],
   },
-];
+} as const;
+
+export const serviceCategories: ServiceCategory[] = contentCategories.map(
+  (category) => {
+    const decor = categoryDecor[category.slug];
+
+    return {
+      href: category.route,
+      label: category.name,
+      eyebrow: category.eyebrow,
+      title: category.headline,
+      description: category.description,
+      cta: decor.cta,
+      accent: decor.accent,
+      icon: decor.icon,
+      samples: [...decor.samples],
+    };
+  },
+);
 
 export const featuredWorkflows = [
   {
@@ -111,7 +115,7 @@ export const featuredWorkflows = [
   {
     title: "Codebase Assets",
     description:
-      "Use branded graphic tiles now, with project-managed image paths ready for future owned photos.",
+      "Use generated project-managed image paths for public service imagery.",
     icon: FileText,
   },
 ];
@@ -131,19 +135,19 @@ export const statusStateContent = {
   loading: {
     title: "Preparing the workspace",
     description:
-      "The page shell is ready while the next phase connects real data.",
+      "The public page shell is ready while live request handling is prepared.",
     icon: Sparkles,
   },
   empty: {
-    title: "Nothing to show yet",
+    title: "Direct contact available",
     description:
-      "This area is reserved for Phase 3 and later data-backed workflows.",
+      "Use the shop phone or email for active quote and order requests.",
     icon: FileText,
   },
   error: {
-    title: "This view needs attention",
+    title: "No live submission yet",
     description:
-      "Use inline errors here when forms and admin actions arrive in later phases.",
+      "Form validation and stored request handling are intentionally out of scope for this static launch layer.",
     icon: ShieldCheck,
   },
 };

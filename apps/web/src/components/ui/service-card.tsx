@@ -47,7 +47,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         </div>
         <Link
           href={service.href}
-          className="inline-flex min-h-11 w-fit items-center justify-center rounded-full bg-[#151515] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] active:scale-[0.98]"
+          className="inline-flex min-h-11 w-fit items-center justify-center rounded-full bg-[#151515] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
         >
           {service.cta}
         </Link>

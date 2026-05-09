@@ -12,6 +12,7 @@ FROM base AS deps
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/web/package.json apps/web/package.json
+COPY packages/content/package.json packages/content/package.json
 COPY packages/db/package.json packages/db/package.json
 
 RUN corepack pnpm install --frozen-lockfile
@@ -22,6 +23,16 @@ COPY . .
 
 RUN corepack pnpm db:generate
 RUN corepack pnpm --filter @mrsign/web build
+
+FROM deps AS dev
+
+ENV NODE_ENV=development
+ENV PORT=3000
+ENV WATCHPACK_POLLING=true
+
+EXPOSE 3000
+
+CMD ["sh", "-c", "if [ -z \"$BETTER_AUTH_SECRET\" ] || [ \"$BETTER_AUTH_SECRET\" = \"replace-with-a-secure-secret\" ]; then echo 'BETTER_AUTH_SECRET must be set to a non-placeholder value.' >&2; exit 1; fi; corepack pnpm db:generate && corepack pnpm --filter @mrsign/web dev --hostname 0.0.0.0"]
 
 FROM base AS runner
 

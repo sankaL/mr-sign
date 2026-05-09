@@ -15,7 +15,7 @@ export function AdminShell({ title, description, children }: AdminShellProps) {
       <header className="border-b border-[#151515]/10 bg-[#151515] px-5 py-4 text-white md:px-8">
         <div className="mx-auto flex max-w-[1440px] flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#FFF200]">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
               Admin portal
             </p>
             <h1 className="mt-2 text-2xl font-black uppercase leading-none">
@@ -29,7 +29,7 @@ export function AdminShell({ title, description, children }: AdminShellProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-[#151515] active:scale-[0.98]"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#151515] focus-visible:bg-white focus-visible:!text-[#151515] active:scale-[0.98]"
                 >
                   <Icon className="h-4 w-4" />
                   {item.label}

@@ -1,10 +1,14 @@
-import { SiteShell } from "@/components/site/site-shell";
+import type { Metadata } from "next";
+
 import { TextAreaField, TextField } from "@/components/forms/form-field";
+import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
+import { orderPage } from "@/lib/site";
 
-export const metadata = {
-  title: "Order Online",
+export const metadata: Metadata = {
+  title: orderPage.seo.title,
+  description: orderPage.seo.description,
 };
 
 export default function OrderOnlinePage() {
@@ -12,17 +16,18 @@ export default function OrderOnlinePage() {
     <SiteShell>
       <main>
         <PageHeader
-          eyebrow="Order online"
-          title="Submit an order request without checkout or uploads."
-          description="The MVP order flow is a structured request path, not ecommerce. Phase 2 provides the layout and input pattern only."
+          eyebrow={orderPage.eyebrow}
+          title={orderPage.headline}
+          description={orderPage.subheadline}
         />
         <section className="px-5 py-14 md:px-10 md:py-20">
           <div
             className="mx-auto grid max-w-[900px] gap-5 rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8"
             aria-label="Order online form preview"
           >
-            <p className="rounded-2xl bg-[#FFF200] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
-              Preview only. Submission arrives in Phase 5.
+            <p className="rounded-2xl bg-[#CCFF00] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
+              Online submission is coming soon. Call or email the shop with
+              known sizes, quantities, materials, and deadline.
             </p>
             <TextField
               id="order-name"

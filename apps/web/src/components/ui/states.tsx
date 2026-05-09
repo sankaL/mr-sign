@@ -13,7 +13,7 @@ export function StatePanel({ kind }: StatePanelProps) {
   return (
     <div className="rounded-[2rem] border border-[#151515]/10 bg-white p-6">
       <div className="flex items-start gap-4">
-        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FFF200] text-[#151515]">
+        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
           <Icon className="h-5 w-5" />
         </span>
         <div>

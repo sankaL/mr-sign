@@ -1,31 +1,19 @@
-export const metadata = {
-  title: "Signs",
+import { getCategory } from "@mrsign/content";
+import type { Metadata } from "next";
+
+import { CategoryPage } from "@/components/site/category-page";
+
+const category = getCategory("signs");
+
+export const metadata: Metadata = {
+  title: category?.seo.title,
+  description: category?.seo.description,
+  openGraph: {
+    title: category?.seo.socialTitle ?? category?.seo.title,
+    description: category?.seo.socialDescription ?? category?.seo.description,
+  },
 };
 
-import { SiteShell } from "@/components/site/site-shell";
-import { CtaSection } from "@/components/ui/cta-section";
-import { PageHeader } from "@/components/ui/page-header";
-import { ServiceCard } from "@/components/ui/service-card";
-import { serviceCategories } from "@/lib/site";
-
 export default function SignsPage() {
-  const service = serviceCategories.find((item) => item.href === "/signs")!;
-
-  return (
-    <SiteShell>
-      <main>
-        <PageHeader
-          eyebrow="Signs"
-          title="Storefront visibility, banners, boards, and lettering."
-          description="A Phase 2 category foundation for sign services. Detailed service pages and database-backed pricing arrive in later phases."
-        />
-        <section className="px-5 py-14 md:px-10 md:py-20">
-          <div className="mx-auto max-w-[1152px]">
-            <ServiceCard service={service} />
-          </div>
-        </section>
-        <CtaSection title="Need a sign job quoted for Vaughan or the GTA?" />
-      </main>
-    </SiteShell>
-  );
+  return <CategoryPage categorySlug="signs" />;
 }

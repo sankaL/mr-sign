@@ -12,6 +12,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@mrsign/content": "workspace:*",
     "lucide-react": "1.14.0",
     "motion": "12.38.0",
     "next": "16.2.5",

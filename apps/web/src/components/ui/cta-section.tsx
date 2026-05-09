@@ -15,7 +15,7 @@ export function CtaSection({
     <section className="bg-[#FFFAF0] px-5 py-16 md:px-10 md:py-24">
       <div className="mx-auto grid max-w-[1152px] gap-8 rounded-[2rem] bg-[#1936D4] p-6 text-white md:grid-cols-[1.2fr_0.8fr] md:p-10">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#FFF200]">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
             Request path
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase leading-none md:text-5xl">

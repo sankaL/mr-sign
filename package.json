@@ -11,6 +11,7 @@
     "typecheck": "corepack pnpm --recursive --if-present typecheck",
     "format": "corepack pnpm --filter @mrsign/web format",
     "format:check": "corepack pnpm --recursive --if-present format:check",
+    "test": "corepack pnpm --recursive --if-present test",
     "db:generate": "corepack pnpm --filter @mrsign/db generate",
     "db:migrate": "corepack pnpm --filter @mrsign/db migrate",
     "db:migrate:deploy": "corepack pnpm --filter @mrsign/db migrate:deploy",

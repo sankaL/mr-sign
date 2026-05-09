@@ -17,7 +17,7 @@ export default function AdminLoginPage() {
           className="grid content-start gap-5 rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8"
           aria-label="Admin login form preview"
         >
-          <p className="rounded-2xl bg-[#FFF200] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
+          <p className="rounded-2xl bg-[#CCFF00] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
             Preview only. Magic-link login arrives in Phase 7.
           </p>
           <TextField
