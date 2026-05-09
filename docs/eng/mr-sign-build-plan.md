@@ -34,6 +34,7 @@
 | AH-2026-05-09-01 | Fix button hover text contrast                 | Done        | Removed inline shared button text colors and added explicit hover and focus contrast classes so filled hover states keep readable text across navigation, CTAs, and service links.                                           | 2026-05-09   |
 | AH-2026-05-09-02 | Fix filled button base text contrast           | Done        | Set shared CTA and service-card filled button text colors as explicit important utilities so lime buttons stay ink and black buttons stay white before hover.                                                                | 2026-05-09   |
 | AH-2026-05-09-03 | Adjust desktop navigation button sizing        | Done        | Reduced the center desktop navigation pills and made the Request Quote CTA larger to match the requested navigation hierarchy.                                                                                               | 2026-05-09   |
+| AH-2026-05-09-04 | UI modernization polish pass                   | Done        | Eliminated cards-inside-cards, reduced oversized headlines across all pages, tightened section padding, and flattened nested layouts for a more professional, cohesive design.                                                 | 2026-05-09   |
 
 ---
 

@@ -20,12 +20,12 @@ export default function OrderOnlinePage() {
           title={orderPage.headline}
           description={orderPage.subheadline}
         />
-        <section className="px-5 py-14 md:px-10 md:py-20">
+        <section className="px-5 py-10 md:px-10 md:py-14">
           <div
-            className="mx-auto grid max-w-[900px] gap-5 rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8"
+            className="mx-auto grid max-w-[900px] gap-4"
             aria-label="Order online form preview"
           >
-            <p className="rounded-2xl bg-[#CCFF00] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
+            <p className="rounded-xl bg-[#CCFF00] px-4 py-2.5 text-xs font-black uppercase tracking-wide text-[#151515]">
               Online submission is coming soon. Call or email the shop with
               known sizes, quantities, materials, and deadline.
             </p>

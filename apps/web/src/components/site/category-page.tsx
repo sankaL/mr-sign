@@ -30,16 +30,16 @@ export function CategoryPage({ categorySlug }: CategoryPageProps) {
   return (
     <SiteShell>
       <main>
-        <section className="bg-[#1936D4] px-5 py-14 text-white md:px-10 md:py-20">
-          <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <section className="bg-[#1936D4] px-5 py-10 text-white md:px-10 md:py-14">
+          <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div className="max-w-3xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
                 {category.eyebrow}
               </p>
-              <h1 className="mt-4 text-[clamp(3.2rem,8vw,7.25rem)] font-black uppercase leading-[0.88] tracking-tight">
+              <h1 className="mt-3 text-[clamp(2.25rem,5vw,4.25rem)] font-black uppercase leading-[0.92] tracking-tight">
                 {category.headline}
               </h1>
-              <p className="mt-6 max-w-[62ch] text-base font-semibold leading-7 text-white/82 md:text-lg">
+              <p className="mt-4 max-w-[62ch] text-sm font-semibold leading-6 text-white/82 md:text-base md:leading-7">
                 {category.subheadline}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -69,23 +69,23 @@ export function CategoryPage({ categorySlug }: CategoryPageProps) {
           </div>
         </section>
 
-        <section className="bg-[#FFFAF0] px-5 py-14 md:px-10 md:py-20">
+        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
           <div className="mx-auto max-w-[1440px]">
-            <div className="grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                   {category.name}
                 </p>
-                <h2 className="mt-3 text-3xl font-black uppercase leading-none md:text-5xl">
+                <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
                   {category.gridHeading}
                 </h2>
               </div>
-              <p className="max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66 md:text-base md:leading-7">
+              <p className="max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
                 {category.gridSubheading}
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
                 <ServiceTeaserCard
                   key={service.route}
@@ -97,17 +97,17 @@ export function CategoryPage({ categorySlug }: CategoryPageProps) {
           </div>
         </section>
 
-        <section className="bg-white px-5 py-14 md:px-10 md:py-20">
-          <div className="mx-auto grid max-w-[1152px] gap-6 rounded-[2rem] border border-[#151515]/10 p-6 md:grid-cols-[1fr_0.7fr] md:p-8">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+        <section className="bg-white px-5 py-10 md:px-10 md:py-14">
+          <div className="mx-auto flex max-w-[1152px] flex-col gap-5 border-t border-[#151515]/10 pt-10 md:flex-row md:items-center md:justify-between md:pt-14">
+            <div className="max-w-xl">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                 Need help choosing?
               </p>
-              <h2 className="mt-3 text-3xl font-black uppercase leading-none md:text-5xl">
+              <h2 className="mt-2 text-xl font-black uppercase leading-tight md:text-2xl">
                 {category.ctaCopy}
               </h2>
             </div>
-            <div className="flex flex-col justify-end gap-3 sm:flex-row md:flex-col">
+            <div className="flex shrink-0 flex-wrap gap-3">
               <Link
                 href={primaryActions.quote.href}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"

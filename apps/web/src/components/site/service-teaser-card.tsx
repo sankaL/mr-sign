@@ -31,15 +31,15 @@ export function ServiceTeaserCard({
             : "(min-width: 1024px) 28vw, 100vw"
         }
       />
-      <div className="flex min-h-full flex-col justify-between gap-6 p-5 md:p-6">
+      <div className="flex min-h-full flex-col justify-between gap-4 p-4 md:p-5">
         <div>
-          <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
             {service.categorySlug}
           </p>
-          <h2 className="mt-3 text-2xl font-black uppercase leading-none md:text-3xl">
+          <h2 className="mt-2 text-xl font-black uppercase leading-none md:text-2xl">
             {service.name}
           </h2>
-          <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/66">
+          <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/66">
             {service.shortDescription}
           </p>
         </div>

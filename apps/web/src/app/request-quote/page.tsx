@@ -21,13 +21,13 @@ export default function RequestQuotePage() {
           title={quotePage.headline}
           description={quotePage.subheadline}
         />
-        <section className="px-5 py-14 md:px-10 md:py-20">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[1fr_0.8fr]">
+        <section className="px-5 py-10 md:px-10 md:py-14">
+          <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[1fr_0.8fr]">
             <div
-              className="grid gap-5 rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8"
+              className="grid gap-4"
               aria-label="Request quote form preview"
             >
-              <p className="rounded-2xl bg-[#CCFF00] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
+              <p className="rounded-xl bg-[#CCFF00] px-4 py-2.5 text-xs font-black uppercase tracking-wide text-[#151515]">
                 Online submission is coming soon. Call or email the shop with
                 these details for active quote requests.
               </p>
@@ -52,7 +52,7 @@ export default function RequestQuotePage() {
                 readOnly
               />
             </div>
-            <div className="grid content-start gap-5">
+            <div className="grid content-start gap-4">
               <StatePanel kind="empty" />
               <StatePanel kind="error" />
             </div>

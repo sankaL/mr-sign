@@ -59,21 +59,21 @@ export default function LocationPage() {
           title={locationPage.headline}
           description={locationPage.subheadline}
         />
-        <section className="px-5 py-14 md:px-10 md:py-20">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="grid content-start gap-6">
-              <section className="rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+        <section className="px-5 py-10 md:px-10 md:py-14">
+          <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="grid content-start gap-5">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                   Address
                 </p>
-                <h2 className="mt-4 text-3xl font-black uppercase leading-none">
+                <h2 className="mt-3 text-2xl font-black uppercase leading-tight md:text-3xl">
                   {siteContact.address}
                 </h2>
-                <p className="mt-5 text-sm font-semibold leading-6 text-[#151515]/65">
+                <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/65">
                   We serve {siteContact.serviceArea}. Call ahead for quote
                   timing, pickup details, and production questions.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     href={siteContact.directionsUrl}
                     className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
@@ -89,17 +89,17 @@ export default function LocationPage() {
                     <Phone className="h-4 w-4" strokeWidth={2.5} />
                   </Link>
                 </div>
-              </section>
+              </div>
 
-              <section className="rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+              <div className="border-t border-[#151515]/10 pt-5">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                   Hours
                 </p>
-                <div className="mt-5 grid gap-3">
+                <div className="mt-4 grid gap-2">
                   {businessHours.map((item) => (
                     <div
                       key={item.day}
-                      className="flex items-center justify-between gap-4 border-b border-[#151515]/10 pb-3 last:border-b-0 last:pb-0"
+                      className="flex items-center justify-between gap-4 border-b border-[#151515]/8 pb-2 last:border-b-0 last:pb-0"
                     >
                       <span className="text-sm font-black uppercase tracking-wide">
                         {item.day}
@@ -110,13 +110,13 @@ export default function LocationPage() {
                     </div>
                   ))}
                 </div>
-              </section>
+              </div>
             </div>
 
-            <div className="grid gap-6">
+            <div className="grid gap-5">
               <Link
                 href={siteContact.directionsUrl}
-                className="relative min-h-96 overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-[#CCFF00] p-6 transition-transform hover:-translate-y-1 active:scale-[0.99]"
+                className="relative min-h-72 overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-[#CCFF00] p-5 transition-transform hover:-translate-y-1 active:scale-[0.99]"
               >
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#15151518_1px,transparent_1px),linear-gradient(to_bottom,#15151518_1px,transparent_1px)] bg-[size:2rem_2rem]" />
                 <div className="relative flex h-full flex-col justify-between">
@@ -125,10 +125,10 @@ export default function LocationPage() {
                     Vaughan
                   </span>
                   <div>
-                    <p className="text-5xl font-black uppercase leading-none md:text-6xl">
+                    <p className="text-4xl font-black uppercase leading-none md:text-5xl">
                       Four Valley Dr.
                     </p>
-                    <p className="mt-4 max-w-sm text-sm font-black uppercase leading-5 tracking-wide">
+                    <p className="mt-3 max-w-sm text-sm font-black uppercase leading-5 tracking-wide">
                       Unit 3, Vaughan, Ontario L4K 5X5.
                     </p>
                   </div>
@@ -139,23 +139,23 @@ export default function LocationPage() {
                 </div>
               </Link>
 
-              <div className="grid gap-3 rounded-[2rem] border border-[#151515]/10 bg-white p-6">
+              <div className="grid gap-2.5 rounded-2xl border border-[#151515]/10 bg-white p-4">
                 <Link
                   href={siteContact.phoneHref}
                   className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#1936D4]"
                 >
-                  <Phone className="h-5 w-5 text-[#E51B23]" />
+                  <Phone className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.phone} or {siteContact.secondaryPhone}
                 </Link>
                 <Link
                   href={siteContact.emailHref}
                   className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#1936D4]"
                 >
-                  <Mail className="h-5 w-5 text-[#E51B23]" />
+                  <Mail className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.email}
                 </Link>
                 <p className="flex items-center gap-3 text-sm font-black">
-                  <Clock className="h-5 w-5 text-[#E51B23]" />
+                  <Clock className="h-4 w-4 text-[#E51B23]" />
                   Monday to Friday, 9:00 AM to 5:00 PM
                 </p>
               </div>

@@ -292,34 +292,34 @@ export function HomeHero() {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF0] px-5 py-14 text-[#151515] md:px-10 md:py-20">
+      <section className="bg-[#FFFAF0] px-5 py-10 text-[#151515] md:px-10 md:py-14">
         <div className="mx-auto max-w-[1152px]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
               Getting started
             </p>
-            <h2 className="mt-3 max-w-5xl text-3xl font-black uppercase leading-none md:text-5xl">
+            <h2 className="mt-2 max-w-5xl text-2xl font-black uppercase leading-tight md:text-3xl">
               A simple shop process.
             </h2>
-            <p className="mt-5 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66 md:text-base md:leading-7">
+            <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
               No complicated portal. Share the project details, we follow up,
               and the work moves into production once approved.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {processSteps.map((step) => (
               <article
                 key={step.number}
-                className="relative rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6"
+                className="relative rounded-[1.5rem] border border-[#151515]/10 bg-white p-4 md:p-5"
               >
-                <p className="text-4xl font-black uppercase leading-none text-[#1936D4]">
+                <p className="text-3xl font-black uppercase leading-none text-[#1936D4]">
                   {step.number}
                 </p>
-                <h3 className="mt-5 text-xl font-black uppercase leading-none">
+                <h3 className="mt-4 text-base font-black uppercase leading-none">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/66">
+                <p className="mt-2 text-sm font-semibold leading-6 text-[#151515]/66">
                   {step.description}
                 </p>
               </article>
@@ -328,22 +328,22 @@ export function HomeHero() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-14 text-[#151515] md:px-10 md:py-20">
+      <section className="bg-white px-5 py-10 text-[#151515] md:px-10 md:py-14">
         <div className="mx-auto max-w-[1440px]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#E51B23]">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
               Popular services
             </p>
-            <h2 className="mt-3 max-w-7xl text-3xl font-black uppercase leading-none md:text-5xl">
+            <h2 className="mt-2 max-w-7xl text-2xl font-black uppercase leading-tight md:text-3xl">
               A few of the products we quote every day.
             </h2>
-            <p className="mt-5 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66 md:text-base md:leading-7">
+            <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
               The gallery and service pages reuse the same generated service
               imagery so every public route stays consistent.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {featuredServices.map((service, index) => (
               <ServiceTeaserCard
                 key={service.route}
@@ -355,16 +355,16 @@ export function HomeHero() {
         </div>
       </section>
 
-      <section className="bg-[#151515] px-5 py-14 text-white md:px-10 md:py-20">
-        <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="bg-[#151515] px-5 py-10 text-white md:px-10 md:py-14">
+        <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#CCFF00]">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
               Come visit us
             </p>
-            <h2 className="mt-3 text-3xl font-black uppercase leading-none md:text-5xl">
+            <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
               Mr. Sign and Print in Vaughan.
             </h2>
-            <div className="mt-6 grid gap-3 text-sm font-bold leading-6 text-white/75">
+            <div className="mt-5 grid gap-2.5 text-sm font-bold leading-6 text-white/75">
               <p className="flex gap-3">
                 <Store className="mt-0.5 h-5 w-5 shrink-0 text-[#CCFF00]" />
                 {siteContact.address}
@@ -382,7 +382,7 @@ export function HomeHero() {
                 Monday to Friday: {weekdayHours}
               </p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink href={primaryActions.directions.href}>
                 Get directions
               </ButtonLink>
@@ -394,7 +394,7 @@ export function HomeHero() {
 
           <Link
             href={siteContact.directionsUrl}
-            className="relative min-h-80 overflow-hidden rounded-[2rem] border border-white/14 bg-[#CCFF00] p-6 text-[#151515] transition-transform hover:-translate-y-1 active:scale-[0.99]"
+            className="relative min-h-64 overflow-hidden rounded-[2rem] border border-white/14 bg-[#CCFF00] p-5 text-[#151515] transition-transform hover:-translate-y-1 active:scale-[0.99]"
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#15151518_1px,transparent_1px),linear-gradient(to_bottom,#15151518_1px,transparent_1px)] bg-[size:2rem_2rem]" />
             <div className="relative flex h-full flex-col justify-between">
@@ -403,10 +403,10 @@ export function HomeHero() {
                 Vaughan
               </span>
               <div>
-                <p className="text-5xl font-black uppercase leading-none md:text-6xl">
+                <p className="text-4xl font-black uppercase leading-none md:text-5xl">
                   Four Valley Dr.
                 </p>
-                <p className="mt-4 max-w-sm text-sm font-black uppercase leading-5 tracking-wide">
+                <p className="mt-3 max-w-sm text-sm font-black uppercase leading-5 tracking-wide">
                   Serving Vaughan, Concord, Woodbridge, and the Greater Toronto
                   Area.
                 </p>

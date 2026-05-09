@@ -28,8 +28,8 @@ export default function GalleryPage() {
           title={galleryPage.headline}
           description={galleryPage.subheadline}
         />
-        <section className="bg-[#FFFAF0] px-5 py-14 md:px-10 md:py-20">
-          <div className="mx-auto grid max-w-[1440px] gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
+          <div className="mx-auto grid max-w-[1440px] gap-5 md:grid-cols-2 lg:grid-cols-4">
             {galleryServices.map((service, index) => (
               <Link
                 key={service.route}
@@ -54,14 +54,14 @@ export default function GalleryPage() {
                   }
                   imageClassName="transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="p-5">
-                  <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
+                <div className="p-4">
+                  <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
                     {service.categorySlug}
                   </p>
-                  <h2 className="mt-2 text-xl font-black uppercase leading-none">
+                  <h2 className="mt-1.5 text-base font-black uppercase leading-none">
                     {service.name}
                   </h2>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/64">
+                  <p className="mt-2 text-sm font-semibold leading-5 text-[#151515]/64">
                     {service.shortDescription}
                   </p>
                 </div>

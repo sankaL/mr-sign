@@ -39,19 +39,19 @@ export function PricingSummary({
     <div
       className={
         compact
-          ? "rounded-2xl border border-[#151515]/10 bg-white px-4 py-3"
-          : "rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6"
+          ? "border-t border-[#151515]/10 pt-3"
+          : "rounded-2xl border border-[#151515]/10 bg-white p-4 md:p-5"
       }
     >
       <div className="flex items-start gap-3">
-        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
-          <BadgeDollarSign className="h-5 w-5" strokeWidth={2.25} />
+        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
+          <BadgeDollarSign className="h-4 w-4" strokeWidth={2.25} />
         </span>
         <div className="min-w-0">
-          <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
+          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
             {pricingTypeLabel(pricing.type)}
           </p>
-          <p className="mt-1 text-sm font-black leading-5 text-[#151515] md:text-base">
+          <p className="mt-1 text-sm font-black leading-5 text-[#151515]">
             {amount
               ? `${amount} CAD - ${pricing.publicLabel}`
               : pricing.publicLabel}
