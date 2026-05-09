@@ -36,6 +36,7 @@ export function ServiceDetailPage({
     categorySlug: service.categorySlug,
     serviceSlug: service.slug,
   });
+  const quoteHref = `${primaryActions.quote.href}?category=${service.categorySlug}&service=${service.slug}`;
 
   return (
     <SiteShell>
@@ -66,7 +67,7 @@ export function ServiceDetailPage({
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={primaryActions.quote.href}
+                  href={quoteHref}
                   className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
                 >
                   Request a quote

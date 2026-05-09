@@ -50,3 +50,19 @@ Impact:
 - Seed data now uses the shared content catalog for categories, services, image metadata, SEO metadata, and public pricing.
 - Services with unclear or missing legacy prices remain `REQUEST_QUOTE`.
 - LocalBusiness schema omits geo coordinates until they are confirmed.
+
+## 2026-05-09: Use Request Quote as the only public project intake flow
+
+Decision: Remove Online Order as a separate public website flow for MVP. Customers should use Request Quote for project intake, and `/order-online` should redirect to `/request-quote`.
+
+Rationale:
+
+- The Online Order and Request Quote flows collected the same practical information.
+- A single intake path reduces navigation friction and avoids implying checkout, payment, or confirmed production online.
+- Existing backend order request support can remain for compatibility without being exposed on the public website.
+
+Impact:
+
+- Public navigation, footer links, and content exports should not include Online Order.
+- Product and engineering plans should treat quote and contact submissions as the MVP customer request flows.
+- No Prisma schema or request-code migration is required for this decision.

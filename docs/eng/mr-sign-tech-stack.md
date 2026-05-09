@@ -4,7 +4,7 @@
 
 This document summarizes the recommended technology stack and high-level monorepo structure for the Mr. Sign and Print website redesign MVP.
 
-The MVP is a modern customer-facing website with a custom admin portal. It supports service browsing, quote requests, order requests, contact inquiries, admin service and pricing management, request tracking, email notifications, and basic user analytics.
+The MVP is a modern customer-facing website with a custom admin portal. It supports service browsing, quote requests, contact inquiries, admin service and pricing management, request tracking, email notifications, and basic user analytics.
 
 The MVP does not include online payments, customer accounts, customer login, customer file uploads, admin image uploads, inventory management, CRM integration, or production workflow automation.
 
@@ -151,7 +151,6 @@ Required emails:
 |---|---|
 | Admin login | Magic-link login email |
 | Quote request submitted | Customer confirmation and admin notification |
-| Order request submitted | Customer confirmation and admin notification |
 | Contact form submitted | Customer confirmation and admin notification |
 
 Admin notifications should go to `order@mrsignandprint.net`.
@@ -168,8 +167,8 @@ Recommended tracking areas:
 |---|---|
 | Page views | Home, category pages, service pages, location page |
 | Services | Service views, featured service clicks, category views |
-| CTAs | Request quote, order online, browse services, call now, directions |
-| Forms | Quote form started/submitted, order form started/submitted, contact form submitted |
+| CTAs | Request quote, browse services, call now, directions |
+| Forms | Quote form started/submitted, contact form submitted |
 | Admin | Login, service updates, request status updates |
 
 PostHog should not receive sensitive customer information.
@@ -194,8 +193,8 @@ The database should support the following main entities:
 | Service Category | Top-level public categories: Signs, Printing, Design |
 | Service | Individual services under each category |
 | Pricing | Pricing type and public pricing display rules |
-| Customer Request | Quote, order, and contact submissions |
-| Request Service | Services selected in a quote/order request |
+| Customer Request | Quote and contact submissions |
+| Request Service | Services selected in a quote request |
 | Request Note | Internal admin notes |
 | Admin User | Admin users allowed to access the portal |
 | Audit Log | Optional lightweight record of admin actions |
@@ -221,7 +220,7 @@ Admins should be able to update pricing and mark services as quote-only.
 
 ## 7. Request Workflow
 
-Quote requests, order requests, and contact messages should use a simple admin workflow.
+Quote requests and contact messages should use a simple admin workflow.
 
 Recommended statuses:
 
@@ -325,7 +324,6 @@ If setup speed becomes more important than package separation, `packages/config`
 | `/design` | Design category page |
 | `/design/[slug]` | Individual design service page |
 | `/request-quote` | Quote request form |
-| `/order-online` | Order request form |
 | `/contact` | Contact form |
 | `/location` | Business location and hours |
 | `/gallery` | Optional gallery page |

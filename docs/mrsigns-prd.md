@@ -3,11 +3,11 @@
 
 ## 1. Product Summary
 
-Mr. Sign and Print needs a modern, responsive customer-facing website that clearly presents its sign, printing, and design services. The current website feels outdated and relies heavily on old visual layouts. The redesigned website should make it easier for customers to understand available services, request a quote, submit an order request, contact the business, and find the store location.
+Mr. Sign and Print needs a modern, responsive customer-facing website that clearly presents its sign, printing, and design services. The current website feels outdated and relies heavily on old visual layouts. The redesigned website should make it easier for customers to understand available services, request a quote, contact the business, and find the store location.
 
-The website should not function as a full e-commerce store in MVP. Customers will not pay online and will not upload files. Instead, they will submit structured quote or order requests, receive a unique request code, and Mr. Sign and Print will follow up by email or phone.
+The website should not function as a full e-commerce store in MVP. Customers will not pay online and will not upload files. Instead, they will submit structured quote requests, receive a unique request code, and Mr. Sign and Print will follow up by email or phone.
 
-The website will also include an admin portal where staff can manage services, pricing, quote/order requests, and basic website content.
+The website will also include an admin portal where staff can manage services, pricing, quote and contact requests, and basic website content.
 
 ---
 
@@ -18,7 +18,7 @@ The website will also include an admin portal where staff can manage services, p
 - Modernize the Mr. Sign and Print online presence.
 - Make the business look professional, current, and trustworthy.
 - Clearly show all services offered by the business.
-- Improve quote and order request submissions.
+- Improve quote request submissions.
 - Reduce manual back-and-forth by collecting structured information from customers.
 - Allow admins to update services and pricing without changing code.
 - Improve search visibility for customers looking for signs and printing services in Vaughan and the GTA.
@@ -29,7 +29,6 @@ The website will also include an admin portal where staff can manage services, p
 - Browse services under Signs, Printing, and Design.
 - View pricing where available.
 - Request a quote online.
-- Submit an order request online.
 - Contact the business easily.
 - Find the location, hours, phone number, and email.
 - Use the website easily on mobile.
@@ -38,7 +37,7 @@ The website will also include an admin portal where staff can manage services, p
 
 - Manage services shown on the website.
 - Manage pricing or mark services as “Request Quote.”
-- View incoming quote, order, and contact requests.
+- View incoming quote and contact requests.
 - Receive email notifications for new requests.
 - Support multiple admin accounts.
 - Keep website content up to date without developer support.
@@ -58,12 +57,11 @@ The MVP includes:
 - Design page
 - Individual service pages
 - Request Quote page
-- Order Online page
 - Location page
 - Contact page
 - Admin portal
 - Service and pricing management
-- Quote/order/contact request management
+- Quote and contact request management
 - Email notifications through Resend
 - Unique request codes
 - SEO and social sharing metadata
@@ -93,7 +91,7 @@ The MVP does not include:
 | Area | Decision |
 |---|---|
 | Online payment | Not included in MVP |
-| Online order | Customers submit an order request only |
+| Online order | Not included as a separate public flow in MVP |
 | File uploads | Not included in MVP |
 | Artwork/files | Customers can be told to email files separately after submitting a request |
 | Pricing | Some services may show pricing; others may show “Request Quote” |
@@ -137,13 +135,12 @@ The redesigned website should include the following public pages:
 
 | Page | Purpose |
 |---|---|
-| Home | Introduce the business and direct users to services or quote/order requests |
+| Home | Introduce the business and direct users to services or quote requests |
 | Signs | Show all sign-related services |
 | Printing | Show all printing-related services |
 | Design | Show all design-related services |
 | Service Detail Pages | Provide details for each individual service |
 | Request a Quote | Allow customers to submit quote requests |
-| Order Online | Allow customers to submit order requests |
 | Location | Show address, hours, map, and contact details |
 | Contact | Allow general inquiries |
 | Portfolio/Gallery | Optional, if enough work samples are available |
@@ -251,7 +248,7 @@ The Home page should include:
 ### Acceptance Criteria
 
 - Customers can quickly understand what the business offers.
-- Customers can easily access Signs, Printing, Design, Quote, Order Online, Location, and Contact.
+- Customers can easily access Signs, Printing, Design, Quote, Location, and Contact.
 - The page works well on mobile and desktop.
 
 ---
@@ -328,7 +325,7 @@ Each service page should include:
 - Pricing or “Request Quote”
 - Optional service image/gallery
 - Related services
-- Call-to-action to request a quote or submit an order request
+- Call-to-action to request a quote
 
 ### Acceptance Criteria
 
@@ -391,39 +388,7 @@ The admin should receive the request at:
 
 ---
 
-## 8.7 Order Online Page
-
-The Order Online page should allow customers to submit an order request.
-
-This is not a payment or checkout page in MVP. It is a structured order request form.
-
-Customers should be able to:
-
-- Select one or more services
-- Enter order details
-- Submit the request
-- Receive a unique order request code
-- Receive a confirmation email
-
-The admin should receive the request at:
-
-`order@mrsignandprint.net`
-
-### Order Code Example
-
-`O-MSP-2026-000001`
-
-### Acceptance Criteria
-
-- Customer can submit an order request without payment.
-- Customer receives an order request code.
-- Admin receives an email notification.
-- The request appears in the admin portal.
-- No file upload is available.
-
----
-
-## 8.8 Contact Page
+## 8.7 Contact Page
 
 The Contact page should support general inquiries.
 
@@ -458,7 +423,7 @@ The page should include:
 
 ---
 
-## 8.9 Location Page
+## 8.8 Location Page
 
 The Location page should help customers find and contact the business.
 
@@ -484,7 +449,7 @@ The page should include:
 
 ---
 
-## 8.10 Portfolio / Gallery
+## 8.9 Portfolio / Gallery
 
 A portfolio or gallery may be included if the business has enough quality images.
 
@@ -529,7 +494,6 @@ The dashboard should give admins a quick view of recent activity.
 The dashboard should show:
 
 - New quote requests
-- New order requests
 - New contact messages
 - Recent submissions
 - Requests by status
@@ -722,7 +686,7 @@ The website must work well on:
 
 - Easy-to-use navigation
 - Clear service cards
-- Simple quote/order forms
+- Simple quote and contact forms
 - Tap-to-call phone number
 - Clear quote CTA
 - No horizontal scrolling
@@ -782,17 +746,11 @@ As a customer,
 I want to request a quote online,  
 so that I do not need to manually write an email.
 
-### Submit an Order Request
-
-As a customer,  
-I want to submit an order request online,  
-so that Mr. Sign and Print can follow up with me.
-
 ### Contact the Business
 
 As a customer,  
 I want to send a general message,  
-so that I can ask questions before ordering.
+so that I can ask questions before starting a project.
 
 ### Find the Location
 
@@ -845,22 +803,21 @@ The MVP is complete when:
 3. The service categories match the existing old website.
 4. Each service has a detail page.
 5. Customers can submit quote requests.
-6. Customers can submit order requests.
-7. Customers can submit general contact inquiries.
-8. Quote, order, and contact submissions generate unique codes.
-9. Customer confirmation emails are sent.
-10. Admin notification emails are sent to `order@mrsignandprint.net`.
-11. Admin users can log in.
-12. Multiple admin accounts are supported.
-13. Admins can manage services.
-14. Admins can manage pricing.
-15. Admins can mark services as “Request Quote.”
-16. Admins can view and manage customer requests.
-17. The website works well on mobile, tablet, and desktop.
-18. Pages have SEO and social sharing metadata.
-19. The Location page includes business details.
-20. No online payment is included.
-21. No file upload is included.
+6. Customers can submit general contact inquiries.
+7. Quote and contact submissions generate unique codes.
+8. Customer confirmation emails are sent.
+9. Admin notification emails are sent to `order@mrsignandprint.net`.
+10. Admin users can log in.
+11. Multiple admin accounts are supported.
+12. Admins can manage services.
+13. Admins can manage pricing.
+14. Admins can mark services as “Request Quote.”
+15. Admins can view and manage customer requests.
+16. The website works well on mobile, tablet, and desktop.
+17. Pages have SEO and social sharing metadata.
+18. The Location page includes business details.
+19. No online payment is included.
+20. No file upload is included.
 
 ---
 
@@ -887,7 +844,6 @@ The MVP is complete when:
 - [ ] Design page completed
 - [ ] Service detail pages completed
 - [ ] Quote form completed
-- [ ] Order request form completed
 - [ ] Contact form completed
 - [ ] Location page completed
 - [ ] Responsive design completed
@@ -906,7 +862,6 @@ The MVP is complete when:
 ### Testing
 
 - [ ] Test quote request submission
-- [ ] Test order request submission
 - [ ] Test contact submission
 - [ ] Test customer confirmation emails
 - [ ] Test admin notification emails

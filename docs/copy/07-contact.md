@@ -85,7 +85,7 @@ We typically respond within one business day.
 **Email**
 - **Icon:** Envelope icon
 - **order@mrsignandprint.net**
-- Note below email (small text): For file submissions, include your quote or order code in the subject line.
+- Note below email (small text): For file submissions, include your quote code in the subject line.
 
 ---
 
@@ -204,10 +204,9 @@ Log in to the admin portal to view and manage this inquiry.
 **Mobile note for designer:** On mobile, display the phone numbers near the top of the page with a large, clearly tappable "Call Now" button. This is the fastest conversion action for mobile users. The form can sit below.
 
 **Helpful bottom strip (optional):**
-Below the form and contact details, add a small strip with links to the two action pages, since some people who visit the Contact page may actually want to request a quote or submit an order.
+Below the form and contact details, add a small strip with a link to the quote page, since some people who visit the Contact page may actually be ready to request a quote.
 
 **Strip Copy:** Not just reaching out -- ready to get started?
 
 **Strip Links:**
 - Request a Quote (links to /request-quote)
-- Order Online (links to /order-online)

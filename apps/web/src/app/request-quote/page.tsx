@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 
-import { TextAreaField, TextField } from "@/components/forms/form-field";
+import { CustomerRequestForm } from "@/components/forms/customer-request-form";
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
-import { StatePanel } from "@/components/ui/states";
+import {
+  getServiceSelectGroups,
+  getValidatedRequestDefaults,
+} from "@/lib/customer-request-options";
 import { quotePage } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,7 +15,19 @@ export const metadata: Metadata = {
   description: quotePage.seo.description,
 };
 
-export default function RequestQuotePage() {
+type RequestQuotePageProps = {
+  searchParams: Promise<{
+    category?: string;
+    service?: string;
+  }>;
+};
+
+export default async function RequestQuotePage({
+  searchParams,
+}: RequestQuotePageProps) {
+  const { category, service } = await searchParams;
+  const defaults = getValidatedRequestDefaults(category, service);
+
   return (
     <SiteShell>
       <main>
@@ -22,40 +37,12 @@ export default function RequestQuotePage() {
           description={quotePage.subheadline}
         />
         <section className="px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[1fr_0.8fr]">
-            <div
-              className="grid gap-4"
-              aria-label="Request quote form preview"
-            >
-              <p className="rounded-xl bg-[#CCFF00] px-4 py-2.5 text-xs font-black uppercase tracking-wide text-[#151515]">
-                Online submission is coming soon. Call or email the shop with
-                these details for active quote requests.
-              </p>
-              <TextField
-                id="quote-name"
-                label="Name"
-                helperText="Business or contact name."
-                placeholder="Business or contact name"
-                readOnly
-              />
-              <TextField
-                id="quote-service"
-                label="Service"
-                placeholder="Signs, printing, or design"
-                readOnly
-              />
-              <TextAreaField
-                id="quote-details"
-                label="Job details"
-                helperText="No uploads are included in the MVP."
-                placeholder="Size, quantity, deadline, and notes"
-                readOnly
-              />
-            </div>
-            <div className="grid content-start gap-4">
-              <StatePanel kind="empty" />
-              <StatePanel kind="error" />
-            </div>
+          <div className="mx-auto max-w-[1152px]">
+            <CustomerRequestForm
+              kind="quote"
+              serviceGroups={getServiceSelectGroups()}
+              defaults={defaults}
+            />
           </div>
         </section>
         <CtaSection title="Prefer to speak with the shop first?" />

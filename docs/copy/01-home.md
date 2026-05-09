@@ -160,7 +160,7 @@ Each highlight: a simple flat-line icon above a short label and one-line descrip
 - **Number:** 01
 - **Icon:** Clipboard or form icon
 - **Step Title:** Submit Your Request
-- **Step Description:** Fill out our online quote or order form. Tell us about your project, your size, quantity, and timeline. No account needed.
+- **Step Description:** Fill out our online quote form. Tell us about your project, your size, quantity, and timeline. No account needed.
 
 **Step 2**
 - **Number:** 02
@@ -254,7 +254,6 @@ Vaughan's local sign, print, and design shop. Proudly serving the GTA since 2000
 - Printing
 - Design
 - Request a Quote
-- Order Online
 - Location
 - Contact
 

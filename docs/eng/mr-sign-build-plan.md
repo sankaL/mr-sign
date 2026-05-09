@@ -26,15 +26,23 @@
 | AH-2026-05-08-05 | Set hero card text to black                    | Done        | Changed the floating Printing and Signs hero card title and meta text to ink charcoal.                                                                                                                                    | 2026-05-08   |
 | AH-2026-05-08-06 | Fit hero headline on narrow mobile             | Done        | Reduced the mobile-only Signs and Printing headline sizes below the small-screen breakpoint so the hero text fits narrow viewports.                                                                                       | 2026-05-08   |
 | AH-2026-05-08-07 | Update hero badge and card text                | Done        | Changed the circular hero badge copy to `Serving Since 2000` and restored floating card text to white.                                                                                                                    | 2026-05-08   |
-| AH-2026-05-08-08 | Adjust shop process header layout              | Done        | Extended the process heading area and moved the explanatory copy directly below the section header.                                                                                                                        | 2026-05-08   |
-| AH-2026-05-08-09 | Unify lime accent and product header layout    | Done        | Changed visible yellow app accents to the hero lime green and moved the popular services intro copy directly below its extended heading.                                                                                   | 2026-05-08   |
+| AH-2026-05-08-08 | Adjust shop process header layout              | Done        | Extended the process heading area and moved the explanatory copy directly below the section header.                                                                                                                       | 2026-05-08   |
+| AH-2026-05-08-09 | Unify lime accent and product header layout    | Done        | Changed visible yellow app accents to the hero lime green and moved the popular services intro copy directly below its extended heading.                                                                                  | 2026-05-08   |
 | AH-2026-05-08-10 | Simplify public navigation                     | Done        | Removed the duplicate Request Quote nav item, changed the desktop CTA to Request Quote, and grouped Order Online, Gallery, Location, and Contact under More across desktop and mobile navigation.                         | 2026-05-08   |
-| AH-2026-05-08-11 | Refine navigation hover and mobile menu        | Done        | Flattened the mobile navigation menu and updated desktop blue-header hover states so nav buttons turn lime with black text while the Request Quote CTA turns red with white text.                                           | 2026-05-08   |
-| AH-2026-05-08-12 | Set desktop nav hover text to black            | Done        | Changed blue-header desktop nav and More dropdown hover/focus text from ink charcoal to explicit black.                                                                                                                     | 2026-05-08   |
-| AH-2026-05-09-01 | Fix button hover text contrast                 | Done        | Removed inline shared button text colors and added explicit hover and focus contrast classes so filled hover states keep readable text across navigation, CTAs, and service links.                                           | 2026-05-09   |
-| AH-2026-05-09-02 | Fix filled button base text contrast           | Done        | Set shared CTA and service-card filled button text colors as explicit important utilities so lime buttons stay ink and black buttons stay white before hover.                                                                | 2026-05-09   |
-| AH-2026-05-09-03 | Adjust desktop navigation button sizing        | Done        | Reduced the center desktop navigation pills and made the Request Quote CTA larger to match the requested navigation hierarchy.                                                                                               | 2026-05-09   |
-| AH-2026-05-09-04 | UI modernization polish pass                   | Done        | Eliminated cards-inside-cards, reduced oversized headlines across all pages, tightened section padding, and flattened nested layouts for a more professional, cohesive design.                                                 | 2026-05-09   |
+| AH-2026-05-08-11 | Refine navigation hover and mobile menu        | Done        | Flattened the mobile navigation menu and updated desktop blue-header hover states so nav buttons turn lime with black text while the Request Quote CTA turns red with white text.                                         | 2026-05-08   |
+| AH-2026-05-08-12 | Set desktop nav hover text to black            | Done        | Changed blue-header desktop nav and More dropdown hover/focus text from ink charcoal to explicit black.                                                                                                                   | 2026-05-08   |
+| AH-2026-05-09-01 | Fix button hover text contrast                 | Done        | Removed inline shared button text colors and added explicit hover and focus contrast classes so filled hover states keep readable text across navigation, CTAs, and service links.                                        | 2026-05-09   |
+| AH-2026-05-09-02 | Fix filled button base text contrast           | Done        | Set shared CTA and service-card filled button text colors as explicit important utilities so lime buttons stay ink and black buttons stay white before hover.                                                             | 2026-05-09   |
+| AH-2026-05-09-03 | Adjust desktop navigation button sizing        | Done        | Reduced the center desktop navigation pills and made the Request Quote CTA larger to match the requested navigation hierarchy.                                                                                            | 2026-05-09   |
+| AH-2026-05-09-04 | UI modernization polish pass                   | Done        | Eliminated cards-inside-cards, reduced oversized headlines across all pages, tightened section padding, and flattened nested layouts for a more professional, cohesive design.                                            | 2026-05-09   |
+| AH-2026-05-09-05 | Fix mobile card padding and flow arrows        | Done        | Reduced hero process card padding on mobile, added vertical flow arrows between stacked cards on mobile, and tightened section spacing for narrow viewports.                                                              | 2026-05-09   |
+| AH-2026-05-09-06 | Remove redundant process and help sections     | Done        | Removed the home page simple shop process section and the shared category help-choosing section from service category pages.                                                                                              | 2026-05-09   |
+| AH-2026-05-09-07 | Align category header descriptions             | Done        | Moved parent category grid descriptions below their section headers so Signs, Printing, and Design use the same left-aligned stacked intro layout.                                                                        | 2026-05-09   |
+| AH-2026-05-09-08 | Stack shared page header descriptions          | Done        | Updated shared interior page headers so descriptions sit below the hero title and span the available content width responsively.                                                                                          | 2026-05-09   |
+| AH-2026-05-09-09 | Tighten mobile quote process spacing           | Done        | Reduced narrow-screen side padding on the home process band and kept the Free quote chip close to the blue shop bubble.                                                                                                   | 2026-05-09   |
+| AH-2026-05-09-10 | Overlap quote mini-card chips                  | Done        | Extended the blue shop mini-card and overlaid the Free quote chip on reserved right-side space so the labels connect without covering text.                                                                               | 2026-05-09   |
+| AH-2026-05-09-11 | Address Phase 5 form review findings           | Done        | Added focused form validation tests, extracted request parsing, validated contact reasons, normalized public save errors, disabled pending submissions, and corrected the Phase 5 task summary.                           | 2026-05-09   |
+| AH-2026-05-09-12 | Remove public Online Order flow                | Done        | Removed Online Order from public navigation and content, redirected `/order-online` to Request Quote, and updated product planning docs so quote/contact intake is the MVP direction.                                     | 2026-05-09   |
 
 ---
 
@@ -149,46 +157,46 @@
 
 ---
 
-## Phase 5 — Quote, Order, and Contact Forms
+## Phase 5 — Quote and Contact Forms
 
-| Task number | Task                                                                     | Task status | Comments | Updated date |
-| ----------- | ------------------------------------------------------------------------ | ----------- | -------- | ------------ |
-| P5-01       | Build Request Quote form UI                                              | To Do       |          |              |
-| P5-02       | Build Order Online request form UI                                       | To Do       |          |              |
-| P5-03       | Build Contact form UI                                                    | To Do       |          |              |
-| P5-04       | Add service category and service selection fields                        | To Do       |          |              |
-| P5-05       | Add contact information fields                                           | To Do       |          |              |
-| P5-06       | Add project/order detail fields                                          | To Do       |          |              |
-| P5-07       | Add form validation rules                                                | To Do       |          |              |
-| P5-08       | Add form submission handling                                             | To Do       |          |              |
-| P5-09       | Save quote requests to database                                          | To Do       |          |              |
-| P5-10       | Save order requests to database                                          | To Do       |          |              |
-| P5-11       | Save contact inquiries to database                                       | To Do       |          |              |
-| P5-12       | Generate unique quote, order, and contact request codes                  | To Do       |          |              |
-| P5-13       | Show confirmation screen after successful submission                     | To Do       |          |              |
-| P5-14       | Add service-page CTA behavior to preselect service in forms where useful | To Do       |          |              |
-| P5-15       | Add basic spam protection such as hidden honeypot field                  | To Do       |          |              |
-| P5-16       | Confirm there is no payment flow and no file upload flow                 | To Do       |          |              |
+| Task number | Task                                                                     | Task status | Comments                                                                                                                           | Updated date |
+| ----------- | ------------------------------------------------------------------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| P5-01       | Build Request Quote form UI                                              | Done        | Replaced quote preview with a live shared request form.                                                                            | 2026-05-09   |
+| P5-02       | Build Order Online request form UI                                       | Superseded  | Public Online Order was removed from MVP; `/order-online` now redirects to Request Quote while backend compatibility remains.      | 2026-05-09   |
+| P5-03       | Build Contact form UI                                                    | Done        | Replaced contact preview with a live contact inquiry form.                                                                         | 2026-05-09   |
+| P5-04       | Add service category and service selection fields                        | Done        | Added grouped service checkboxes from the shared content catalog.                                                                  | 2026-05-09   |
+| P5-05       | Add contact information fields                                           | Done        | Added name, email, phone, company, and preferred contact fields.                                                                   | 2026-05-09   |
+| P5-06       | Add project detail fields                                                | Done        | Added quantity, size, material, colour, artwork status, date, and detail fields for quote requests.                                | 2026-05-09   |
+| P5-07       | Add form validation rules                                                | Done        | Added server-side validation for required fields, email, phone preference, service selection, quantity, date, and message details. | 2026-05-09   |
+| P5-08       | Add form submission handling                                             | Done        | Added server action submission handling with typed success and error states.                                                       | 2026-05-09   |
+| P5-09       | Save quote requests to database                                          | Done        | Quote requests now create customer request and selected service rows.                                                              | 2026-05-09   |
+| P5-10       | Save order requests to database                                          | Superseded  | Public order intake was removed from MVP; existing backend support remains only for compatibility.                                 | 2026-05-09   |
+| P5-11       | Save contact inquiries to database                                       | Done        | Contact inquiries now create customer request rows without requiring services.                                                     | 2026-05-09   |
+| P5-12       | Generate unique quote and contact request codes                          | Done        | Request codes are generated transactionally using the existing per-type yearly counter format; order codes remain only for compatibility. | 2026-05-09   |
+| P5-13       | Show confirmation screen after successful submission                     | Done        | Added inline confirmation panels showing generated request codes.                                                                  | 2026-05-09   |
+| P5-14       | Add service-page CTA behavior to preselect service in forms where useful | Done        | Service detail quote CTAs now pass category and service query params for form preselection.                                        | 2026-05-09   |
+| P5-15       | Add basic spam protection such as hidden honeypot field                  | Done        | Added hidden `website` honeypot handling that accepts without database writes.                                                     | 2026-05-09   |
+| P5-16       | Confirm there is no payment flow and no file upload flow                 | Done        | Form helper copy and fields avoid payment, checkout, account, and upload flows.                                                    | 2026-05-09   |
 
 ---
 
 ## Phase 6 — Email Notifications with Resend
 
-| Task number | Task                                                      | Task status | Comments | Updated date |
-| ----------- | --------------------------------------------------------- | ----------- | -------- | ------------ |
-| P6-01       | Set up Resend package/configuration                       | To Do       |          |              |
-| P6-02       | Configure sender email/domain                             | To Do       |          |              |
-| P6-03       | Create customer quote confirmation email template         | To Do       |          |              |
-| P6-04       | Create admin quote notification email template            | To Do       |          |              |
-| P6-05       | Create customer order request confirmation email template | To Do       |          |              |
-| P6-06       | Create admin order request notification email template    | To Do       |          |              |
-| P6-07       | Create customer contact confirmation email template       | To Do       |          |              |
-| P6-08       | Create admin contact notification email template          | To Do       |          |              |
-| P6-09       | Send admin notifications to `order@mrsignandprint.net`    | To Do       |          |              |
-| P6-10       | Include request code in email subject/body                | To Do       |          |              |
-| P6-11       | Include customer and request details in admin emails      | To Do       |          |              |
-| P6-12       | Test email delivery in development/staging                | To Do       |          |              |
-| P6-13       | Test email delivery in production                         | To Do       |          |              |
+| Task number | Task                                                                            | Task status | Comments | Updated date |
+| ----------- | ------------------------------------------------------------------------------- | ----------- | -------- | ------------ |
+| P6-01       | Set up Resend package/configuration                                             | To Do       |          |              |
+| P6-02       | Configure sender email/domain                                                   | To Do       |          |              |
+| P6-03       | Create customer quote confirmation email template                               | To Do       |          |              |
+| P6-04       | Create admin quote notification email template                                  | To Do       |          |              |
+| P6-05       | Create customer order request confirmation email template                       | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
+| P6-06       | Create admin order request notification email template                          | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
+| P6-07       | Create customer contact confirmation email template                             | To Do       |          |              |
+| P6-08       | Create admin contact notification email template                                | To Do       |          |              |
+| P6-09       | make send and from e-mail address configuratble env variables for resend emails | To Do       |          |              |
+| P6-10       | Include request code in email subject/body                                      | To Do       |          |              |
+| P6-11       | Include customer and request details in admin emails                            | To Do       |          |              |
+| P6-12       | Test email delivery in development/staging                                      | To Do       |          |              |
+| P6-13       | Test email delivery in production                                               | To Do       |          |              |
 
 ---
 
@@ -216,7 +224,7 @@
 | Task number | Task                                                                       | Task status | Comments | Updated date |
 | ----------- | -------------------------------------------------------------------------- | ----------- | -------- | ------------ |
 | P8-01       | Build admin dashboard                                                      | To Do       |          |              |
-| P8-02       | Show new quote requests, order requests, and contact messages on dashboard | To Do       |          |              |
+| P8-02       | Show new quote requests and contact messages on dashboard                  | To Do       |          |              |
 | P8-03       | Show recent submissions on dashboard                                       | To Do       |          |              |
 | P8-04       | Show request counts by status                                              | To Do       |          |              |
 | P8-05       | Show services missing pricing or marked as request quote                   | To Do       |          |              |
@@ -246,9 +254,9 @@
 | P9-02       | Add page view tracking                                                                              | To Do       |          |              |
 | P9-03       | Track category page views                                                                           | To Do       |          |              |
 | P9-04       | Track service page views                                                                            | To Do       |          |              |
-| P9-05       | Track CTA clicks such as Request Quote, Order Online, Browse Services, Call Now, and Get Directions | To Do       |          |              |
+| P9-05       | Track CTA clicks such as Request Quote, Browse Services, Call Now, and Get Directions               | To Do       |          |              |
 | P9-06       | Track quote form started/submitted events                                                           | To Do       |          |              |
-| P9-07       | Track order form started/submitted events                                                           | To Do       |          |              |
+| P9-07       | Track order form started/submitted events                                                           | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
 | P9-08       | Track contact form submitted event                                                                  | To Do       |          |              |
 | P9-09       | Track admin login and key admin actions                                                             | To Do       |          |              |
 | P9-10       | Confirm no sensitive customer information is sent to PostHog                                        | To Do       |          |              |
@@ -267,7 +275,7 @@
 | P10-05      | Add SEO metadata to Printing page                                     | To Do       |          |              |
 | P10-06      | Add SEO metadata to Design page                                       | To Do       |          |              |
 | P10-07      | Add SEO metadata to Request Quote page                                | To Do       |          |              |
-| P10-08      | Add SEO metadata to Order Online page                                 | To Do       |          |              |
+| P10-08      | Add SEO metadata to Order Online page                                 | Superseded  | `/order-online` redirects to Request Quote. | 2026-05-09   |
 | P10-09      | Add SEO metadata to Contact page                                      | To Do       |          |              |
 | P10-10      | Add SEO metadata to Location page                                     | To Do       |          |              |
 | P10-11      | Add dynamic SEO metadata for each service detail page                 | To Do       |          |              |
@@ -341,7 +349,7 @@
 | P12-05      | Test Location page and tap-to-call behavior                                  | To Do       |          |              |
 | P12-06      | Test Contact page and form submission                                        | To Do       |          |              |
 | P12-07      | Test quote request submission                                                | To Do       |          |              |
-| P12-08      | Test order request submission                                                | To Do       |          |              |
+| P12-08      | Test order request submission                                                | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
 | P12-09      | Test customer confirmation emails                                            | To Do       |          |              |
 | P12-10      | Test admin notification emails                                               | To Do       |          |              |
 | P12-11      | Test request code generation                                                 | To Do       |          |              |
@@ -378,7 +386,7 @@
 | P13-04      | Check Google search result appearance for branded queries | To Do       |          |              |
 | P13-05      | Review crawl/indexing issues                              | To Do       |          |              |
 | P13-06      | Review top landing pages and service interest in PostHog  | To Do       |          |              |
-| P13-07      | Review quote/order/contact conversion events              | To Do       |          |              |
+| P13-07      | Review quote/contact conversion events                    | To Do       |          |              |
 | P13-08      | Check form submission logs for errors                     | To Do       |          |              |
 | P13-09      | Check Railway deployment and runtime logs                 | To Do       |          |              |
 | P13-10      | Check Resend delivery logs                                | To Do       |          |              |

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { TextAreaField, TextField } from "@/components/forms/form-field";
+import { CustomerRequestForm } from "@/components/forms/customer-request-form";
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
+import { getServiceSelectGroups } from "@/lib/customer-request-options";
 import { contactMethods, contactPage, siteContact } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -51,32 +52,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div
-              className="grid gap-4"
-              aria-label="Contact form preview"
-            >
-              <p className="rounded-xl bg-[#CCFF00] px-4 py-2.5 text-xs font-black uppercase tracking-wide text-[#151515]">
-                Online submission is coming soon. Call or email the shop for
-                active requests.
-              </p>
-              <TextField
-                id="contact-name"
-                label="Name"
-                placeholder="Name"
-                readOnly
-              />
-              <TextField
-                id="contact-email"
-                label="Email"
-                type="email"
-                placeholder="name@example.com"
-                readOnly
-              />
-              <TextAreaField
-                id="contact-message"
-                label="Message"
-                placeholder="How can the shop help?"
-                readOnly
+            <div>
+              <CustomerRequestForm
+                kind="contact"
+                serviceGroups={getServiceSelectGroups()}
               />
             </div>
           </div>

@@ -1,6 +1,7 @@
 import type {
   InputHTMLAttributes,
   ReactNode,
+  SelectHTMLAttributes,
   TextareaHTMLAttributes,
 } from "react";
 
@@ -18,6 +19,15 @@ type TextFieldProps = BaseFieldProps &
 
 type TextAreaFieldProps = BaseFieldProps &
   TextareaHTMLAttributes<HTMLTextAreaElement>;
+
+type SelectFieldProps = BaseFieldProps &
+  SelectHTMLAttributes<HTMLSelectElement> & {
+    options: {
+      label: string;
+      value: string;
+    }[];
+    placeholder?: string;
+  };
 
 function FieldFrame({
   id,
@@ -110,6 +120,43 @@ export function TextAreaField({
         aria-describedby={describedBy || undefined}
         {...props}
       />
+    </FieldFrame>
+  );
+}
+
+export function SelectField({
+  id,
+  label,
+  helperText,
+  error,
+  className = "",
+  options,
+  placeholder,
+  ...props
+}: SelectFieldProps) {
+  const describedBy = [
+    helperText ? `${id}-helper` : null,
+    error ? `${id}-error` : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <FieldFrame id={id} label={label} helperText={helperText} error={error}>
+      <select
+        id={id}
+        className={`min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors focus:border-[#1936D4] ${className}`}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={describedBy || undefined}
+        {...props}
+      >
+        {placeholder ? <option value="">{placeholder}</option> : null}
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
     </FieldFrame>
   );
 }

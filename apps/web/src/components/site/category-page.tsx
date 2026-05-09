@@ -3,7 +3,7 @@ import {
   getServicesByCategory,
   type CategorySlug,
 } from "@mrsign/content";
-import { ArrowRight, ClipboardList, Phone } from "lucide-react";
+import { ClipboardList, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -71,16 +71,14 @@ export function CategoryPage({ categorySlug }: CategoryPageProps) {
 
         <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
           <div className="mx-auto max-w-[1440px]">
-            <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  {category.name}
-                </p>
-                <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
-                  {category.gridHeading}
-                </h2>
-              </div>
-              <p className="max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                {category.name}
+              </p>
+              <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
+                {category.gridHeading}
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
                 {category.gridSubheading}
               </p>
             </div>
@@ -93,34 +91,6 @@ export function CategoryPage({ categorySlug }: CategoryPageProps) {
                   prominent={Boolean(service.isFeatured) || index === 0}
                 />
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto flex max-w-[1152px] flex-col gap-5 border-t border-[#151515]/10 pt-10 md:flex-row md:items-center md:justify-between md:pt-14">
-            <div className="max-w-xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                Need help choosing?
-              </p>
-              <h2 className="mt-2 text-xl font-black uppercase leading-tight md:text-2xl">
-                {category.ctaCopy}
-              </h2>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-3">
-              <Link
-                href={primaryActions.quote.href}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-              >
-                Request a quote
-                <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#151515]/15 px-5 py-3 text-xs font-black uppercase tracking-wide text-[#151515] transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-              >
-                Contact us
-              </Link>
             </div>
           </div>
         </section>

@@ -4,7 +4,6 @@ import {
   galleryPage,
   homePage,
   locationPage,
-  orderPage,
   primaryActions,
   publicNavigation,
   quotePage,
@@ -33,7 +32,6 @@ export {
   galleryPage,
   homePage,
   locationPage,
-  orderPage,
   primaryActions,
   publicNavigation,
   quotePage,
@@ -45,7 +43,7 @@ export const primaryNavigation = publicNavigation.filter((item) =>
 );
 
 export const secondaryNavigation = publicNavigation.filter((item) =>
-  ["/order-online", "/gallery", "/location", "/contact"].includes(item.href),
+  ["/gallery", "/location", "/contact"].includes(item.href),
 );
 
 export type ServiceCategory = {
@@ -140,8 +138,7 @@ export const statusStateContent = {
   },
   empty: {
     title: "Direct contact available",
-    description:
-      "Use the shop phone or email for active quote and order requests.",
+    description: "Use the shop phone or email for active quote requests.",
     icon: FileText,
   },
   error: {

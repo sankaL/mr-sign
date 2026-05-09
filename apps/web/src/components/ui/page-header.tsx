@@ -15,7 +15,7 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="bg-[#1936D4] px-5 py-10 text-white md:px-10 md:py-14">
-      <div className="mx-auto grid max-w-[1440px] gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+      <div className="mx-auto max-w-[1440px]">
         <div>
           <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
             {eyebrow}
@@ -24,7 +24,7 @@ export function PageHeader({
             {title}
           </h1>
         </div>
-        <div className="max-w-xl">
+        <div className="mt-5">
           <p className="text-sm font-semibold leading-6 text-white/80 md:text-base md:leading-7">
             {description}
           </p>

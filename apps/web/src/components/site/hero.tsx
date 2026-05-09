@@ -1,5 +1,6 @@
 import { businessHours, getFeaturedServices, homePage } from "@mrsign/content";
 import {
+  ArrowDown,
   ArrowRight,
   BadgeCheck,
   Clock,
@@ -108,27 +109,6 @@ const CircularBadge = () => (
   </Link>
 );
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Share Your Request",
-    description:
-      "Tell us the service, size, quantity, deadline, and any production notes. No account is needed.",
-  },
-  {
-    number: "02",
-    title: "We Follow Up",
-    description:
-      "The shop reviews the request and gets back to you by phone or email with next steps.",
-  },
-  {
-    number: "03",
-    title: "We Make It Happen",
-    description:
-      "Once the job is approved, we produce it and let you know when it is ready for pickup.",
-  },
-];
-
 export function HomeHero() {
   const featuredServices = getFeaturedServices();
   const weekdayHours = businessHours
@@ -210,18 +190,18 @@ export function HomeHero() {
         </div>
       </section>
 
-      <section className="relative z-20 -mt-14 w-full rounded-t-[2.5rem] bg-white px-6 py-12 text-black shadow-[0_-20px_50px_rgba(0,0,0,0.2)] md:rounded-t-[3.5rem] md:px-10 md:py-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          <div className="relative flex h-64 flex-col items-center rounded-[2rem] border border-gray-100 bg-[#F8F9FA] p-8 text-center">
-            <h3 className="mb-2 text-xl font-black uppercase leading-tight md:text-2xl">
+      <section className="relative z-20 -mt-14 w-full rounded-t-[2rem] bg-white px-1.5 py-8 text-black shadow-[0_-20px_50px_rgba(0,0,0,0.2)] sm:px-4 md:rounded-t-[3.5rem] md:px-10 md:py-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-0 md:grid md:grid-cols-3 md:gap-8">
+          <div className="relative flex flex-col items-center rounded-xl border border-gray-100 bg-[#F8F9FA] p-4 text-center md:h-64 md:rounded-[2rem] md:p-8">
+            <h3 className="mb-1 text-base font-black uppercase leading-tight md:mb-2 md:text-2xl">
               Request
               <br />a quote
             </h3>
-            <p className="mb-auto text-[10px] font-bold text-black/60 md:text-xs">
+            <p className="mb-3 text-[10px] font-bold text-black/60 md:mb-auto md:text-xs">
               send project details for signs, print, or design
             </p>
-            <div className="relative mt-6 flex w-full justify-center">
-              <div className="relative z-10 flex items-center rounded-2xl bg-[#0038FF] p-2 pr-16 text-white shadow-lg">
+            <div className="relative mt-2 flex w-full max-w-[260px] justify-center md:mt-6">
+              <div className="relative z-10 flex w-[190px] items-center rounded-2xl bg-[#0038FF] p-2 pr-20 text-white shadow-lg">
                 <div className="relative mr-3 h-8 w-8 shrink-0 overflow-hidden rounded-full border border-white/30 bg-[#D2B48C]">
                   <Image
                     src="/images/generated/home-hero.png"
@@ -238,7 +218,7 @@ export function HomeHero() {
                   </p>
                 </div>
               </div>
-              <div className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-xl bg-[#CCFF00] px-3 py-2 text-[10px] font-black text-black shadow-md">
+              <div className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-xl bg-[#CCFF00] px-3 py-2 text-[10px] font-black text-black shadow-md">
                 Free quote
               </div>
             </div>
@@ -247,16 +227,23 @@ export function HomeHero() {
             </div>
           </div>
 
-          <div className="relative flex h-64 flex-col items-center rounded-[2rem] border border-gray-100 bg-[#F8F9FA] p-8 text-center">
-            <h3 className="mb-2 text-xl font-black uppercase leading-tight md:text-2xl">
+          {/* Mobile flow arrow */}
+          <div className="flex items-center justify-center py-1.5 md:hidden">
+            <div className="rounded-full bg-[#0038FF] p-1.5 shadow-md">
+              <ArrowDown className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+            </div>
+          </div>
+
+          <div className="relative flex flex-col items-center rounded-xl border border-gray-100 bg-[#F8F9FA] p-4 text-center md:h-64 md:rounded-[2rem] md:p-8">
+            <h3 className="mb-1 text-base font-black uppercase leading-tight md:mb-2 md:text-2xl">
               Choose
               <br />
               the right service
             </h3>
-            <p className="mb-auto text-[10px] font-bold text-black/60 md:text-xs">
+            <p className="mb-3 text-[10px] font-bold text-black/60 md:mb-auto md:text-xs">
               storefront signs, cards, banners, and artwork
             </p>
-            <div className="relative mt-6 flex w-full justify-center">
+            <div className="relative mt-2 flex w-full justify-center md:mt-6">
               <div className="flex items-center rounded-full bg-[#0038FF] p-1.5 text-white shadow-lg">
                 <div className="mr-2 rounded-full bg-white/20 px-4 py-2 text-sm font-bold text-white">
                   3 core
@@ -272,58 +259,29 @@ export function HomeHero() {
             </div>
           </div>
 
-          <div className="relative flex h-64 flex-col items-center rounded-[2rem] border border-gray-100 bg-[#F8F9FA] p-8 text-center">
-            <h3 className="mb-2 text-xl font-black uppercase leading-tight md:text-2xl">
+          {/* Mobile flow arrow */}
+          <div className="flex items-center justify-center py-1.5 md:hidden">
+            <div className="rounded-full bg-[#0038FF] p-1.5 shadow-md">
+              <ArrowDown className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+            </div>
+          </div>
+
+          <div className="relative flex flex-col items-center rounded-xl border border-gray-100 bg-[#F8F9FA] p-4 text-center md:h-64 md:rounded-[2rem] md:p-8">
+            <h3 className="mb-1 text-base font-black uppercase leading-tight md:mb-2 md:text-2xl">
               Produce
               <br />
               and pick up
             </h3>
-            <p className="mb-auto text-[10px] font-bold text-black/60 md:text-xs">
+            <p className="mb-3 text-[10px] font-bold text-black/60 md:mb-auto md:text-xs">
               local production with fast follow-up
             </p>
-            <div className="relative mt-6 flex w-full max-w-[200px] flex-col items-center rounded-[2rem] bg-[#CCFF00] px-6 py-4 text-black shadow-lg">
+            <div className="relative mt-2 flex w-full max-w-[200px] flex-col items-center rounded-[2rem] bg-[#CCFF00] px-6 py-3 text-black shadow-lg md:mt-6 md:py-4">
               <p className="mb-1 text-[9px] font-bold uppercase tracking-wider">
                 Serving since
               </p>
               <p className="text-xl font-black">2000</p>
               <div className="absolute -bottom-2 left-8 h-5 w-5 rotate-45 bg-[#CCFF00]" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#FFFAF0] px-5 py-10 text-[#151515] md:px-10 md:py-14">
-        <div className="mx-auto max-w-[1152px]">
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-              Getting started
-            </p>
-            <h2 className="mt-2 max-w-5xl text-2xl font-black uppercase leading-tight md:text-3xl">
-              A simple shop process.
-            </h2>
-            <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
-              No complicated portal. Share the project details, we follow up,
-              and the work moves into production once approved.
-            </p>
-          </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {processSteps.map((step) => (
-              <article
-                key={step.number}
-                className="relative rounded-[1.5rem] border border-[#151515]/10 bg-white p-4 md:p-5"
-              >
-                <p className="text-3xl font-black uppercase leading-none text-[#1936D4]">
-                  {step.number}
-                </p>
-                <h3 className="mt-4 text-base font-black uppercase leading-none">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm font-semibold leading-6 text-[#151515]/66">
-                  {step.description}
-                </p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

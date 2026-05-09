@@ -38,7 +38,6 @@ export const publicNavigation = [
   { href: "/printing", label: "Printing" },
   { href: "/design", label: "Design" },
   { href: "/request-quote", label: "Request Quote" },
-  { href: "/order-online", label: "Order Online" },
   { href: "/gallery", label: "Gallery" },
   { href: "/location", label: "Location" },
   { href: "/contact", label: "Contact" },
@@ -46,7 +45,6 @@ export const publicNavigation = [
 
 export const primaryActions = {
   quote: { href: "/request-quote", label: "Request Quote" },
-  order: { href: "/order-online", label: "Order Online" },
   services: { href: "/signs", label: "Browse Services" },
   call: { href: siteContact.phoneHref, label: "Call for Quote" },
   directions: { href: siteContact.directionsUrl, label: "Get Directions" },
@@ -133,17 +131,4 @@ export const quotePage: PageContent = {
   headline: "Request a Free Quote",
   subheadline:
     "Use this page to gather the details we need: service, size, quantity, deadline, and contact information. No account, checkout, payment, or file upload is required.",
-};
-
-export const orderPage: PageContent = {
-  route: "/order-online",
-  seo: {
-    title: "Order Online | Mr. Sign and Print - Vaughan Sign and Print Shop",
-    description:
-      "Prepare an order request for Mr. Sign and Print in Vaughan. No online payment, account, checkout, or file upload is collected on the MVP public site.",
-  },
-  eyebrow: "Order online",
-  headline: "Prepare Your Order Request",
-  subheadline:
-    "Already know what you need? Gather the order details and contact the shop directly. No payment is collected online.",
 };
