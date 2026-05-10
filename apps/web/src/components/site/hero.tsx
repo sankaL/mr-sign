@@ -17,6 +17,7 @@ import { primaryActions, siteContact } from "@/lib/site";
 
 import { FloatingMrSignHeroCards } from "./hero-motion";
 import { ServiceTeaserCard } from "./service-teaser-card";
+import { InteractiveTravelCard } from "@/components/ui/3d-card";
 
 const displayShadow = {
   textShadow:
@@ -286,27 +287,27 @@ export function HomeHero() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-10 text-[#151515] md:px-10 md:py-14">
-        <div className="mx-auto max-w-[1440px]">
-          <div>
+      <section className="bg-white px-5 py-10 text-[#151515] md:px-10 md:py-14 w-full">
+        <div className="mx-auto w-full">
+          <div className="flex flex-col items-center text-center">
             <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
               Popular services
             </p>
             <h2 className="mt-2 max-w-7xl text-2xl font-black uppercase leading-tight md:text-3xl">
               A few of the products we quote every day.
             </h2>
-            <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
-              The gallery and service pages reuse the same generated service
-              imagery so every public route stays consistent.
-            </p>
           </div>
 
-          <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {featuredServices.map((service, index) => (
-              <ServiceTeaserCard
+          <div className="mt-8 flex flex-wrap justify-center gap-5 w-full">
+            {featuredServices.map((service) => (
+              <InteractiveTravelCard
                 key={service.route}
-                service={service}
-                prominent={index === 0}
+                title={service.name}
+                subtitle={service.shortDescription}
+                imageUrl={service.image.path}
+                actionText="View service"
+                href={service.route}
+                className="w-full max-w-[320px]"
               />
             ))}
           </div>
