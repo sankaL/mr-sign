@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Check, ChevronDown } from "lucide-react";
 
+import { useDropdownPosition } from "@/hooks/use-dropdown-position";
+
 type SelectOption = {
   label: string;
   value: string;
@@ -43,59 +45,17 @@ export function SelectDropdown({
   const selectedValue = isControlled ? controlledValue : internalValue;
   const selectedOption = options.find((o) => o.value === selectedValue);
 
-  const [placement, setPlacement] = useState<{
-    top: number;
-    left: number;
-    width: number;
-  }>({ top: 0, left: 0, width: 0 });
-
-  const recalc = useCallback(() => {
-    if (!triggerRef.current) return;
-    const rect = triggerRef.current.getBoundingClientRect();
-    setPlacement({ top: rect.bottom + 4, left: rect.left, width: rect.width });
+  const handleClose = useCallback(() => {
+    setOpen(false);
   }, []);
 
-  /* Reposition on scroll/resize while open */
-  useEffect(() => {
-    if (!open) return;
-    recalc();
-    window.addEventListener("scroll", recalc, true);
-    window.addEventListener("resize", recalc);
-    return () => {
-      window.removeEventListener("scroll", recalc, true);
-      window.removeEventListener("resize", recalc);
-    };
-  }, [open, recalc]);
-
-  /* Close on click outside */
-  useEffect(() => {
-    if (!open) return;
-    function handleClick(e: MouseEvent) {
-      const target = e.target as Node;
-      if (
-        triggerRef.current?.contains(target) ||
-        panelRef.current?.contains(target)
-      ) {
-        return;
-      }
-      setOpen(false);
-    }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, [open]);
-
-  /* Close on Escape */
-  useEffect(() => {
-    if (!open) return;
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        setOpen(false);
-        triggerRef.current?.focus();
-      }
-    }
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, [open]);
+  const { placement } = useDropdownPosition({
+    open,
+    triggerRef,
+    panelRef,
+    onClose: handleClose,
+    align: "left",
+  });
 
   const handleTriggerKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -174,7 +134,7 @@ export function SelectDropdown({
                 style={{
                   top: placement.top,
                   left: placement.left,
-                  minWidth: placement.width,
+                  minWidth: placement.minWidth,
                 }}
               >
                 {options.length === 0 ? (

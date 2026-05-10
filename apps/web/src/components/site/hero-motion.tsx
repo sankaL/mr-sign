@@ -65,7 +65,7 @@ export function FloatingMrSignHeroCards() {
         className="pointer-events-auto absolute bottom-[10%] left-[5%] z-30 md:left-[20%]"
         duration={5}
         href="/printing"
-        image="/images/generated/printing-hero.png"
+        image="/images/home-page/home-page-print.png"
         label="Printing"
         meta="cards, flyers, posters"
         rotate="rotate-[-12deg]"
@@ -75,7 +75,7 @@ export function FloatingMrSignHeroCards() {
         delay={1}
         duration={6}
         href="/signs"
-        image="/images/generated/signs-hero.png"
+        image="/images/home-page/home-page-sign.png"
         label="Signs"
         meta="storefront, vehicle, banner"
         rotate="rotate-[12deg]"

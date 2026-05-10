@@ -321,7 +321,7 @@ export function ServicesTable({ services, typeOptions }: ServicesTableProps) {
                         ) : (
                           <Link
                             href={`/admin/services/${service.id}`}
-                            className="inline-flex h-8 items-center rounded-lg border border-[#151515]/10 px-3 text-xs font-semibold transition-colors hover:bg-[#151515] hover:text-white"
+                            className="inline-flex h-8 items-center rounded-lg border border-[#151515]/10 px-3 text-xs font-semibold transition-colors hover:bg-[#151515] hover:!text-white"
                           >
                             Edit
                           </Link>

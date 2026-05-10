@@ -6,22 +6,14 @@ import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
 import { RequestNoteForm } from "@/components/admin/request-note-form";
-import { RequestStatusForm } from "@/components/admin/request-status-form";
+import { RequestStatusBadge } from "@/components/admin/request-status-badge";
 
 type RequestDetailPageProps = {
   params: Promise<{ requestCode: string }>;
 };
 
-function statusBadgeClass(status: string) {
-  return `badge badge-${status.toLowerCase().replace(/_/g, "-")}`;
-}
-
 function typeBadgeClass(type: string) {
   return `badge badge-${type.toLowerCase()}`;
-}
-
-function formatStatus(status: string) {
-  return status.replace(/_/g, " ").toLowerCase();
 }
 
 export async function generateMetadata({ params }: RequestDetailPageProps) {
@@ -96,8 +88,7 @@ export default async function AdminRequestDetailPage({
         </Link>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-[1fr_340px]">
-        <div className="grid gap-5">
+      <div className="grid gap-5">
           {/* Request details */}
           <div className="admin-card">
             <div className="admin-card-header flex items-center justify-between">
@@ -106,9 +97,10 @@ export default async function AdminRequestDetailPage({
                 <span className={typeBadgeClass(request.type)}>
                   {request.type}
                 </span>
-                <span className={statusBadgeClass(request.status)}>
-                  {formatStatus(request.status)}
-                </span>
+                <RequestStatusBadge
+                  requestCode={request.requestCode}
+                  currentStatus={request.status}
+                />
               </div>
             </div>
             <div className="admin-card-body">
@@ -254,15 +246,6 @@ export default async function AdminRequestDetailPage({
             ) : null}
           </div>
         </div>
-
-        {/* Sidebar: Status update */}
-        <div className="grid gap-5 self-start">
-          <RequestStatusForm
-            requestCode={request.requestCode}
-            currentStatus={request.status}
-          />
-        </div>
-      </div>
     </AdminShell>
   );
 }
