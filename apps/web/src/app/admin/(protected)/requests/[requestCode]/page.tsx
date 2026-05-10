@@ -1,5 +1,6 @@
 import { prisma } from "@mrsign/db/src/client";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
@@ -10,6 +11,18 @@ import { RequestStatusForm } from "@/components/admin/request-status-form";
 type RequestDetailPageProps = {
   params: Promise<{ requestCode: string }>;
 };
+
+function statusBadgeClass(status: string) {
+  return `badge badge-${status.toLowerCase().replace(/_/g, "-")}`;
+}
+
+function typeBadgeClass(type: string) {
+  return `badge badge-${type.toLowerCase()}`;
+}
+
+function formatStatus(status: string) {
+  return status.replace(/_/g, " ").toLowerCase();
+}
 
 export async function generateMetadata({ params }: RequestDetailPageProps) {
   const { requestCode } = await params;
@@ -48,17 +61,19 @@ export default async function AdminRequestDetailPage({
         description="The requested customer request does not exist."
         adminName={admin.name ?? undefined}
       >
-        <div className="rounded-[1.75rem] border border-[#151515]/10 bg-white p-6">
-          <p className="text-sm font-semibold text-[#151515]/55">
-            No request found with code{" "}
-            <strong className="text-[#151515]">{requestCode}</strong>.
-          </p>
-          <Link
-            href="/admin/requests"
-            className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1936D4] px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] active:scale-[0.98]"
-          >
-            Back to requests
-          </Link>
+        <div className="admin-card">
+          <div className="admin-card-body py-8 text-center">
+            <p className="text-sm text-[#151515]/55">
+              No request found with code{" "}
+              <strong className="text-[#151515]">{requestCode}</strong>.
+            </p>
+            <Link
+              href="/admin/requests"
+              className="mt-4 inline-flex h-9 items-center gap-2 rounded-lg bg-[#151515] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#3b82f6]"
+            >
+              Back to requests
+            </Link>
+          </div>
         </div>
       </AdminShell>
     );
@@ -70,121 +85,167 @@ export default async function AdminRequestDetailPage({
       description={`${request.type} request from ${request.firstName} ${request.lastName}`}
       adminName={admin.name ?? undefined}
     >
-      <div className="grid gap-6 lg:grid-cols-[1fr_0.4fr]">
-        <div className="grid gap-6">
-          <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-            <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-                Request details
-              </p>
+      {/* Back link */}
+      <div className="mb-5">
+        <Link
+          href="/admin/requests"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#151515]/50 transition-colors hover:text-[#151515]"
+        >
+          <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+          Back to requests
+        </Link>
+      </div>
+
+      <div className="grid gap-5 lg:grid-cols-[1fr_340px]">
+        <div className="grid gap-5">
+          {/* Request details */}
+          <div className="admin-card">
+            <div className="admin-card-header flex items-center justify-between">
+              <p className="admin-card-title">Request details</p>
+              <div className="flex items-center gap-2">
+                <span className={typeBadgeClass(request.type)}>
+                  {request.type}
+                </span>
+                <span className={statusBadgeClass(request.status)}>
+                  {formatStatus(request.status)}
+                </span>
+              </div>
             </div>
-            <div className="grid gap-4 px-5 py-5 md:px-6">
-              <DetailRow label="Type" value={request.type} />
-              <DetailRow
-                label="Status"
-                value={request.status.replace(/_/g, " ").toLowerCase()}
-              />
-              <DetailRow
-                label="Name"
-                value={`${request.firstName} ${request.lastName}`}
-              />
-              <DetailRow label="Email" value={request.email} />
-              {request.phone ? (
-                <DetailRow label="Phone" value={request.phone} />
-              ) : null}
-              {request.companyName ? (
-                <DetailRow label="Company" value={request.companyName} />
-              ) : null}
-              {request.preferredContactMethod ? (
+            <div className="admin-card-body">
+              <dl className="grid gap-3">
                 <DetailRow
-                  label="Preferred contact"
-                  value={request.preferredContactMethod}
+                  label="Name"
+                  value={`${request.firstName} ${request.lastName}`}
                 />
-              ) : null}
-              {request.reasonForContact ? (
-                <DetailRow label="Reason" value={request.reasonForContact} />
-              ) : null}
-              {request.quantity ? (
-                <DetailRow label="Quantity" value={String(request.quantity)} />
-              ) : null}
-              {request.sizeDetails ? (
-                <DetailRow label="Size" value={request.sizeDetails} />
-              ) : null}
-              {request.materialDetails ? (
-                <DetailRow label="Material" value={request.materialDetails} />
-              ) : null}
-              {request.colorPreferences ? (
-                <DetailRow label="Colour" value={request.colorPreferences} />
-              ) : null}
-              {request.artworkStatus ? (
+                <DetailRow label="Email" value={request.email} />
+                {request.phone ? (
+                  <DetailRow label="Phone" value={request.phone} />
+                ) : null}
+                {request.companyName ? (
+                  <DetailRow label="Company" value={request.companyName} />
+                ) : null}
+                {request.preferredContactMethod ? (
+                  <DetailRow
+                    label="Preferred contact"
+                    value={request.preferredContactMethod}
+                  />
+                ) : null}
+                {request.reasonForContact ? (
+                  <DetailRow label="Reason" value={request.reasonForContact} />
+                ) : null}
+                {request.quantity ? (
+                  <DetailRow
+                    label="Quantity"
+                    value={String(request.quantity)}
+                  />
+                ) : null}
+                {request.sizeDetails ? (
+                  <DetailRow label="Size" value={request.sizeDetails} />
+                ) : null}
+                {request.materialDetails ? (
+                  <DetailRow
+                    label="Material"
+                    value={request.materialDetails}
+                  />
+                ) : null}
+                {request.colorPreferences ? (
+                  <DetailRow
+                    label="Colour"
+                    value={request.colorPreferences}
+                  />
+                ) : null}
+                {request.artworkStatus ? (
+                  <DetailRow
+                    label="Artwork"
+                    value={request.artworkStatus
+                      .replace(/_/g, " ")
+                      .toLowerCase()}
+                  />
+                ) : null}
+                {request.desiredCompletionDate ? (
+                  <DetailRow
+                    label="Desired date"
+                    value={new Date(
+                      request.desiredCompletionDate,
+                    ).toLocaleDateString("en-CA")}
+                  />
+                ) : null}
                 <DetailRow
-                  label="Artwork"
-                  value={request.artworkStatus.replace(/_/g, " ").toLowerCase()}
+                  label="Project details"
+                  value={request.projectDetails}
                 />
-              ) : null}
-              {request.desiredCompletionDate ? (
                 <DetailRow
-                  label="Desired date"
-                  value={new Date(
-                    request.desiredCompletionDate,
-                  ).toLocaleDateString("en-CA")}
+                  label="Submitted"
+                  value={new Date(request.submittedAt).toLocaleString("en-CA")}
                 />
-              ) : null}
-              <DetailRow
-                label="Project details"
-                value={request.projectDetails}
-              />
-              <DetailRow
-                label="Submitted"
-                value={new Date(request.submittedAt).toLocaleString("en-CA")}
-              />
+              </dl>
             </div>
           </div>
 
+          {/* Selected services */}
           {request.services.length > 0 ? (
-            <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-              <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-                  Selected services
+            <div className="admin-card">
+              <div className="admin-card-header">
+                <p className="admin-card-title">Selected services</p>
+                <p className="admin-card-subtitle">
+                  {request.services.length} service
+                  {request.services.length === 1 ? "" : "s"} requested
                 </p>
               </div>
-              <div className="grid divide-y divide-[#151515]/10 px-5 md:px-6">
-                {request.services.map((rs) => (
-                  <div key={rs.id} className="py-3">
-                    <p className="text-sm font-black text-[#151515]">
-                      {rs.service.name}
-                    </p>
-                    <p className="text-xs font-bold text-[#151515]/45">
-                      {rs.service.category.name}
-                    </p>
-                  </div>
-                ))}
+              <div className="overflow-x-auto">
+                <table className="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Category</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {request.services.map((rs) => (
+                      <tr key={rs.id}>
+                        <td className="font-semibold">{rs.service.name}</td>
+                        <td className="text-[#151515]/55">
+                          {rs.service.category.name}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           ) : null}
 
-          <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-            <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-                Internal notes
+          {/* Internal notes */}
+          <div className="admin-card">
+            <div className="admin-card-header">
+              <p className="admin-card-title">Internal notes</p>
+              <p className="admin-card-subtitle">
+                {request.notes.length} note
+                {request.notes.length === 1 ? "" : "s"}
               </p>
             </div>
-            <div className="px-5 py-5 md:px-6">
+            <div className="admin-card-body">
               <RequestNoteForm requestCode={request.requestCode} />
             </div>
             {request.notes.length > 0 ? (
-              <div className="grid divide-y divide-[#151515]/10 border-t border-[#151515]/10">
+              <div className="border-t border-[#151515]/6">
                 {request.notes.map((note) => (
-                  <div key={note.id} className="px-5 py-4 md:px-6">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-sm font-black text-[#151515]">
+                  <div
+                    key={note.id}
+                    className="border-b border-[#151515]/6 px-5 py-4 last:border-b-0"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#151515] text-[10px] font-bold text-white">
+                        {(note.author?.name ?? "A").charAt(0).toUpperCase()}
+                      </div>
+                      <span className="text-sm font-semibold">
                         {note.author?.name ?? "Admin"}
                       </span>
-                      <span className="text-xs font-bold text-[#151515]/45">
+                      <span className="text-xs text-[#151515]/40">
                         {new Date(note.createdAt).toLocaleString("en-CA")}
                       </span>
                     </div>
-                    <p className="mt-2 whitespace-pre-wrap text-sm font-semibold text-[#151515]/65">
+                    <p className="mt-2 whitespace-pre-wrap pl-8 text-sm text-[#151515]/65">
                       {note.body}
                     </p>
                   </div>
@@ -194,7 +255,8 @@ export default async function AdminRequestDetailPage({
           </div>
         </div>
 
-        <div className="grid gap-6">
+        {/* Sidebar: Status update */}
+        <div className="grid gap-5 self-start">
           <RequestStatusForm
             requestCode={request.requestCode}
             currentStatus={request.status}
@@ -207,11 +269,11 @@ export default async function AdminRequestDetailPage({
 
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="grid gap-1 sm:grid-cols-[160px_1fr] sm:items-start">
-      <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
+    <div className="flex items-start gap-4">
+      <dt className="w-32 shrink-0 text-xs font-semibold uppercase tracking-wide text-[#151515]/40">
         {label}
       </dt>
-      <dd className="text-sm font-semibold text-[#151515]/85">{value}</dd>
+      <dd className="text-sm text-[#151515]/80">{value}</dd>
     </div>
   );
 }

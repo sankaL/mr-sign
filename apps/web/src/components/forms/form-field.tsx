@@ -1,7 +1,8 @@
+"use client";
+
 import type {
   InputHTMLAttributes,
   ReactNode,
-  SelectHTMLAttributes,
   TextareaHTMLAttributes,
 } from "react";
 
@@ -20,14 +21,19 @@ type TextFieldProps = BaseFieldProps &
 type TextAreaFieldProps = BaseFieldProps &
   TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-type SelectFieldProps = BaseFieldProps &
-  SelectHTMLAttributes<HTMLSelectElement> & {
-    options: {
-      label: string;
-      value: string;
-    }[];
-    placeholder?: string;
-  };
+type SelectOption = {
+  label: string;
+  value: string;
+};
+
+type CustomSelectFieldProps = BaseFieldProps & {
+  options: SelectOption[];
+  placeholder?: string;
+  defaultValue?: string;
+  name?: string;
+  required?: boolean;
+  onChange?: (value: string) => void;
+};
 
 function FieldFrame({
   id,
@@ -37,31 +43,29 @@ function FieldFrame({
   children,
 }: BaseFieldProps & { children: ReactNode }) {
   return (
-    <div className="grid gap-2">
+    <div className="grid content-start gap-1.5">
       <label
         htmlFor={id}
-        className="text-sm font-black uppercase tracking-wide"
+        className="text-xs font-semibold uppercase tracking-wide text-[#151515]/55"
       >
         {label}
       </label>
       {children}
-      {helperText ? (
-        <p
-          id={`${id}-helper`}
-          className="text-xs font-semibold leading-5 text-[#151515]/55"
-        >
-          {helperText}
-        </p>
-      ) : null}
-      {error ? (
-        <p
-          id={`${id}-error`}
-          className="text-xs font-black leading-5 text-[#E51B23]"
-          aria-live="polite"
-        >
-          {error}
-        </p>
-      ) : null}
+      <div className="min-h-[16px]">
+        {error ? (
+          <p
+            id={`${id}-error`}
+            className="text-xs font-semibold text-red-600"
+            aria-live="polite"
+          >
+            {error}
+          </p>
+        ) : helperText ? (
+          <p id={`${id}-helper`} className="text-xs text-[#151515]/40">
+            {helperText}
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -87,7 +91,7 @@ export function TextField({
       <input
         id={id}
         type={type}
-        className={`min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#1936D4] ${className}`}
+        className={`h-10 rounded-lg border border-[#151515]/10 bg-white px-3 text-sm outline-none transition-colors placeholder:text-[#151515]/30 focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${className}`}
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy || undefined}
         {...props}
@@ -115,7 +119,7 @@ export function TextAreaField({
     <FieldFrame id={id} label={label} helperText={helperText} error={error}>
       <textarea
         id={id}
-        className={`min-h-32 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#1936D4] ${className}`}
+        className={`min-h-24 rounded-lg border border-[#151515]/10 bg-white px-3 py-2.5 text-sm outline-none transition-colors placeholder:text-[#151515]/30 focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10 ${className}`}
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy || undefined}
         {...props}
@@ -129,11 +133,13 @@ export function SelectField({
   label,
   helperText,
   error,
-  className = "",
   options,
   placeholder,
-  ...props
-}: SelectFieldProps) {
+  defaultValue = "",
+  name,
+  required,
+  onChange,
+}: CustomSelectFieldProps) {
   const describedBy = [
     helperText ? `${id}-helper` : null,
     error ? `${id}-error` : null,
@@ -145,10 +151,13 @@ export function SelectField({
     <FieldFrame id={id} label={label} helperText={helperText} error={error}>
       <select
         id={id}
-        className={`min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors focus:border-[#1936D4] ${className}`}
+        name={name}
+        required={required}
+        defaultValue={defaultValue}
+        className="h-10 rounded-lg border border-[#151515]/10 bg-white px-3 text-sm outline-none transition-colors focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy || undefined}
-        {...props}
+        onChange={(event) => onChange?.(event.target.value)}
       >
         {placeholder ? <option value="">{placeholder}</option> : null}
         {options.map((option) => (

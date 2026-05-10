@@ -14,107 +14,74 @@ export default async function AdminSettingsPage() {
       description="Admin portal settings and business information."
       adminName={admin.name ?? undefined}
     >
-      <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Account
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Current session
-            </h2>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {/* Current session */}
+        <div className="admin-card">
+          <div className="admin-card-header">
+            <p className="admin-card-title">Current session</p>
+            <p className="admin-card-subtitle">Account</p>
           </div>
-          <div className="grid gap-4 px-5 py-5 md:px-6">
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Name
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {admin.name ?? "Admin"}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Email
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {admin.email}
-              </dd>
-            </div>
+          <div className="admin-card-body">
+            <dl className="grid gap-3">
+              <SettingsRow label="Name" value={admin.name ?? "Admin"} />
+              <SettingsRow label="Email" value={admin.email} />
+            </dl>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Business
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Shop details
-            </h2>
+        {/* Shop details */}
+        <div className="admin-card">
+          <div className="admin-card-header">
+            <p className="admin-card-title">Shop details</p>
+            <p className="admin-card-subtitle">Business</p>
           </div>
-          <div className="grid gap-4 px-5 py-5 md:px-6">
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Name
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {siteContact.businessName}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Phone
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {siteContact.phone}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Email
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {siteContact.email}
-              </dd>
-            </div>
-            <div className="grid gap-1 sm:grid-cols-[120px_1fr]">
-              <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                Address
-              </dt>
-              <dd className="text-sm font-semibold text-[#151515]/85">
-                {siteContact.address}
-              </dd>
-            </div>
+          <div className="admin-card-body">
+            <dl className="grid gap-3">
+              <SettingsRow label="Name" value={siteContact.businessName} />
+              <SettingsRow label="Phone" value={siteContact.phone} />
+              <SettingsRow label="Email" value={siteContact.email} />
+              <SettingsRow label="Address" value={siteContact.address} />
+            </dl>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white lg:col-span-2">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Hours
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Business hours
-            </h2>
+        {/* Business hours */}
+        <div className="admin-card lg:col-span-2">
+          <div className="admin-card-header">
+            <p className="admin-card-title">Business hours</p>
+            <p className="admin-card-subtitle">Hours</p>
           </div>
-          <div className="grid divide-y divide-[#151515]/10 px-5 md:px-6">
-            {businessHours.map((day) => (
-              <div
-                key={day.day}
-                className="grid gap-1 py-3 sm:grid-cols-[140px_1fr]"
-              >
-                <dt className="text-xs font-black uppercase tracking-wide text-[#151515]/45">
-                  {day.day}
-                </dt>
-                <dd className="text-sm font-semibold text-[#151515]/85">
-                  {day.hours}
-                </dd>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Hours</th>
+                </tr>
+              </thead>
+              <tbody>
+                {businessHours.map((day) => (
+                  <tr key={day.day}>
+                    <td className="font-semibold">{day.day}</td>
+                    <td className="text-[#151515]/65">{day.hours}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </AdminShell>
+  );
+}
+
+function SettingsRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-start gap-4">
+      <dt className="w-20 shrink-0 text-xs font-semibold uppercase tracking-wide text-[#151515]/40">
+        {label}
+      </dt>
+      <dd className="text-sm text-[#151515]/80">{value}</dd>
+    </div>
   );
 }

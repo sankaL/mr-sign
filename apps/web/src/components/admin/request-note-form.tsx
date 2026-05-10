@@ -24,7 +24,7 @@ export function RequestNoteForm({ requestCode }: RequestNoteFormProps) {
     <form action={formAction} className="grid gap-3">
       <label
         htmlFor="note-body"
-        className="text-sm font-black uppercase tracking-wide"
+        className="text-xs font-semibold uppercase tracking-wide text-[#151515]/50"
       >
         Add a note
       </label>
@@ -33,15 +33,15 @@ export function RequestNoteForm({ requestCode }: RequestNoteFormProps) {
         name="body"
         rows={3}
         required
-        placeholder="Enter an internal note..."
-        className="min-h-24 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#1936D4]"
+        placeholder="Enter an internal note…"
+        className="min-h-20 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm outline-none transition-colors placeholder:text-[#151515]/30 focus:border-[#3b82f6]"
       />
       {state.message ? (
         <p
-          className={`rounded-xl px-4 py-3 text-sm font-black leading-5 ${
+          className={`rounded-lg px-4 py-3 text-sm font-semibold ${
             state.status === "success"
-              ? "bg-[#CCFF00]/35 text-[#151515]"
-              : "bg-[#E51B23]/10 text-[#E51B23]"
+              ? "bg-green-50 text-green-800"
+              : "bg-red-50 text-red-700"
           }`}
           aria-live="polite"
         >
@@ -51,9 +51,9 @@ export function RequestNoteForm({ requestCode }: RequestNoteFormProps) {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#151515] px-5 py-2 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[#151515]/35 md:justify-self-start"
+        className="inline-flex h-9 items-center justify-center rounded-lg bg-[#151515] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#3b82f6] disabled:cursor-not-allowed disabled:opacity-40 md:justify-self-start"
       >
-        {isPending ? "Saving..." : "Add note"}
+        {isPending ? "Saving…" : "Add note"}
       </button>
     </form>
   );

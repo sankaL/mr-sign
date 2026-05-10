@@ -10,7 +10,7 @@ import {
 
 type DbService = {
   slug: string;
-  isActive: boolean;
+  status: string;
   name: string;
   shortDescription: string;
   description?: string | null;
@@ -70,7 +70,7 @@ function mergeService(
   contentService: ServiceDetail,
   dbService: DbService | undefined,
 ): ServiceDetail | null {
-  if (dbService && !dbService.isActive) return null;
+  if (dbService && dbService.status && dbService.status !== "ACTIVE") return null;
 
   const name = dbService?.name || contentService.name;
   const slug = dbService?.slug || contentService.slug;
@@ -110,7 +110,7 @@ function serviceFromDb(
   category: NonNullable<ReturnType<typeof getCategory>>,
   dbService: DbService,
 ): ServiceDetail | null {
-  if (!dbService.isActive) return null;
+  if (dbService.status && dbService.status !== "ACTIVE") return null;
 
   const image: GeneratedImageAsset = dbService.imagePath
     ? {
@@ -232,7 +232,7 @@ export async function getPublicStaticServiceParams(categorySlug: CategorySlug) {
     const services = await prisma.service.findMany({
       where: {
         category: { slug: categorySlug },
-        isActive: true,
+        status: "ACTIVE",
       },
       select: { slug: true },
     });

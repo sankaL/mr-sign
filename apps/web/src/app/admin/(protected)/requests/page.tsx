@@ -1,30 +1,49 @@
-import { prisma } from "@mrsign/db/src/client";
+import Link from "next/link";
+import { Plus } from "lucide-react";
 
+import {
+  getRequestsPage,
+  type RequestSortField,
+} from "@/lib/admin/data";
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
+import { AdminPagination } from "@/components/admin/admin-pagination";
 import { RequestFilters } from "@/components/admin/request-filters";
+import { SortableLink } from "@/components/admin/sortable-link";
 
 type RequestListPageProps = {
   searchParams?: Promise<{
     q?: string;
     type?: string;
     status?: string;
+    sort?: string;
+    order?: string;
+    page?: string;
   }>;
 };
 
-const requestTypes = ["QUOTE", "ORDER", "CONTACT"] as const;
-const requestStatuses = [
-  "NEW",
-  "UNDER_REVIEW",
-  "QUOTE_SENT",
-  "AWAITING_CUSTOMER_APPROVAL",
-  "APPROVED",
-  "IN_PRODUCTION",
-  "READY_FOR_PICKUP",
-  "COMPLETED",
-  "CANCELLED",
-] as const;
+const validSortFields: RequestSortField[] = [
+  "submittedAt",
+  "requestCode",
+  "type",
+  "status",
+  "firstName",
+];
+
+const PER_PAGE = 20;
+
+function statusBadgeClass(status: string) {
+  return `badge badge-${status.toLowerCase().replace(/_/g, "-")}`;
+}
+
+function typeBadgeClass(type: string) {
+  return `badge badge-${type.toLowerCase()}`;
+}
+
+function formatStatus(status: string) {
+  return status.replace(/_/g, " ").toLowerCase();
+}
 
 export const metadata = { title: "Requests" };
 
@@ -33,107 +52,147 @@ export default async function AdminRequestsPage({
 }: RequestListPageProps) {
   const admin = await requireActiveAdminSession();
   const params = await searchParams;
-  const query = params?.q?.trim() ?? "";
-  const typeFilter = requestTypes.includes(
-    params?.type as (typeof requestTypes)[number],
-  )
-    ? (params?.type as (typeof requestTypes)[number])
-    : undefined;
-  const statusFilter = requestStatuses.includes(
-    params?.status as (typeof requestStatuses)[number],
-  )
-    ? (params?.status as (typeof requestStatuses)[number])
-    : undefined;
 
-  const requests = await prisma.customerRequest.findMany({
-    where: {
-      ...(query
-        ? { requestCode: { contains: query, mode: "insensitive" } }
-        : {}),
-      ...(typeFilter ? { type: typeFilter } : {}),
-      ...(statusFilter ? { status: statusFilter } : {}),
+  const query = params?.q?.trim() ?? "";
+
+  /* Parse comma-separated multi-value filters */
+  const typeFilter = params?.type
+    ? params.type.split(",").filter(Boolean)
+    : [];
+  const statusFilter = params?.status
+    ? params.status.split(",").filter(Boolean)
+    : [];
+
+  /* Parse sort */
+  const sortField = validSortFields.includes(params?.sort as RequestSortField)
+    ? (params?.sort as RequestSortField)
+    : "submittedAt";
+  const sortOrder =
+    params?.order === "asc" || params?.order === "desc"
+      ? params.order
+      : "desc";
+
+  const page = Math.max(1, parseInt(params?.page ?? "1", 10) || 1);
+
+  const { items: requests, totalCount } = await getRequestsPage(
+    page,
+    PER_PAGE,
+    {
+      q: query || undefined,
+      type: typeFilter.length > 0 ? typeFilter : undefined,
+      status: statusFilter.length > 0 ? statusFilter : undefined,
+      sort: sortField,
+      order: sortOrder,
     },
-    orderBy: { submittedAt: "desc" },
-    take: 100,
-    select: {
-      id: true,
-      requestCode: true,
-      type: true,
-      status: true,
-      firstName: true,
-      lastName: true,
-      email: true,
-      phone: true,
-      submittedAt: true,
-    },
-  });
+  );
+
+  const addRequestButton = (
+    <Link
+      href="/admin/requests/new"
+      className="inline-flex h-9 items-center gap-2 rounded-lg bg-[#151515] px-4 text-sm font-semibold !text-white transition-colors hover:bg-[#3b82f6]"
+    >
+      <Plus className="h-4 w-4" strokeWidth={2} />
+      Add request
+    </Link>
+  );
 
   return (
     <AdminShell
       title="Requests"
       description="Search, filter, and manage customer quote and contact requests."
       adminName={admin.name ?? undefined}
+      actions={addRequestButton}
     >
-      <div className="grid gap-6">
+      <div className="grid gap-5">
         <RequestFilters
           initialQ={query}
-          initialType={typeFilter}
-          initialStatus={statusFilter}
+          initialTypes={typeFilter}
+          initialStatuses={statusFilter}
         />
 
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              {requests.length} result{requests.length === 1 ? "" : "s"}
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Customer requests
-            </h2>
+        <div className="admin-card">
+          <div className="admin-card-header flex items-center justify-between">
+            <div>
+              <p className="admin-card-title">Customer requests</p>
+              <p className="admin-card-subtitle">
+                {totalCount} result{totalCount === 1 ? "" : "s"}
+              </p>
+            </div>
           </div>
           {requests.length === 0 ? (
-            <div className="px-5 py-8 text-center md:px-6">
-              <p className="text-sm font-semibold text-[#151515]/55">
+            <div className="admin-card-body py-8 text-center">
+              <p className="text-sm text-[#151515]/45">
                 No requests match the current filters.
               </p>
             </div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full text-left">
+              <table className="admin-table">
                 <thead>
-                  <tr className="border-b border-[#151515]/10 text-[10px] font-black uppercase tracking-[0.22em] text-[#151515]/55">
-                    <th className="px-5 py-3 md:px-6">Code</th>
-                    <th className="px-5 py-3 md:px-6">Type</th>
-                    <th className="px-5 py-3 md:px-6">Customer</th>
-                    <th className="px-5 py-3 md:px-6">Status</th>
-                    <th className="px-5 py-3 md:px-6">Date</th>
-                    <th className="px-5 py-3 md:px-6"></th>
+                  <tr>
+                    <SortableLink
+                      label="Code"
+                      field="requestCode"
+                      currentSort={sortField}
+                      currentOrder={sortOrder}
+                      basePath="/admin/requests"
+                    />
+                    <SortableLink
+                      label="Type"
+                      field="type"
+                      currentSort={sortField}
+                      currentOrder={sortOrder}
+                      basePath="/admin/requests"
+                    />
+                    <SortableLink
+                      label="Customer"
+                      field="firstName"
+                      currentSort={sortField}
+                      currentOrder={sortOrder}
+                      basePath="/admin/requests"
+                    />
+                    <SortableLink
+                      label="Status"
+                      field="status"
+                      currentSort={sortField}
+                      currentOrder={sortOrder}
+                      basePath="/admin/requests"
+                    />
+                    <SortableLink
+                      label="Date"
+                      field="submittedAt"
+                      currentSort={sortField}
+                      currentOrder={sortOrder}
+                      basePath="/admin/requests"
+                    />
+                    <th />
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#151515]/10">
+                <tbody>
                   {requests.map((request) => (
-                    <tr
-                      key={request.id}
-                      className="transition-colors hover:bg-[#F3F4F6]"
-                    >
-                      <td className="px-5 py-3 text-sm font-black text-[#151515] md:px-6">
-                        {request.requestCode}
-                      </td>
-                      <td className="px-5 py-3 md:px-6">
-                        <span className="rounded-full bg-[#CCFF00] px-3 py-1 text-[10px] font-black uppercase tracking-wide text-[#151515]">
+                    <tr key={request.id}>
+                      <td className="font-semibold">{request.requestCode}</td>
+                      <td>
+                        <span className={typeBadgeClass(request.type)}>
                           {request.type}
                         </span>
                       </td>
-                      <td className="px-5 py-3 text-sm font-semibold text-[#151515]/65 md:px-6">
-                        {request.firstName} {request.lastName}
-                        <br />
-                        <span className="text-xs font-bold text-[#151515]/45">
-                          {request.email}
+                      <td>
+                        <div>
+                          <p className="font-medium text-[#151515]">
+                            {request.firstName} {request.lastName}
+                          </p>
+                          <p className="mt-0.5 text-xs text-[#151515]/45">
+                            {request.email}
+                          </p>
+                        </div>
+                      </td>
+                      <td>
+                        <span className={statusBadgeClass(request.status)}>
+                          {formatStatus(request.status)}
                         </span>
                       </td>
-                      <td className="px-5 py-3 text-xs font-black uppercase text-[#151515] md:px-6">
-                        {request.status.replace(/_/g, " ").toLowerCase()}
-                      </td>
-                      <td className="px-5 py-3 text-xs font-bold text-[#151515]/45 md:px-6">
+                      <td className="text-xs text-[#151515]/50">
                         {new Date(request.submittedAt).toLocaleDateString(
                           "en-CA",
                           {
@@ -145,13 +204,13 @@ export default async function AdminRequestsPage({
                           },
                         )}
                       </td>
-                      <td className="px-5 py-3 md:px-6">
-                        <a
+                      <td>
+                        <Link
                           href={`/admin/requests/${request.requestCode}`}
-                          className="inline-flex min-h-9 items-center rounded-full border border-[#151515]/15 px-3 py-1 text-xs font-black uppercase tracking-wide transition-colors hover:bg-[#1936D4] hover:!text-white hover:border-[#1936D4] focus-visible:bg-[#1936D4] focus-visible:!text-white focus-visible:border-[#1936D4]"
+                          className="inline-flex h-8 items-center rounded-lg border border-[#151515]/10 px-3 text-xs font-semibold transition-colors hover:bg-[#151515] hover:text-white"
                         >
                           View
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   ))}
@@ -159,6 +218,16 @@ export default async function AdminRequestsPage({
               </table>
             </div>
           )}
+          {totalCount > PER_PAGE ? (
+            <div className="border-t border-[#151515]/6 px-5 py-4">
+              <AdminPagination
+                totalItems={totalCount}
+                perPage={PER_PAGE}
+                currentPage={page}
+                basePath="/admin/requests"
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </AdminShell>

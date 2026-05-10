@@ -53,3 +53,664 @@ img,
 svg {
   display: block;
 }
+
+/* ───────────────────────────────────────
+   Admin layout
+   ─────────────────────────────────────── */
+
+.admin-layout {
+  display: flex;
+  min-height: 100dvh;
+  background: #f5f6f8;
+}
+
+.admin-sidebar {
+  position: fixed;
+  inset-block: 0;
+  left: 0;
+  width: 260px;
+  background: #151515;
+  z-index: 30;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.admin-content {
+  flex: 1;
+  min-width: 0;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .admin-content {
+    margin-left: 260px;
+  }
+}
+
+/* ───────────────────────────────────────
+   Admin toggle switch
+   ─────────────────────────────────────── */
+
+.admin-toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.admin-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.admin-toggle[data-on="true"] {
+  background: #22c55e;
+}
+
+.admin-toggle[data-on="false"] {
+  background: #d1d5db;
+}
+
+.admin-toggle[data-on="true"]::after {
+  transform: translateX(18px);
+}
+
+.admin-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ───────────────────────────────────────
+   Admin tables
+   ─────────────────────────────────────── */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(21, 21, 21, 0.5);
+  background: #f9fafb;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+  white-space: nowrap;
+}
+
+.admin-table tbody td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #151515;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.06);
+  vertical-align: middle;
+  transition: background 0.15s ease;
+}
+
+.admin-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(21, 21, 21, 0.04);
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: rgba(21, 21, 21, 0.015);
+}
+
+.admin-table tbody tr:nth-child(even):hover {
+  background: rgba(21, 21, 21, 0.045);
+}
+
+/* ───────────────────────────────────────
+   Status badges
+   ─────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+.badge-new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-under-review {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-quote-sent {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge-awaiting-approval {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.badge-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-in-production {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+.badge-ready-for-pickup {
+  background: #c4b5fd;
+  color: #5b21b6;
+}
+
+.badge-completed {
+  background: #bbf7d0;
+  color: #166534;
+}
+
+.badge-cancelled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.badge-quote {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-contact {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.badge-order {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ───────────────────────────────────────
+   Admin cards
+   ─────────────────────────────────────── */
+
+.admin-card {
+  background: white;
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.admin-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.06);
+  background: rgba(21, 21, 21, 0.01);
+}
+
+.admin-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #151515;
+}
+
+.admin-card-subtitle {
+  font-size: 12px;
+  color: rgba(21, 21, 21, 0.5);
+  margin-top: 2px;
+}
+
+.admin-card-body {
+  padding: 16px 20px;
+}
+
+/* ───────────────────────────────────────
+   Chart utilities
+   ─────────────────────────────────────── */
+
+.chart-bar {
+  height: 28px;
+  border-radius: 6px;
+  min-width: 4px;
+  transition: width 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.chart-donut {
+  border-radius: 50%;
+  position: relative;
+}
+
+.chart-donut-hole {
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ───────────────────────────────────────
+   Multi-select dropdown
+   ─────────────────────────────────────── */
+
+.admin-multiselect {
+  position: relative;
+  display: inline-flex;
+}
+
+.admin-multiselect-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 8px;
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  color: #151515;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  user-select: none;
+}
+
+.admin-multiselect-trigger:hover {
+  border-color: rgba(21, 21, 21, 0.2);
+}
+
+.admin-multiselect-trigger[data-open="true"] {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.admin-multiselect-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #3b82f6;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.admin-multiselect-chevron {
+  width: 14px;
+  height: 14px;
+  color: rgba(21, 21, 21, 0.35);
+  transition: transform 0.15s;
+}
+
+.admin-multiselect-trigger[data-open="true"] .admin-multiselect-chevron {
+  transform: rotate(180deg);
+}
+
+.admin-multiselect-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 50;
+  min-width: 200px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 4px;
+}
+
+.admin-multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 13px;
+  color: #151515;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.admin-multiselect-option:hover {
+  background: rgba(21, 21, 21, 0.04);
+}
+
+.admin-multiselect-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(21, 21, 21, 0.2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background 0.1s,
+    border-color 0.1s;
+}
+
+.admin-multiselect-checkbox[data-checked="true"] {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.admin-multiselect-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 6px 10px;
+  margin-top: 2px;
+  border: none;
+  border-top: 1px solid rgba(21, 21, 21, 0.06);
+  border-radius: 0 0 6px 6px;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(21, 21, 21, 0.4);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.admin-multiselect-clear:hover {
+  color: #ef4444;
+}
+
+/* ───────────────────────────────────────
+   Sortable column headers
+   ─────────────────────────────────────── */
+
+.admin-table thead th.sortable {
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.admin-table thead th.sortable button {
+  cursor: pointer;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+.admin-table thead th.sortable button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+.admin-table thead th.sortable:hover {
+  color: rgba(21, 21, 21, 0.75);
+}
+
+.admin-table thead th.sortable .sort-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 4px;
+  vertical-align: middle;
+  line-height: 1;
+  gap: 1px;
+}
+
+.admin-table thead th.sortable .sort-arrow {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.admin-table thead th.sortable .sort-arrow-up {
+  border-bottom: 4px solid rgba(21, 21, 21, 0.15);
+}
+
+.admin-table thead th.sortable .sort-arrow-down {
+  border-top: 4px solid rgba(21, 21, 21, 0.15);
+}
+
+.admin-table thead th.sortable[data-sort="asc"] .sort-arrow-up {
+  border-bottom-color: #3b82f6;
+}
+
+.admin-table thead th.sortable[data-sort="desc"] .sort-arrow-down {
+  border-top-color: #3b82f6;
+}
+
+/* ───────────────────────────────────────
+   Category type badges for services
+   ─────────────────────────────────────── */
+
+.badge-signs {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-printing {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.badge-design {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge-draft {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ───────────────────────────────────────
+   Step indicator
+   ─────────────────────────────────────── */
+
+.step-indicator {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.step-indicator-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.step-indicator-line {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: rgba(21, 21, 21, 0.1);
+  border-radius: 1px;
+  transition: background 0.3s;
+  z-index: 0;
+}
+
+.step-line-active {
+  background: #3b82f6;
+}
+
+.step-indicator-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-indicator-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f5f6f8;
+  z-index: -1;
+}
+
+.step-indicator-button:disabled {
+  opacity: 0.5;
+}
+
+.step-indicator-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(21, 21, 21, 0.15);
+  background: white;
+  transition: all 0.2s;
+  color: rgba(21, 21, 21, 0.4);
+}
+
+.step-current .step-indicator-circle {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  color: white;
+}
+
+.step-completed .step-indicator-circle {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  color: white;
+}
+
+.step-pending .step-indicator-circle {
+  border-color: rgba(21, 21, 21, 0.15);
+  color: rgba(21, 21, 21, 0.3);
+}
+
+.step-indicator-number {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step-indicator-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.step-indicator-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(21, 21, 21, 0.5);
+}
+
+.step-current .step-indicator-label {
+  color: #151515;
+}
+
+.step-completed .step-indicator-label {
+  color: #3b82f6;
+}
+
+.step-indicator-description {
+  font-size: 11px;
+  color: rgba(21, 21, 21, 0.35);
+  text-align: center;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .step-indicator-description {
+    display: block;
+  }
+}
+
+/* ───────────────────────────────────────
+   Service form step content
+   ─────────────────────────────────────── */
+
+.service-step-content {
+  display: grid;
+  gap: 20px;
+}
+
+.service-step-header {
+  display: grid;
+  gap: 4px;
+}
+
+.service-step-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #3b82f6;
+}
+
+.service-step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #151515;
+}
+
+.service-step-description {
+  font-size: 13px;
+  color: rgba(21, 21, 21, 0.5);
+}

@@ -14,6 +14,12 @@ enum PricingType {
   REQUEST_QUOTE
 }
 
+enum ServiceStatus {
+  DRAFT
+  ACTIVE
+  INACTIVE
+}
+
 enum RequestType {
   QUOTE
   ORDER
@@ -68,27 +74,29 @@ model ServiceCategory {
 }
 
 model Service {
-  id                String          @id @default(cuid())
-  categoryId        String
-  name              String
-  slug              String
-  shortDescription  String
-  description       String?
-  imagePath         String?
-  imageAlt          String?
-  metaTitle         String?
-  metaDescription   String?
-  isActive          Boolean         @default(true)
-  isFeatured        Boolean         @default(false)
-  displayOrder      Int             @default(0)
-  createdAt         DateTime        @default(now())
-  updatedAt         DateTime        @updatedAt
-  category          ServiceCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
-  pricing           Pricing?
-  requestServices   RequestService[]
+  id               String           @id @default(cuid())
+  categoryId       String
+  name             String
+  slug             String
+  shortDescription String
+  description      String?
+  imagePath        String?
+  imageAlt         String?
+  metaTitle        String?
+  metaDescription  String?
+  isActive         Boolean          @default(true) @ignore
+  status           ServiceStatus    @default(DRAFT)
+  isFeatured       Boolean          @default(false)
+  displayOrder     Int              @default(0)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  category         ServiceCategory  @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  pricing          Pricing?
+  requestServices  RequestService[]
 
   @@unique([categoryId, slug])
   @@index([categoryId, displayOrder])
+  @@index([status])
   @@map("services")
 }
 
@@ -109,10 +117,10 @@ model Pricing {
 }
 
 model CustomerRequest {
-  id                     String                 @id @default(cuid())
-  requestCode            String                 @unique
+  id                     String                  @id @default(cuid())
+  requestCode            String                  @unique
   type                   RequestType
-  status                 RequestStatus          @default(NEW)
+  status                 RequestStatus           @default(NEW)
   firstName              String
   lastName               String
   email                  String
@@ -124,12 +132,12 @@ model CustomerRequest {
   sizeDetails            String?
   materialDetails        String?
   colorPreferences       String?
-  artworkStatus          ArtworkStatus          @default(NOT_APPLICABLE)
+  artworkStatus          ArtworkStatus           @default(NOT_APPLICABLE)
   desiredCompletionDate  DateTime?
   projectDetails         String
   adminSummary           String?
-  submittedAt            DateTime               @default(now())
-  updatedAt              DateTime               @updatedAt
+  submittedAt            DateTime                @default(now())
+  updatedAt              DateTime                @updatedAt
   services               RequestService[]
   notes                  RequestNote[]
   auditLogs              AuditLog[]
@@ -208,13 +216,13 @@ model RequestCodeCounter {
 }
 
 model User {
-  id            String      @id
+  id            String     @id
   name          String
-  email         String      @unique
-  emailVerified Boolean     @default(false)
+  email         String     @unique
+  emailVerified Boolean    @default(false)
   image         String?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
   sessions      Session[]
   accounts      Account[]
   adminUser     AdminUser?

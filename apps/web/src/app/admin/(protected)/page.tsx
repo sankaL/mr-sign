@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   getDashboardStats,
   getRecentRequests,
@@ -5,9 +7,25 @@ import {
 } from "@/lib/admin/data";
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
+import { FileText, Inbox, Users, ArrowRight, Pencil } from "lucide-react";
+
 import { AdminShell } from "@/components/admin/admin-shell";
+import {
+  StatCard,
+  StatusBarChart,
+  TypeDonut,
+} from "@/components/admin/dashboard-charts";
+import { AnimatedSection } from "@/components/admin/animated-section";
 
 export const metadata = { title: "Dashboard" };
+
+function statusBadgeClass(status: string) {
+  return `badge badge-${status.toLowerCase().replace(/_/g, "-")}`;
+}
+
+function typeBadgeClass(type: string) {
+  return `badge badge-${type.toLowerCase()}`;
+}
 
 function formatStatus(status: string) {
   return status.replace(/_/g, " ").toLowerCase();
@@ -28,166 +46,184 @@ export default async function AdminDashboardPage() {
       description="Overview of new requests, recent activity, and services needing attention."
       adminName={admin.name ?? undefined}
     >
-      <div className="grid gap-5 md:grid-cols-3">
-        <a
+      {/* ── Stat cards ───────────────────────── */}
+      <div className="grid gap-5 sm:grid-cols-3">
+        <StatCard
+          label="New quotes"
+          value={stats.newQuoteCount}
+          subtitle="Awaiting review"
           href={quoteUrl}
-          className="rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 transition-shadow hover:shadow-md md:p-6"
-        >
-          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-            New quote requests
-          </p>
-          <p className="mt-2 text-4xl font-black text-[#151515]">
-            {stats.newQuoteCount}
-          </p>
-          <p className="mt-1 text-sm font-semibold text-[#151515]/55">
-            Awaiting review
-          </p>
-        </a>
-
-        <a
+          accentColor="#3b82f6"
+          icon={<FileText className="h-5 w-5" />}
+          delay={0}
+        />
+        <StatCard
+          label="New contacts"
+          value={stats.newContactCount}
+          subtitle="Awaiting review"
           href={contactUrl}
-          className="rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 transition-shadow hover:shadow-md md:p-6"
-        >
-          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-            New contact messages
-          </p>
-          <p className="mt-2 text-4xl font-black text-[#151515]">
-            {stats.newContactCount}
-          </p>
-          <p className="mt-1 text-sm font-semibold text-[#151515]/55">
-            Awaiting review
-          </p>
-        </a>
-
-        <div className="rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-            Total requests
-          </p>
-          <p className="mt-2 text-4xl font-black text-[#151515]">
-            {stats.totalRequestCount}
-          </p>
-          <p className="mt-1 text-sm font-semibold text-[#151515]/55">
-            All time
-          </p>
-        </div>
+          accentColor="#ec4899"
+          icon={<Users className="h-5 w-5" />}
+          delay={0.08}
+        />
+        <StatCard
+          label="Total requests"
+          value={stats.totalRequestCount}
+          subtitle="All time"
+          accentColor="#8b5cf6"
+          icon={<Inbox className="h-5 w-5" />}
+          delay={0.16}
+        />
       </div>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Recent submissions
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Last 10 requests
-            </h2>
-          </div>
-          {recent.length === 0 ? (
-            <div className="px-5 py-8 text-center md:px-6">
-              <p className="text-sm font-semibold text-[#151515]/55">
-                No requests yet.
-              </p>
-            </div>
-          ) : (
-            <div className="grid divide-y divide-[#151515]/10">
-              {recent.map((request) => (
-                <a
-                  key={request.id}
-                  href={`/admin/requests/${request.requestCode}`}
-                  className="grid gap-1 px-5 py-3 transition-colors hover:bg-[#F3F4F6] md:px-6"
-                >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-[#CCFF00] px-3 py-1 text-[10px] font-black uppercase tracking-wide text-[#151515]">
-                      {request.type}
-                    </span>
-                    <span className="text-sm font-black text-[#151515]">
-                      {request.requestCode}
-                    </span>
-                  </div>
-                  <p className="text-sm font-semibold text-[#151515]/65">
-                    {request.firstName} {request.lastName}
-                  </p>
-                  <p className="text-xs font-bold text-[#151515]/45">
-                    {formatStatus(request.status)} ·{" "}
-                    {new Date(request.submittedAt).toLocaleDateString("en-CA", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </p>
-                </a>
-              ))}
-            </div>
-          )}
+      {/* ── Charts ───────────────────────────── */}
+      <AnimatedSection delay={0.24} className="mt-8">
+        <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
+          <StatusBarChart data={stats.statusCounts} />
+          <TypeDonut data={stats.typeCounts} />
         </div>
+      </AnimatedSection>
 
-        <div className="overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Services
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Request quote or missing pricing
-            </h2>
-          </div>
-          {attentionServices.length === 0 ? (
-            <div className="px-5 py-8 text-center md:px-6">
-              <p className="text-sm font-semibold text-[#151515]/55">
-                All services have pricing configured.
-              </p>
-            </div>
-          ) : (
-            <div className="grid divide-y divide-[#151515]/10">
-              {attentionServices.map((service) => (
-                <a
-                  key={service.id}
-                  href={`/admin/services/${service.id}`}
-                  className="grid gap-1 px-5 py-3 transition-colors hover:bg-[#F3F4F6] md:px-6"
-                >
-                  <p className="text-sm font-black text-[#151515]">
-                    {service.name}
-                  </p>
-                  <p className="text-xs font-bold text-[#151515]/45">
-                    {service.categoryName} ·{" "}
-                    {service.pricingType ?? "No pricing"}
-                  </p>
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {stats.statusCounts.length > 0 ? (
-        <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-[#151515]/10 bg-white">
-          <div className="border-b border-[#151515]/10 px-5 py-4 md:px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-              Requests by status
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Status breakdown
-            </h2>
-          </div>
-          <div className="grid gap-4 px-5 py-4 sm:grid-cols-2 md:grid-cols-3 md:px-6 lg:grid-cols-4">
-            {stats.statusCounts.map((item) => (
-              <a
-                key={item.status}
-                href={`/admin/requests?status=${item.status}`}
-                className="flex items-center justify-between rounded-2xl border border-[#151515]/10 p-4 transition-colors hover:bg-[#F3F4F6]"
+      {/* ── Recent submissions + Attention ───── */}
+      <AnimatedSection delay={0.32} className="mt-8">
+        <div className="grid gap-5 lg:grid-cols-[1fr_1fr]">
+          {/* Recent submissions */}
+          <div className="admin-card">
+            <div className="admin-card-header flex items-start justify-between">
+              <div>
+                <p className="admin-card-title">Recent submissions</p>
+                <p className="admin-card-subtitle">Last 10 requests</p>
+              </div>
+              <Link
+                href="/admin/requests"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-[#151515]/8 bg-white px-3 py-1.5 text-xs font-bold text-[#151515]/70 transition-all hover:border-[#151515]/15 hover:bg-[#151515]/[0.03] hover:text-[#151515]"
               >
-                <span className="text-sm font-black uppercase">
-                  {formatStatus(item.status)}
-                </span>
-                <span className="text-xl font-black text-[#1936D4]">
-                  {item.count}
-                </span>
-              </a>
-            ))}
+                View all
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            {recent.length === 0 ? (
+              <div className="admin-card-body py-10 text-center">
+                <p className="text-sm text-[#151515]/40">No requests yet.</p>
+              </div>
+            ) : (
+              <div className="overflow-y-auto" style={{ maxHeight: "336px" }}>
+                <table className="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Type</th>
+                      <th>Customer</th>
+                      <th>Status</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {recent.map((request) => (
+                      <tr key={request.id}>
+                        <td>
+                          <Link
+                            href={`/admin/requests/${request.requestCode}`}
+                            className="font-semibold text-[#3b82f6] transition-colors hover:text-[#2563eb]"
+                          >
+                            {request.requestCode}
+                          </Link>
+                        </td>
+                        <td>
+                          <span className={typeBadgeClass(request.type)}>
+                            {request.type}
+                          </span>
+                        </td>
+                        <td className="text-[#151515]/65">
+                          {request.firstName} {request.lastName}
+                        </td>
+                        <td>
+                          <span className={statusBadgeClass(request.status)}>
+                            {formatStatus(request.status)}
+                          </span>
+                        </td>
+                        <td className="text-xs text-[#151515]/40">
+                          {new Date(request.submittedAt).toLocaleDateString(
+                            "en-CA",
+                            {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            },
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+
+          {/* Services needing attention */}
+          <div className="admin-card">
+            <div className="admin-card-header flex items-start justify-between">
+              <div>
+                <p className="admin-card-title">Services needing attention</p>
+                <p className="admin-card-subtitle">
+                  Missing pricing or request-quote only
+                </p>
+              </div>
+              <Link
+                href="/admin/services"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-[#151515]/8 bg-white px-3 py-1.5 text-xs font-bold text-[#151515]/70 transition-all hover:border-[#151515]/15 hover:bg-[#151515]/[0.03] hover:text-[#151515]"
+              >
+                Manage
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            {attentionServices.length === 0 ? (
+              <div className="admin-card-body py-10 text-center">
+                <p className="text-sm text-[#151515]/40">
+                  All services have pricing configured.
+                </p>
+              </div>
+            ) : (
+              <div className="overflow-y-auto" style={{ maxHeight: "336px" }}>
+                <table className="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Category</th>
+                      <th>Pricing</th>
+                      <th />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {attentionServices.map((service) => (
+                      <tr key={service.id}>
+                        <td className="font-semibold">{service.name}</td>
+                        <td className="text-[#151515]/55">
+                          {service.categoryName}
+                        </td>
+                        <td>
+                          <span className="badge badge-under-review">
+                            {service.pricingType}
+                          </span>
+                        </td>
+                        <td>
+                          <Link
+                            href={`/admin/services/${service.id}`}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#3b82f6] transition-colors hover:text-[#2563eb]"
+                          >
+                            <Pencil className="h-3 w-3" />
+                            Edit
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
-      ) : null}
+      </AnimatedSection>
     </AdminShell>
   );
 }

@@ -1,6 +1,4 @@
-import { AdminShell } from "@/components/admin/admin-shell";
 import { AdminLoginForm } from "@/components/admin/admin-login-form";
-import { StatePanel } from "@/components/ui/states";
 
 export const metadata = {
   title: "Admin Login",
@@ -26,21 +24,15 @@ export default async function AdminLoginPage({
   const error = params?.error ? errorMessages[params.error] : null;
 
   return (
-    <AdminShell
-      title="Login"
-      description="Request a secure one-time login link for the admin portal."
-    >
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1fr]">
-        <div className="grid gap-4">
-          {error ? (
-            <p className="rounded-xl bg-[#E51B23]/10 px-4 py-3 text-sm font-black leading-5 text-[#E51B23]">
-              {error}
-            </p>
-          ) : null}
-          <AdminLoginForm />
-        </div>
-        <StatePanel kind="loading" />
+    <div className="flex min-h-dvh items-center justify-center bg-[#f5f6f8] px-4">
+      <div className="w-full max-w-sm">
+        {error ? (
+          <p className="mb-4 rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+            {error}
+          </p>
+        ) : null}
+        <AdminLoginForm />
       </div>
-    </AdminShell>
+    </div>
   );
 }

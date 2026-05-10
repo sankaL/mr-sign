@@ -1,17 +1,18 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useTransition } from "react";
+import { useCallback, useTransition } from "react";
+import { Search } from "lucide-react";
+
+import { MultiSelectDropdown } from "@/components/admin/multi-select-dropdown";
 
 const requestTypes = [
-  { value: "", label: "All types" },
   { value: "QUOTE", label: "Quote" },
   { value: "ORDER", label: "Order" },
   { value: "CONTACT", label: "Contact" },
 ];
 
 const requestStatuses = [
-  { value: "", label: "All statuses" },
   { value: "NEW", label: "New" },
   { value: "UNDER_REVIEW", label: "Under review" },
   { value: "QUOTE_SENT", label: "Quote sent" },
@@ -25,71 +26,83 @@ const requestStatuses = [
 
 type RequestFiltersProps = {
   initialQ: string;
-  initialType?: string;
-  initialStatus?: string;
+  initialTypes: string[];
+  initialStatuses: string[];
 };
 
 export function RequestFilters({
   initialQ,
-  initialType,
-  initialStatus,
+  initialTypes,
+  initialStatuses,
 }: RequestFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
-  function updateFilters(updates: Record<string, string>) {
-    const params = new URLSearchParams(searchParams.toString());
-    Object.entries(updates).forEach(([key, value]) => {
-      if (value) {
-        params.set(key, value);
-      } else {
-        params.delete(key);
-      }
-    });
-    startTransition(() => {
-      router.replace(`/admin/requests?${params.toString()}`);
-    });
-  }
+  const updateFilters = useCallback(
+    (updates: Record<string, string | string[]>) => {
+      const params = new URLSearchParams(searchParams.toString());
+      /* Reset to page 1 when filters change */
+      params.delete("page");
+
+      Object.entries(updates).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          if (value.length > 0) {
+            params.set(key, value.join(","));
+          } else {
+            params.delete(key);
+          }
+        } else if (value) {
+          params.set(key, value);
+        } else {
+          params.delete(key);
+        }
+      });
+
+      startTransition(() => {
+        router.replace(`/admin/requests?${params.toString()}`);
+      });
+    },
+    [router, searchParams, startTransition],
+  );
 
   return (
-    <div className="grid gap-4 sm:grid-cols-[1fr_auto_auto]">
-      <input
-        type="text"
-        name="q"
-        placeholder="Search by request code"
-        defaultValue={initialQ}
-        onChange={(e) => updateFilters({ q: e.target.value })}
-        className="min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#1936D4]"
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      {/* Search input with icon */}
+      <div className="relative flex-1">
+        <Search
+          className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#151515]/35"
+          strokeWidth={2}
+        />
+        <input
+          type="text"
+          name="q"
+          placeholder="Search by code, name, or email…"
+          key={initialQ}
+          defaultValue={initialQ}
+          onChange={(e) => updateFilters({ q: e.target.value })}
+          className="h-10 w-full rounded-lg border border-[#151515]/10 bg-white pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
+        />
+      </div>
+
+      {/* Multi-select type filter */}
+      <MultiSelectDropdown
+        label="Type"
+        options={requestTypes}
+        selected={initialTypes}
+        onChange={(values) => updateFilters({ type: values })}
       />
-      <select
-        name="type"
-        defaultValue={initialType ?? ""}
-        onChange={(e) => updateFilters({ type: e.target.value })}
-        className="min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors focus:border-[#1936D4]"
-      >
-        {requestTypes.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      <select
-        name="status"
-        defaultValue={initialStatus ?? ""}
-        onChange={(e) => updateFilters({ status: e.target.value })}
-        className="min-h-11 rounded-2xl border border-[#151515]/15 bg-white px-4 py-3 text-base font-semibold outline-none transition-colors focus:border-[#1936D4]"
-      >
-        {requestStatuses.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+
+      {/* Multi-select status filter */}
+      <MultiSelectDropdown
+        label="Status"
+        options={requestStatuses}
+        selected={initialStatuses}
+        onChange={(values) => updateFilters({ status: values })}
+      />
+
       {isPending ? (
-        <p className="text-xs font-bold text-[#151515]/45 sm:col-span-3">
-          Updating...
-        </p>
+        <p className="text-xs text-[#151515]/40">Updating…</p>
       ) : null}
     </div>
   );

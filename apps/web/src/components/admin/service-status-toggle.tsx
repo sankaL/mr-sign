@@ -3,13 +3,13 @@
 import { useOptimistic, useTransition } from "react";
 
 import {
-  toggleServiceActive,
+  toggleServiceStatus,
   toggleServiceFeatured,
 } from "@/app/actions/admin-services";
 
 type ServiceStatusToggleProps = {
   serviceId: string;
-  field: "active" | "featured";
+  field: "status" | "featured";
   value: boolean;
 };
 
@@ -27,8 +27,8 @@ export function ServiceStatusToggle({
     startTransition(async () => {
       setOptimisticValue(nextValue);
       try {
-        if (field === "active") {
-          await toggleServiceActive(serviceId);
+        if (field === "status") {
+          await toggleServiceStatus(serviceId);
         } else {
           await toggleServiceFeatured(serviceId);
         }
@@ -43,13 +43,9 @@ export function ServiceStatusToggle({
       type="button"
       onClick={handleToggle}
       disabled={isPending}
-      className={`inline-flex min-h-8 items-center rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wide transition-colors ${
-        optimisticValue
-          ? "bg-[#CCFF00] text-[#151515]"
-          : "bg-[#151515]/10 text-[#151515]/55"
-      } disabled:opacity-60`}
-    >
-      {optimisticValue ? "Yes" : "No"}
-    </button>
+      data-on={String(optimisticValue)}
+      className="admin-toggle"
+      aria-label={`${field} toggle`}
+    />
   );
 }

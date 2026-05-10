@@ -1,7 +1,7 @@
 "use client";
 
 import { UserPlus } from "lucide-react";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 
 import { addAdminUser } from "@/app/actions/admin-users";
 import type { AdminUserFormState } from "@/app/actions/admin-users";
@@ -11,25 +11,24 @@ const initialState: AdminUserFormState = {
   status: "idle",
 };
 
-export function AdminUserForm() {
+type AdminUserFormProps = {
+  onSuccess?: () => void;
+};
+
+export function AdminUserForm({ onSuccess }: AdminUserFormProps) {
   const [state, formAction, isPending] = useActionState(
     addAdminUser,
     initialState,
   );
 
+  useEffect(() => {
+    if (state.status === "success" && onSuccess) {
+      onSuccess();
+    }
+  }, [state.status, onSuccess]);
+
   return (
-    <form
-      action={formAction}
-      className="grid gap-4 rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6"
-    >
-      <div>
-        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-          Add admin
-        </p>
-        <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-          Invite access by email
-        </h2>
-      </div>
+    <form action={formAction} className="grid gap-4">
       <div className="grid gap-4 md:grid-cols-2">
         <TextField
           id="new-admin-email"
@@ -51,10 +50,10 @@ export function AdminUserForm() {
       </div>
       {state.message ? (
         <p
-          className={`rounded-xl px-4 py-3 text-sm font-black leading-5 ${
+          className={`rounded-lg px-4 py-3 text-sm font-semibold ${
             state.status === "success"
-              ? "bg-[#CCFF00]/35 text-[#151515]"
-              : "bg-[#E51B23]/10 text-[#E51B23]"
+              ? "bg-green-50 text-green-800"
+              : "bg-red-50 text-red-700"
           }`}
           aria-live="polite"
         >
@@ -64,10 +63,10 @@ export function AdminUserForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#151515] px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[#151515]/35 md:justify-self-start"
+        className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-[#151515] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#3b82f6] disabled:cursor-not-allowed disabled:opacity-40 md:justify-self-start"
       >
-        {isPending ? "Saving..." : "Add admin"}
-        <UserPlus className="h-4 w-4" strokeWidth={2.5} />
+        {isPending ? "Saving…" : "Add admin"}
+        <UserPlus className="h-4 w-4" strokeWidth={2} />
       </button>
     </form>
   );

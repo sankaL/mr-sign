@@ -5,7 +5,7 @@ import { updateService } from "@/app/actions/admin-services";
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
-import { ServiceForm } from "@/components/admin/service-form";
+import { ServiceFormWizard } from "@/components/admin/service-form-wizard";
 
 type EditServicePageProps = {
   params: Promise<{ id: string }>;
@@ -48,12 +48,10 @@ export default async function EditServicePage({
       description="Update service details, pricing, and SEO."
       adminName={admin.name ?? undefined}
     >
-      <ServiceForm
+      <ServiceFormWizard
         action={updateAction}
         categories={categories}
         service={service}
-        submitLabel="Save changes"
-        initialState={{ status: "idle" }}
       />
     </AdminShell>
   );

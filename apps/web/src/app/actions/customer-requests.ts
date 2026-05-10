@@ -134,7 +134,7 @@ export async function submitCustomerRequest(
         selectedServices.length > 0
           ? await tx.service.findMany({
               where: {
-                isActive: true,
+                status: "ACTIVE",
                 OR: selectedServices.map((service) => ({
                   slug: service.serviceSlug,
                   category: {

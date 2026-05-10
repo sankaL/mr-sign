@@ -4,20 +4,35 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@mrsign/db/src/client";
 
 import { requireActiveAdminSession } from "@/lib/admin-session";
-import { validateServiceInput } from "@/lib/admin-service-validation";
+import {
+  validateServiceInput,
+  validateServiceDraftInput,
+} from "@/lib/admin-service-validation";
 
 export type ServiceFormState = {
   status: "idle" | "success" | "error";
   message?: string;
   fieldErrors?: Record<string, string>;
+  serviceId?: string;
 };
+
+function revalidateServicePaths(categorySlug: string, serviceSlug: string) {
+  revalidatePath("/admin/services");
+  revalidatePath(`/${categorySlug}`);
+  revalidatePath(`/${categorySlug}/${serviceSlug}`);
+}
 
 export async function createService(
   _previousState: ServiceFormState,
   formData: FormData,
 ): Promise<ServiceFormState> {
   await requireActiveAdminSession();
-  const parsed = validateServiceInput(formData);
+  const intent = String(formData.get("intent") ?? "publish");
+
+  const isDraft = intent === "draft";
+  const parsed = isDraft
+    ? validateServiceDraftInput(formData)
+    : validateServiceInput(formData);
 
   if (!parsed.ok) {
     return {
@@ -64,13 +79,13 @@ export async function createService(
     },
   });
 
-  revalidatePath("/admin/services");
+  revalidateServicePaths(service.category.slug, service.slug);
   revalidatePath(`/admin/services/${service.id}`);
-  revalidatePath(`/${service.category.slug}`);
 
   return {
     status: "success",
-    message: "Service created.",
+    message: isDraft ? "Draft saved." : "Service created.",
+    serviceId: service.id,
   };
 }
 
@@ -80,7 +95,12 @@ export async function updateService(
   formData: FormData,
 ): Promise<ServiceFormState> {
   await requireActiveAdminSession();
-  const parsed = validateServiceInput(formData);
+  const intent = String(formData.get("intent") ?? "publish");
+
+  const isDraft = intent === "draft";
+  const parsed = isDraft
+    ? validateServiceDraftInput(formData)
+    : validateServiceInput(formData);
 
   if (!parsed.ok) {
     return {
@@ -163,17 +183,18 @@ export async function updateService(
 
   return {
     status: "success",
-    message: "Service updated.",
+    message: isDraft ? "Draft saved." : "Service updated.",
+    serviceId: service.id,
   };
 }
 
-export async function toggleServiceActive(serviceId: string) {
+export async function toggleServiceStatus(serviceId: string) {
   const admin = await requireActiveAdminSession();
   const service = await prisma.service.findUnique({
     where: { id: serviceId },
     select: {
       id: true,
-      isActive: true,
+      status: true,
       slug: true,
       category: { select: { slug: true } },
     },
@@ -181,9 +202,11 @@ export async function toggleServiceActive(serviceId: string) {
 
   if (!service) throw new Error("Service not found.");
 
+  const nextStatus = service.status === "ACTIVE" ? "INACTIVE" : "ACTIVE";
+
   await prisma.service.update({
     where: { id: serviceId },
-    data: { isActive: !service.isActive },
+    data: { status: nextStatus },
   });
 
   await prisma.auditLog.create({
@@ -192,14 +215,48 @@ export async function toggleServiceActive(serviceId: string) {
       action: "STATUS_CHANGE",
       entity: "Service",
       entityId: serviceId,
-      metadata: { field: "isActive", value: !service.isActive },
+      metadata: { field: "status", value: nextStatus },
     },
   });
 
-  revalidatePath("/admin/services");
-  revalidatePath(`/${service.category.slug}`);
+  revalidateServicePaths(service.category.slug, service.slug);
 
-  return { isActive: !service.isActive };
+  return { status: nextStatus };
+}
+
+export async function publishService(serviceId: string) {
+  const admin = await requireActiveAdminSession();
+  const service = await prisma.service.findUnique({
+    where: { id: serviceId },
+    select: {
+      id: true,
+      status: true,
+      slug: true,
+      category: { select: { slug: true } },
+    },
+  });
+
+  if (!service) throw new Error("Service not found.");
+  if (service.status !== "DRAFT") return { status: service.status };
+
+  await prisma.service.update({
+    where: { id: serviceId },
+    data: { status: "ACTIVE" },
+  });
+
+  await prisma.auditLog.create({
+    data: {
+      adminId: admin.adminId,
+      action: "STATUS_CHANGE",
+      entity: "Service",
+      entityId: serviceId,
+      metadata: { field: "status", value: "ACTIVE" },
+    },
+  });
+
+  revalidateServicePaths(service.category.slug, service.slug);
+
+  return { status: "ACTIVE" };
 }
 
 export async function toggleServiceFeatured(serviceId: string) {
@@ -221,8 +278,7 @@ export async function toggleServiceFeatured(serviceId: string) {
     data: { isFeatured: !service.isFeatured },
   });
 
-  revalidatePath("/admin/services");
-  revalidatePath(`/${service.category.slug}`);
+  revalidateServicePaths(service.category.slug, service.slug);
 
   return { isFeatured: !service.isFeatured };
 }
@@ -231,13 +287,12 @@ export async function deleteService(serviceId: string) {
   await requireActiveAdminSession();
   const service = await prisma.service.findUnique({
     where: { id: serviceId },
-    select: { id: true, category: { select: { slug: true } } },
+    select: { id: true, slug: true, category: { select: { slug: true } } },
   });
 
   if (!service) throw new Error("Service not found.");
 
   await prisma.service.delete({ where: { id: serviceId } });
 
-  revalidatePath("/admin/services");
-  revalidatePath(`/${service.category.slug}`);
+  revalidateServicePaths(service.category.slug, service.slug);
 }

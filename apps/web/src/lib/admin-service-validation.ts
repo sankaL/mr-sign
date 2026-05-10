@@ -12,7 +12,7 @@ export type ServiceInput = {
   shortDescription: string;
   description: string | null;
   imagePath: string | null;
-  isActive: boolean;
+  status: "DRAFT" | "ACTIVE" | "INACTIVE";
   isFeatured: boolean;
   displayOrder: number;
   metaTitle: string | null;
@@ -53,7 +53,11 @@ export function validateServiceInput(
   ).trim();
   const description = String(formData.get("description") ?? "").trim() || null;
   const imagePath = String(formData.get("imagePath") ?? "").trim() || null;
-  const isActive = formData.get("isActive") === "on";
+  const statusRaw = String(formData.get("status") ?? "DRAFT").trim();
+  const validStatuses = new Set(["DRAFT", "ACTIVE", "INACTIVE"]);
+  const status = validStatuses.has(statusRaw)
+    ? (statusRaw as ServiceInput["status"])
+    : "DRAFT";
   const isFeatured = formData.get("isFeatured") === "on";
   const displayOrder = Number.parseInt(
     String(formData.get("displayOrder") ?? "0"),
@@ -134,7 +138,7 @@ export function validateServiceInput(
       shortDescription,
       description,
       imagePath,
-      isActive,
+      status,
       isFeatured,
       displayOrder,
       metaTitle,
@@ -147,6 +151,88 @@ export function validateServiceInput(
       unitLabel,
       tieredDescription,
       publicLabel,
+    },
+  };
+}
+
+export type ServiceDraftValidationResult =
+  | { ok: true; data: ServiceInput; pricing: PricingInput }
+  | { ok: false; fieldErrors: Record<string, string>; message: string };
+
+export function validateServiceDraftInput(
+  formData: FormData,
+): ServiceDraftValidationResult {
+  const categoryId = String(formData.get("categoryId") ?? "").trim();
+  const name = String(formData.get("name") ?? "").trim();
+  const slugInput = String(formData.get("slug") ?? "").trim();
+  const slug = slugInput || slugify(name);
+  const shortDescription = String(
+    formData.get("shortDescription") ?? "",
+  ).trim();
+  const description = String(formData.get("description") ?? "").trim() || null;
+  const imagePath = String(formData.get("imagePath") ?? "").trim() || null;
+  const isFeatured = formData.get("isFeatured") === "on";
+  const displayOrder = Number.parseInt(
+    String(formData.get("displayOrder") ?? "0"),
+    10,
+  );
+  const metaTitle = String(formData.get("metaTitle") ?? "").trim() || null;
+  const metaDescription =
+    String(formData.get("metaDescription") ?? "").trim() || null;
+
+  const pricingType = String(formData.get("pricingType") ?? "REQUEST_QUOTE").trim();
+  const amountCentsRaw = String(formData.get("amountCents") ?? "").trim();
+  const currency = String(formData.get("currency") ?? "CAD").trim();
+  const unitLabel = String(formData.get("unitLabel") ?? "").trim() || null;
+  const tieredDescription =
+    String(formData.get("tieredDescription") ?? "").trim() || null;
+  const publicLabel = String(formData.get("publicLabel") ?? "").trim();
+
+  const fieldErrors: Record<string, string> = {};
+
+  if (!categoryId) fieldErrors.categoryId = "Choose a category.";
+  if (!name) fieldErrors.name = "Enter a service name.";
+
+  let amountCents: number | null = null;
+  if (amountCentsRaw) {
+    const parsed = Number.parseInt(amountCentsRaw, 10);
+    if (!Number.isNaN(parsed) && parsed >= 0) {
+      amountCents = parsed;
+    }
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      ok: false,
+      fieldErrors,
+      message: "Check the highlighted fields and try again.",
+    };
+  }
+
+  return {
+    ok: true,
+    data: {
+      categoryId,
+      name,
+      slug,
+      shortDescription: shortDescription || name,
+      description,
+      imagePath,
+      status: "DRAFT",
+      isFeatured,
+      displayOrder: Number.isNaN(displayOrder) ? 0 : displayOrder,
+      metaTitle,
+      metaDescription,
+    },
+    pricing: {
+      type: (validPricingTypes.has(pricingType)
+        ? pricingType
+        : "REQUEST_QUOTE") as PricingInput["type"],
+      amountCents,
+      currency: currency || "CAD",
+      unitLabel,
+      tieredDescription,
+      publicLabel: publicLabel || "Request a quote",
     },
   };
 }
