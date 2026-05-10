@@ -6,13 +6,13 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "generate": "prisma generate",
-    "migrate": "prisma migrate dev",
-    "migrate:deploy": "prisma migrate deploy",
-    "seed": "tsx scripts/seed.ts",
-    "seed:requests": "tsx scripts/seed-requests.ts",
-    "create-admin": "tsx scripts/create-first-admin.ts",
-    "typecheck": "prisma generate && tsc --noEmit",
+    "generate": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env prisma generate",
+    "migrate": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env prisma migrate dev",
+    "migrate:deploy": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env prisma migrate deploy",
+    "seed": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env tsx -r dotenv/config scripts/seed.ts",
+    "seed:requests": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env tsx -r dotenv/config scripts/seed-requests.ts",
+    "create-admin": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env tsx -r dotenv/config scripts/create-first-admin.ts",
+    "typecheck": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env prisma generate && tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "format:check": "prettier --check ."
   },
@@ -32,6 +32,6 @@
     "typescript": "6.0.3"
   },
   "prisma": {
-    "seed": "tsx scripts/seed.ts"
+    "seed": "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env tsx -r dotenv/config scripts/seed.ts"
   }
 }

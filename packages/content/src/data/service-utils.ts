@@ -4,6 +4,7 @@ import type {
   ServiceDetail,
   ServiceReference,
 } from "../types";
+import { getServiceContentOverride } from "./normalized-service-content";
 
 type ServiceInput = {
   categorySlug: CategorySlug;
@@ -24,10 +25,15 @@ type ServiceInput = {
 };
 
 export function service(input: ServiceInput): ServiceDetail {
-  const body = input.body ?? [
-    input.shortDescription,
-    `Mr. Sign and Print supports ${input.name.toLowerCase()} work for businesses, organizations, and events across Vaughan, Concord, and the GTA.`,
-  ];
+  const override = getServiceContentOverride(input.categorySlug, input.slug);
+  const shortDescription = override?.shortDescription ?? input.shortDescription;
+  const body = override?.body ??
+    input.body ?? [
+      shortDescription,
+      `Mr. Sign and Print supports ${input.name.toLowerCase()} work for businesses, organizations, and events across Vaughan, Concord, and the GTA.`,
+    ];
+  const capabilities = override?.capabilities ?? input.capabilities;
+  const pricing = override?.pricing ?? input.pricing;
 
   return {
     categorySlug: input.categorySlug,
@@ -36,10 +42,10 @@ export function service(input: ServiceInput): ServiceDetail {
     route: `/${input.categorySlug}/${input.slug}`,
     eyebrow: input.categorySlug,
     headline: input.headline,
-    shortDescription: input.shortDescription,
+    shortDescription,
     body,
-    capabilities: input.capabilities,
-    pricing: input.pricing,
+    capabilities,
+    pricing,
     image: {
       path: `/images/generated/${input.categorySlug}-${input.slug}.png`,
       alt: input.imageAlt,

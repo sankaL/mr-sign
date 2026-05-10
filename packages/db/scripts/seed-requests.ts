@@ -292,7 +292,8 @@ function generateRequestsForYear(
   // Status distribution varies by request age
   const getStatusForDate = (submittedAt: Date): RequestSeed["status"] => {
     const now = new Date();
-    const daysAgo = (now.getTime() - submittedAt.getTime()) / (1000 * 60 * 60 * 24);
+    const daysAgo =
+      (now.getTime() - submittedAt.getTime()) / (1000 * 60 * 60 * 24);
 
     if (daysAgo < 7) {
       return pickRandom(["NEW", "NEW", "UNDER_REVIEW", "QUOTE_SENT"]);
@@ -337,26 +338,37 @@ function generateRequestsForYear(
       "sympatico.ca",
     ]);
     const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${Math.floor(Math.random() * 100)}@${emailDomain}`;
-    const phone = Math.random() > 0.3
-      ? `(${Math.floor(Math.random() * 900) + 100}) ${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 9000) + 1000}`
-      : undefined;
-    const companyName = Math.random() > 0.5 ? pickRandom(companyNames) : undefined;
+    const phone =
+      Math.random() > 0.3
+        ? `(${Math.floor(Math.random() * 900) + 100}) ${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 9000) + 1000}`
+        : undefined;
+    const companyName =
+      Math.random() > 0.5 ? pickRandom(companyNames) : undefined;
     const preferredContactMethod = pickRandom([
       "PHONE",
       "EMAIL",
       "EMAIL",
       "EITHER",
-    ]);
+    ] as const);
 
     // Random date within the year
     const month = Math.floor(Math.random() * 12);
     const day = Math.floor(Math.random() * 28) + 1;
-    const submittedAt = new Date(year, month, day, Math.floor(Math.random() * 12), Math.floor(Math.random() * 60));
+    const submittedAt = new Date(
+      year,
+      month,
+      day,
+      Math.floor(Math.random() * 12),
+      Math.floor(Math.random() * 60),
+    );
 
     // Skip future dates
     if (submittedAt > new Date()) continue;
 
-    const serviceSlugs = pickRandomN(allServiceSlugs, Math.floor(Math.random() * 3) + 1);
+    const serviceSlugs = pickRandomN(
+      allServiceSlugs,
+      Math.floor(Math.random() * 3) + 1,
+    );
     const primaryService = serviceSlugs[0];
 
     const templateVars = {
@@ -376,9 +388,13 @@ function generateRequestsForYear(
 
     const status = getStatusForDate(submittedAt);
 
-    const desiredCompletionDate = status !== "CANCELLED" && status !== "COMPLETED"
-      ? new Date(submittedAt.getTime() + (Math.floor(Math.random() * 30) + 7) * 24 * 60 * 60 * 1000)
-      : undefined;
+    const desiredCompletionDate =
+      status !== "CANCELLED" && status !== "COMPLETED"
+        ? new Date(
+            submittedAt.getTime() +
+              (Math.floor(Math.random() * 30) + 7) * 24 * 60 * 60 * 1000,
+          )
+        : undefined;
 
     const artworkStatus = pickRandom([
       "WILL_EMAIL_FILES",
@@ -386,7 +402,7 @@ function generateRequestsForYear(
       "HAS_ROUGH_IDEA",
       "NOT_APPLICABLE",
       "NOT_APPLICABLE",
-    ]);
+    ] as const);
 
     const request: RequestSeed = {
       type,
@@ -397,8 +413,10 @@ function generateRequestsForYear(
       phone,
       companyName,
       preferredContactMethod,
-      reasonForContact: type === "CONTACT" ? projectDetails.slice(0, 100) : undefined,
-      quantity: type === "ORDER" ? Math.floor(Math.random() * 50) + 1 : undefined,
+      reasonForContact:
+        type === "CONTACT" ? projectDetails.slice(0, 100) : undefined,
+      quantity:
+        type === "ORDER" ? Math.floor(Math.random() * 50) + 1 : undefined,
       sizeDetails: Math.random() > 0.5 ? pickRandom(sizes) : undefined,
       materialDetails: Math.random() > 0.5 ? pickRandom(materials) : undefined,
       colorPreferences: Math.random() > 0.5 ? pickRandom(colors) : undefined,
@@ -458,7 +476,11 @@ async function main() {
   for (const req of allRequests) {
     try {
       // Generate request code with the historical date
-      const requestCode = await generateRequestCode(prisma, req.type, req.submittedAt);
+      const requestCode = await generateRequestCode(
+        prisma,
+        req.type,
+        req.submittedAt,
+      );
 
       // Find service IDs
       const serviceIds = req.serviceSlugs
@@ -512,7 +534,10 @@ async function main() {
       ) {
         skipped++;
       } else {
-        console.error(`Error creating request for ${req.firstName} ${req.lastName}:`, error);
+        console.error(
+          `Error creating request for ${req.firstName} ${req.lastName}:`,
+          error,
+        );
       }
     }
   }

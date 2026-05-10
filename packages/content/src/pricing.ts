@@ -2,11 +2,14 @@ import type { PublicPricing } from "./types";
 
 const CAD = "CAD" as const;
 
-export function requestQuote(sourceUrl?: string): PublicPricing {
+export function requestQuote(
+  sourceUrl?: string,
+  publicLabel = "Request a quote",
+): PublicPricing {
   return {
     type: "REQUEST_QUOTE",
     currency: CAD,
-    publicLabel: "Request Quote",
+    publicLabel,
     sourceUrl,
   };
 }

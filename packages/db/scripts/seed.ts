@@ -1,18 +1,7 @@
 import { getServicesByCategory, serviceCategories } from "@mrsign/content";
 
 import { prisma } from "../src/client.js";
-import type { PublicPricing } from "@mrsign/content";
-
-function pricingSeed(pricing: PublicPricing) {
-  return {
-    type: pricing.type,
-    amountCents: pricing.amountCents ?? null,
-    currency: pricing.currency,
-    unitLabel: pricing.unitLabel ?? null,
-    tieredDescription: pricing.tieredDescription ?? null,
-    publicLabel: pricing.publicLabel,
-  };
-}
+import { pricingResetSeed, serviceResetSeed } from "./service-seed-reset.js";
 
 async function main() {
   for (const [categoryIndex, categorySeed] of serviceCategories.entries()) {
@@ -34,6 +23,7 @@ async function main() {
     const categoryServices = getServicesByCategory(categorySeed.slug);
 
     for (const [serviceIndex, serviceSeed] of categoryServices.entries()) {
+      const serviceData = serviceResetSeed(serviceSeed);
       const service = await prisma.service.upsert({
         where: {
           categoryId_slug: {
@@ -43,33 +33,17 @@ async function main() {
         },
         create: {
           categoryId: category.id,
-          name: serviceSeed.name,
           slug: serviceSeed.slug,
-          shortDescription: serviceSeed.shortDescription,
-          description: serviceSeed.body.join("\n\n"),
-          imagePath: serviceSeed.image.path,
-          imageAlt: serviceSeed.image.alt,
-          metaTitle: serviceSeed.seo.title,
-          metaDescription: serviceSeed.seo.description,
-          status: "ACTIVE",
-          isFeatured: serviceSeed.isFeatured ?? false,
+          ...serviceData,
           displayOrder: serviceIndex + 1,
         },
         update: {
-          name: serviceSeed.name,
-          shortDescription: serviceSeed.shortDescription,
-          description: serviceSeed.body.join("\n\n"),
-          imagePath: serviceSeed.image.path,
-          imageAlt: serviceSeed.image.alt,
-          metaTitle: serviceSeed.seo.title,
-          metaDescription: serviceSeed.seo.description,
-          status: "ACTIVE",
-          isFeatured: serviceSeed.isFeatured ?? false,
+          ...serviceData,
           displayOrder: serviceIndex + 1,
         },
       });
 
-      const pricingData = pricingSeed(serviceSeed.pricing);
+      const pricingData = pricingResetSeed(serviceSeed.pricing);
 
       await prisma.pricing.upsert({
         where: { serviceId: service.id },

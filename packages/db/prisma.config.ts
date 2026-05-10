@@ -9,7 +9,7 @@ export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
     path: "prisma/migrations",
-    seed: "tsx scripts/seed.ts",
+    seed: "DOTENV_CONFIG_QUIET=true DOTENV_CONFIG_PATH=../../.env tsx -r dotenv/config scripts/seed.ts",
   },
   datasource: {
     url: databaseUrl,

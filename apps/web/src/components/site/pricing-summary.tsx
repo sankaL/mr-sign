@@ -1,6 +1,5 @@
 import type { PublicPricing } from "@mrsign/content";
-import { BadgeDollarSign, ExternalLink } from "lucide-react";
-import Link from "next/link";
+import { BadgeDollarSign } from "lucide-react";
 
 type PricingSummaryProps = {
   pricing: PublicPricing;
@@ -18,14 +17,21 @@ function money(amountCents: number) {
 function pricingTypeLabel(type: PublicPricing["type"]) {
   switch (type) {
     case "EXACT_PRICE":
-      return "Exact legacy price";
+      return "Price";
     case "STARTING_FROM":
-      return "Starting price";
+      return "Starting from";
     case "TIERED":
-      return "Legacy tiers";
+      return "Pricing tiers";
     case "REQUEST_QUOTE":
-      return "Quoted by job";
+      return "Pricing by quote";
   }
+}
+
+function quoteLabel(pricing: PublicPricing) {
+  return pricing.type === "REQUEST_QUOTE" &&
+    !/legacy/i.test(pricing.publicLabel)
+    ? pricing.publicLabel
+    : "Request a quote for pricing for this specific service.";
 }
 
 export function PricingSummary({
@@ -34,16 +40,24 @@ export function PricingSummary({
 }: PricingSummaryProps) {
   const amount =
     typeof pricing.amountCents === "number" ? money(pricing.amountCents) : null;
+  const hasDisplayAmount =
+    (pricing.type === "EXACT_PRICE" || pricing.type === "STARTING_FROM") &&
+    amount;
+  const shouldShowUnit = hasDisplayAmount && pricing.unitLabel;
+  const shouldShowVariablePricingNote =
+    pricing.type === "STARTING_FROM" && !compact;
+  const shouldShowTieredDescription =
+    pricing.type === "TIERED" && pricing.tieredDescription && !compact;
 
   return (
     <div
       className={
         compact
           ? "border-t border-[#151515]/10 pt-3"
-          : "rounded-2xl border border-[#151515]/10 bg-white p-4 md:p-5"
+          : "border-y border-[#151515]/12 py-5"
       }
     >
-      <div className="flex items-start gap-3">
+      <div className="grid gap-3 sm:grid-cols-[auto_1fr] sm:items-start">
         <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
           <BadgeDollarSign className="h-4 w-4" strokeWidth={2.25} />
         </span>
@@ -51,36 +65,41 @@ export function PricingSummary({
           <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#E51B23]">
             {pricingTypeLabel(pricing.type)}
           </p>
-          <p className="mt-1 text-sm font-black leading-5 text-[#151515]">
-            {amount
-              ? `${amount} CAD - ${pricing.publicLabel}`
-              : pricing.publicLabel}
-          </p>
-          {pricing.unitLabel ? (
+          {hasDisplayAmount ? (
+            <p
+              className={
+                compact
+                  ? "mt-1 text-base font-black leading-5 tracking-tight text-[#151515]"
+                  : "mt-1 text-[1.7rem] font-black leading-none tracking-tight text-[#151515]"
+              }
+            >
+              {amount}
+            </p>
+          ) : (
+            <p className="mt-1 text-sm font-black leading-5 text-[#151515]">
+              {pricing.type === "TIERED"
+                ? pricing.publicLabel
+                : quoteLabel(pricing)}
+            </p>
+          )}
+          {shouldShowUnit ? (
             <p className="mt-1 text-xs font-bold text-[#151515]/55">
               Unit: {pricing.unitLabel}
             </p>
           ) : null}
+          {shouldShowVariablePricingNote ? (
+            <p className="mt-2 max-w-[42ch] text-sm font-semibold leading-6 text-[#151515]/62">
+              Final pricing depends on size, material, quantity, artwork, and
+              installation needs.
+            </p>
+          ) : null}
+          {shouldShowTieredDescription ? (
+            <p className="mt-2 max-w-[42ch] text-sm font-semibold leading-6 text-[#151515]/62">
+              {pricing.tieredDescription}
+            </p>
+          ) : null}
         </div>
       </div>
-
-      {!compact && pricing.tieredDescription ? (
-        <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/68">
-          {pricing.tieredDescription}
-        </p>
-      ) : null}
-
-      {!compact && pricing.sourceUrl ? (
-        <Link
-          href={pricing.sourceUrl}
-          className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-wide text-[#1936D4] transition-colors hover:text-[#E51B23]"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Legacy source
-          <ExternalLink className="h-3.5 w-3.5" />
-        </Link>
-      ) : null}
     </div>
   );
 }

@@ -60,7 +60,9 @@ function defaultPricing(dbPricing: DbService["pricing"]): PublicPricing {
     amountCents: dbPricing?.amountCents ?? undefined,
     currency: (dbPricing?.currency as "CAD") || "CAD",
     unitLabel: dbPricing?.unitLabel ?? undefined,
-    publicLabel: dbPricing?.publicLabel ?? "Request a quote",
+    publicLabel:
+      dbPricing?.publicLabel ??
+      "Request a quote for pricing for this specific service.",
     tieredDescription: dbPricing?.tieredDescription ?? undefined,
   };
 }
@@ -70,7 +72,8 @@ function mergeService(
   contentService: ServiceDetail,
   dbService: DbService | undefined,
 ): ServiceDetail | null {
-  if (dbService && dbService.status && dbService.status !== "ACTIVE") return null;
+  if (dbService && dbService.status && dbService.status !== "ACTIVE")
+    return null;
 
   const name = dbService?.name || contentService.name;
   const slug = dbService?.slug || contentService.slug;
