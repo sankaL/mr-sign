@@ -1,7 +1,10 @@
-import { getService, getServicesByCategory } from "@mrsign/content";
 import type { Metadata } from "next";
 
 import { ServiceDetailPage } from "@/components/site/service-detail-page";
+import {
+  getPublicService,
+  getPublicStaticServiceParams,
+} from "@/lib/public-services";
 
 type ServicePageProps = {
   params: Promise<{
@@ -9,17 +12,15 @@ type ServicePageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return getServicesByCategory("printing").map((service) => ({
-    serviceSlug: service.slug,
-  }));
+export async function generateStaticParams() {
+  return getPublicStaticServiceParams("printing");
 }
 
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { serviceSlug } = await params;
-  const service = getService("printing", serviceSlug);
+  const service = await getPublicService("printing", serviceSlug);
 
   return {
     title: service?.seo.title ?? "Printing Service",

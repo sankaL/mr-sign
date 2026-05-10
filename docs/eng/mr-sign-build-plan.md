@@ -44,6 +44,7 @@
 | AH-2026-05-09-11 | Address Phase 5 form review findings           | Done        | Added focused form validation tests, extracted request parsing, validated contact reasons, normalized public save errors, disabled pending submissions, and corrected the Phase 5 task summary.                           | 2026-05-09   |
 | AH-2026-05-09-12 | Remove public Online Order flow                | Done        | Removed Online Order from public navigation and content, redirected `/order-online` to Request Quote, and updated product planning docs so quote/contact intake is the MVP direction.                                     | 2026-05-09   |
 | AH-2026-05-09-13 | Address Phase 7 auth review findings           | Done        | Added controlled admin deactivation failures, serializable deactivation transaction handling, explicit login-link request throttling, accessible disabled deactivate reasons, and corrected Phase 7 verification docs.       | 2026-05-09   |
+| AH-2026-05-09-14 | Address Phase 8 admin portal review findings   | Done        | Fixed DB-only public service rendering, edit-service server action wiring, old/new route revalidation, optimistic service toggles, and Phase 8 documentation.                                                               | 2026-05-09   |
 
 ---
 
@@ -224,26 +225,26 @@
 
 | Task number | Task                                                                       | Task status | Comments | Updated date |
 | ----------- | -------------------------------------------------------------------------- | ----------- | -------- | ------------ |
-| P8-01       | Build admin dashboard                                                      | To Do       |          |              |
-| P8-02       | Show new quote requests and contact messages on dashboard                  | To Do       |          |              |
-| P8-03       | Show recent submissions on dashboard                                       | To Do       |          |              |
-| P8-04       | Show request counts by status                                              | To Do       |          |              |
-| P8-05       | Show services missing pricing or marked as request quote                   | To Do       |          |              |
-| P8-06       | Build request list page                                                    | To Do       |          |              |
-| P8-07       | Add request search by request code                                         | To Do       |          |              |
-| P8-08       | Add filters for request type and request status                            | To Do       |          |              |
-| P8-09       | Build request detail page                                                  | To Do       |          |              |
-| P8-10       | Add request status update flow                                             | To Do       |          |              |
-| P8-11       | Add internal notes to requests                                             | To Do       |          |              |
-| P8-12       | Build services list page                                                   | To Do       |          |              |
-| P8-13       | Build add/edit service pages                                               | To Do       |          |              |
-| P8-14       | Add service active/inactive control                                        | To Do       |          |              |
-| P8-15       | Add service display order control                                          | To Do       |          |              |
-| P8-16       | Add featured service control                                               | To Do       |          |              |
-| P8-17       | Add image path field for service images                                    | To Do       |          |              |
-| P8-18       | Build pricing management flow                                              | To Do       |          |              |
-| P8-19       | Add SEO fields for service pages                                           | To Do       |          |              |
-| P8-20       | Build basic admin settings page                                            | To Do       |          |              |
+| P8-01       | Build admin dashboard                                                      | Done        | Dashboard with summary cards, recent submissions, status breakdown, and services needing attention. | 2026-05-09 |
+| P8-02       | Show new quote requests and contact messages on dashboard                  | Done        | Dashboard cards show new quote and contact counts with links to filtered request list. | 2026-05-09 |
+| P8-03       | Show recent submissions on dashboard                                       | Done        | Recent submissions table shows last 10 requests with code, type, customer, status, and date. | 2026-05-09 |
+| P8-04       | Show request counts by status                                              | Done        | Status breakdown section with count cards linking to filtered request list. | 2026-05-09 |
+| P8-05       | Show services missing pricing or marked as request quote                   | Done        | Services attention panel shows active services with REQUEST_QUOTE pricing or missing pricing. | 2026-05-09 |
+| P8-06       | Build request list page                                                    | Done        | Request list with table, sort by submittedAt desc, 100 result limit. | 2026-05-09 |
+| P8-07       | Add request search by request code                                         | Done        | Search input filters by request code substring match via URL params. | 2026-05-09 |
+| P8-08       | Add filters for request type and request status                            | Done        | Dropdown filters for type (QUOTE/ORDER/CONTACT) and status via URL params. | 2026-05-09 |
+| P8-09       | Build request detail page                                                  | Done        | Full request details, selected services, internal notes, and status update form. | 2026-05-09 |
+| P8-10       | Add request status update flow                                             | Done        | Status dropdown with server action, audit log entry, and revalidation. | 2026-05-09 |
+| P8-11       | Add internal notes to requests                                             | Done        | Notes list with author and date, add note form with server action. | 2026-05-09 |
+| P8-12       | Build services list page                                                   | Done        | Services grouped by category with active/featured toggles and edit links. | 2026-05-09 |
+| P8-13       | Build add/edit service pages                                               | Done        | Add and edit service forms with all fields including pricing and SEO. | 2026-05-09 |
+| P8-14       | Add service active/inactive control                                        | Done        | Quick toggle on service list and checkbox in edit form. | 2026-05-09 |
+| P8-15       | Add service display order control                                          | Done        | Numeric input in service form, ordered by displayOrder in lists. | 2026-05-09 |
+| P8-16       | Add featured service control                                               | Done        | Quick toggle on service list and checkbox in edit form. | 2026-05-09 |
+| P8-17       | Add image path field for service images                                    | Done        | Image path text field in service form. | 2026-05-09 |
+| P8-18       | Build pricing management flow                                              | Done        | Inline pricing sub-form with type selector, amount, unit label, tiered description, and public label. | 2026-05-09 |
+| P8-19       | Add SEO fields for service pages                                           | Done        | Meta title and meta description fields in service form. | 2026-05-09 |
+| P8-20       | Build basic admin settings page                                            | Done        | Settings page showing current admin info, business details, and business hours. | 2026-05-09 |
 
 ---
 

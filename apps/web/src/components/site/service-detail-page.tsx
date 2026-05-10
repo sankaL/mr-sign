@@ -1,7 +1,6 @@
 import {
   getCategory,
   getRelatedServices,
-  getService,
   type CategorySlug,
 } from "@mrsign/content";
 import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
@@ -9,6 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CtaSection } from "@/components/ui/cta-section";
+import { getPublicService } from "@/lib/public-services";
 import { primaryActions, siteContact } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
@@ -21,12 +21,12 @@ type ServiceDetailPageProps = {
   serviceSlug: string;
 };
 
-export function ServiceDetailPage({
+export async function ServiceDetailPage({
   categorySlug,
   serviceSlug,
 }: ServiceDetailPageProps) {
   const category = getCategory(categorySlug);
-  const service = getService(categorySlug, serviceSlug);
+  const service = await getPublicService(categorySlug, serviceSlug);
 
   if (!category || !service) {
     notFound();

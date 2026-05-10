@@ -127,8 +127,10 @@ export const contactMethods = [
 
 export const adminNavigation = [
   { href: "/admin", label: "Dashboard", icon: Hammer },
+  { href: "/admin/requests", label: "Requests", icon: ClipboardCheck },
+  { href: "/admin/services", label: "Services", icon: FileText },
   { href: "/admin/users", label: "Users", icon: Users },
-  { href: "/admin/login", label: "Login", icon: ShieldCheck },
+  { href: "/admin/settings", label: "Settings", icon: Sparkles },
 ];
 
 export const statusStateContent = {

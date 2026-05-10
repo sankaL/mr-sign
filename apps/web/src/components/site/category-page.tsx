@@ -1,13 +1,10 @@
-import {
-  getCategory,
-  getServicesByCategory,
-  type CategorySlug,
-} from "@mrsign/content";
+import { getCategory, type CategorySlug } from "@mrsign/content";
 import { ClipboardList, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CtaSection } from "@/components/ui/cta-section";
+import { getPublicServices } from "@/lib/public-services";
 import { primaryActions, siteContact } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
@@ -18,14 +15,14 @@ type CategoryPageProps = {
   categorySlug: CategorySlug;
 };
 
-export function CategoryPage({ categorySlug }: CategoryPageProps) {
+export async function CategoryPage({ categorySlug }: CategoryPageProps) {
   const category = getCategory(categorySlug);
 
   if (!category) {
     notFound();
   }
 
-  const services = getServicesByCategory(categorySlug);
+  const services = await getPublicServices(categorySlug);
 
   return (
     <SiteShell>
