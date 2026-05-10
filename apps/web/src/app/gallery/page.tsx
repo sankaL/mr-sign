@@ -36,8 +36,8 @@ export default function GalleryPage() {
                 href={service.route}
                 className={
                   index === 0 || index === 5
-                    ? "group grid overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-white md:col-span-2"
-                    : "group grid overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-white"
+                    ? "group flex flex-col overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-white md:col-span-2"
+                    : "group flex flex-col overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-white"
                 }
               >
                 <ContentImage

@@ -42,9 +42,13 @@ export function RequestStatusBadge({
   currentStatus,
 }: RequestStatusBadgeProps) {
   const requestCodeRef = useRef(requestCode);
-  requestCodeRef.current = requestCode;
 
-  const [state, formAction, isPending] = useActionState(
+  useEffect(() => {
+    requestCodeRef.current = requestCode;
+  }, [requestCode]);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_state, formAction, isPending] = useActionState(
     async (_prev: RequestStatusFormState, formData: FormData) =>
       updateRequestStatus(requestCodeRef.current, _prev, formData),
     initialState,
@@ -56,6 +60,11 @@ export function RequestStatusBadge({
   const panelRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleOpen = useCallback(() => {
+    setOpen(true);
+    setFocusedIndex(0);
+  }, []);
 
   const handleClose = useCallback(() => {
     setOpen(false);
@@ -78,13 +87,6 @@ export function RequestStatusBadge({
     }
   }, [focusedIndex]);
 
-  /* Reset focus index when closing */
-  useEffect(() => {
-    if (!open) {
-      setFocusedIndex(-1);
-    }
-  }, [open]);
-
   const selectOption = useCallback(
     (optionValue: string) => {
       if (optionValue !== currentStatus && formRef.current) {
@@ -97,12 +99,16 @@ export function RequestStatusBadge({
     [currentStatus, formAction, handleClose],
   );
 
+  const handleTriggerClick = useCallback(() => {
+    setOpen((prev) => !prev);
+    setFocusedIndex((prev) => (prev === -1 ? 0 : prev));
+  }, []);
+
   const handleTriggerKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
         e.preventDefault();
-        setOpen(true);
-        setFocusedIndex(0);
+        handleOpen();
       }
       if (e.key === "ArrowUp") {
         e.preventDefault();
@@ -110,7 +116,7 @@ export function RequestStatusBadge({
         setFocusedIndex(statuses.length - 1);
       }
     },
-    [],
+    [handleOpen],
   );
 
   const handleOptionKeyDown = useCallback(
@@ -139,7 +145,7 @@ export function RequestStatusBadge({
         <button
           ref={triggerRef}
           type="button"
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={handleTriggerClick}
           onKeyDown={handleTriggerKeyDown}
           className={`${statusBadgeClass(
             currentStatus,
