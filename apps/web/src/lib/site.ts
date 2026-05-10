@@ -24,6 +24,7 @@ import {
   Ruler,
   ShieldCheck,
   Sparkles,
+  Users,
 } from "lucide-react";
 
 export {
@@ -126,6 +127,7 @@ export const contactMethods = [
 
 export const adminNavigation = [
   { href: "/admin", label: "Dashboard", icon: Hammer },
+  { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/login", label: "Login", icon: ShieldCheck },
 ];
 

@@ -43,6 +43,7 @@
 | AH-2026-05-09-10 | Overlap quote mini-card chips                  | Done        | Extended the blue shop mini-card and overlaid the Free quote chip on reserved right-side space so the labels connect without covering text.                                                                               | 2026-05-09   |
 | AH-2026-05-09-11 | Address Phase 5 form review findings           | Done        | Added focused form validation tests, extracted request parsing, validated contact reasons, normalized public save errors, disabled pending submissions, and corrected the Phase 5 task summary.                           | 2026-05-09   |
 | AH-2026-05-09-12 | Remove public Online Order flow                | Done        | Removed Online Order from public navigation and content, redirected `/order-online` to Request Quote, and updated product planning docs so quote/contact intake is the MVP direction.                                     | 2026-05-09   |
+| AH-2026-05-09-13 | Address Phase 7 auth review findings           | Done        | Added controlled admin deactivation failures, serializable deactivation transaction handling, explicit login-link request throttling, accessible disabled deactivate reasons, and corrected Phase 7 verification docs.       | 2026-05-09   |
 
 ---
 
@@ -204,18 +205,18 @@
 
 | Task number | Task                                                   | Task status | Comments | Updated date |
 | ----------- | ------------------------------------------------------ | ----------- | -------- | ------------ |
-| P7-01       | Set up Better Auth                                     | To Do       |          |              |
-| P7-02       | Configure passwordless magic-link login through Resend | To Do       |          |              |
-| P7-03       | Build admin login page                                 | To Do       |          |              |
-| P7-04       | Protect all `/admin` routes                            | To Do       |          |              |
-| P7-05       | Create first admin user script                         | To Do       |          |              |
-| P7-06       | Configure admin session duration                       | To Do       |          |              |
-| P7-07       | Build admin users list page                            | To Do       |          |              |
-| P7-08       | Build add admin user flow                              | To Do       |          |              |
-| P7-09       | Build deactivate admin user flow                       | To Do       |          |              |
-| P7-10       | Prevent unauthorized users from accessing admin pages  | To Do       |          |              |
-| P7-11       | Test login email flow                                  | To Do       |          |              |
-| P7-12       | Test expired/invalid login link behavior               | To Do       |          |              |
+| P7-01       | Set up Better Auth                                     | Done        | Added Better Auth config, Prisma adapter wiring, Next.js auth route, and admin session helpers. | 2026-05-09   |
+| P7-02       | Configure passwordless magic-link login through Resend | Done        | Added Better Auth magic-link plugin with active-admin allowlist checks, explicit login-link request throttling, and Resend-backed login email. | 2026-05-09   |
+| P7-03       | Build admin login page                                 | Done        | Replaced the preview login page with a live server-action magic-link request form. | 2026-05-09   |
+| P7-04       | Protect all `/admin` routes                            | Done        | Moved protected admin pages into an authenticated route group and added a cookie-based Next proxy redirect plus page-level active-admin validation. | 2026-05-09   |
+| P7-05       | Create first admin user script                         | Done        | Existing `db:create-admin` script creates or reactivates the Better Auth user and linked AdminUser record. | 2026-05-09   |
+| P7-06       | Configure admin session duration                       | Done        | Configured 14-day sessions with daily refresh and 5-minute session freshness. | 2026-05-09   |
+| P7-07       | Build admin users list page                            | Done        | Added `/admin/users` with active/inactive admin listing and current-user state. | 2026-05-09   |
+| P7-08       | Build add admin user flow                              | Done        | Added server-action admin creation/reactivation flow backed by Better Auth User and AdminUser records. | 2026-05-09   |
+| P7-09       | Build deactivate admin user flow                       | Done        | Added deactivate flow with self-deactivation and last-active-admin safeguards, serializable transaction handling, controlled failure messages, and session revocation. | 2026-05-09   |
+| P7-10       | Prevent unauthorized users from accessing admin pages  | Done        | Active AdminUser validation is required for protected admin pages and actions; login requests use neutral unauthorized responses. | 2026-05-09   |
+| P7-11       | Test login email flow                                  | In Progress | Added deterministic email template tests; real Resend delivery still requires configured API key and verified sender/domain. | 2026-05-09   |
+| P7-12       | Test expired/invalid login link behavior               | Done        | Login page maps Better Auth invalid, expired, and attempts-exceeded errors to user-facing retry guidance. | 2026-05-09   |
 
 ---
 

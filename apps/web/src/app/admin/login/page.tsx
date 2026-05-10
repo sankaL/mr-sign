@@ -1,33 +1,43 @@
 import { AdminShell } from "@/components/admin/admin-shell";
-import { TextField } from "@/components/forms/form-field";
+import { AdminLoginForm } from "@/components/admin/admin-login-form";
 import { StatePanel } from "@/components/ui/states";
 
 export const metadata = {
   title: "Admin Login",
 };
 
-export default function AdminLoginPage() {
+type AdminLoginPageProps = {
+  searchParams?: Promise<{
+    error?: string;
+  }>;
+};
+
+const errorMessages: Record<string, string> = {
+  INVALID_TOKEN: "That login link is invalid. Request a new one.",
+  EXPIRED_TOKEN: "That login link expired. Request a new one.",
+  ATTEMPTS_EXCEEDED:
+    "That login link can no longer be used. Request a new one.",
+};
+
+export default async function AdminLoginPage({
+  searchParams,
+}: AdminLoginPageProps) {
+  const params = await searchParams;
+  const error = params?.error ? errorMessages[params.error] : null;
+
   return (
     <AdminShell
       title="Login"
-      description="Passwordless admin login is planned for the Better Auth and Resend phase. This page establishes the frontend shell only."
+      description="Request a secure one-time login link for the admin portal."
     >
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1fr]">
-        <div
-          className="grid content-start gap-5 rounded-[2rem] border border-[#151515]/10 bg-white p-6 md:p-8"
-          aria-label="Admin login form preview"
-        >
-          <p className="rounded-2xl bg-[#CCFF00] px-4 py-3 text-xs font-black uppercase tracking-wide text-[#151515]">
-            Preview only. Magic-link login arrives in Phase 7.
-          </p>
-          <TextField
-            id="admin-email"
-            label="Admin email"
-            type="email"
-            helperText="Magic-link delivery is implemented in a later phase."
-            placeholder="admin@example.com"
-            readOnly
-          />
+        <div className="grid gap-4">
+          {error ? (
+            <p className="rounded-xl bg-[#E51B23]/10 px-4 py-3 text-sm font-black leading-5 text-[#E51B23]">
+              {error}
+            </p>
+          ) : null}
+          <AdminLoginForm />
         </div>
         <StatePanel kind="loading" />
       </div>

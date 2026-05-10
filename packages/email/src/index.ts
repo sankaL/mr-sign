@@ -1,3 +1,8 @@
+export { buildAdminLoginEmail, sendAdminLoginEmail } from "./admin-login-email";
+export type {
+  AdminLoginEmailInput,
+  AdminLoginEmailResult,
+} from "./admin-login-email";
 export {
   buildCustomerRequestEmails,
   sendCustomerRequestEmails,

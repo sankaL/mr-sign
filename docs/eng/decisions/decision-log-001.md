@@ -66,3 +66,19 @@ Impact:
 - Public navigation, footer links, and content exports should not include Online Order.
 - Product and engineering plans should treat quote and contact submissions as the MVP customer request flows.
 - No Prisma schema or request-code migration is required for this decision.
+
+## 2026-05-09: Restrict admin magic links to active AdminUser records
+
+Decision: Admin authentication uses Better Auth magic links, but access is controlled by the app-level `AdminUser` allowlist. Only active admins can receive login links, protected admin pages validate active admin status server-side, and deactivated admins have sessions revoked.
+
+Rationale:
+
+- Better Auth owns secure session and magic-link mechanics, while `AdminUser` remains the business-level access list for the custom admin portal.
+- A neutral login response avoids revealing whether an email belongs to an admin.
+- Page-level validation is required because cookie-only proxy checks are only an optimization and are not sufficient authorization.
+
+Impact:
+
+- Admin user management must create or reactivate both Better Auth `User` and `AdminUser` records.
+- Deactivation must keep at least one active admin and prevent self-deactivation.
+- Real login email delivery still depends on Resend production configuration.

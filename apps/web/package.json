@@ -16,6 +16,7 @@
     "@mrsign/content": "workspace:*",
     "@mrsign/db": "workspace:*",
     "@mrsign/email": "workspace:*",
+    "better-auth": "1.6.9",
     "lucide-react": "1.14.0",
     "motion": "12.38.0",
     "next": "16.2.5",
