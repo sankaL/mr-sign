@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@mrsign/db/src/client";
@@ -11,7 +13,54 @@ export type ActiveAdminSession = {
   adminId: string;
 };
 
+async function getOrCreateDevAdmin(): Promise<ActiveAdminSession | null> {
+  const existing = await prisma.adminUser.findFirst({
+    where: { isActive: true },
+    select: { id: true, email: true, name: true },
+    orderBy: { createdAt: "asc" },
+  });
+
+  if (existing) {
+    return {
+      userId: existing.id,
+      email: existing.email,
+      name: existing.name,
+      adminId: existing.id,
+    };
+  }
+
+  const user = await prisma.user.create({
+    data: {
+      id: randomUUID(),
+      email: "dev@mrsignandprint.net",
+      name: "Dev Admin",
+      emailVerified: true,
+    },
+  });
+
+  const admin = await prisma.adminUser.create({
+    data: {
+      email: "dev@mrsignandprint.net",
+      name: "Dev Admin",
+      isActive: true,
+      userId: user.id,
+    },
+    select: { id: true, email: true, name: true },
+  });
+
+  return {
+    userId: admin.id,
+    email: admin.email,
+    name: admin.name,
+    adminId: admin.id,
+  };
+}
+
 export async function getActiveAdminSession(): Promise<ActiveAdminSession | null> {
+  if (process.env.NODE_ENV === "development") {
+    return getOrCreateDevAdmin();
+  }
+
   const session = await auth.api.getSession({
     headers: await headers(),
   });

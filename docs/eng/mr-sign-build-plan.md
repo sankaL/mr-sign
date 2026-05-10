@@ -45,6 +45,7 @@
 | AH-2026-05-09-12 | Remove public Online Order flow                | Done        | Removed Online Order from public navigation and content, redirected `/order-online` to Request Quote, and updated product planning docs so quote/contact intake is the MVP direction.                                     | 2026-05-09   |
 | AH-2026-05-09-13 | Address Phase 7 auth review findings           | Done        | Added controlled admin deactivation failures, serializable deactivation transaction handling, explicit login-link request throttling, accessible disabled deactivate reasons, and corrected Phase 7 verification docs.       | 2026-05-09   |
 | AH-2026-05-09-14 | Address Phase 8 admin portal review findings   | Done        | Fixed DB-only public service rendering, edit-service server action wiring, old/new route revalidation, optimistic service toggles, and Phase 8 documentation.                                                               | 2026-05-09   |
+| AH-2026-05-09-15 | Fix better-auth/cookies module resolution      | Done        | Added `pnpm install --frozen-lockfile` to the Dockerfile dev CMD so stale anonymous node_modules volumes don't shadow freshly installed dependencies after `package.json` changes.                                        | 2026-05-09   |
 
 ---
 

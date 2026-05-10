@@ -2,6 +2,10 @@ import { getSessionCookie } from "better-auth/cookies";
 import { NextRequest, NextResponse } from "next/server";
 
 export function proxy(request: NextRequest) {
+  if (process.env.NODE_ENV === "development") {
+    return NextResponse.next();
+  }
+
   const pathname = request.nextUrl.pathname;
 
   if (pathname.startsWith("/admin/login")) {
