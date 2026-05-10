@@ -60,7 +60,7 @@
 | P0-08       | Confirm whether portfolio/gallery is included in MVP                           | Done        | Portfolio/gallery will use AI-generated images via OpenAI's image model during frontend build phase.                 | 2026-05-06   |
 | P0-09       | Collect approved service images, hero images, gallery images, and brand assets | In Progress | Gallery images will be generated using OpenAI's image model during frontend development. Other brand assets pending. | 2026-05-06   |
 | P0-10       | Confirm launch admin users                                                     | To Do       | Pending decision on who the admin users will be.                                                                     | 2026-05-06   |
-| P0-11       | Confirm Resend sender email/domain setup                                       | To Do       | Pending Resend setup confirmation.                                                                                   | 2026-05-06   |
+| P0-11       | Confirm Resend sender email/domain setup                                       | In Progress | App now reads configurable Resend sender and admin recipient env vars; verified Resend domain/API key confirmation remains pending. | 2026-05-09   |
 | P0-12       | Confirm MVP acceptance criteria and launch checklist with client               | Done        | MVP acceptance criteria confirmed.                                                                                   | 2026-05-06   |
 
 ---
@@ -184,18 +184,18 @@
 
 | Task number | Task                                                                            | Task status | Comments | Updated date |
 | ----------- | ------------------------------------------------------------------------------- | ----------- | -------- | ------------ |
-| P6-01       | Set up Resend package/configuration                                             | To Do       |          |              |
-| P6-02       | Configure sender email/domain                                                   | To Do       |          |              |
-| P6-03       | Create customer quote confirmation email template                               | To Do       |          |              |
-| P6-04       | Create admin quote notification email template                                  | To Do       |          |              |
+| P6-01       | Set up Resend package/configuration                                             | Done        | Added `@mrsign/email` workspace package with Resend client wiring, safe no-key skip behavior, isolated post-save notification handling, and a basic public submission throttle. | 2026-05-09   |
+| P6-02       | Configure sender email/domain                                                   | In Progress | Sender is configurable through `RESEND_FROM_EMAIL`; real sender/domain verification remains pending in Resend. | 2026-05-09   |
+| P6-03       | Create customer quote confirmation email template                               | Done        | Added branded customer quote confirmation subject, plain text, and HTML content. | 2026-05-09   |
+| P6-04       | Create admin quote notification email template                                  | Done        | Added admin quote notification with customer, service, project, timing, and reply-to details. | 2026-05-09   |
 | P6-05       | Create customer order request confirmation email template                       | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
 | P6-06       | Create admin order request notification email template                          | Superseded  | Public order intake was removed from MVP. | 2026-05-09   |
-| P6-07       | Create customer contact confirmation email template                             | To Do       |          |              |
-| P6-08       | Create admin contact notification email template                                | To Do       |          |              |
-| P6-09       | make send and from e-mail address configuratble env variables for resend emails | To Do       |          |              |
-| P6-10       | Include request code in email subject/body                                      | To Do       |          |              |
-| P6-11       | Include customer and request details in admin emails                            | To Do       |          |              |
-| P6-12       | Test email delivery in development/staging                                      | To Do       |          |              |
+| P6-07       | Create customer contact confirmation email template                             | Done        | Added branded customer contact confirmation subject, plain text, and HTML content. | 2026-05-09   |
+| P6-08       | Create admin contact notification email template                                | Done        | Added admin contact notification with customer, contact reason, message, and reply-to details. | 2026-05-09   |
+| P6-09       | make send and from e-mail address configuratble env variables for resend emails | Done        | Uses `RESEND_FROM_EMAIL` and `ADMIN_NOTIFICATION_EMAIL` with existing `.env.example` values. | 2026-05-09   |
+| P6-10       | Include request code in email subject/body                                      | Done        | Request code appears in customer/admin subjects and message details. | 2026-05-09   |
+| P6-11       | Include customer and request details in admin emails                            | Done        | Admin templates include customer contact fields, selected services, request details, and submission time. | 2026-05-09   |
+| P6-12       | Test email delivery in development/staging                                      | To Do       | Automated template tests added; real Resend delivery test requires configured API key and verified sender/domain. | 2026-05-09   |
 | P6-13       | Test email delivery in production                                               | To Do       |          |              |
 
 ---

@@ -330,7 +330,10 @@ export function CustomerRequestForm({
         </div>
 
         {state.status === "error" && state.message ? (
-          <p className="rounded-xl bg-[#E51B23]/10 px-4 py-3 text-sm font-black leading-5 text-[#E51B23]">
+          <p
+            className="rounded-xl bg-[#E51B23]/10 px-4 py-3 text-sm font-black leading-5 text-[#E51B23]"
+            role="alert"
+          >
             {state.message}
           </p>
         ) : null}

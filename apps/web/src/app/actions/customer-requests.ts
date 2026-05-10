@@ -1,6 +1,8 @@
 "use server";
 
+import { getService } from "@mrsign/content";
 import { revalidatePath } from "next/cache";
+import { headers } from "next/headers";
 
 import type {
   CustomerRequestFormState,
@@ -17,6 +19,32 @@ import {
 
 const publicSaveErrorMessage =
   "The request could not be saved. Please call or email the shop.";
+const rateLimitWindowMs = 10 * 60 * 1000;
+const maxSubmissionsPerWindow = 5;
+const submissionBuckets = new Map<string, number[]>();
+
+async function getSubmissionRateLimitKey(email: string) {
+  const requestHeaders = await headers();
+  const forwardedFor = requestHeaders.get("x-forwarded-for");
+  const ipAddress = forwardedFor?.split(",")[0]?.trim();
+
+  return `${ipAddress || "unknown"}:${email}`;
+}
+
+function isRateLimited(key: string, now = Date.now()) {
+  const windowStart = now - rateLimitWindowMs;
+  const attempts = (submissionBuckets.get(key) ?? []).filter(
+    (timestamp) => timestamp > windowStart,
+  );
+
+  if (attempts.length >= maxSubmissionsPerWindow) {
+    submissionBuckets.set(key, attempts);
+    return true;
+  }
+
+  submissionBuckets.set(key, [...attempts, now]);
+  return false;
+}
 
 export async function submitCustomerRequest(
   kind: CustomerRequestKind,
@@ -59,6 +87,21 @@ export async function submitCustomerRequest(
     colorPreferences,
   } = parsed.data;
 
+  const rateLimitKey = await getSubmissionRateLimitKey(email);
+
+  if (isRateLimited(rateLimitKey)) {
+    return {
+      status: "error",
+      message:
+        "Too many requests were submitted recently. Please wait a few minutes or call the shop.",
+    };
+  }
+
+  let request: {
+    requestCode: string;
+    submittedAt: Date;
+  };
+
   try {
     const [{ prisma }, { formatRequestCode }] = await Promise.all([
       import("@mrsign/db/src/client"),
@@ -67,7 +110,7 @@ export async function submitCustomerRequest(
     const requestType = requestTypeByKind[kind];
     const year = new Date().getFullYear();
 
-    const request = await prisma.$transaction(async (tx) => {
+    request = await prisma.$transaction(async (tx) => {
       const counter = await tx.requestCodeCounter.upsert({
         where: {
           requestType_year: {
@@ -139,17 +182,12 @@ export async function submitCustomerRequest(
         },
         select: {
           requestCode: true,
+          submittedAt: true,
         },
       });
     });
 
     revalidatePath(pathByKind[kind]);
-
-    return {
-      status: "success",
-      message: successMessageByKind[kind],
-      requestCode: request.requestCode,
-    };
   } catch (error) {
     console.error("Customer request submission failed", error);
 
@@ -158,4 +196,46 @@ export async function submitCustomerRequest(
       message: publicSaveErrorMessage,
     };
   }
+
+  if (kind === "quote" || kind === "contact") {
+    try {
+      const { sendCustomerRequestEmails } = await import("@mrsign/email");
+
+      await sendCustomerRequestEmails({
+        kind,
+        requestCode: request.requestCode,
+        submittedAt: request.submittedAt,
+        firstName,
+        lastName,
+        email,
+        phone,
+        companyName,
+        preferredContactMethod,
+        reasonForContact,
+        selectedServices: selectedServices.map((serviceRef) => {
+          const service = getService(
+            serviceRef.categorySlug,
+            serviceRef.serviceSlug,
+          );
+
+          return service?.name ?? serviceRef.serviceSlug;
+        }),
+        quantity,
+        desiredCompletionDate,
+        projectDetails,
+        artworkStatus,
+        sizeDetails,
+        materialDetails,
+        colorPreferences,
+      });
+    } catch (error) {
+      console.error("Customer request email notification failed", error);
+    }
+  }
+
+  return {
+    status: "success",
+    message: successMessageByKind[kind],
+    requestCode: request.requestCode,
+  };
 }
