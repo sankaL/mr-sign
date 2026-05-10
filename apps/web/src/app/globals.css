@@ -1,6 +1,63 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
 
 :root {
+  --radius: 0.625rem;
+  --background: oklch(0.985 0.002 247);
+  --foreground: oklch(0.145 0.017 247);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0.017 247);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0.017 247);
+  --primary: oklch(0.37 0.16 265);
+  --primary-foreground: oklch(0.985 0.002 247);
+  --secondary: oklch(0.965 0.005 247);
+  --secondary-foreground: oklch(0.37 0.017 247);
+  --muted: oklch(0.965 0.005 247);
+  --muted-foreground: oklch(0.55 0.017 247);
+  --accent: oklch(0.965 0.005 247);
+  --accent-foreground: oklch(0.37 0.017 247);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0.007 247);
+  --input: oklch(0.922 0.007 247);
+  --ring: oklch(0.37 0.16 265);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
   color: #151515;
   background: #fffaf0;
   font-family:
@@ -713,4 +770,226 @@ svg {
 .service-step-description {
   font-size: 13px;
   color: rgba(21, 21, 21, 0.5);
+}
+
+/* ───────────────────────────────────────
+   Service category tabs
+   ─────────────────────────────────────── */
+
+.service-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: rgba(21, 21, 21, 0.05);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.service-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(21, 21, 21, 0.5);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.service-tab:hover {
+  color: rgba(21, 21, 21, 0.75);
+  background: rgba(21, 21, 21, 0.04);
+}
+
+.service-tab-active {
+  background: white;
+  color: #151515;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.service-tab-active:hover {
+  background: white;
+  color: #151515;
+}
+
+.service-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  background: rgba(21, 21, 21, 0.08);
+  color: rgba(21, 21, 21, 0.5);
+}
+
+.service-tab-active .service-tab-count {
+  background: #1936d4;
+  color: white;
+}
+
+/* ───────────────────────────────────────
+   Service search input
+   ─────────────────────────────────────── */
+
+.service-search {
+  position: relative;
+}
+
+.service-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: rgba(21, 21, 21, 0.3);
+  pointer-events: none;
+}
+
+.service-search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 36px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.service-search input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.service-search input::placeholder {
+  color: rgba(21, 21, 21, 0.3);
+}
+
+/* ───────────────────────────────────────
+   Service checkbox list
+   ─────────────────────────────────────── */
+
+.service-list {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  border-radius: 10px;
+  background: white;
+}
+
+.service-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #151515;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.05);
+  cursor: pointer;
+  transition: background 0.1s;
+  user-select: none;
+}
+
+.service-list-item:last-child {
+  border-bottom: none;
+}
+
+.service-list-item:hover {
+  background: rgba(21, 21, 21, 0.02);
+}
+
+.service-list-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1936d4;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.service-list-item-cat {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(21, 21, 21, 0.3);
+}
+
+.service-list-empty {
+  padding: 24px 14px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(21, 21, 21, 0.4);
+}
+
+/* ───────────────────────────────────────
+   Selected service chips
+   ─────────────────────────────────────── */
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(25, 54, 212, 0.08);
+  color: #1936d4;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.service-chip button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(25, 54, 212, 0.5);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.1s;
+}
+
+.service-chip button:hover {
+  background: rgba(25, 54, 212, 0.12);
+  color: #1936d4;
+}
+
+/* ───────────────────────────────────────
+   Form section dividers (public forms)
+   ─────────────────────────────────────── */
+
+.form-section-divider {
+  border: none;
+  border-top: 1px solid rgba(21, 21, 21, 0.08);
+  margin: 0;
 }

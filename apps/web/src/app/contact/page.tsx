@@ -27,22 +27,33 @@ export default function ContactPage() {
           description={contactPage.subheadline}
         />
         <section className="px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[0.8fr_1fr]">
-            <div className="grid content-start gap-3">
-              {contactMethods.map((method) => {
-                const Icon = method.icon;
-                return (
-                  <Link
-                    key={method.label}
-                    href={method.href}
-                    className="flex min-h-14 items-center gap-3 rounded-xl border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#1936D4] hover:text-[#1936D4]"
-                  >
-                    <Icon className="h-4 w-4 text-[#E51B23]" />
-                    {method.label}
-                  </Link>
-                );
-              })}
-              <div className="rounded-xl border border-[#151515]/10 bg-white px-4 py-3">
+          <div className="mx-auto grid max-w-[1060px] gap-8 lg:grid-cols-[320px_1fr]">
+            {/* ── Contact sidebar ── */}
+            <div className="grid content-start gap-5">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                  Get in touch
+                </p>
+                <h2 className="mt-2 text-lg font-black uppercase leading-tight">
+                  Reach us directly
+                </h2>
+              </div>
+              <div className="grid gap-2">
+                {contactMethods.map((method) => {
+                  const Icon = method.icon;
+                  return (
+                    <Link
+                      key={method.label}
+                      href={method.href}
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-bold transition-colors hover:bg-[#151515]/4 hover:text-[#1936D4]"
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 text-[#E51B23]" />
+                      {method.label}
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="rounded-lg bg-[#151515]/4 px-4 py-3">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                   Visit
                 </p>
@@ -52,7 +63,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div>
+            {/* ── Contact form ── */}
+            <div className="rounded-2xl border border-[#151515]/8 bg-white p-6 md:p-8">
               <CustomerRequestForm
                 kind="contact"
                 serviceGroups={getServiceSelectGroups()}

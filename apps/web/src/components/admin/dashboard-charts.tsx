@@ -112,12 +112,12 @@ export function TypeDonut({ data }: TypeDonutProps) {
   }
 
   return (
-    <div className="admin-card">
-      <div className="admin-card-header">
+    <div className="admin-card flex h-full flex-col">
+      <div className="admin-card-header shrink-0">
         <p className="admin-card-title">Request types</p>
         <p className="admin-card-subtitle">Quote, contact &amp; order split</p>
       </div>
-      <div className="admin-card-body flex flex-col items-center gap-5">
+      <div className="admin-card-body flex flex-1 flex-col items-center justify-center gap-5">
         {total === 0 ? (
           <p className="py-4 text-center text-sm text-[#151515]/45">
             No requests yet.

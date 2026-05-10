@@ -6,6 +6,8 @@ import type {
   TextareaHTMLAttributes,
 } from "react";
 
+import { SelectDropdown } from "./select-dropdown";
+
 type BaseFieldProps = {
   id: string;
   label: string;
@@ -140,32 +142,18 @@ export function SelectField({
   required,
   onChange,
 }: CustomSelectFieldProps) {
-  const describedBy = [
-    helperText ? `${id}-helper` : null,
-    error ? `${id}-error` : null,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
     <FieldFrame id={id} label={label} helperText={helperText} error={error}>
-      <select
+      <SelectDropdown
         id={id}
         name={name}
-        required={required}
+        options={options}
+        placeholder={placeholder}
         defaultValue={defaultValue}
-        className="h-10 rounded-lg border border-[#151515]/10 bg-white px-3 text-sm outline-none transition-colors focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
-        aria-invalid={error ? true : undefined}
-        aria-describedby={describedBy || undefined}
-        onChange={(event) => onChange?.(event.target.value)}
-      >
-        {placeholder ? <option value="">{placeholder}</option> : null}
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+        required={required}
+        onChange={onChange}
+        error={Boolean(error)}
+      />
     </FieldFrame>
   );
 }

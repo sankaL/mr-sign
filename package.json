@@ -16,6 +16,7 @@
     "db:migrate": "corepack pnpm --filter @mrsign/db migrate",
     "db:migrate:deploy": "corepack pnpm --filter @mrsign/db migrate:deploy",
     "db:seed": "corepack pnpm --filter @mrsign/db seed",
+    "db:seed:requests": "corepack pnpm --filter @mrsign/db seed:requests",
     "db:create-admin": "corepack pnpm --filter @mrsign/db create-admin"
   },
   "devDependencies": {

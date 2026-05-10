@@ -10,6 +10,7 @@
     "migrate": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy",
     "seed": "tsx scripts/seed.ts",
+    "seed:requests": "tsx scripts/seed-requests.ts",
     "create-admin": "tsx scripts/create-first-admin.ts",
     "typecheck": "prisma generate && tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",

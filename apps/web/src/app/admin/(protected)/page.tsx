@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   getDashboardStats,
   getRecentRequests,
+  getRequestTrends,
   getServicesNeedingAttention,
 } from "@/lib/admin/data";
 import { requireActiveAdminSession } from "@/lib/admin-session";
@@ -15,6 +16,7 @@ import {
   StatusBarChart,
   TypeDonut,
 } from "@/components/admin/dashboard-charts";
+import { RequestTrendChart } from "@/components/admin/request-trend-chart";
 import { AnimatedSection } from "@/components/admin/animated-section";
 
 export const metadata = { title: "Dashboard" };
@@ -36,6 +38,10 @@ export default async function AdminDashboardPage() {
   const stats = await getDashboardStats();
   const recent = await getRecentRequests();
   const attentionServices = await getServicesNeedingAttention();
+
+  const oneYearAgo = new Date();
+  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+  const trends = await getRequestTrends(oneYearAgo);
 
   const quoteUrl = "/admin/requests?type=QUOTE&status=NEW";
   const contactUrl = "/admin/requests?type=CONTACT&status=NEW";
@@ -76,8 +82,13 @@ export default async function AdminDashboardPage() {
         />
       </div>
 
+      {/* ── Request trend ─────────────────────── */}
+      <AnimatedSection delay={0.2} className="mt-8">
+        <RequestTrendChart data={trends} />
+      </AnimatedSection>
+
       {/* ── Charts ───────────────────────────── */}
-      <AnimatedSection delay={0.24} className="mt-8">
+      <AnimatedSection delay={0.28} className="mt-8">
         <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
           <StatusBarChart data={stats.statusCounts} />
           <TypeDonut data={stats.typeCounts} />
@@ -85,7 +96,7 @@ export default async function AdminDashboardPage() {
       </AnimatedSection>
 
       {/* ── Recent submissions + Attention ───── */}
-      <AnimatedSection delay={0.32} className="mt-8">
+      <AnimatedSection delay={0.36} className="mt-8">
         <div className="grid gap-5 lg:grid-cols-[1fr_1fr]">
           {/* Recent submissions */}
           <div className="admin-card">

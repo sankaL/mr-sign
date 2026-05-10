@@ -12,6 +12,7 @@ import type {
   ServiceSelectGroup,
 } from "./customer-request-types";
 import { SelectField, TextAreaField, TextField } from "./form-field";
+import { ServiceSelector } from "./service-selector";
 
 type CustomerRequestFormProps = {
   kind: CustomerRequestKind;
@@ -22,12 +23,6 @@ type CustomerRequestFormProps = {
 const initialState: CustomerRequestFormState = {
   status: "idle",
 };
-
-const headingByKind = {
-  quote: "Quote details",
-  order: "Order request",
-  contact: "Contact message",
-} as const satisfies Record<CustomerRequestKind, string>;
 
 const detailsLabelByKind = {
   quote: "Project details",
@@ -89,30 +84,47 @@ function SubmitButton({
 
 function Confirmation({ state }: { state: CustomerRequestFormState }) {
   return (
-    <div className="rounded-[1.75rem] border border-[#151515]/10 bg-white p-6">
-      <div className="flex items-start gap-4">
-        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
-          <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
-        </span>
-        <div>
-          <h2 className="text-xl font-black uppercase leading-tight">
-            {state.message}
-          </h2>
-          {state.requestCode && state.requestCode !== "Received" ? (
-            <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/68">
-              Your request code is{" "}
-              <span className="font-black text-[#1936D4]">
-                {state.requestCode}
-              </span>
-              . The shop will follow up by phone or email.
-            </p>
-          ) : (
-            <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/68">
-              The shop will follow up by phone or email.
-            </p>
-          )}
-        </div>
+    <div className="flex items-start gap-4 py-6">
+      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
+        <CheckCircle2 className="h-5 w-5" strokeWidth={2.5} />
+      </span>
+      <div>
+        <h2 className="text-xl font-black uppercase leading-tight">
+          {state.message}
+        </h2>
+        {state.requestCode && state.requestCode !== "Received" ? (
+          <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/68">
+            Your request code is{" "}
+            <span className="font-black text-[#1936D4]">
+              {state.requestCode}
+            </span>
+            . The shop will follow up by phone or email.
+          </p>
+        ) : (
+          <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/68">
+            The shop will follow up by phone or email.
+          </p>
+        )}
       </div>
+    </div>
+  );
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <div>
+      <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+        {eyebrow}
+      </p>
+      <h2 className="mt-2 text-lg font-black uppercase leading-tight">
+        {title}
+      </h2>
     </div>
   );
 }
@@ -135,17 +147,13 @@ export function CustomerRequestForm({
   }
 
   return (
-    <form action={formAction} className="grid gap-6">
-      <div className="grid gap-4 rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6">
-        <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-            Contact information
-          </p>
-          <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-            How should we reach you?
-          </h2>
-        </div>
-
+    <form action={formAction} className="grid gap-8">
+      {/* ── Contact information ── */}
+      <section className="grid gap-5">
+        <SectionHeading
+          eyebrow="Contact information"
+          title="How should we reach you?"
+        />
         <div className="grid gap-4 md:grid-cols-2">
           <TextField
             id={`${kind}-first-name`}
@@ -197,53 +205,23 @@ export function CustomerRequestForm({
             required
           />
         </div>
-      </div>
+      </section>
 
+      <hr className="form-section-divider" />
+
+      {/* ── Services & project details, or contact reason ── */}
       {includeProjectFields ? (
-        <div className="grid gap-4 rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6">
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-              {headingByKind[kind]}
-            </p>
-            <h2 className="mt-2 text-xl font-black uppercase leading-tight">
-              Select services and project specs
-            </h2>
-          </div>
+        <section className="grid gap-5">
+          <SectionHeading
+            eyebrow="Quote details"
+            title="Select services and project specs"
+          />
 
-          <fieldset className="grid gap-3">
-            <legend className="text-sm font-black uppercase tracking-wide">
-              Services
-            </legend>
-            <div className="grid gap-3 md:grid-cols-2">
-              {serviceGroups.map((group) => (
-                <div key={group.label} className="grid content-start gap-2">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1936D4]">
-                    {group.label}
-                  </p>
-                  {group.options.map((option) => (
-                    <label
-                      key={option.value}
-                      className="flex min-h-11 items-center gap-3 rounded-xl border border-[#151515]/10 px-3 py-2 text-sm font-bold transition-colors hover:border-[#1936D4]"
-                    >
-                      <input
-                        type="checkbox"
-                        name="services"
-                        value={option.value}
-                        defaultChecked={option.value === defaultService}
-                        className="h-4 w-4 accent-[#1936D4]"
-                      />
-                      {option.label}
-                    </label>
-                  ))}
-                </div>
-              ))}
-            </div>
-            {errors.services ? (
-              <p className="text-xs font-black leading-5 text-[#E51B23]">
-                {errors.services}
-              </p>
-            ) : null}
-          </fieldset>
+          <ServiceSelector
+            serviceGroups={serviceGroups}
+            defaultSelected={defaultService}
+            error={errors.services}
+          />
 
           <div className="grid gap-4 md:grid-cols-2">
             <TextField
@@ -289,9 +267,13 @@ export function CustomerRequestForm({
               helperText="No file upload is included. Email artwork separately if needed."
             />
           </div>
-        </div>
+        </section>
       ) : (
-        <div className="grid gap-4 rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6">
+        <section className="grid gap-5">
+          <SectionHeading
+            eyebrow="Your inquiry"
+            title="What can we help with?"
+          />
           <SelectField
             id="contact-reason"
             name="reasonForContact"
@@ -301,10 +283,13 @@ export function CustomerRequestForm({
             error={errors.reasonForContact}
             required
           />
-        </div>
+        </section>
       )}
 
-      <div className="grid gap-4 rounded-[1.75rem] border border-[#151515]/10 bg-white p-5 md:p-6">
+      <hr className="form-section-divider" />
+
+      {/* ── Message / details ── */}
+      <section className="grid gap-5">
         <TextAreaField
           id={`${kind}-project-details`}
           name="projectDetails"
@@ -344,7 +329,7 @@ export function CustomerRequestForm({
           </p>
           <SubmitButton kind={kind} isPending={isPending} />
         </div>
-      </div>
+      </section>
     </form>
   );
 }

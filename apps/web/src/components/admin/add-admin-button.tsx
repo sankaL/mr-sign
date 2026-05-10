@@ -26,7 +26,7 @@ export function AddAdminButton() {
       <button
         type="button"
         onClick={handleOpen}
-        className="inline-flex h-9 items-center gap-2 rounded-lg bg-[#151515] px-4 text-sm font-semibold !text-white transition-colors hover:bg-[#3b82f6]"
+        className="inline-flex h-9 items-center gap-2 rounded-lg bg-[#151515] px-4 !text-sm !font-semibold !text-white transition-colors hover:bg-[#3b82f6]"
       >
         <Plus className="h-4 w-4" strokeWidth={2} />
         Add admin

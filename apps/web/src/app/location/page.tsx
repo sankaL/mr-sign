@@ -76,10 +76,10 @@ export default function LocationPage() {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     href={siteContact.directionsUrl}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
                   >
                     Get directions
-                    <Navigation className="h-4 w-4" strokeWidth={2.5} />
+                    <Navigation className="h-4 w-4 !text-white" strokeWidth={2.5} />
                   </Link>
                   <Link
                     href={siteContact.phoneHref}

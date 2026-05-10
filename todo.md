@@ -1,6 +1,11 @@
 # Todo
 
-## 1. Investigate Admin Services Features
+## 1. Create Seed Script for All Services
+- [ ] Create a seed script that seeds all services with pricing
+- [ ] Set all services to active by default
+- [ ] Check existing Prisma schema in `packages/db/` for service and pricing models
+
+## 2. Investigate Admin Services Features
 - [ ] Find out what "services" features in the admin page means and what it actually does.
   - Paths: `apps/web/src/app/admin/(protected)/services/`
   - Components: `apps/web/src/components/admin/services-table.tsx`, `service-form.tsx`, `service-form-wizard.tsx`, `service-step-basics.tsx`, `service-step-pricing.tsx`, `service-step-visibility.tsx`, `service-status-toggle.tsx`
@@ -26,12 +31,22 @@
 - [ ] Review `apps/web/src/components/admin/service-step-visibility.tsx` – step 3 alignment
 - [ ] Check all input forms for consistent alignment
 
-## 5. Make Admin Settings Page Editable
+## 5. Admin Delete Actions
+- [ ] Delete a service – add delete button/confirmation to service detail page or table
+- [ ] Delete a user – add delete button/confirmation to users page
+- [ ] Delete a request – add delete button/confirmation to request detail page or table
+
+## 6. Make Admin Settings Page Editable
 - [ ] Review `apps/web/src/app/admin/(protected)/settings/page.tsx` – current settings page
 - [ ] Determine what settings need to be editable (site config, contact info, etc.)
 - [ ] Implement save/persist functionality
 
-## 6. Add Full-Width Monthly Requests Graph to Dashboard
+## 7. Add Google Map to Location Page and Home Page
+- [ ] Add Google Map component to the location page
+- [ ] Add Google Map component to the home page
+- [ ] Set up Google Maps API key and configuration
+
+## 8. Add Full-Width Monthly Requests Graph to Dashboard
 - [ ] `apps/web/src/app/admin/(protected)/page.tsx` – dashboard page
 - [ ] `apps/web/src/components/admin/dashboard-charts.tsx` – existing chart components
 - [ ] `apps/web/src/lib/admin/data.ts` – `getDashboardStats()` data function

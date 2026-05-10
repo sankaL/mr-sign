@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { CustomerRequestForm } from "@/components/forms/customer-request-form";
 import { SiteShell } from "@/components/site/site-shell";
-import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import {
   getServiceSelectGroups,
@@ -36,16 +35,13 @@ export default async function RequestQuotePage({
           title={quotePage.headline}
           description={quotePage.subheadline}
         />
-        <section className="px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto max-w-[1152px]">
-            <CustomerRequestForm
-              kind="quote"
-              serviceGroups={getServiceSelectGroups()}
-              defaults={defaults}
-            />
-          </div>
+        <section className="mx-auto max-w-[880px] px-5 py-10 md:px-10 md:py-14">
+          <CustomerRequestForm
+            kind="quote"
+            serviceGroups={getServiceSelectGroups()}
+            defaults={defaults}
+          />
         </section>
-        <CtaSection title="Prefer to speak with the shop first?" />
       </main>
     </SiteShell>
   );

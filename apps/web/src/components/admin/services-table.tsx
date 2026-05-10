@@ -314,7 +314,7 @@ export function ServicesTable({ services, typeOptions }: ServicesTableProps) {
                         {service.status === "DRAFT" ? (
                           <Link
                             href={`/admin/services/${service.id}`}
-                            className="inline-flex h-8 items-center rounded-lg bg-[#3b82f6] px-3 text-xs font-semibold text-white transition-colors hover:bg-[#1d4ed8]"
+                            className="inline-flex h-8 items-center rounded-lg bg-[#3b82f6] px-3 text-xs font-semibold !text-white transition-colors hover:bg-[#1d4ed8]"
                           >
                             Continue
                           </Link>

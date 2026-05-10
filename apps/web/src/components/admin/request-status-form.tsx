@@ -6,6 +6,7 @@ import {
   updateRequestStatus,
   type RequestStatusFormState,
 } from "@/app/actions/admin-requests";
+import { SelectDropdown } from "@/components/forms/select-dropdown";
 
 const statuses = [
   { value: "NEW", label: "New" },
@@ -43,17 +44,12 @@ export function RequestStatusForm({
         <p className="admin-card-subtitle">Change the request workflow stage</p>
       </div>
       <div className="admin-card-body grid gap-4">
-        <select
+        <SelectDropdown
           name="status"
+          options={statuses}
           defaultValue={currentStatus}
-          className="h-10 w-full rounded-lg border border-[#151515]/10 bg-white px-3 text-sm outline-none transition-colors focus:border-[#3b82f6]"
-        >
-          {statuses.map((s) => (
-            <option key={s.value} value={s.value}>
-              {s.label}
-            </option>
-          ))}
-        </select>
+          className="w-full"
+        />
         {state.message ? (
           <p
             className={`rounded-lg px-4 py-3 text-sm font-semibold ${

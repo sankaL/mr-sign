@@ -1,7 +1,7 @@
 COMPOSE ?= docker compose
 APP_SERVICE ?= app
 
-.PHONY: dev dev-down dev-logs db-migrate db-migrate-deploy db-seed
+.PHONY: dev dev-down dev-logs db-migrate db-migrate-deploy db-seed db-seed-requests
 
 dev:
 	$(COMPOSE) up --build
@@ -20,3 +20,6 @@ db-migrate-deploy:
 
 db-seed:
 	$(COMPOSE) run --rm $(APP_SERVICE) corepack pnpm db:seed
+
+db-seed-requests:
+	$(COMPOSE) run --rm $(APP_SERVICE) corepack pnpm db:seed:requests

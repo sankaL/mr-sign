@@ -29,8 +29,10 @@ async function getOrCreateDevAdmin(): Promise<ActiveAdminSession | null> {
     };
   }
 
-  const user = await prisma.user.create({
-    data: {
+  const user = await prisma.user.upsert({
+    where: { email: "dev@mrsignandprint.net" },
+    update: {},
+    create: {
       id: randomUUID(),
       email: "dev@mrsignandprint.net",
       name: "Dev Admin",
@@ -38,8 +40,10 @@ async function getOrCreateDevAdmin(): Promise<ActiveAdminSession | null> {
     },
   });
 
-  const admin = await prisma.adminUser.create({
-    data: {
+  const admin = await prisma.adminUser.upsert({
+    where: { email: "dev@mrsignandprint.net" },
+    update: { isActive: true, userId: user.id },
+    create: {
       email: "dev@mrsignandprint.net",
       name: "Dev Admin",
       isActive: true,

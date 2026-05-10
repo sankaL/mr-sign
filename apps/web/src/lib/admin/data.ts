@@ -113,6 +113,30 @@ export async function getServicesNeedingAttention(): Promise<
   }
 }
 
+/* ─── Request trend data ─────────────────────── */
+
+export type RequestTrendPoint = {
+  date: string;
+  count: number;
+};
+
+export async function getRequestTrends(
+  startDate: Date,
+): Promise<RequestTrendPoint[]> {
+  const rows = await prisma.$queryRaw<Array<{ date: Date; count: bigint }>>`
+    SELECT DATE("submittedAt") AS date, COUNT(*) AS count
+    FROM "customer_requests"
+    WHERE "submittedAt" >= ${startDate}
+    GROUP BY DATE("submittedAt")
+    ORDER BY date ASC
+  `;
+
+  return rows.map((row) => ({
+    date: row.date.toISOString().slice(0, 10),
+    count: Number(row.count),
+  }));
+}
+
 /* ─── Paginated request list ─────────────────── */
 
 export type PaginatedRequests = {
