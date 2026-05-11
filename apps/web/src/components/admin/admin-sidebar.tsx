@@ -60,17 +60,17 @@ export function AdminSidebarLayout({
               onClick={() => setOpen(false)}
               className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] transition-all ${
                 active
-                  ? "bg-[#CCFF00] font-semibold"
-                  : "text-[#ffffffb3] font-normal hover:bg-white/10 hover:text-[#ffffff]"
+                  ? "bg-[#CCFF00] font-semibold text-[#151515]"
+                  : "text-white font-normal hover:bg-white/10"
               }`}
-              style={active ? { color: "#000" } : undefined}
             >
               <Icon
-                className={`h-[18px] w-[18px] shrink-0 ${active ? "" : "text-white/70 group-hover:text-white"}`}
-                style={active ? { color: "#000" } : undefined}
+                className={`h-[18px] w-[18px] shrink-0 ${active ? "text-[#151515]" : "text-white/70 group-hover:text-white"}`}
                 strokeWidth={2}
               />
-              {item.label}
+              <span className={active ? "text-[#151515]" : "text-white"}>
+                {item.label}
+              </span>
             </Link>
           );
         })}

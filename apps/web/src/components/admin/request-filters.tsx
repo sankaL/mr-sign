@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useTransition } from "react";
+import { useCallback, useEffect, useRef, useTransition } from "react";
 import { Search } from "lucide-react";
 
 import { MultiSelectDropdown } from "@/components/admin/multi-select-dropdown";
@@ -37,7 +37,14 @@ export function RequestFilters({
 }: RequestFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    if (searchInputRef.current && searchInputRef.current.value !== initialQ) {
+      searchInputRef.current.value = initialQ;
+    }
+  }, [initialQ]);
 
   const updateFilters = useCallback(
     (updates: Record<string, string | string[]>) => {
@@ -75,12 +82,15 @@ export function RequestFilters({
           strokeWidth={2}
         />
         <input
+          ref={searchInputRef}
           type="text"
           name="q"
           placeholder="Search by code, name, or email…"
-          key={initialQ}
           defaultValue={initialQ}
-          onChange={(e) => updateFilters({ q: e.target.value })}
+          onChange={(e) => {
+            const nextValue = e.target.value;
+            updateFilters({ q: nextValue });
+          }}
           className="h-10 w-full rounded-lg border border-[#151515]/10 bg-white pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-[#151515]/35 focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/10"
         />
       </div>
@@ -99,6 +109,7 @@ export function RequestFilters({
         options={requestStatuses}
         selected={initialStatuses}
         onChange={(values) => updateFilters({ status: values })}
+        align="right"
       />
 
       {isPending ? (

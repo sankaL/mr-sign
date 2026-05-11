@@ -13,6 +13,7 @@ type MultiSelectDropdownProps = {
   options: Option[];
   selected: string[];
   onChange: (selected: string[]) => void;
+  align?: "left" | "right";
 };
 
 export function MultiSelectDropdown({
@@ -20,9 +21,11 @@ export function MultiSelectDropdown({
   options,
   selected,
   onChange,
+  align = "left",
 }: MultiSelectDropdownProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   /* Close on click outside */
   useEffect(() => {
@@ -34,6 +37,19 @@ export function MultiSelectDropdown({
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  /* Close on Escape */
+  useEffect(() => {
+    if (!open) return;
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [open]);
 
   const toggle = useCallback(
@@ -55,6 +71,7 @@ export function MultiSelectDropdown({
   return (
     <div className="admin-multiselect" ref={ref}>
       <button
+        ref={triggerRef}
         type="button"
         className="admin-multiselect-trigger"
         data-open={String(open)}
@@ -70,7 +87,11 @@ export function MultiSelectDropdown({
       </button>
 
       {open ? (
-        <div className="admin-multiselect-panel" role="listbox">
+        <div
+          className="admin-multiselect-panel"
+          role="listbox"
+          style={align === "right" ? { left: "auto", right: 0 } : undefined}
+        >
           {options.map((option) => {
             const isSelected = selected.includes(option.value);
             return (

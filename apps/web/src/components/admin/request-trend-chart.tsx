@@ -125,9 +125,11 @@ export function RequestTrendChart({ data }: RequestTrendChartProps) {
             className="hidden w-[160px] rounded-lg sm:ml-auto sm:flex"
             aria-label="Select time range"
           >
-            <SelectValue placeholder="Last year" />
+            <SelectValue placeholder="Last year">
+              {TIME_RANGE_OPTIONS.find((opt) => opt.value === timeRange)?.label || "Last year"}
+            </SelectValue>
           </SelectTrigger>
-          <SelectContent className="rounded-xl">
+          <SelectContent className="rounded-xl" align="end">
             {TIME_RANGE_OPTIONS.map((opt) => (
               <SelectItem key={opt.value} value={opt.value}>
                 {opt.label}

@@ -32,15 +32,15 @@ export function useDropdownPosition({
   });
 
   const recalc = useCallback(() => {
-    if (!triggerRef.current) return;
+    if (!triggerRef.current?.isConnected) return;
     const rect = triggerRef.current.getBoundingClientRect();
     const minWidth = Math.max(rect.width, 210);
-    const windowWidth = window.innerWidth;
+    const viewportWidth = document.documentElement.clientWidth;
 
-    if (align === "auto" && rect.left + minWidth > windowWidth - 10) {
+    if (align === "auto" && rect.left + minWidth > viewportWidth - 10) {
       setPlacement({
         top: rect.bottom + 4,
-        right: windowWidth - rect.right,
+        right: viewportWidth - rect.right,
         minWidth,
       });
     } else {
