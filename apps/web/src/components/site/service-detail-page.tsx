@@ -3,7 +3,7 @@ import {
   getRelatedServices,
   type CategorySlug,
 } from "@mrsign/content";
-import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, FileText, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -92,44 +92,63 @@ export async function ServiceDetailPage({
           </div>
         </section>
 
-        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[1fr_0.76fr]">
-            <div>
+        <section className="bg-[#FFFAF0] px-5 py-16 md:px-10 md:py-24">
+          <div className="mx-auto max-w-[1152px]">
+            {/* Section header */}
+            <div className="mb-10 flex items-center gap-3 md:mb-14">
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1936D4] text-white">
+                <FileText className="h-3.5 w-3.5" strokeWidth={2.5} />
+              </span>
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
                 Service details
               </p>
-              <div className="mt-4 grid gap-4">
-                {service.body.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className="text-sm font-semibold leading-6 text-[#151515]/70"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
             </div>
 
-            <div className="grid content-start gap-5">
-              <PricingSummary pricing={service.pricing} />
-
+            <div className="grid gap-12 lg:grid-cols-[1fr_0.72fr] lg:gap-16">
+              {/* Body text */}
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  What we handle
-                </p>
-                <ul className="mt-4 grid gap-2.5">
-                  {service.capabilities.map((capability) => (
-                    <li
-                      key={capability}
-                      className="flex gap-3 text-sm font-bold leading-6 text-[#151515]/72"
+                <div className="grid gap-5">
+                  {service.body.map((paragraph, i) => (
+                    <p
+                      key={paragraph}
+                      className={
+                        i === 0
+                          ? "border-l-2 border-[#CCFF00] pl-5 text-base font-semibold leading-7 text-[#151515]/80 md:text-[1.05rem]"
+                          : "text-sm font-semibold leading-7 text-[#151515]/60 md:text-base"
+                      }
                     >
-                      <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
-                        <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
-                      </span>
-                      {capability}
-                    </li>
+                      {paragraph}
+                    </p>
                   ))}
-                </ul>
+                </div>
+
+                {service.capabilities.length > 0 && (
+                  <div className="mt-10">
+                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                      What we handle
+                    </p>
+                    <ul className="mt-5 grid gap-3">
+                      {service.capabilities.map((capability) => (
+                        <li
+                          key={capability}
+                          className="flex items-start gap-3 text-sm font-semibold leading-6 text-[#151515]/75"
+                        >
+                          <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515] shadow-[0_0_0_3px_rgba(204,255,0,0.18)]">
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                          </span>
+                          {capability}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Pricing card */}
+              <div className="lg:sticky lg:top-8 lg:self-start">
+                <div className="rounded-2xl border border-[#151515]/8 bg-white/60 p-6 shadow-[0_2px_24px_rgba(21,21,21,0.05)] backdrop-blur-sm md:p-8">
+                  <PricingSummary pricing={service.pricing} />
+                </div>
               </div>
             </div>
           </div>
@@ -138,16 +157,14 @@ export async function ServiceDetailPage({
         {related.length > 0 ? (
           <section className="bg-white px-5 py-10 md:px-10 md:py-14">
             <div className="mx-auto max-w-[1440px]">
-              <div className="grid gap-3 md:grid-cols-[0.7fr_1.3fr] md:items-end">
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                    Related services
-                  </p>
-                  <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
-                    Often quoted together
-                  </h2>
-                </div>
-                <p className="max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
+              <div className="max-w-3xl">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                  Related services
+                </p>
+                <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
+                  Often quoted together
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
                   These services are commonly part of the same sign, print, or
                   design conversation.
                 </p>

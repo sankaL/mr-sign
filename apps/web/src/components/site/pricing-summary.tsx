@@ -54,7 +54,7 @@ export function PricingSummary({
       className={
         compact
           ? "border-t border-[#151515]/10 pt-3"
-          : "border-y border-[#151515]/12 py-5"
+          : "py-0"
       }
     >
       <div className="grid gap-3 sm:grid-cols-[auto_1fr] sm:items-start">
