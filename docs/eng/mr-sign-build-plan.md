@@ -59,6 +59,8 @@
 | AH-2026-05-11-01 | Fix mobile quote CTA text color                          | Done        | Kept the mobile menu Request Quote CTA label white in base, hover, and focus states.                                                                                                                                      | 2026-05-11   |
 | AH-2026-05-11-02 | Refine animated popular service cards                    | Done        | Improved the home popular service card shell, image overlay, text treatment, and leaner navigation-style CTA button while preserving the existing 3D tilt and button motion.                                              | 2026-05-11   |
 | AH-2026-05-11-03 | Improve floating hero card text visibility               | Done        | Increased the floating hero card label and meta text weight and size, with a subtle dark drop shadow, while preserving the existing glass-card motion style.                                                              | 2026-05-11   |
+| AH-2026-05-11-04 | Simplify popular service card actions                    | Done        | Removed the popular service card text CTA, let the title and description span the card width, and moved the circular right-arrow link to the lower-right corner.                                                          | 2026-05-11   |
+| AH-2026-05-11-05 | Show full popular service descriptions                   | Done        | Removed the two-line clamp from popular service card descriptions so the full service summary is visible.                                                                                                                 | 2026-05-11   |
 
 ---
 

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { ArrowUpRight, Navigation } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils"; // Your utility for merging class names
 import { useRouter } from "next/navigation";
@@ -17,9 +17,9 @@ export interface InteractiveTravelCardProps {
   subtitle: string;
   /** The URL for the background image. */
   imageUrl: string;
-  /** The text for the primary action button, e.g., "Book your trip" */
+  /** Legacy action text retained for existing call sites. */
   actionText: string;
-  /** The destination URL for the top-right link. */
+  /** The destination URL for the card link. */
   href: string;
   /** Callback function when the primary action button is clicked. */
   onActionClick?: () => void;
@@ -35,7 +35,7 @@ export const InteractiveTravelCard = React.forwardRef<
   InteractiveTravelCardProps
 >(
   (
-    { title, subtitle, imageUrl, actionText, href, onActionClick, className },
+    { title, subtitle, imageUrl, href, onActionClick, className },
     ref
   ) => {
     const router = useRouter();
@@ -75,11 +75,6 @@ export const InteractiveTravelCard = React.forwardRef<
       }
     };
 
-    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.stopPropagation();
-      handleActionClick();
-    };
-
     return (
       <motion.div
         ref={ref}
@@ -113,45 +108,32 @@ export const InteractiveTravelCard = React.forwardRef<
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,32,0.74)_0%,rgba(12,18,32,0.26)_42%,rgba(12,18,32,0.88)_100%)]" />
           <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_24%_20%,rgba(255,255,255,0.28),transparent_44%)]" />
 
-          <div className="relative flex h-full flex-col justify-between p-4 text-white">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0 pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.58)]">
-                <motion.h2
-                  style={{ transform: "translateZ(50px)" }}
-                  className="text-balance text-2xl font-black leading-none tracking-normal text-white md:text-[1.7rem]"
-                >
-                  {title}
-                </motion.h2>
-                <motion.p
-                  style={{ transform: "translateZ(40px)" }}
-                  className="mt-2 line-clamp-2 max-w-[16rem] text-sm font-semibold leading-5 text-white/86"
-                >
-                  {subtitle}
-                </motion.p>
-              </div>
-              <motion.a
-                href={href}
-                onClick={(event) => event.stopPropagation()}
-                whileHover={{ scale: 1.1, rotate: "2.5deg" }}
-                whileTap={{ scale: 0.9 }}
-                aria-label={`Learn more about ${title}`}
-                style={{ transform: "translateZ(60px)" }}
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/22 backdrop-blur-md ring-1 ring-inset ring-white/45 transition-colors hover:bg-white/34"
+          <div className="relative flex h-full flex-col p-4 text-white">
+            <div className="min-w-0 pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.58)]">
+              <motion.h2
+                style={{ transform: "translateZ(50px)" }}
+                className="text-balance text-2xl font-black leading-none tracking-normal text-white md:text-[1.7rem]"
               >
-                <ArrowUpRight className="h-5 w-5 text-white" />
-              </motion.a>
+                {title}
+              </motion.h2>
+              <motion.p
+                style={{ transform: "translateZ(40px)" }}
+                className="mt-2 w-full text-sm font-semibold leading-5 text-white/86"
+              >
+                {subtitle}
+              </motion.p>
             </div>
-
-            <motion.button
-              onClick={handleButtonClick}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.96 }}
-              style={{ transform: "translateZ(40px)" }}
-              className="mx-auto flex min-h-10 w-[86%] items-center justify-center gap-1.5 rounded-full bg-[#151515] px-4 py-2 text-center text-xs font-black uppercase tracking-wide text-white shadow-[0_10px_22px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.12)] transition-transform hover:bg-[#1936D4] active:scale-95"
+            <motion.a
+              href={href}
+              onClick={(event) => event.stopPropagation()}
+              whileHover={{ scale: 1.1, rotate: "2.5deg" }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={`Learn more about ${title}`}
+              style={{ transform: "translateZ(60px)" }}
+              className="absolute bottom-4 right-4 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/22 backdrop-blur-md ring-1 ring-inset ring-white/45 transition-colors hover:bg-white/34"
             >
-              {actionText}
-              <Navigation className="h-3.5 w-3.5 text-white" />
-            </motion.button>
+              <ArrowRight className="h-5 w-5 text-white" />
+            </motion.a>
           </div>
         </div>
       </motion.div>
