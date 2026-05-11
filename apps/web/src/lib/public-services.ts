@@ -1,7 +1,9 @@
 import {
   getCategory,
+  getFeaturedServices,
   getService,
   getServicesByCategory,
+  serviceCategories,
   type CategorySlug,
   type GeneratedImageAsset,
   type PublicPricing,
@@ -223,6 +225,27 @@ export async function getPublicService(
   }
 
   return dbService ? serviceFromDb(categorySlug, category, dbService) : null;
+}
+
+export async function getPublicFeaturedServices(): Promise<ServiceDetail[]> {
+  const publicServices = await Promise.all(
+    serviceCategories.map((category) => getPublicServices(category.slug)),
+  );
+  const featured = publicServices
+    .flat()
+    .filter((service) => Boolean(service.isFeatured))
+    .sort(
+      (a, b) =>
+        a.categorySlug.localeCompare(b.categorySlug) ||
+        a.displayOrder - b.displayOrder ||
+        a.name.localeCompare(b.name),
+    );
+
+  if (featured.length > 0) {
+    return featured;
+  }
+
+  return getFeaturedServices();
 }
 
 export async function getPublicStaticServiceParams(categorySlug: CategorySlug) {

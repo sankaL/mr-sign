@@ -1,4 +1,4 @@
-import { businessHours, getFeaturedServices, homePage } from "@mrsign/content";
+import { businessHours, homePage } from "@mrsign/content";
 import {
   ArrowDown,
   ArrowRight,
@@ -13,11 +13,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { InteractiveTravelCard } from "@/components/ui/3d-card";
+import { getPublicFeaturedServices } from "@/lib/public-services";
 import { primaryActions, siteContact } from "@/lib/site";
 
 import { FloatingMrSignHeroCards } from "./hero-motion";
 import { ServiceTeaserCard } from "./service-teaser-card";
-import { InteractiveTravelCard } from "@/components/ui/3d-card";
 
 const displayShadow = {
   textShadow:
@@ -110,8 +111,8 @@ const CircularBadge = () => (
   </Link>
 );
 
-export function HomeHero() {
-  const featuredServices = getFeaturedServices();
+export async function HomeHero() {
+  const featuredServices = await getPublicFeaturedServices();
   const weekdayHours = businessHours
     .filter((item) =>
       ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].includes(

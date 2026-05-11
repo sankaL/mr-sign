@@ -17,6 +17,7 @@ export type ServiceFormState = {
 };
 
 function revalidateServicePaths(categorySlug: string, serviceSlug: string) {
+  revalidatePath("/");
   revalidatePath("/admin/services");
   revalidatePath(`/${categorySlug}`);
   revalidatePath(`/${categorySlug}/${serviceSlug}`);
@@ -174,6 +175,7 @@ export async function updateService(
     },
   });
 
+  revalidatePath("/");
   revalidatePath("/admin/services");
   revalidatePath(`/admin/services/${service.id}`);
   revalidatePath(`/${previousService.category.slug}`);
