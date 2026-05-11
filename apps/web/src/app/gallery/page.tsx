@@ -1,13 +1,11 @@
 import { getGalleryServices } from "@mrsign/content";
 import type { Metadata } from "next";
 
-import { ContentImage } from "@/components/site/content-image";
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { ImageGallery } from "@/components/ui/image-gallery";
 import { PageHeader } from "@/components/ui/page-header";
 import { galleryPage } from "@/lib/site";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: galleryPage.seo.title,

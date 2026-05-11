@@ -47,9 +47,11 @@ function FloatingShopCard({
             className="object-cover"
           />
         </div>
-        <div className="mt-2 text-center">
-          <p className="text-sm font-bold text-white md:text-lg">{label}</p>
-          <p className="mt-1 text-[10px] font-semibold text-white md:text-xs">
+        <div className="mt-2 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
+          <p className="text-base font-black leading-none text-white md:text-xl">
+            {label}
+          </p>
+          <p className="mt-1 text-[11px] font-bold leading-snug text-white md:text-[13px]">
             {meta}
           </p>
         </div>

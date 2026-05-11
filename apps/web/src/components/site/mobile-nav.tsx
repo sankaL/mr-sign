@@ -65,7 +65,7 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
           </div>
           <Link
             href={primaryActions.quote.href}
-            className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4] active:scale-[0.98]"
+            className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#C9455A] hover:!text-white focus-visible:bg-[#C9455A] focus-visible:!text-white active:scale-[0.98]"
             onClick={closeNavigation}
           >
             {primaryActions.quote.label}

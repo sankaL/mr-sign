@@ -2,10 +2,8 @@ import { businessHours, homePage } from "@mrsign/content";
 import {
   ArrowDown,
   ArrowRight,
-  BadgeCheck,
   Clock,
   Mail,
-  Navigation,
   Phone,
   Store,
 } from "lucide-react";
@@ -17,8 +15,8 @@ import { InteractiveTravelCard } from "@/components/ui/3d-card";
 import { getPublicFeaturedServices } from "@/lib/public-services";
 import { primaryActions, siteContact } from "@/lib/site";
 
+import { GoogleMapEmbed } from "./google-map-embed";
 import { FloatingMrSignHeroCards } from "./hero-motion";
-import { ServiceTeaserCard } from "./service-teaser-card";
 
 const displayShadow = {
   textShadow:
@@ -352,31 +350,11 @@ export async function HomeHero() {
             </div>
           </div>
 
-          <Link
-            href={siteContact.directionsUrl}
-            className="relative min-h-64 overflow-hidden rounded-[2rem] border border-white/14 bg-[#CCFF00] p-5 text-[#151515] transition-transform hover:-translate-y-1 active:scale-[0.99]"
-          >
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#15151518_1px,transparent_1px),linear-gradient(to_bottom,#15151518_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-            <div className="relative flex h-full flex-col justify-between">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em]">
-                <Navigation className="h-3.5 w-3.5" />
-                Vaughan
-              </span>
-              <div>
-                <p className="text-4xl font-black uppercase leading-none md:text-5xl">
-                  Four Valley Dr.
-                </p>
-                <p className="mt-3 max-w-sm text-sm font-black uppercase leading-5 tracking-wide">
-                  Serving Vaughan, Concord, Woodbridge, and the Greater Toronto
-                  Area.
-                </p>
-              </div>
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[#151515] px-4 py-2 text-xs font-black uppercase tracking-wide text-white">
-                Open directions
-                <BadgeCheck className="h-4 w-4" strokeWidth={2.5} />
-              </span>
-            </div>
-          </Link>
+          <GoogleMapEmbed
+            title="Google map showing Mr. Sign and Print at 399 Four Valley Dr. Unit 3 in Vaughan"
+            linkLabel="Open directions"
+            className="min-h-64 border-white/14"
+          />
         </div>
       </section>
     </>

@@ -1,14 +1,14 @@
 import Link from "next/link";
+import type { ServiceDetail } from "@mrsign/content";
+
 import { ContentImage } from "@/components/site/content-image";
-import type { ServiceDetail } from "@mrsign/content/src/types"; // Assuming this is available, or we can use any
 
 interface ImageGalleryProps {
-  services: any[]; // using any[] to avoid strict type imports if not exported perfectly, will use proper types if possible
+  services: ServiceDetail[];
 }
 
 export function ImageGallery({ services }: ImageGalleryProps) {
-  // We can chunk the services into groups of 4-6 so they fit well in the accordion rows
-  const chunkedServices = [];
+  const chunkedServices: ServiceDetail[][] = [];
   for (let i = 0; i < services.length; i += 4) {
     chunkedServices.push(services.slice(i, i + 4));
   }
@@ -20,7 +20,7 @@ export function ImageGallery({ services }: ImageGalleryProps) {
           key={rowIndex}
           className="flex flex-col md:flex-row items-center gap-2 h-[600px] md:h-[400px] lg:h-[500px] w-full"
         >
-          {row.map((service, idx) => (
+          {row.map((service) => (
             <Link
               key={service.route}
               href={service.route}

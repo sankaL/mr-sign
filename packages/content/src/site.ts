@@ -19,6 +19,8 @@ export const siteContact = {
   serviceArea: "Vaughan, Concord, and the GTA",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5&output=embed",
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5",
 } as const;

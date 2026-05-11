@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { ArrowUpRight, BadgeCheck } from "lucide-react";
+import { ArrowUpRight, Navigation } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils"; // Your utility for merging class names
 import { useRouter } from "next/navigation";
 
@@ -74,6 +75,11 @@ export const InteractiveTravelCard = React.forwardRef<
       }
     };
 
+    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.stopPropagation();
+      handleActionClick();
+    };
+
     return (
       <motion.div
         ref={ref}
@@ -86,8 +92,7 @@ export const InteractiveTravelCard = React.forwardRef<
           transformStyle: "preserve-3d",
         }}
         className={cn(
-          // Base styles for the card container, using theme variables for border
-          "relative h-[26rem] w-full rounded-2xl bg-transparent shadow-2xl border border-border/30 cursor-pointer",
+          "relative h-[27rem] w-full cursor-pointer rounded-[1.75rem] border border-[#151515]/10 bg-white p-3 shadow-[0_24px_70px_rgba(21,21,21,0.16)]",
           className
         )}
       >
@@ -96,62 +101,56 @@ export const InteractiveTravelCard = React.forwardRef<
             transform: "translateZ(50px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute inset-4 grid h-[calc(100%-2rem)] w-[calc(100%-2rem)] grid-rows-[1fr_auto] rounded-xl shadow-lg"
+          className="absolute inset-3 grid h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] grid-rows-[1fr_auto] overflow-hidden rounded-[1.25rem] border border-white/45 shadow-[0_18px_45px_rgba(21,21,21,0.24)]"
         >
-          {/* Background Image */}
-          <img
+          <Image
             src={imageUrl}
             alt={`${title}, ${subtitle}`}
-            className="absolute inset-0 h-full w-full rounded-xl object-cover object-center"
+            fill
+            sizes="(min-width: 1024px) 320px, 100vw"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
-          
-          {/* Darkening overlay for better text contrast over the image */}
-          <div className="absolute inset-0 h-full w-full rounded-xl bg-gradient-to-b from-black/40 via-black/10 to-black/80" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,18,32,0.74)_0%,rgba(12,18,32,0.26)_42%,rgba(12,18,32,0.88)_100%)]" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_24%_20%,rgba(255,255,255,0.28),transparent_44%)]" />
 
-          {/* Card Content (Header & Footer) */}
-          <div className="relative flex flex-col justify-between rounded-xl p-4 text-white h-full">
-            
-            {/* Header section with text and link */}
-            <div className="flex items-start justify-between">
-              <div>
-                <motion.h2 
+          <div className="relative flex h-full flex-col justify-between p-4 text-white">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0 pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.58)]">
+                <motion.h2
                   style={{ transform: "translateZ(50px)" }}
-                  className="text-2xl font-bold"
+                  className="text-balance text-2xl font-black leading-none tracking-normal text-white md:text-[1.7rem]"
                 >
                   {title}
                 </motion.h2>
-                <motion.p 
+                <motion.p
                   style={{ transform: "translateZ(40px)" }}
-                  className="text-sm font-medium text-white/90 mt-1 line-clamp-2"
+                  className="mt-2 line-clamp-2 max-w-[16rem] text-sm font-semibold leading-5 text-white/86"
                 >
                   {subtitle}
                 </motion.p>
               </div>
               <motion.a
                 href={href}
+                onClick={(event) => event.stopPropagation()}
                 whileHover={{ scale: 1.1, rotate: "2.5deg" }}
                 whileTap={{ scale: 0.9 }}
                 aria-label={`Learn more about ${title}`}
                 style={{ transform: "translateZ(60px)" }}
-                className="flex h-10 w-10 shrink-0 ml-4 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm ring-1 ring-inset ring-white/30 transition-colors hover:bg-white/30"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/22 backdrop-blur-md ring-1 ring-inset ring-white/45 transition-colors hover:bg-white/34"
               >
                 <ArrowUpRight className="h-5 w-5 text-white" />
               </motion.a>
             </div>
 
-            {/* Footer Button */}
             <motion.button
-              onClick={handleActionClick}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={handleButtonClick}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.96 }}
               style={{ transform: "translateZ(40px)" }}
-              className={cn(
-                "w-full flex items-center justify-center gap-2 rounded-full py-3 text-center font-black uppercase tracking-wider text-white transition-transform mt-auto",
-                "bg-[#151515] hover:scale-105 active:scale-95 shadow-lg"
-              )}
+              className="mx-auto flex min-h-10 w-[86%] items-center justify-center gap-1.5 rounded-full bg-[#151515] px-4 py-2 text-center text-xs font-black uppercase tracking-wide text-white shadow-[0_10px_22px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.12)] transition-transform hover:bg-[#1936D4] active:scale-95"
             >
               {actionText}
-              <BadgeCheck className="h-5 w-5" />
+              <Navigation className="h-3.5 w-3.5 text-white" />
             </motion.button>
           </div>
         </div>
