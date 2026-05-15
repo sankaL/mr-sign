@@ -16,7 +16,6 @@ import { getPublicFeaturedServices } from "@/lib/public-services";
 import { primaryActions, siteContact } from "@/lib/site";
 
 import { GoogleMapEmbed } from "./google-map-embed";
-import { FloatingMrSignHeroCards } from "./hero-motion";
 
 const displayShadow = {
   textShadow:
@@ -72,7 +71,7 @@ const ArrowBlack = () => (
 const CircularBadge = () => (
   <Link
     href={primaryActions.quote.href}
-    className="relative flex h-28 w-28 rotate-12 cursor-pointer items-center justify-center rounded-full border-[3px] border-black/5 bg-[#CCFF00] shadow-xl transition-transform hover:scale-105 md:h-36 md:w-36"
+    className="relative flex h-[clamp(4.5rem,8vw,7rem)] w-[clamp(4.5rem,8vw,7rem)] rotate-12 cursor-pointer items-center justify-center rounded-full border-[3px] border-black/5 bg-[#CCFF00] shadow-xl transition-transform hover:scale-105"
     aria-label="Request a free quote"
   >
     <div className="absolute inset-1 animate-[spin_10s_linear_infinite]">
@@ -155,16 +154,15 @@ export async function HomeHero() {
               </div>
             </div>
 
-            <FloatingMrSignHeroCards />
+            <div className="absolute left-[30%] top-[70%] z-40 -translate-x-1/2 -translate-y-1/2 sm:left-[33%] sm:top-[71%] md:left-[28%] md:top-[72%] lg:left-[27%] lg:top-[72%]">
+              <CircularBadge />
+            </div>
 
             <div className="pointer-events-none absolute bottom-[0%] left-[0%] z-20 h-24 w-24 md:left-[10%] md:h-32 md:w-32">
               <ArrowGreenLeft />
             </div>
             <div className="pointer-events-none absolute right-[0%] top-[5%] z-20 h-24 w-24 md:right-[10%] md:h-32 md:w-32">
               <ArrowGreenRight />
-            </div>
-            <div className="absolute bottom-[-10%] right-[0%] z-40 md:right-[15%]">
-              <CircularBadge />
             </div>
           </div>
 
