@@ -68,6 +68,8 @@
 | AH-2026-05-14-02 | Remove logo ampersand                                    | Done        | Removed the ampersand separator from the public and admin logo components while keeping the landing hero card removal.                                                                                                    | 2026-05-14   |
 | AH-2026-05-14-03 | Reposition hero quote badge                              | Done        | Moved the circular hero quote badge into the selected left-side hero gap below Printing, restored its larger responsive size, and refined its final responsive position.                                                   | 2026-05-14   |
 | AH-2026-05-18-01 | Add Railway production deploy and autodeploy support     | Done        | Added Railway config-as-code, a production health endpoint, idempotent deploy bootstrap commands for migrations/seed/admin creation, and the documentation needed to wire GitHub-triggered Railway deploys from `main`. | 2026-05-18   |
+| AH-2026-05-18-02 | Seed Railway production request demo data                | Done        | Ran the existing request seed script against the Railway production database using the public Postgres URL and inserted 242 seeded customer requests for admin/demo review.                                                 | 2026-05-18   |
+| AH-2026-05-18-03 | Diagnose Railway admin magic-link email failure          | Done        | Confirmed the Resend API key can send but the configured sender domain `mrsignandprint.net` is not verified, and improved admin login email error logging to include the underlying Resend message.                      | 2026-05-18   |
 
 ---
 

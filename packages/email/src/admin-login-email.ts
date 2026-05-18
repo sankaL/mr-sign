@@ -77,7 +77,9 @@ export async function sendAdminLoginEmail(
   });
 
   if (result.error) {
-    throw new Error("Resend failed to send the admin login email.");
+    throw new Error(
+      `Resend failed to send the admin login email: ${result.error.message}`,
+    );
   }
 
   return { status: "sent", id: result.data?.id ?? null };
