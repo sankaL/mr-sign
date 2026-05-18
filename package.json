@@ -17,7 +17,8 @@
     "db:migrate:deploy": "corepack pnpm --filter @mrsign/db migrate:deploy",
     "db:seed": "corepack pnpm --filter @mrsign/db seed",
     "db:seed:requests": "corepack pnpm --filter @mrsign/db seed:requests",
-    "db:create-admin": "corepack pnpm --filter @mrsign/db create-admin"
+    "db:create-admin": "corepack pnpm --filter @mrsign/db create-admin",
+    "db:bootstrap": "corepack pnpm db:migrate:deploy && corepack pnpm db:seed && corepack pnpm db:create-admin"
   },
   "devDependencies": {
     "prettier": "3.8.3"

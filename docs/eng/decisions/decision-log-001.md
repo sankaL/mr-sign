@@ -82,3 +82,20 @@ Impact:
 - Admin user management must create or reactivate both Better Auth `User` and `AdminUser` records.
 - Deactivation must keep at least one active admin and prevent self-deactivation.
 - Real login email delivery still depends on Resend production configuration.
+
+## 2026-05-18: Use Railway config-as-code and an idempotent pre-deploy bootstrap
+
+Decision: Production deployments should use a repo-level `railway.toml` and a Railway pre-deploy command that runs Prisma migrations, reseeds canonical service data, and ensures the first admin account exists.
+
+Rationale:
+
+- The production deployment path should be reproducible from GitHub without relying on one-off dashboard-only settings.
+- Railway health checks need an explicit application endpoint so deployments can fail fast when the app does not start correctly.
+- Database migrations, service-catalog reseeding, and first-admin creation are safe to run on every deploy because the existing scripts are idempotent.
+- GitHub autodeploys on `main` are safer when deployment behavior lives in version-controlled code alongside the app.
+
+Impact:
+
+- Railway production uses the root `Dockerfile` plus `railway.toml` rather than ad hoc per-service commands.
+- The web service must define `FIRST_ADMIN_EMAIL`, `FIRST_ADMIN_NAME`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_SITE_URL`, and database/email variables in Railway.
+- Every successful deploy can recreate missing base catalog data and reactivate the configured first admin without manual shell access.

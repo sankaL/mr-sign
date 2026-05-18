@@ -67,6 +67,7 @@
 | AH-2026-05-14-01 | Update hero cards and logo wording                       | Done        | Removed the two floating public landing hero cards and added an ampersand between Mr. Sign and Print in both public and admin logo components.                                                                            | 2026-05-14   |
 | AH-2026-05-14-02 | Remove logo ampersand                                    | Done        | Removed the ampersand separator from the public and admin logo components while keeping the landing hero card removal.                                                                                                    | 2026-05-14   |
 | AH-2026-05-14-03 | Reposition hero quote badge                              | Done        | Moved the circular hero quote badge into the selected left-side hero gap below Printing, restored its larger responsive size, and refined its final responsive position.                                                   | 2026-05-14   |
+| AH-2026-05-18-01 | Add Railway production deploy and autodeploy support     | Done        | Added Railway config-as-code, a production health endpoint, idempotent deploy bootstrap commands for migrations/seed/admin creation, and the documentation needed to wire GitHub-triggered Railway deploys from `main`. | 2026-05-18   |
 
 ---
 
