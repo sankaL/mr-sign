@@ -47,4 +47,4 @@ COPY --from=builder /app/packages ./packages
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "if [ -z \"$BETTER_AUTH_SECRET\" ] || [ \"$BETTER_AUTH_SECRET\" = \"replace-with-a-secure-secret\" ]; then echo 'BETTER_AUTH_SECRET must be set to a non-placeholder value.' >&2; exit 1; fi; corepack pnpm --filter @mrsign/web start"]
+CMD ["sh", "-c", "if [ -z \"$BETTER_AUTH_SECRET\" ] || [ \"$BETTER_AUTH_SECRET\" = \"replace-with-a-secure-secret\" ]; then echo 'BETTER_AUTH_SECRET must be set to a non-placeholder value.' >&2; exit 1; fi; corepack pnpm db:bootstrap && corepack pnpm --filter @mrsign/web start"]
