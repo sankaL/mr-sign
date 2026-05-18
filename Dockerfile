@@ -20,6 +20,8 @@ RUN corepack pnpm install --frozen-lockfile
 
 FROM deps AS builder
 
+ENV BETTER_AUTH_SECRET=railway-build-only-secret
+
 COPY . .
 
 RUN corepack pnpm db:generate
