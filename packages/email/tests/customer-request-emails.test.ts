@@ -46,7 +46,9 @@ test("builds quote confirmation and admin notification emails", () => {
   assert.match(emails.customer.html, /background:#eef4fb/);
   assert.match(emails.customer.html, /Mr\. Sign and Print/);
   assert.match(emails.admin.html, /A new quote request was submitted/);
-  assert.match(emails.admin.html, /order@mrsignandprint\.net/);
+  assert.match(emails.admin.html, /\(416\) 512-9353/);
+  assert.match(emails.admin.html, /399 Four Valley Dr/);
+  assert.doesNotMatch(emails.admin.html, /order@mrsignandprint\.net/);
 });
 
 test("escapes customer-provided HTML in email markup", () => {

@@ -73,6 +73,7 @@
 | AH-2026-05-18-04 | Update favicon and app icon source artwork               | Done        | Replaced generated favicon and app icon artwork with resized variants derived directly from the supplied `mr-sign-icon.png` source file.                                                                                  | 2026-05-18   |
 | AH-2026-05-19-01 | Update icon and social preview source artwork            | Done        | Replaced favicon/app icons from `mr-sign-icon3.png` and all social preview images from `mr-sign-socials.png` using direct resizes only.                                                                                  | 2026-05-19   |
 | AH-2026-05-19-02 | Modernize transactional email templates                  | Done        | Added a shared branded HTML email layout and refreshed request confirmation, admin notification, and admin login emails with modern inline-CSS styling while preserving existing APIs and plain-text content.             | 2026-05-19   |
+| AH-2026-05-19-03 | Remove email address from transactional email footer     | Done        | Removed the business email address from the shared branded email footer while keeping the phone number and shop address visible.                                                                                         | 2026-05-19   |
 
 ---
 
