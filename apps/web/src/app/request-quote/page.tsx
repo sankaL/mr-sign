@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { CustomerRequestForm } from "@/components/forms/customer-request-form";
 import { SiteShell } from "@/components/site/site-shell";
 import { PageHeader } from "@/components/ui/page-header";
@@ -8,11 +6,9 @@ import {
   getValidatedRequestDefaults,
 } from "@/lib/customer-request-options";
 import { quotePage } from "@/lib/site";
+import { buildContentPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: quotePage.seo.title,
-  description: quotePage.seo.description,
-};
+export const metadata = buildContentPageMetadata(quotePage);
 
 type RequestQuotePageProps = {
   searchParams: Promise<{

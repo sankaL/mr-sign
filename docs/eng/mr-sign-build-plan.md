@@ -70,6 +70,7 @@
 | AH-2026-05-18-01 | Add Railway production deploy and autodeploy support     | Done        | Added Railway config-as-code, a production health endpoint, idempotent deploy bootstrap commands for migrations/seed/admin creation, and the documentation needed to wire GitHub-triggered Railway deploys from `main`. | 2026-05-18   |
 | AH-2026-05-18-02 | Seed Railway production request demo data                | Done        | Ran the existing request seed script against the Railway production database using the public Postgres URL and inserted 242 seeded customer requests for admin/demo review.                                                 | 2026-05-18   |
 | AH-2026-05-18-03 | Diagnose Railway admin magic-link email failure          | Done        | Confirmed the Resend API key can send but the configured sender domain `mrsignandprint.net` is not verified, and improved admin login email error logging to include the underlying Resend message.                      | 2026-05-18   |
+| AH-2026-05-18-04 | Update favicon and app icon source artwork               | Done        | Replaced generated favicon and app icon artwork with resized variants derived directly from the supplied `mr-sign-icon.png` source file.                                                                                  | 2026-05-18   |
 
 ---
 
@@ -295,43 +296,43 @@
 
 | Task number | Task                                                                  | Task status | Comments                                    | Updated date |
 | ----------- | --------------------------------------------------------------------- | ----------- | ------------------------------------------- | ------------ |
-| P10-01      | Define SEO title and meta description format for main pages           | To Do       |                                             |              |
-| P10-02      | Define SEO title and meta description format for service detail pages | To Do       |                                             |              |
-| P10-03      | Add SEO metadata to Home page                                         | To Do       |                                             |              |
-| P10-04      | Add SEO metadata to Signs page                                        | To Do       |                                             |              |
-| P10-05      | Add SEO metadata to Printing page                                     | To Do       |                                             |              |
-| P10-06      | Add SEO metadata to Design page                                       | To Do       |                                             |              |
-| P10-07      | Add SEO metadata to Request Quote page                                | To Do       |                                             |              |
+| P10-01      | Define SEO title and meta description format for main pages           | Done        | Added shared page metadata helpers for titles, descriptions, canonicals, Open Graph, and Twitter cards. | 2026-05-18   |
+| P10-02      | Define SEO title and meta description format for service detail pages | Done        | Added shared service metadata helper using service SEO copy, route canonicals, and service images. | 2026-05-18   |
+| P10-03      | Add SEO metadata to Home page                                         | Done        | Home page now uses shared metadata with canonical URL and social image handling. | 2026-05-18   |
+| P10-04      | Add SEO metadata to Signs page                                        | Done        | Signs page now uses shared category metadata with canonical URL and category social image. | 2026-05-18   |
+| P10-05      | Add SEO metadata to Printing page                                     | Done        | Printing page now uses shared category metadata with canonical URL and category social image. | 2026-05-18   |
+| P10-06      | Add SEO metadata to Design page                                       | Done        | Design page now uses shared category metadata with canonical URL and category social image. | 2026-05-18   |
+| P10-07      | Add SEO metadata to Request Quote page                                | Done        | Request Quote page now uses shared page metadata with canonical URL and fallback social image. | 2026-05-18   |
 | P10-08      | Add SEO metadata to Order Online page                                 | Superseded  | `/order-online` redirects to Request Quote. | 2026-05-09   |
-| P10-09      | Add SEO metadata to Contact page                                      | To Do       |                                             |              |
-| P10-10      | Add SEO metadata to Location page                                     | To Do       |                                             |              |
-| P10-11      | Add dynamic SEO metadata for each service detail page                 | To Do       |                                             |              |
-| P10-12      | Add clean URLs and canonical URL handling                             | To Do       |                                             |              |
-| P10-13      | Create sitemap.xml                                                    | To Do       |                                             |              |
-| P10-14      | Create robots.txt                                                     | To Do       |                                             |              |
-| P10-15      | Add Local Business structured data                                    | To Do       |                                             |              |
-| P10-16      | Add service-specific structured data where useful                     | To Do       |                                             |              |
-| P10-17      | Add Open Graph metadata for web sharing                               | To Do       |                                             |              |
-| P10-18      | Add Twitter/X card metadata for web sharing                           | To Do       |                                             |              |
-| P10-19      | Generate or create default social sharing image                       | To Do       |                                             |              |
-| P10-20      | Generate or create category social sharing images                     | To Do       |                                             |              |
-| P10-21      | Generate or create service page images where needed                   | To Do       |                                             |              |
-| P10-22      | Create favicon.ico                                                    | To Do       |                                             |              |
-| P10-23      | Create PNG favicons for browser tabs and search results               | To Do       |                                             |              |
-| P10-24      | Create Apple touch icon for iPhone/iPad home screen save              | To Do       |                                             |              |
-| P10-25      | Create Android/Chrome web app icons                                   | To Do       |                                             |              |
-| P10-26      | Create web app manifest file                                          | To Do       |                                             |              |
-| P10-27      | Confirm social preview works on common sharing platforms              | To Do       |                                             |              |
-| P10-28      | Add alt text for all important images                                 | To Do       |                                             |              |
-| P10-29      | Optimize image sizes and formats                                      | To Do       |                                             |              |
-| P10-30      | Use text-based service content instead of image-only labels           | To Do       |                                             |              |
-| P10-31      | Add internal links between related services                           | To Do       |                                             |              |
-| P10-32      | Add Vaughan and GTA wording naturally across key pages                | To Do       |                                             |              |
-| P10-33      | Configure Google Search Console after launch                          | To Do       |                                             |              |
-| P10-34      | Submit sitemap in Google Search Console                               | To Do       |                                             |              |
-| P10-35      | Configure Bing Webmaster Tools after launch                           | To Do       |                                             |              |
-| P10-36      | Verify indexability after production deployment                       | To Do       |                                             |              |
-| P10-37      | Check metadata and social previews after custom domain is live        | To Do       |                                             |              |
+| P10-09      | Add SEO metadata to Contact page                                      | Done        | Contact page now uses shared page metadata with canonical URL and fallback social image. | 2026-05-18   |
+| P10-10      | Add SEO metadata to Location page                                     | Done        | Location page now uses shared page metadata with canonical URL and fallback social image. | 2026-05-18   |
+| P10-11      | Add dynamic SEO metadata for each service detail page                 | Done        | Dynamic service routes now generate canonical metadata, Open Graph, and Twitter cards from public service data. | 2026-05-18   |
+| P10-12      | Add clean URLs and canonical URL handling                             | Done        | Added canonical URL helpers using `NEXT_PUBLIC_SITE_URL` with `https://mrsignandprint.net` as production default. | 2026-05-18   |
+| P10-13      | Create sitemap.xml                                                    | Done        | Added dynamic Next sitemap route for public pages and active service routes. | 2026-05-18   |
+| P10-14      | Create robots.txt                                                     | Done        | Added robots route allowing public pages, disallowing admin/API paths, and linking the sitemap. | 2026-05-18   |
+| P10-15      | Add Local Business structured data                                    | Done        | Moved LocalBusiness JSON-LD to shared helper and included business URL, image, contact, address, area, and hours. | 2026-05-18   |
+| P10-16      | Add service-specific structured data where useful                     | Done        | Added Service JSON-LD to service detail pages with provider, image, area served, and quote offer URL. | 2026-05-18   |
+| P10-17      | Add Open Graph metadata for web sharing                               | Done        | Added shared Open Graph metadata for public pages, categories, services, and root layout defaults. | 2026-05-18   |
+| P10-18      | Add Twitter/X card metadata for web sharing                           | Done        | Added shared summary-large-image Twitter card metadata for public pages, categories, services, and root layout defaults. | 2026-05-18   |
+| P10-19      | Generate or create default social sharing image                       | Done        | Added deterministic default 1200x630 social sharing PNG. | 2026-05-18   |
+| P10-20      | Generate or create category social sharing images                     | Done        | Added deterministic category social sharing PNGs for Signs, Printing, and Design. | 2026-05-18   |
+| P10-21      | Generate or create service page images where needed                   | Done        | Service metadata uses existing generated service images from the content catalog. | 2026-05-18   |
+| P10-22      | Create favicon.ico                                                    | Done        | Added multi-size ICO favicon generated from the brand chip mark. | 2026-05-18   |
+| P10-23      | Create PNG favicons for browser tabs and search results               | Done        | Added PNG icon assets for browser and search surfaces. | 2026-05-18   |
+| P10-24      | Create Apple touch icon for iPhone/iPad home screen save              | Done        | Added Apple touch icon. | 2026-05-18   |
+| P10-25      | Create Android/Chrome web app icons                                   | Done        | Added 192px, 512px, and maskable 512px app icons. | 2026-05-18   |
+| P10-26      | Create web app manifest file                                          | Done        | Added Next manifest route with app identity, theme colors, and icons. | 2026-05-18   |
+| P10-27      | Confirm social preview works on common sharing platforms              | Done        | Code-level social metadata and absolute image URLs verified locally; live platform validation remains P10-37 after custom domain. | 2026-05-18   |
+| P10-28      | Add alt text for all important images                                 | Done        | Public service and category images continue to use required catalog alt text through `ContentImage`. | 2026-05-18   |
+| P10-29      | Optimize image sizes and formats                                      | Done        | Added correctly sized web asset PNGs and social images; service images remain Next image optimized. | 2026-05-18   |
+| P10-30      | Use text-based service content instead of image-only labels           | Done        | Public pages render service names, descriptions, pricing, headings, and CTAs as text content. | 2026-05-18   |
+| P10-31      | Add internal links between related services                           | Done        | Service detail pages already render related-service internal links from catalog relationships. | 2026-05-18   |
+| P10-32      | Add Vaughan and GTA wording naturally across key pages                | Done        | Public SEO copy and page content include Vaughan and GTA wording across main and service pages. | 2026-05-18   |
+| P10-33      | Configure Google Search Console after launch                          | To Do       | External post-launch task after the custom domain is live. | 2026-05-18   |
+| P10-34      | Submit sitemap in Google Search Console                               | To Do       | External post-launch task after Search Console is configured. | 2026-05-18   |
+| P10-35      | Configure Bing Webmaster Tools after launch                           | To Do       | External post-launch task after the custom domain is live. | 2026-05-18   |
+| P10-36      | Verify indexability after production deployment                       | To Do       | External post-deployment task after production is reachable on the custom domain. | 2026-05-18   |
+| P10-37      | Check metadata and social previews after custom domain is live        | To Do       | External validation task after live custom-domain pages are shareable. | 2026-05-18   |
 
 ---
 

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock, Mail, Navigation, Phone } from "lucide-react";
 
@@ -7,43 +6,11 @@ import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { businessHours, locationPage, siteContact } from "@/lib/site";
+import { buildContentPageMetadata, buildLocalBusinessSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: locationPage.seo.title,
-  description: locationPage.seo.description,
-  openGraph: {
-    title: locationPage.seo.socialTitle,
-    description: locationPage.seo.socialDescription,
-  },
-};
+export const metadata = buildContentPageMetadata(locationPage);
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: siteContact.businessName,
-  telephone: siteContact.phone,
-  email: siteContact.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: siteContact.streetAddress,
-    addressLocality: siteContact.locality,
-    addressRegion: siteContact.region,
-    postalCode: siteContact.postalCode,
-    addressCountry: siteContact.country,
-  },
-  openingHoursSpecification: [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-  ].map((dayOfWeek) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek,
-    opens: "09:00",
-    closes: "17:00",
-  })),
-};
+const localBusinessSchema = buildLocalBusinessSchema();
 
 export default function LocationPage() {
   return (

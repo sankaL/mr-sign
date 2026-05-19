@@ -5,6 +5,7 @@ import {
   getPublicService,
   getPublicStaticServiceParams,
 } from "@/lib/public-services";
+import { buildServiceMetadata } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{
@@ -22,15 +23,11 @@ export async function generateMetadata({
   const { serviceSlug } = await params;
   const service = await getPublicService("printing", serviceSlug);
 
-  return {
-    title: service?.seo.title ?? "Printing Service",
-    description: service?.seo.description,
-    openGraph: {
-      title: service?.seo.title,
-      description: service?.seo.description,
-      images: service?.image.path ? [{ url: service.image.path }] : undefined,
-    },
-  };
+  return buildServiceMetadata(
+    service,
+    "Printing Service",
+    `/printing/${serviceSlug}`,
+  );
 }
 
 export default async function PrintingServicePage({

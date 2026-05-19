@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CustomerRequestForm } from "@/components/forms/customer-request-form";
@@ -7,15 +6,9 @@ import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { getServiceSelectGroups } from "@/lib/customer-request-options";
 import { contactMethods, contactPage, siteContact } from "@/lib/site";
+import { buildContentPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: contactPage.seo.title,
-  description: contactPage.seo.description,
-  openGraph: {
-    title: contactPage.seo.socialTitle,
-    description: contactPage.seo.socialDescription,
-  },
-};
+export const metadata = buildContentPageMetadata(contactPage);
 
 export default function ContactPage() {
   return (

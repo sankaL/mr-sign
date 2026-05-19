@@ -3,17 +3,9 @@ import { SiteFooter } from "@/components/site/footer";
 import { SiteNav } from "@/components/site/site-nav";
 import { CtaSection } from "@/components/ui/cta-section";
 import { homePage } from "@/lib/site";
-import type { Metadata } from "next";
+import { buildContentPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: homePage.seo.title,
-  description: homePage.seo.description,
-  openGraph: {
-    title: homePage.seo.socialTitle,
-    description: homePage.seo.socialDescription,
-    images: homePage.image ? [{ url: homePage.image.path }] : undefined,
-  },
-};
+export const metadata = buildContentPageMetadata(homePage);
 
 export default function HomePage() {
   return (

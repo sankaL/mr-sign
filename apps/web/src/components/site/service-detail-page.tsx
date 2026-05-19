@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 
 import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicService } from "@/lib/public-services";
+import { buildServiceSchema } from "@/lib/seo";
 import { primaryActions, siteContact } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
@@ -37,10 +38,17 @@ export async function ServiceDetailPage({
     serviceSlug: service.slug,
   });
   const quoteHref = `${primaryActions.quote.href}?category=${service.categorySlug}&service=${service.slug}`;
+  const serviceSchema = buildServiceSchema(service);
 
   return (
     <SiteShell>
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema),
+          }}
+        />
         <section className="bg-[#151515] px-5 py-6 text-white md:px-10 md:py-8">
           <div className="mx-auto max-w-[1440px]">
             <Link

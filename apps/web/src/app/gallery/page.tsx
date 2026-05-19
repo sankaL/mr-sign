@@ -1,20 +1,13 @@
 import { getGalleryServices } from "@mrsign/content";
-import type { Metadata } from "next";
 
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { ImageGallery } from "@/components/ui/image-gallery";
 import { PageHeader } from "@/components/ui/page-header";
 import { galleryPage } from "@/lib/site";
+import { buildContentPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: galleryPage.seo.title,
-  description: galleryPage.seo.description,
-  openGraph: {
-    title: galleryPage.seo.socialTitle,
-    description: galleryPage.seo.socialDescription,
-  },
-};
+export const metadata = buildContentPageMetadata(galleryPage);
 
 export default function GalleryPage() {
   const galleryServices = getGalleryServices();
