@@ -71,6 +71,8 @@
 | AH-2026-05-18-02 | Seed Railway production request demo data                | Done        | Ran the existing request seed script against the Railway production database using the public Postgres URL and inserted 242 seeded customer requests for admin/demo review.                                                 | 2026-05-18   |
 | AH-2026-05-18-03 | Diagnose Railway admin magic-link email failure          | Done        | Confirmed the Resend API key can send but the configured sender domain `mrsignandprint.net` is not verified, and improved admin login email error logging to include the underlying Resend message.                      | 2026-05-18   |
 | AH-2026-05-18-04 | Update favicon and app icon source artwork               | Done        | Replaced generated favicon and app icon artwork with resized variants derived directly from the supplied `mr-sign-icon.png` source file.                                                                                  | 2026-05-18   |
+| AH-2026-05-19-01 | Update icon and social preview source artwork            | Done        | Replaced favicon/app icons from `mr-sign-icon3.png` and all social preview images from `mr-sign-socials.png` using direct resizes only.                                                                                  | 2026-05-19   |
+| AH-2026-05-19-02 | Modernize transactional email templates                  | Done        | Added a shared branded HTML email layout and refreshed request confirmation, admin notification, and admin login emails with modern inline-CSS styling while preserving existing APIs and plain-text content.             | 2026-05-19   |
 
 ---
 

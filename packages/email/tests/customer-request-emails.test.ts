@@ -42,6 +42,11 @@ test("builds quote confirmation and admin notification emails", () => {
   assert.equal(emails.admin.replyTo, "avery@example.com");
   assert.match(emails.admin.text, /Selected services: Banner, Business Cards/);
   assert.match(emails.customer.text, /Request code: MSQ-2026-0001/);
+  assert.match(emails.customer.html, /Request received/);
+  assert.match(emails.customer.html, /background:#eef4fb/);
+  assert.match(emails.customer.html, /Mr\. Sign and Print/);
+  assert.match(emails.admin.html, /A new quote request was submitted/);
+  assert.match(emails.admin.html, /order@mrsignandprint\.net/);
 });
 
 test("escapes customer-provided HTML in email markup", () => {

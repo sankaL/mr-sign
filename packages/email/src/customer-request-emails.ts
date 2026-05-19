@@ -1,6 +1,8 @@
 import { siteContact } from "@mrsign/content";
 import { Resend } from "resend";
 
+import { buildBrandedEmailHtml, type EmailDetailRow } from "./email-html";
+
 export type CustomerRequestEmailKind = "quote" | "contact";
 
 export type CustomerRequestEmailInput = {
@@ -67,15 +69,6 @@ function getEmailConfig(): EmailConfig {
   };
 }
 
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
 function formatDateTime(date: Date) {
   return new Intl.DateTimeFormat("en-CA", {
     dateStyle: "medium",
@@ -132,8 +125,8 @@ function formatPreferredContactMethod(value: string | null) {
   }
 }
 
-function buildDetails(input: CustomerRequestEmailInput) {
-  const baseRows = [
+function buildDetails(input: CustomerRequestEmailInput): EmailDetailRow[] {
+  const baseRows: EmailDetailRow[] = [
     ["Request code", input.requestCode],
     ["Submitted", formatDateTime(input.submittedAt)],
     ["Customer", `${input.firstName} ${input.lastName}`],
@@ -172,21 +165,17 @@ function buildDetails(input: CustomerRequestEmailInput) {
   ];
 }
 
-function rowsToText(rows: string[][]) {
+function rowsToText(rows: EmailDetailRow[]) {
   return rows.map(([label, value]) => `${label}: ${value}`).join("\n");
 }
 
-function rowsToHtml(rows: string[][]) {
-  return rows
-    .map(
-      ([label, value]) =>
-        `<tr><th align="left" style="padding:8px;border-bottom:1px solid #e5e7eb;vertical-align:top;width:180px">${escapeHtml(label)}</th><td style="padding:8px;border-bottom:1px solid #e5e7eb;vertical-align:top;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`,
-    )
-    .join("");
-}
-
-function buildHtml(title: string, intro: string, rows: string[][]) {
-  return `<!doctype html><html><body style="margin:0;background:#f8fafc;color:#111827;font-family:Arial,sans-serif"><div style="max-width:680px;margin:0 auto;padding:28px"><div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:24px"><p style="margin:0 0 8px;color:#1d4ed8;font-weight:700">Mr. Sign and Print</p><h1 style="margin:0 0 16px;font-size:24px;line-height:1.2">${escapeHtml(title)}</h1><p style="margin:0 0 20px;line-height:1.6">${escapeHtml(intro)}</p><table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.5">${rowsToHtml(rows)}</table><p style="margin:20px 0 0;color:#4b5563;font-size:13px;line-height:1.5">${escapeHtml(siteContact.businessName)} | ${escapeHtml(siteContact.phone)} | ${escapeHtml(siteContact.email)}</p></div></div></body></html>`;
+function buildHtml(title: string, intro: string, rows: EmailDetailRow[]) {
+  return buildBrandedEmailHtml({
+    title,
+    intro,
+    badge: "Request received",
+    rows,
+  });
 }
 
 export function buildCustomerRequestEmails(

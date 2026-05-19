@@ -17,5 +17,9 @@ describe("buildAdminLoginEmail", () => {
       message.html,
       /https:\/\/mrsign\.example\/admin\/magic\?token=abc123&amp;next=\/admin/,
     );
+    assert.match(message.html, /Secure access/);
+    assert.match(message.html, /Sign in to admin/);
+    assert.match(message.html, /background:#eef4fb/);
+    assert.match(message.html, /If the button does not work/);
   });
 });
