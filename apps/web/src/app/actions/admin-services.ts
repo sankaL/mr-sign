@@ -2,12 +2,17 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@mrsign/db/src/client";
+import { Prisma } from "@mrsign/db/src/generated/prisma/client";
 
 import { requireActiveAdminSession } from "@/lib/admin-session";
 import {
   validateServiceInput,
   validateServiceDraftInput,
 } from "@/lib/admin-service-validation";
+import {
+  deleteServiceWithAudit,
+  type DeleteActionResult,
+} from "@/lib/admin-delete";
 
 export type ServiceFormState = {
   status: "idle" | "success" | "error";
@@ -285,16 +290,50 @@ export async function toggleServiceFeatured(serviceId: string) {
   return { isFeatured: !service.isFeatured };
 }
 
-export async function deleteService(serviceId: string) {
-  await requireActiveAdminSession();
-  const service = await prisma.service.findUnique({
-    where: { id: serviceId },
-    select: { id: true, slug: true, category: { select: { slug: true } } },
+export async function deleteService(
+  serviceId: string,
+): Promise<DeleteActionResult> {
+  const admin = await requireActiveAdminSession();
+
+  return deleteServiceWithAudit({
+    serviceId,
+    adminId: admin.adminId,
+    findService: (id) =>
+      prisma.service.findUnique({
+        where: { id },
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+          status: true,
+          category: { select: { slug: true, name: true } },
+        },
+      }),
+    deleteService: async (service, adminId) => {
+      await prisma.$transaction([
+        prisma.auditLog.create({
+          data: {
+            adminId,
+            action: "DELETE",
+            entity: "Service",
+            entityId: service.id,
+            metadata: {
+              name: service.name,
+              slug: service.slug,
+              status: service.status,
+              category: service.category.name,
+            },
+          },
+        }),
+        prisma.service.delete({ where: { id: service.id } }),
+      ]);
+    },
+    isHistoryConstraintError: (error) =>
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === "P2003",
+    revalidate: (service) => {
+      revalidateServicePaths(service.category.slug, service.slug);
+      revalidatePath(`/admin/services/${service.id}`);
+    },
   });
-
-  if (!service) throw new Error("Service not found.");
-
-  await prisma.service.delete({ where: { id: serviceId } });
-
-  revalidateServicePaths(service.category.slug, service.slug);
 }

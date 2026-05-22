@@ -5,6 +5,7 @@ import { updateService } from "@/app/actions/admin-services";
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
+import { DeleteServiceButton } from "@/components/admin/delete-service-button";
 import { ServiceFormWizard } from "@/components/admin/service-form-wizard";
 
 type EditServicePageProps = {
@@ -47,6 +48,14 @@ export default async function EditServicePage({
       title={`Edit ${service.name}`}
       description="Update service details, pricing, and SEO."
       adminName={admin.name ?? undefined}
+      actions={
+        <DeleteServiceButton
+          serviceId={service.id}
+          serviceName={service.name}
+          successRedirectTo="/admin/services"
+          variant="header"
+        />
+      }
     >
       <ServiceFormWizard
         action={updateAction}

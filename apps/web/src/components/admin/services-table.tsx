@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
 import { AdminPagination } from "@/components/admin/admin-pagination";
+import { DeleteServiceButton } from "@/components/admin/delete-service-button";
 import { MultiSelectDropdown } from "@/components/admin/multi-select-dropdown";
 import { ServiceStatusToggle } from "@/components/admin/service-status-toggle";
 
@@ -326,6 +327,10 @@ export function ServicesTable({ services, typeOptions }: ServicesTableProps) {
                             Edit
                           </Link>
                         )}
+                        <DeleteServiceButton
+                          serviceId={service.id}
+                          serviceName={service.name}
+                        />
                       </div>
                     </td>
                   </tr>

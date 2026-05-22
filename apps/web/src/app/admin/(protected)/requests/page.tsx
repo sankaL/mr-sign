@@ -9,6 +9,7 @@ import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
 import { AdminPagination } from "@/components/admin/admin-pagination";
+import { DeleteRequestButton } from "@/components/admin/delete-request-button";
 import { RequestFilters } from "@/components/admin/request-filters";
 import { SortableLink } from "@/components/admin/sortable-link";
 
@@ -205,12 +206,18 @@ export default async function AdminRequestsPage({
                         )}
                       </td>
                       <td>
-                        <Link
-                          href={`/admin/requests/${request.requestCode}`}
-                          className="inline-flex h-8 items-center rounded-lg border border-[#151515]/10 px-3 text-xs font-semibold transition-colors hover:bg-[#151515] hover:!text-white"
-                        >
-                          View
-                        </Link>
+                        <div className="flex items-center gap-2">
+                          <Link
+                            href={`/admin/requests/${request.requestCode}`}
+                            className="inline-flex h-8 items-center rounded-lg border border-[#151515]/10 px-3 text-xs font-semibold transition-colors hover:bg-[#151515] hover:!text-white"
+                          >
+                            View
+                          </Link>
+                          <DeleteRequestButton
+                            requestCode={request.requestCode}
+                            customerName={`${request.firstName} ${request.lastName}`}
+                          />
+                        </div>
                       </td>
                     </tr>
                   ))}
