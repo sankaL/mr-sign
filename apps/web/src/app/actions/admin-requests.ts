@@ -5,6 +5,10 @@ import { prisma } from "@mrsign/db/src/client";
 
 import { requireActiveAdminSession } from "@/lib/admin-session";
 import {
+  deleteRequestWithAudit,
+  type DeleteActionResult,
+} from "@/lib/admin-delete";
+import {
   validateNoteBody,
   validateRequestStatus,
 } from "@/lib/admin-request-validation";
@@ -73,59 +77,55 @@ export type RequestNoteFormState = {
   message?: string;
 };
 
-export type DeleteRequestResult = {
-  status: "success" | "error";
-  message?: string;
-};
-
 export async function deleteRequest(
   requestCode: string,
-): Promise<DeleteRequestResult> {
+): Promise<DeleteActionResult> {
   const admin = await requireActiveAdminSession();
 
-  const request = await prisma.customerRequest.findUnique({
-    where: { requestCode },
-    select: {
-      id: true,
-      requestCode: true,
-      type: true,
-      status: true,
-      firstName: true,
-      lastName: true,
-      email: true,
+  return deleteRequestWithAudit({
+    requestCode,
+    adminId: admin.adminId,
+    findRequest: (code) =>
+      prisma.customerRequest.findUnique({
+        where: { requestCode: code },
+        select: {
+          id: true,
+          requestCode: true,
+          type: true,
+          status: true,
+          firstName: true,
+          lastName: true,
+          email: true,
+        },
+      }),
+    deleteRequest: async (request, adminId) => {
+      await prisma.$transaction([
+        prisma.auditLog.create({
+          data: {
+            adminId,
+            requestId: request.id,
+            action: "DELETE",
+            entity: "CustomerRequest",
+            entityId: request.id,
+            metadata: {
+              requestCode: request.requestCode,
+              type: request.type,
+              status: request.status,
+              customerName: `${request.firstName} ${request.lastName}`,
+              email: request.email,
+            },
+          },
+        }),
+        prisma.customerRequest.delete({
+          where: { id: request.id },
+        }),
+      ]);
+    },
+    revalidate: (code) => {
+      revalidatePath("/admin/requests");
+      revalidatePath(`/admin/requests/${code}`);
     },
   });
-
-  if (!request) {
-    return { status: "error", message: "Request not found." };
-  }
-
-  await prisma.$transaction([
-    prisma.auditLog.create({
-      data: {
-        adminId: admin.adminId,
-        requestId: request.id,
-        action: "DELETE",
-        entity: "CustomerRequest",
-        entityId: request.id,
-        metadata: {
-          requestCode: request.requestCode,
-          type: request.type,
-          status: request.status,
-          customerName: `${request.firstName} ${request.lastName}`,
-          email: request.email,
-        },
-      },
-    }),
-    prisma.customerRequest.delete({
-      where: { id: request.id },
-    }),
-  ]);
-
-  revalidatePath("/admin/requests");
-  revalidatePath(`/admin/requests/${requestCode}`);
-
-  return { status: "success", message: "Request deleted." };
 }
 
 export async function addRequestNote(

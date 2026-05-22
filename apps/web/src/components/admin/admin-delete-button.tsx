@@ -51,7 +51,9 @@ export function AdminDeleteButton({
       setIsOpen(false);
       if (successRedirectTo) {
         router.push(successRedirectTo);
+        return;
       }
+
       router.refresh();
     });
   }

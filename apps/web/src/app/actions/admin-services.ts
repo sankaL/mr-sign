@@ -9,17 +9,16 @@ import {
   validateServiceInput,
   validateServiceDraftInput,
 } from "@/lib/admin-service-validation";
+import {
+  deleteServiceWithAudit,
+  type DeleteActionResult,
+} from "@/lib/admin-delete";
 
 export type ServiceFormState = {
   status: "idle" | "success" | "error";
   message?: string;
   fieldErrors?: Record<string, string>;
   serviceId?: string;
-};
-
-export type DeleteServiceResult = {
-  status: "success" | "error";
-  message?: string;
 };
 
 function revalidateServicePaths(categorySlug: string, serviceSlug: string) {
@@ -293,62 +292,48 @@ export async function toggleServiceFeatured(serviceId: string) {
 
 export async function deleteService(
   serviceId: string,
-): Promise<DeleteServiceResult> {
+): Promise<DeleteActionResult> {
   const admin = await requireActiveAdminSession();
-  const service = await prisma.service.findUnique({
-    where: { id: serviceId },
-    select: {
-      id: true,
-      name: true,
-      slug: true,
-      status: true,
-      category: { select: { slug: true, name: true } },
-    },
-  });
 
-  if (!service) {
-    return { status: "error", message: "Service not found." };
-  }
-
-  try {
-    await prisma.$transaction([
-      prisma.auditLog.create({
-        data: {
-          adminId: admin.adminId,
-          action: "DELETE",
-          entity: "Service",
-          entityId: serviceId,
-          metadata: {
-            name: service.name,
-            slug: service.slug,
-            status: service.status,
-            category: service.category.name,
-          },
+  return deleteServiceWithAudit({
+    serviceId,
+    adminId: admin.adminId,
+    findService: (id) =>
+      prisma.service.findUnique({
+        where: { id },
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+          status: true,
+          category: { select: { slug: true, name: true } },
         },
       }),
-      prisma.service.delete({ where: { id: serviceId } }),
-    ]);
-  } catch (error) {
-    if (
+    deleteService: async (service, adminId) => {
+      await prisma.$transaction([
+        prisma.auditLog.create({
+          data: {
+            adminId,
+            action: "DELETE",
+            entity: "Service",
+            entityId: service.id,
+            metadata: {
+              name: service.name,
+              slug: service.slug,
+              status: service.status,
+              category: service.category.name,
+            },
+          },
+        }),
+        prisma.service.delete({ where: { id: service.id } }),
+      ]);
+    },
+    isHistoryConstraintError: (error) =>
       error instanceof Prisma.PrismaClientKnownRequestError &&
-      error.code === "P2003"
-    ) {
-      return {
-        status: "error",
-        message:
-          "This service is attached to existing requests. Deactivate it instead to hide it from the public site while preserving request history.",
-      };
-    }
-
-    console.error("Service deletion failed", error);
-    return {
-      status: "error",
-      message: "The service could not be deleted. Please try again.",
-    };
-  }
-
-  revalidateServicePaths(service.category.slug, service.slug);
-  revalidatePath(`/admin/services/${serviceId}`);
-
-  return { status: "success", message: "Service deleted." };
+      error.code === "P2003",
+    revalidate: (service) => {
+      revalidateServicePaths(service.category.slug, service.slug);
+      revalidatePath(`/admin/services/${service.id}`);
+    },
+  });
 }
