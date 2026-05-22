@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { requireActiveAdminSession } from "@/lib/admin-session";
 
 import { AdminShell } from "@/components/admin/admin-shell";
+import { DeleteRequestButton } from "@/components/admin/delete-request-button";
 import { RequestNoteForm } from "@/components/admin/request-note-form";
 import { RequestStatusBadge } from "@/components/admin/request-status-badge";
 
@@ -76,6 +77,14 @@ export default async function AdminRequestDetailPage({
       title={request.requestCode}
       description={`${request.type} request from ${request.firstName} ${request.lastName}`}
       adminName={admin.name ?? undefined}
+      actions={
+        <DeleteRequestButton
+          requestCode={request.requestCode}
+          customerName={`${request.firstName} ${request.lastName}`}
+          successRedirectTo="/admin/requests"
+          variant="header"
+        />
+      }
     >
       {/* Back link */}
       <div className="mb-5">
