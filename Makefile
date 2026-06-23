@@ -4,7 +4,7 @@ APP_SERVICE ?= app
 .PHONY: dev dev-down dev-logs db-migrate db-migrate-deploy db-seed db-seed-requests
 
 dev:
-	$(COMPOSE) up --build
+	./scripts/dev.sh
 
 dev-down:
 	$(COMPOSE) down

@@ -74,6 +74,7 @@
 | AH-2026-05-19-01 | Update icon and social preview source artwork            | Done        | Replaced favicon/app icons from `mr-sign-icon3.png` and all social preview images from `mr-sign-socials.png` using direct resizes only.                                                                                  | 2026-05-19   |
 | AH-2026-05-19-02 | Modernize transactional email templates                  | Done        | Added a shared branded HTML email layout and refreshed request confirmation, admin notification, and admin login emails with modern inline-CSS styling while preserving existing APIs and plain-text content.             | 2026-05-19   |
 | AH-2026-05-19-03 | Remove email address from transactional email footer     | Done        | Removed the business email address from the shared branded email footer while keeping the phone number and shop address visible.                                                                                         | 2026-05-19   |
+| AH-2026-06-04-01 | Modernize README and add clean technology stack overview | Done        | Refined README.md to remove em dashes, polish visual hierarchy, add clean SVG badge links, and include a precise Technology Stack section at the bottom. | 2026-06-04   |
 
 ---
 
@@ -471,3 +472,5 @@
 | AHT-032     | Fix local dev database host configuration                          | Done        | Changed local `DATABASE_URL` defaults to `localhost` for host-run Next.js and Prisma commands while keeping Docker Compose app containers wired to the internal `db` service hostname.                                                   | 2026-05-21   |
 | AHT-033     | Add guarded admin deletion for requests and services               | Done        | Added confirmation-driven hard delete for requests, guarded service deletion that blocks services with request history, delete audit logs, and admin table/detail actions.                                                                | 2026-05-21   |
 | AHT-034     | Address guarded admin deletion review findings                     | Done        | Added structured request delete failure handling, removed misleading refresh after redirect, and covered guarded delete helper behavior with focused unit tests.                                                                          | 2026-05-21   |
+| AHT-035     | Dynamic port conflict resolution in dev environment | Done        | Created scripts/dev.sh to dynamically detect and resolve port conflicts for DB_PORT and APP_PORT on the host, automatically updating the local .env and DATABASE_URL variables, and integrated it into the dev target in the root Makefile. | 2026-06-23   |
+
