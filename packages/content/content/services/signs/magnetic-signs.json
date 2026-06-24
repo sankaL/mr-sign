@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "magnetic-signs",
+  "name": "Magnetic Signs",
+  "status": "published",
+  "displayOrder": 15,
+  "featured": false,
+  "headline": "Magnetic Vehicle Signs for Flexible Promotion",
+  "shortDescription": "Removable magnetic vehicle signs for contractors, mobile services, and temporary business branding.",
+  "body": [
+    "Magnetic signs let a vehicle carry business branding when needed and return to regular use afterward.",
+    "They are useful for contractors, service vehicles, and businesses that need flexible vehicle identification without permanent lettering."
+  ],
+  "capabilities": [
+    "Removable door magnets",
+    "One-colour and two-colour lettering",
+    "Passenger car and pickup truck formats",
+    "Care guidance for vehicle-safe use"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 4000,
+    "currency": "CAD",
+    "unitLabel": "per sign",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-magnetic-signs.png",
+    "alt": "Magnetic business signs mounted on vehicle doors.",
+    "prompt": "Two matching magnetic signs mounted on the front doors of a white SUV, displaying abstract logo blocks and clean colour bands. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Magnetic Vehicle Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom magnetic vehicle signs for cars and vans in Vaughan and the GTA. Easy on, easy off. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vehicle-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "real-estate-signs"
+    }
+  ]
+}

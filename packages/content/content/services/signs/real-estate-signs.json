@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "real-estate-signs",
+  "name": "Real Estate Signs",
+  "status": "published",
+  "displayOrder": 6,
+  "featured": false,
+  "headline": "Real Estate Signs for Listings and Open Houses",
+  "shortDescription": "Custom real estate sign panels, posts, riders, and frames for agents and brokerages.",
+  "body": [
+    "Real estate signs use coroplast or similar sign boards mounted into vertical stands, posts, or hanging frames.",
+    "They are built for listing visibility, open houses, directional signs, agent branding, and brokerage consistency."
+  ],
+  "capabilities": [
+    "Listing panels and post signs",
+    "Open house and directional signs",
+    "Coroplast sign board options",
+    "Agent and brokerage branding"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-real-estate-signs.png",
+    "alt": "Installed real estate post sign in front of a home.",
+    "prompt": "A professionally installed real estate post sign in front of a detached home in a Vaughan neighbourhood, with clean abstract branding panels and no readable text. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Real Estate Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom real estate signs and posts for agents and brokers in Vaughan and the GTA. Fast turnaround, professional quality. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plastic-lawn-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "magnetic-signs"
+    }
+  ]
+}

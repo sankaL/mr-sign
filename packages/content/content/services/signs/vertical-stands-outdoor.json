@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "vertical-stands-outdoor",
+  "name": "Vertical Stands (Outdoor)",
+  "status": "published",
+  "displayOrder": 14,
+  "featured": false,
+  "headline": "Outdoor Vertical Stands Built for Street-Level Promotions",
+  "shortDescription": "Outdoor vertical stands and frames for sidewalk, roadside, seasonal, and property entrance signage.",
+  "body": [
+    "Outdoor vertical stands provide freestanding sign visibility without permanent building installation.",
+    "They can be used with frame-only setups, one-sided signs, two-sided signs, crane-style stands, and wire step stakes."
+  ],
+  "capabilities": [
+    "Small, medium, and large outdoor stand formats",
+    "Frame-only and lettered sign packages",
+    "One-sided and two-sided options",
+    "Wire stands for economical outdoor placement"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 5500,
+    "currency": "CAD",
+    "unitLabel": "per frame",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-vertical-stands-outdoor.png",
+    "alt": "Double-sided outdoor banner stand near a plaza entrance.",
+    "prompt": "A double-sided outdoor banner stand positioned near the entrance of a commercial plaza, featuring full-colour abstract business graphics. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Outdoor Vertical Banner Stands in Vaughan | Mr. Sign and Print",
+    "description": "Durable outdoor vertical banner stands for Vaughan businesses and events. Built for Canadian weather. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vertical-stands-indoor"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "sandwich-boards"
+    }
+  ]
+}

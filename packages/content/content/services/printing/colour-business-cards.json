@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "colour-business-cards",
+  "name": "Colour Business Cards",
+  "status": "published",
+  "displayOrder": 5,
+  "featured": false,
+  "headline": "Full-Colour Business Cards That Stand Out",
+  "shortDescription": "Full-colour business cards for sharper branding, photography, colour blocks, and double-sided layouts.",
+  "body": [
+    "Colour business cards are useful when your card needs to show brand colours, imagery, or a more polished visual impression.",
+    "They can be printed single-sided or double-sided on coated card stock with a clean business finish."
+  ],
+  "capabilities": [
+    "Single-sided colour cards",
+    "Double-sided colour cards",
+    "Coated card stock options",
+    "Business card and postcard-style formats"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 7000,
+    "currency": "CAD",
+    "unitLabel": "per starter batch",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-colour-business-cards.png",
+    "alt": "Vibrant full-colour business cards spread across a surface.",
+    "prompt": "A set of vibrant full-colour business cards spread across a clean white surface, with bold photography blocks and illustrated abstract design elements. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Colour Business Cards in Vaughan | Mr. Sign and Print",
+    "description": "Full-colour business cards that make an impact. Printed in Vaughan for businesses across the GTA. Premium stock and finishes available. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    }
+  ]
+}

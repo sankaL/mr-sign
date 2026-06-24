@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "vertical-stands-indoor",
+  "name": "Vertical Stands (Indoor)",
+  "status": "published",
+  "displayOrder": 12,
+  "featured": false,
+  "headline": "Indoor Vertical Stands for Events and Lobbies",
+  "shortDescription": "Self-standing indoor display stands for lobbies, showrooms, trade shows, and point-of-sale messages.",
+  "body": [
+    "Indoor vertical stands hold printed inserts in a self-standing frame for clean presentation inside stores, lobbies, and events.",
+    "They can be built with round or square bases and support common poster-size inserts."
+  ],
+  "capabilities": [
+    "Round base and square base display stands",
+    "Poster and insert support",
+    "Chrome and black stand options",
+    "Lobby, conference, and trade show use"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 7500,
+    "currency": "CAD",
+    "unitLabel": "per stand",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-vertical-stands-indoor.png",
+    "alt": "Retractable banner stand set up indoors.",
+    "prompt": "A sleek silver retractable banner stand set up inside a modern conference room, displaying abstract corporate colour blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Indoor Vertical Banner Stands in Vaughan | Mr. Sign and Print",
+    "description": "Indoor retractable and fixed vertical banner stands for trade shows, events, and offices in Vaughan and the GTA. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vertical-stands-outdoor"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plate-directory-board"
+    }
+  ]
+}

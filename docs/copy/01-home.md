@@ -6,7 +6,7 @@
 ## SEO
 
 - **Page Title:** Mr. Sign and Print | Custom Signs, Printing & Design in Vaughan
-- **Meta Description:** Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, and graphic design. Serving the GTA since 2000. Request a quote today.
+- **Meta Description:** Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, and graphic design. Serving the GTA since 2000. Contact the shop for pricing today.
 - **URL:** /
 - **Social Sharing Title:** Mr. Sign and Print -- Custom Signs & Printing in Vaughan, Ontario
 - **Social Sharing Description:** From channel letters and vehicle lettering to business cards and banners, we bring your brand to life. Based in Vaughan, serving the entire GTA.
@@ -27,7 +27,7 @@
 - Location
 - Contact
 
-**CTA Button (top right):** Request a Quote
+**CTA Button (top right):** Contact the Shop
 
 ---
 
@@ -47,7 +47,7 @@ From custom signs and banners to business cards and graphic design, Mr. Sign and
 Proudly serving Vaughan, Concord, and the entire Greater Toronto Area.
 
 ### CTA Buttons
-- **Primary:** Request a Quote (links to /request-quote)
+- **Primary:** Contact the Shop (links to /contact)
 - **Secondary:** Browse Our Services (links to /signs, or scrolls to the Services section)
 
 ---
@@ -140,9 +140,9 @@ Each highlight: a simple flat-line icon above a short label and one-line descrip
 - **Description:** We use durable materials built to last indoors and outdoors.
 
 **Highlight 4**
-- **Icon:** Clipboard or quote bubble icon
-- **Label:** Free Quotes, No Obligation
-- **Description:** Request a quote online and we will follow up quickly.
+- **Icon:** Clipboard or pricing bubble icon
+- **Label:** Free pricings, No Obligation
+- **Description:** Contact the shop for pricing online and we will follow up quickly.
 
 ---
 
@@ -158,9 +158,9 @@ Each highlight: a simple flat-line icon above a short label and one-line descrip
 
 **Step 1**
 - **Number:** 01
-- **Icon:** Clipboard or form icon
-- **Step Title:** Submit Your Request
-- **Step Description:** Fill out our online quote form. Tell us about your project, your size, quantity, and timeline. No account needed.
+- **Icon:** Phone or envelope icon
+- **Step Title:** Call or Email
+- **Step Description:** Fill out our direct contact path. Tell us about your project, your size, quantity, and timeline. No account needed.
 
 **Step 2**
 - **Number:** 02
@@ -174,7 +174,7 @@ Each highlight: a simple flat-line icon above a short label and one-line descrip
 - **Step Title:** We Make It Happen
 - **Step Description:** Once approved, we get to work and let you know when your order is ready for pickup.
 
-**CTA Below Steps:** Ready to get started? Request a Quote (links to /request-quote)
+**CTA Below Steps:** Ready to get started? Contact the Shop (links to /contact)
 
 ---
 
@@ -237,7 +237,7 @@ Serving Vaughan, Concord, Woodbridge, and the Greater Toronto Area.
 **CTA Buttons:**
 - Get Directions (links to Google Maps directions)
 - Call Now (tel: link for mobile)
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 
 ---
 
@@ -253,7 +253,7 @@ Vaughan's local sign, print, and design shop. Proudly serving the GTA since 2000
 - Signs
 - Printing
 - Design
-- Request a Quote
+- Contact the Shop
 - Location
 - Contact
 

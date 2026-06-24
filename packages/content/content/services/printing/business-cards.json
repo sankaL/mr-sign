@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "business-cards",
+  "name": "Business Cards",
+  "status": "published",
+  "displayOrder": 3,
+  "featured": true,
+  "headline": "Business Cards That Make a Strong First Impression",
+  "shortDescription": "Business cards printed on practical stocks with one-colour, standard colour, or full-colour options.",
+  "body": [
+    "Business cards are still one of the most direct printed tools for sharing your name, contact details, and brand.",
+    "Options include raised or flat offset printing, one-sided or double-sided cards, standard stocks, gloss stocks, and full-colour layouts."
+  ],
+  "capabilities": [
+    "Standard business card sizing",
+    "Raised, flat, and full-colour options",
+    "One-sided and double-sided printing",
+    "Multiple stock and finish options"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 3800,
+    "currency": "CAD",
+    "unitLabel": "per starter batch",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-business-cards.png",
+    "alt": "Fanned stack of matte-finish business cards.",
+    "prompt": "A neatly fanned stack of matte-finish business cards on a white surface, showing clean modern abstract contact layout blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Business Cards in Vaughan | Mr. Sign and Print",
+    "description": "Professionally printed business cards in Vaughan and the GTA. Matte, gloss, and premium finishes. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-business-cards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "full-colour-brochures",
+  "name": "Full Colour Brochures",
+  "status": "published",
+  "displayOrder": 9,
+  "featured": false,
+  "headline": "Full-Colour Brochures With Rich, Professional Output",
+  "shortDescription": "Full-colour brochures for product sheets, service overviews, event programs, and business promotions.",
+  "body": [
+    "Full-colour brochures combine images, colour, and structured information in a compact printed piece.",
+    "They are useful for sales materials, product information, event handouts, service menus, and local campaigns."
+  ],
+  "capabilities": [
+    "Common brochure sizes",
+    "One-sided and both-sided colour options",
+    "Coated stock options",
+    "Business campaign quantities"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 38300,
+    "currency": "CAD",
+    "unitLabel": "per starter run",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-full-colour-brochures.png",
+    "alt": "Folded full-colour brochure with full-bleed photography.",
+    "prompt": "A folded full-colour brochure opened to show vibrant full-bleed photography blocks inside, with a bold graphic cover nearby. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Full Colour Brochures in Vaughan | Mr. Sign and Print",
+    "description": "Full-colour brochures with rich photography and bold design for Vaughan businesses. Multiple sizes and fold options. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    }
+  ]
+}

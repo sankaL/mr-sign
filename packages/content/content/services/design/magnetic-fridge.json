@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "magnetic-fridge",
+  "name": "Magnetic (Fridge)",
+  "status": "published",
+  "displayOrder": 7,
+  "featured": false,
+  "headline": "Custom Fridge Magnets for Everyday Brand Visibility",
+  "shortDescription": "Custom fridge magnets for business promotions, service reminders, calendars, and local customer handouts.",
+  "body": [
+    "Fridge magnets keep your business information visible in homes, offices, and customer workspaces.",
+    "Options include business card magnets, round magnets, calendar magnets, and other promotional shapes."
+  ],
+  "capabilities": [
+    "Business card magnets",
+    "Round magnet options",
+    "Calendar-style magnets",
+    "Promotional handouts for local customers"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 350,
+    "currency": "CAD",
+    "unitLabel": "per magnet",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-magnetic-fridge.png",
+    "alt": "Business fridge magnet on a refrigerator door.",
+    "prompt": "A flat calendar-style fridge magnet held against a white refrigerator door, showing abstract business logo blocks, phone-line shapes, and a small calendar grid. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Fridge Magnets in Vaughan | Mr. Sign and Print",
+    "description": "Custom business fridge magnets for promotions and brand awareness in Vaughan and the GTA. Printed in full colour. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "t-shirts-caps"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    }
+  ]
+}

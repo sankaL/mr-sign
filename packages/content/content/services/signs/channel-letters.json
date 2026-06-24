@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "channel-letters",
+  "name": "Channel Letters",
+  "status": "published",
+  "displayOrder": 5,
+  "featured": true,
+  "headline": "Channel Letter Signs That Make Your Storefront Visible",
+  "shortDescription": "Dimensional channel letters for storefronts, with illuminated options for high-visibility commercial signs.",
+  "body": [
+    "Channel letters give storefronts a dimensional sign with separate letter forms mounted to the building face.",
+    "They are a strong choice for plazas and commercial buildings that need clear visibility from the street, including illuminated builds when required."
+  ],
+  "capabilities": [
+    "Dimensional channel letter fabrication",
+    "Illuminated letter options",
+    "Commercial storefront and plaza signs",
+    "Material, face, trim, and finish coordination"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 28200,
+    "currency": "CAD",
+    "unitLabel": "per letter",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-channel-letters.png",
+    "alt": "LED illuminated channel letters on a storefront facade.",
+    "prompt": "A close-up night-time photo of bright red LED illuminated channel letters mounted on a dark brick storefront facade, shot from a low commercial-street angle. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Channel Letter Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom illuminated channel letters for storefronts and commercial buildings in Vaughan and the GTA. Front-lit, back-lit, and halo options. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "awnings"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "neon"
+    }
+  ]
+}

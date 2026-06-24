@@ -112,14 +112,14 @@ export function SiteNav({ variant = "blue" }: SiteNavProps) {
 
           <div className="flex items-center gap-2">
             <Link
-              href={primaryActions.quote.href}
+              href={primaryActions.call.href}
               className={
                 isBlue
                   ? "hidden min-h-12 items-center rounded-full border border-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white transition-colors hover:border-[#E51B23] hover:bg-[#E51B23] hover:!text-white focus-visible:border-[#E51B23] focus-visible:bg-[#E51B23] focus-visible:!text-white active:scale-[0.98] sm:inline-flex"
                   : "hidden min-h-12 items-center rounded-full border border-[#1936D4] px-6 py-2.5 text-xs font-black uppercase tracking-wide text-[#1936D4] transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98] sm:inline-flex"
               }
             >
-              {primaryActions.quote.label}
+              {primaryActions.call.label}
             </Link>
             <MobileNav variant={variant} />
           </div>

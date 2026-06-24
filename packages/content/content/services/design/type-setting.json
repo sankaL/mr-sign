@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "type-setting",
+  "name": "Type Setting",
+  "status": "published",
+  "displayOrder": 8,
+  "featured": false,
+  "headline": "Typesetting That Makes Print and Signs Easier to Read",
+  "shortDescription": "Typesetting and layout support for flyers, menus, business cards, envelopes, letterheads, and print files.",
+  "body": [
+    "Typesetting makes printed material easier to read, align, and produce cleanly.",
+    "We can prepare layout and text for flyers, menus, business cards, envelopes, letterheads, artwork files, and other production pieces."
+  ],
+  "capabilities": [
+    "Flyer and menu layout",
+    "Business card and envelope setup",
+    "Scanning, cutting, and file preparation",
+    "Production-ready text layout"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 3500,
+    "currency": "CAD",
+    "unitLabel": "per layout",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-type-setting.png",
+    "alt": "Professional type layout shown on a design screen.",
+    "prompt": "A close-up of a screen showing a professional type layout for a sign or printed menu, with careful alignment guides and abstract text lines. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Professional Typesetting in Vaughan | Mr. Sign and Print",
+    "description": "Professional typesetting for signs, menus, publications, and print materials in Vaughan and the GTA. Clean, readable, and production-ready. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "silk-screens"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "full-colour-brochures"
+    }
+  ]
+}

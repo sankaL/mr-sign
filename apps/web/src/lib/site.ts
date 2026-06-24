@@ -6,7 +6,7 @@ import {
   locationPage,
   primaryActions,
   publicNavigation,
-  quotePage,
+  pricingContactPage,
   serviceCategories as contentCategories,
   siteContact,
 } from "@mrsign/content";
@@ -15,7 +15,6 @@ import {
   Brush,
   ClipboardCheck,
   FileText,
-  Hammer,
   Mail,
   MapPin,
   Megaphone,
@@ -23,8 +22,6 @@ import {
   Printer,
   Ruler,
   ShieldCheck,
-  Sparkles,
-  Users,
 } from "lucide-react";
 
 export {
@@ -35,7 +32,7 @@ export {
   locationPage,
   primaryActions,
   publicNavigation,
-  quotePage,
+  pricingContactPage,
   siteContact,
 };
 
@@ -100,15 +97,15 @@ export const serviceCategories: ServiceCategory[] = contentCategories.map(
 
 export const featuredWorkflows = [
   {
-    title: "Quote Intake",
+    title: "Direct Contact",
     description:
-      "Collect service, size, quantity, deadline, and contact details without payments or file uploads.",
+      "Help customers call, email, or visit with service, size, quantity, deadline, and artwork details.",
     icon: ClipboardCheck,
   },
   {
-    title: "Production Notes",
+    title: "Service Guidance",
     description:
-      "Show clear service paths and leave detailed production management for later admin phases.",
+      "Show clear service paths and practical details without account, checkout, or upload flows.",
     icon: Ruler,
   },
   {
@@ -125,30 +122,21 @@ export const contactMethods = [
   { label: siteContact.shortAddress, href: "/location", icon: MapPin },
 ];
 
-export const adminNavigation = [
-  { href: "/admin", label: "Dashboard", icon: Hammer },
-  { href: "/admin/requests", label: "Requests", icon: ClipboardCheck },
-  { href: "/admin/services", label: "Services", icon: FileText },
-  { href: "/admin/users", label: "Users", icon: Users },
-  { href: "/admin/settings", label: "Settings", icon: Sparkles },
-];
-
 export const statusStateContent = {
   loading: {
-    title: "Preparing the workspace",
-    description:
-      "The public page shell is ready while live request handling is prepared.",
-    icon: Sparkles,
+    title: "Preparing the service details",
+    description: "The public page shell is ready while content loads.",
+    icon: FileText,
   },
   empty: {
     title: "Direct contact available",
-    description: "Use the shop phone or email for active quote requests.",
+    description: "Use the shop phone or email for current pricing questions.",
     icon: FileText,
   },
   error: {
-    title: "No live submission yet",
+    title: "No online submission",
     description:
-      "Form validation and stored request handling are intentionally out of scope for this static launch layer.",
+      "Online forms and stored requests are intentionally out of scope for this static site.",
     icon: ShieldCheck,
   },
 };

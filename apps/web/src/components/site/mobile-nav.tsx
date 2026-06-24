@@ -64,11 +64,11 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
             ))}
           </div>
           <Link
-            href={primaryActions.quote.href}
+            href={primaryActions.call.href}
             className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#C9455A] hover:!text-white focus-visible:bg-[#C9455A] focus-visible:!text-white active:scale-[0.98]"
             onClick={closeNavigation}
           >
-            {primaryActions.quote.label}
+            {primaryActions.call.label}
           </Link>
         </div>
       ) : null}

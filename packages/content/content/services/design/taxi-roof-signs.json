@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "taxi-roof-signs",
+  "name": "Taxi's Roof Signs",
+  "status": "published",
+  "displayOrder": 2,
+  "featured": false,
+  "headline": "Custom Taxi Roof Signs Designed and Built to Stand Out",
+  "shortDescription": "Taxi and driving school roof signs with acrylic panels and clear lettering for vehicle-top visibility.",
+  "body": [
+    "Taxi roof signs are built for clear vehicle-top identification in daily use.",
+    "They can be supplied as blank roof signs or finished with vinyl lettering for taxi and driving school branding."
+  ],
+  "capabilities": [
+    "White acrylic taxi roof signs",
+    "Vinyl lettering for sign panels",
+    "Taxi and driving school branding",
+    "Replacement panel support"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 18000,
+    "currency": "CAD",
+    "unitLabel": "per blank sign",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-taxi-roof-signs.png",
+    "alt": "Backlit taxi roof sign mounted on a cab.",
+    "prompt": "A well-lit taxi at a street corner at night, with an illuminated roof sign showing abstract company-name blocks on a coloured background. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Taxi Roof Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom-designed and produced illuminated taxi roof signs in Vaughan and the GTA. Clear branding, built for continuous use. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vehicle-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "magnetic-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    }
+  ]
+}

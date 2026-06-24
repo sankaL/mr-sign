@@ -9,7 +9,7 @@
 - **Meta Description:** Visit Mr. Sign and Print at 399 Four Valley Dr., Unit 3, Vaughan, Ontario. View our hours, get directions, and contact us. Serving Vaughan and the GTA since 2000.
 - **URL:** /location
 - **Social Sharing Title:** Find Mr. Sign and Print in Vaughan, Ontario
-- **Social Sharing Description:** Located at 399 Four Valley Dr., Unit 3, Vaughan. Call, get directions, or request a quote online. Serving the GTA since 2000.
+- **Social Sharing Description:** Located at 399 Four Valley Dr., Unit 3, Vaughan. Call, get directions, or contact the shop online. Serving the GTA since 2000.
 
 ---
 
@@ -36,10 +36,10 @@
 - **Style:** Secondary button colour
 - **Link:** Google Maps directions URL for 399 Four Valley Dr., Unit 3, Vaughan, Ontario L4K 5X5
 
-**Button 3:** Request a Quote
-- **Icon:** Clipboard or quote icon beside the label
+**Button 3:** Contact the Shop
+- **Icon:** Clipboard or pricing icon beside the label
 - **Style:** Outlined or tertiary button
-- **Link:** /request-quote
+- **Link:** /contact
 
 ---
 
@@ -176,7 +176,7 @@ If you are having trouble finding us, give us a call and we will guide you in:
 Whether you need a sign for your storefront, a print run for your business, or a logo for your brand -- we are right here in Vaughan and ready to help.
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 - Contact Us (links to /contact)
 - Call Now: (416) 512-9353 (tel: link)
 

@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "brochures",
+  "name": "Brochures",
+  "status": "published",
+  "displayOrder": 1,
+  "featured": false,
+  "headline": "Brochures That Represent Your Business Properly",
+  "shortDescription": "Printed brochures in common business sizes with one-sided or double-sided colour options.",
+  "body": [
+    "Brochures give customers a compact printed overview of your products, services, offer, or event.",
+    "We print practical brochure formats with stock, size, side, and quantity options suited to business campaigns."
+  ],
+  "capabilities": [
+    "Common brochure sizes",
+    "One-sided and double-sided colour printing",
+    "Coated and uncoated stock options",
+    "Short and long run quantities"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 38300,
+    "currency": "CAD",
+    "unitLabel": "per starter run",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-brochures.png",
+    "alt": "Tri-fold brochure printed on glossy stock.",
+    "prompt": "A tri-fold brochure for a fictional local business, open on a clean surface to show polished interior panels with abstract text blocks, icons, and a small image area. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Brochures in Vaughan | Mr. Sign and Print",
+    "description": "Professionally printed brochures for Vaughan businesses. Tri-fold, bi-fold, and custom formats available. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "full-colour-brochures"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 import { getCategory, type CategorySlug } from "@mrsign/content";
-import { ClipboardList, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicServices } from "@/lib/public-services";
-import { primaryActions, siteContact } from "@/lib/site";
+import { primaryActions } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
 import { ServiceTeaserCard } from "./service-teaser-card";
@@ -41,18 +41,18 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href={primaryActions.quote.href}
+                  href={primaryActions.call.href}
                   className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
                 >
-                  {primaryActions.quote.label}
-                  <ClipboardList className="h-4 w-4" strokeWidth={2.5} />
+                  {primaryActions.call.label}
+                  <Phone className="h-4 w-4" strokeWidth={2.5} />
                 </Link>
                 <Link
-                  href={siteContact.phoneHref}
+                  href={primaryActions.email.href}
                   className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/35 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4] active:scale-[0.98]"
                 >
-                  Call the shop
-                  <Phone className="h-4 w-4" strokeWidth={2.5} />
+                  {primaryActions.email.label}
+                  <Mail className="h-4 w-4" strokeWidth={2.5} />
                 </Link>
               </div>
             </div>
@@ -85,7 +85,7 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
                 <ServiceTeaserCard
                   key={service.route}
                   service={service}
-                  prominent={Boolean(service.isFeatured) || index === 0}
+                  prominent={service.featured || index === 0}
                 />
               ))}
             </div>
@@ -93,7 +93,7 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
         </section>
 
         <CtaSection
-          title={`Ready to price ${category.name.toLowerCase()} work?`}
+          title={`Need current pricing for ${category.name.toLowerCase()} work?`}
         />
       </main>
     </SiteShell>

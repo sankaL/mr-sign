@@ -16,22 +16,15 @@ function money(amountCents: number) {
 
 function pricingTypeLabel(type: PublicPricing["type"]) {
   switch (type) {
-    case "EXACT_PRICE":
+    case "fixed":
       return "Price";
-    case "STARTING_FROM":
+    case "startingFrom":
       return "Starting from";
-    case "TIERED":
+    case "tiered":
       return "Pricing tiers";
-    case "REQUEST_QUOTE":
-      return "Pricing by quote";
+    case "contactForPricing":
+      return "Contact for pricing";
   }
-}
-
-function quoteLabel(pricing: PublicPricing) {
-  return pricing.type === "REQUEST_QUOTE" &&
-    !/legacy/i.test(pricing.publicLabel)
-    ? pricing.publicLabel
-    : "Request a quote for pricing for this specific service.";
 }
 
 export function PricingSummary({
@@ -39,24 +32,22 @@ export function PricingSummary({
   compact = false,
 }: PricingSummaryProps) {
   const amount =
-    typeof pricing.amountCents === "number" ? money(pricing.amountCents) : null;
+    "amountCents" in pricing && typeof pricing.amountCents === "number"
+      ? money(pricing.amountCents)
+      : null;
   const hasDisplayAmount =
-    (pricing.type === "EXACT_PRICE" || pricing.type === "STARTING_FROM") &&
-    amount;
-  const shouldShowUnit = hasDisplayAmount && pricing.unitLabel;
+    (pricing.type === "fixed" || pricing.type === "startingFrom") && amount;
+  const unitLabel = "unitLabel" in pricing ? pricing.unitLabel : undefined;
+  const shouldShowUnit = hasDisplayAmount && unitLabel;
   const shouldShowVariablePricingNote =
-    pricing.type === "STARTING_FROM" && !compact;
+    pricing.type === "startingFrom" && !compact;
   const shouldShowTieredDescription =
-    pricing.type === "TIERED" && pricing.tieredDescription && !compact;
+    pricing.type === "tiered" && pricing.description && !compact;
+  const shouldShowContactNote =
+    pricing.type === "contactForPricing" && pricing.notes && !compact;
 
   return (
-    <div
-      className={
-        compact
-          ? "border-t border-[#151515]/10 pt-3"
-          : "py-0"
-      }
-    >
+    <div className={compact ? "border-t border-[#151515]/10 pt-3" : "py-0"}>
       <div className="grid gap-3 sm:grid-cols-[auto_1fr] sm:items-start">
         <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515]">
           <BadgeDollarSign className="h-4 w-4" strokeWidth={2.25} />
@@ -77,14 +68,12 @@ export function PricingSummary({
             </p>
           ) : (
             <p className="mt-1 text-sm font-black leading-5 text-[#151515]">
-              {pricing.type === "TIERED"
-                ? pricing.publicLabel
-                : quoteLabel(pricing)}
+              {pricing.label}
             </p>
           )}
           {shouldShowUnit ? (
             <p className="mt-1 text-xs font-bold text-[#151515]/55">
-              Unit: {pricing.unitLabel}
+              Unit: {unitLabel}
             </p>
           ) : null}
           {shouldShowVariablePricingNote ? (
@@ -95,7 +84,12 @@ export function PricingSummary({
           ) : null}
           {shouldShowTieredDescription ? (
             <p className="mt-2 max-w-[42ch] text-sm font-semibold leading-6 text-[#151515]/62">
-              {pricing.tieredDescription}
+              {pricing.description}
+            </p>
+          ) : null}
+          {shouldShowContactNote ? (
+            <p className="mt-2 max-w-[42ch] text-sm font-semibold leading-6 text-[#151515]/62">
+              {pricing.notes}
             </p>
           ) : null}
         </div>

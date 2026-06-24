@@ -11,14 +11,7 @@
     "typecheck": "corepack pnpm --recursive --if-present typecheck",
     "format": "corepack pnpm --filter @mrsign/web format",
     "format:check": "corepack pnpm --recursive --if-present format:check",
-    "test": "corepack pnpm --recursive --if-present test",
-    "db:generate": "corepack pnpm --filter @mrsign/db generate",
-    "db:migrate": "corepack pnpm --filter @mrsign/db migrate",
-    "db:migrate:deploy": "corepack pnpm --filter @mrsign/db migrate:deploy",
-    "db:seed": "corepack pnpm --filter @mrsign/db seed",
-    "db:seed:requests": "corepack pnpm --filter @mrsign/db seed:requests",
-    "db:create-admin": "corepack pnpm --filter @mrsign/db create-admin",
-    "db:bootstrap": "corepack pnpm db:migrate:deploy && corepack pnpm db:seed && corepack pnpm db:create-admin"
+    "test": "corepack pnpm --recursive --if-present test"
   },
   "devDependencies": {
     "prettier": "3.8.3"

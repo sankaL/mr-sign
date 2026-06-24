@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "silk-screens",
+  "name": "Silk Screens",
+  "status": "published",
+  "displayOrder": 9,
+  "featured": false,
+  "headline": "Silk Screen Printing for Bold Apparel and Promotional Work",
+  "shortDescription": "Silk screen setup and printing support for apparel, bags, promotional materials, and repeatable graphics.",
+  "body": [
+    "Silk screening is useful for sharper, more durable graphics on larger apparel and promotional runs.",
+    "The process can include artwork layout, film, screen preparation, colour planning, and the final screen print."
+  ],
+  "capabilities": [
+    "Silk screen setup for apparel",
+    "Film and screen preparation",
+    "Single-colour and multi-colour jobs",
+    "T-shirts, bags, and promotional materials"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 750,
+    "currency": "CAD",
+    "unitLabel": "per imprint",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-silk-screens.png",
+    "alt": "Silk screen printing setup applying ink to a T-shirt.",
+    "prompt": "A silk screen printing setup in a workshop, with a squeegee pulling ink across a screen frame onto a white T-shirt and a sharp abstract logo impression. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Silk Screen Printing in Vaughan | Mr. Sign and Print",
+    "description": "Silk screen printing for T-shirts, apparel, bags, and promotional materials in Vaughan and the GTA. Bold, durable results. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "design",
+      "serviceSlug": "t-shirts-caps"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    }
+  ]
+}

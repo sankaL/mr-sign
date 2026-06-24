@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "window-lettering",
+  "name": "Window Lettering",
+  "status": "published",
+  "displayOrder": 20,
+  "featured": false,
+  "headline": "Window Lettering for Storefronts and Offices",
+  "shortDescription": "Vinyl window lettering for storefront glass, business hours, logos, messages, and promotional displays.",
+  "body": [
+    "Window lettering uses cut vinyl logos and text applied directly to commercial glass.",
+    "It is useful for business hours, service lists, promotional messages, and pedestrian-level branding at the front of a store."
+  ],
+  "capabilities": [
+    "Vinyl lettering applied directly to glass",
+    "Business hours, logos, and promotional graphics",
+    "Interior and exterior application options",
+    "Layout and cutting-only options"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 500,
+    "currency": "CAD",
+    "unitLabel": "per sq ft",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-window-lettering.png",
+    "alt": "Retail storefront window with vinyl lettering.",
+    "prompt": "A large retail storefront window with vinyl lettering applied directly to the glass, showing abstract business-hour blocks and a clean logo mark shape. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Window Lettering in Vaughan | Mr. Sign and Print",
+    "description": "Professional vinyl window lettering for storefronts and offices in Vaughan and the GTA. Clean, affordable, and long-lasting. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "awnings"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    }
+  ]
+}

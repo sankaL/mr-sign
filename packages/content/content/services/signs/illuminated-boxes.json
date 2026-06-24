@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "illuminated-boxes",
+  "name": "Illuminated Boxes",
+  "status": "published",
+  "displayOrder": 13,
+  "featured": false,
+  "headline": "Illuminated Sign Boxes for Storefronts and Plazas",
+  "shortDescription": "Illuminated sign boxes for storefronts, plazas, and commercial entrances where visibility matters.",
+  "body": [
+    "Illuminated boxes are commonly used as main front signs for stores and plaza units.",
+    "Each box combines a cabinet, plastic face, frame, lighting equipment, and lettering so the whole face can carry the message."
+  ],
+  "capabilities": [
+    "Indoor and outdoor illuminated box signs",
+    "Cabinet, face, frame, and lighting components",
+    "Vinyl lettering on the sign face",
+    "Storefront and plaza installations"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 3500,
+    "currency": "CAD",
+    "unitLabel": "per sq ft",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-illuminated-boxes.png",
+    "alt": "Backlit lightbox sign mounted on a commercial wall.",
+    "prompt": "A square backlit lightbox sign mounted on the exterior wall of a commercial plaza unit at night, glowing with abstract logo shapes. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Illuminated Sign Boxes in Vaughan | Mr. Sign and Print",
+    "description": "Custom backlit illuminated sign boxes for storefronts and plazas in Vaughan and the GTA. Built and installed by Mr. Sign and Print. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "awnings"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "neon"
+    }
+  ]
+}

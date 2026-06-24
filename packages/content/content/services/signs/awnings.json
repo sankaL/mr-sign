@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "awnings",
+  "name": "Awnings",
+  "status": "published",
+  "displayOrder": 1,
+  "featured": false,
+  "headline": "Custom Awnings for Vaughan Businesses",
+  "shortDescription": "Custom awnings that work as storefront signs, shaped to fit your entrance and carry your brand clearly.",
+  "body": [
+    "Awnings are often used as the main front sign for a store, installed above the entrance and often spanning most of the storefront width.",
+    "They work well when the shape and presence of the sign matter as much as the message. Each awning combines a metal skeleton, vinyl skin, and applied or washed-out lettering."
+  ],
+  "capabilities": [
+    "Metal skeletons shaped for the storefront entrance",
+    "Vinyl awning skins with branded lettering",
+    "Lighting and electrical equipment inside the structure",
+    "Storefront awnings for retail, restaurant, and plaza units"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 3500,
+    "currency": "CAD",
+    "unitLabel": "per sq ft",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-awnings.png",
+    "alt": "Fabric business awning over a storefront entrance.",
+    "prompt": "A close-up photo of a freshly installed deep navy fabric awning on a retail storefront, with clean white abstract lettering shapes on the valance. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Awnings in Vaughan | Mr. Sign and Print",
+    "description": "Custom fabric and metal awnings for businesses in Vaughan and the GTA. Built to last and branded to impress. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    }
+  ]
+}

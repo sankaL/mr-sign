@@ -38,8 +38,8 @@ export default function LocationPage() {
                   {siteContact.address}
                 </h2>
                 <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/65">
-                  We serve {siteContact.serviceArea}. Call ahead for quote
-                  timing, pickup details, and production questions.
+                  We serve {siteContact.serviceArea}. Call ahead for current
+                  pricing, pickup details, and production questions.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link

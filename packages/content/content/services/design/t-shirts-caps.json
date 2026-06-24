@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "t-shirts-caps",
+  "name": "T-Shirts and Caps",
+  "status": "published",
+  "displayOrder": 6,
+  "featured": false,
+  "headline": "Custom T-Shirts and Caps for Teams, Staff, and Events",
+  "shortDescription": "Custom T-shirt and cap graphics using heat transfer, inkjet transfer, or silk screen production methods.",
+  "body": [
+    "T-shirts and caps can be produced using heat transfer, inkjet transfer, or silk screening depending on quantity, colours, and durability needs.",
+    "This service covers artwork placement, print method selection, garment graphics, and production preparation."
+  ],
+  "capabilities": [
+    "Heat transfer graphics",
+    "Inkjet transfer graphics",
+    "Silk screen apparel printing",
+    "T-shirt, cap, and promotional apparel layouts"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 750,
+    "currency": "CAD",
+    "unitLabel": "per imprint",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-t-shirts-caps.png",
+    "alt": "Printed T-shirts and embroidered cap with company logo.",
+    "prompt": "A flat-lay of two printed T-shirts and a matching embroidered cap on a clean white surface, with abstract company logo marks on the chest and cap. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom T-Shirts and Caps in Vaughan | Mr. Sign and Print",
+    "description": "Custom logo printing on T-shirts, polo shirts, and caps for businesses and events in Vaughan and the GTA. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "design",
+      "serviceSlug": "silk-screens"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "magnetic-fridge"
+    }
+  ]
+}

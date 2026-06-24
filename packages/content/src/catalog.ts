@@ -45,9 +45,11 @@ export function getRelatedServices(reference: ServiceReference) {
 }
 
 export function getFeaturedServices() {
-  return featuredServiceRefs
+  const featured = featuredServiceRefs
     .map((reference) => getServiceByRef(reference))
     .filter(isServiceDetail);
+
+  return featured.length > 0 ? featured : services.slice(0, 4);
 }
 
 export function getGalleryServices() {

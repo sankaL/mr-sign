@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "logos",
+  "name": "Logos",
+  "status": "published",
+  "displayOrder": 5,
+  "featured": false,
+  "headline": "Logo Design That Works in Print, Signs, and Online",
+  "shortDescription": "Logo and artwork preparation for print, signage, business cards, vehicle graphics, and online use.",
+  "body": [
+    "A logo has to work across signs, print materials, vehicles, magnets, websites, and small-format stationery.",
+    "We can create new logo artwork, clean up existing artwork, prepare production files, and adapt designs for real sign and print output."
+  ],
+  "capabilities": [
+    "Custom logo concepts",
+    "Artwork cleanup for production",
+    "Print-ready and sign-ready files",
+    "Colour and one-colour logo versions"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 5000,
+    "currency": "CAD",
+    "unitLabel": "per custom logo",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-logos.png",
+    "alt": "Logo design work shown on a computer screen.",
+    "prompt": "A computer screen showing a logo in progress in a vector design program, with multiple abstract colour variations and a printed colour proof beside the monitor. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Logo Design in Vaughan | Mr. Sign and Print",
+    "description": "Professional logo design for small businesses in Vaughan and the GTA. We deliver print-ready and digital files so your logo works everywhere. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "design",
+      "serviceSlug": "websites"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "type-setting"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    }
+  ]
+}

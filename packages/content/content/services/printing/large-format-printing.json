@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "large-format-printing",
+  "name": "Large Format Printing",
+  "status": "published",
+  "displayOrder": 6,
+  "featured": false,
+  "headline": "Large Format Printing for Banners, Posters, and Displays",
+  "shortDescription": "Large format output for posters, banners, display panels, backlit film, vinyl, and paper graphics.",
+  "body": [
+    "Large format printing covers posters, banners, display graphics, and oversized materials that need crisp colour at a larger scale.",
+    "Output can be produced on paper, photo paper, adhesive paper, vinyl, backlit film, transparency, banner material, and static cling."
+  ],
+  "capabilities": [
+    "Outdoor and indoor wide-format printing",
+    "Paper, vinyl, backlit film, transparency, and banner materials",
+    "Mounting and laminating options",
+    "Full-colour and text-only output"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 700,
+    "currency": "CAD",
+    "unitLabel": "per sq ft",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-large-format-printing.png",
+    "alt": "Freshly printed large-format banner being unrolled.",
+    "prompt": "A technician carefully unrolling a freshly printed large-format banner in a print shop, with vivid abstract colour fields and crisp edges. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Large Format Printing in Vaughan | Mr. Sign and Print",
+    "description": "Vivid large-format printing for banners, posters, displays, and signage in Vaughan and the GTA. Any size, full colour. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "full-colour-brochures"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    }
+  ]
+}

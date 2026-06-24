@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "flyers",
+  "name": "Flyers",
+  "status": "published",
+  "displayOrder": 11,
+  "featured": false,
+  "headline": "Flyers for Promotions, Events, and Local Advertising",
+  "shortDescription": "Printed flyers for promotions, events, price lists, announcements, menus, and local advertising.",
+  "body": [
+    "Flyers are a flexible print format for promotions, events, menus, neighbourhood advertising, and simple business information.",
+    "They can be printed in different sizes, ink configurations, quantities, and paper choices depending on the campaign."
+  ],
+  "capabilities": [
+    "Single-page promotional flyers",
+    "Colour and black ink options",
+    "Typesetting and layout support",
+    "Small event runs and larger advertising runs"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 2588,
+    "currency": "CAD",
+    "unitLabel": "per starter run",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-flyers.png",
+    "alt": "Stack of freshly printed single-page flyers.",
+    "prompt": "A small stack of freshly printed single-page flyers, each showing bold abstract promotional shapes and bright colour blocks for a local business. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Flyers in Vaughan | Mr. Sign and Print",
+    "description": "Full-colour printed flyers for promotions, events, and businesses in Vaughan and the GTA. Fast turnaround, competitive pricing. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    }
+  ]
+}

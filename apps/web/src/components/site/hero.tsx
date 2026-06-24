@@ -1,12 +1,5 @@
 import { businessHours, homePage } from "@mrsign/content";
-import {
-  ArrowDown,
-  ArrowRight,
-  Clock,
-  Mail,
-  Phone,
-  Store,
-} from "lucide-react";
+import { ArrowDown, ArrowRight, Clock, Mail, Phone, Store } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -70,14 +63,14 @@ const ArrowBlack = () => (
 
 const CircularBadge = () => (
   <Link
-    href={primaryActions.quote.href}
+    href={primaryActions.contact.href}
     className="relative flex h-[clamp(4.5rem,8vw,7rem)] w-[clamp(4.5rem,8vw,7rem)] rotate-12 cursor-pointer items-center justify-center rounded-full border-[3px] border-black/5 bg-[#CCFF00] shadow-xl transition-transform hover:scale-105"
-    aria-label="Request a free quote"
+    aria-label="Contact Mr. Sign and Print"
   >
     <div className="absolute inset-1 animate-[spin_10s_linear_infinite]">
       <svg viewBox="0 0 100 100" className="h-full w-full">
         <path
-          id="quoteCirclePath"
+          id="badgeCirclePath"
           d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
           fill="none"
         />
@@ -85,7 +78,7 @@ const CircularBadge = () => (
           className="text-[11px] font-black uppercase tracking-[0.18em]"
           fill="black"
         >
-          <textPath href="#quoteCirclePath" startOffset="0%">
+          <textPath href="#badgeCirclePath" startOffset="0%">
             SERVING SINCE 2000 - SERVING SINCE 2000 -
           </textPath>
         </text>
@@ -174,8 +167,8 @@ export async function HomeHero() {
               Proudly serving Vaughan, Concord, and the Greater Toronto Area.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <ButtonLink href={primaryActions.quote.href}>
-                {primaryActions.quote.label}
+              <ButtonLink href={primaryActions.call.href}>
+                {primaryActions.call.label}
               </ButtonLink>
               <ButtonLink
                 href={primaryActions.services.href}
@@ -192,11 +185,12 @@ export async function HomeHero() {
         <div className="mx-auto flex max-w-6xl flex-col gap-0 md:grid md:grid-cols-3 md:gap-8">
           <div className="relative flex flex-col items-center rounded-xl border border-gray-100 bg-[#F8F9FA] p-4 text-center md:h-64 md:rounded-[2rem] md:p-8">
             <h3 className="mb-1 text-base font-black uppercase leading-tight md:mb-2 md:text-2xl">
-              Request
-              <br />a quote
+              Call
+              <br />
+              the shop
             </h3>
             <p className="mb-3 text-[10px] font-bold text-black/60 md:mb-auto md:text-xs">
-              send project details for signs, print, or design
+              talk through signs, print, or design details
             </p>
             <div className="relative mt-2 flex w-full max-w-[260px] justify-center md:mt-6">
               <div className="relative z-10 flex w-[190px] items-center rounded-2xl bg-[#0038FF] p-2 pr-20 text-white shadow-lg">
@@ -217,7 +211,7 @@ export async function HomeHero() {
                 </div>
               </div>
               <div className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-xl bg-[#CCFF00] px-3 py-2 text-[10px] font-black text-black shadow-md">
-                Free quote
+                Pricing help
               </div>
             </div>
             <div className="absolute -right-12 bottom-8 z-30 hidden h-16 w-16 md:block">
@@ -291,7 +285,7 @@ export async function HomeHero() {
               Popular services
             </p>
             <h2 className="mt-2 max-w-7xl text-2xl font-black uppercase leading-tight md:text-3xl">
-              A few of the products we quote every day.
+              A few of the products customers ask about every day.
             </h2>
           </div>
 

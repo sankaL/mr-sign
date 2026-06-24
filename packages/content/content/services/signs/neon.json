@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "neon",
+  "name": "Neon",
+  "status": "published",
+  "displayOrder": 19,
+  "featured": false,
+  "headline": "Custom Neon Signs for Bright, Classic Visibility",
+  "shortDescription": "Neon signs and accents for storefronts, windows, interiors, borders, and illuminated display work.",
+  "body": [
+    "Neon signs are used when a business wants a bright, memorable sign that is visible during the day and at night.",
+    "Applications include main front signs, window signs, interior signs, border accents, and complementary lighting for existing storefront signs."
+  ],
+  "capabilities": [
+    "Main storefront neon signs",
+    "Window and interior neon signs",
+    "Carrier boards and transformer support",
+    "Borders and accent neon"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 2600,
+    "currency": "CAD",
+    "unitLabel": "per letter",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-neon.png",
+    "alt": "Bright neon sign glowing in a storefront window.",
+    "prompt": "A vibrant neon sign glowing in orange and pink inside the window of a Vaughan-area cafe, with abstract tube lettering shapes and warm reflections. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Neon Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom neon signs for storefronts, restaurants, and interior spaces in Vaughan and the GTA. Eye-catching and memorable. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    }
+  ]
+}

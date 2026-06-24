@@ -99,3 +99,22 @@ Impact:
 - Railway production uses the root `Dockerfile` plus `railway.toml` rather than ad hoc per-service commands.
 - The web service must define `FIRST_ADMIN_EMAIL`, `FIRST_ADMIN_NAME`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_SITE_URL`, and database/email variables in Railway.
 - Every successful deploy can recreate missing base catalog data and reactivate the configured first admin without manual shell access.
+
+## 2026-06-23: Replace full-stack intake/admin architecture with static JSON content
+
+Decision: The MVP should be a static public website backed by repository-managed JSON content. Online customer submissions, request codes, admin portal features, authentication, database storage, Prisma, and Resend transactional emails are removed from the implementation.
+
+Rationale:
+
+- The customer does not want website visitors to submit online quote requests.
+- Without online intake, the admin portal no longer provides enough value to justify auth, database, email, and request-management infrastructure.
+- Service and pricing content changes are expected to be rare enough that JSON files in the repo are simpler and safer than a custom admin UI.
+- A static site lowers hosting cost, reduces operational risk, and keeps the public experience fast.
+
+Impact:
+
+- `packages/content/content/` is the canonical source for service, category, site, image, pricing, and SEO content.
+- Public CTAs route to phone, email, services, location, and contact pages.
+- `/request-quote` and `/order-online` remain only as static compatibility pages without submission forms.
+- Railway deploys no longer run migrations or database bootstrap commands.
+- Prior full-stack, auth, database, and admin decisions are superseded for the MVP.

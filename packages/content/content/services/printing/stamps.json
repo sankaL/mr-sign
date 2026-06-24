@@ -1,0 +1,49 @@
+{
+  "categorySlug": "printing",
+  "slug": "stamps",
+  "name": "Stamps",
+  "status": "published",
+  "displayOrder": 10,
+  "featured": false,
+  "headline": "Custom Rubber Stamps for Business Use",
+  "shortDescription": "Custom stamps for addresses, document marking, branding, office workflows, and repeated business details.",
+  "body": [
+    "Custom rubber stamps save time on repeated office details, document marking, addresses, approvals, and branding.",
+    "Stamp options can be matched to the impression size, daily use, and business information needed."
+  ],
+  "capabilities": [
+    "Address and logo stamps",
+    "Self-inking rubber stamps",
+    "Document marking stamps",
+    "Business branding and office use"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/printing-stamps.png",
+    "alt": "Self-inking rubber stamp impression on a card.",
+    "prompt": "A custom self-inking rubber stamp pressed onto a white card, leaving a clean abstract blue impression beside office stationery. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Rubber Stamps in Vaughan | Mr. Sign and Print",
+    "description": "Custom self-inking and traditional rubber stamps for businesses in Vaughan and the GTA. Address stamps, logo stamps, and more. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "invoices"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    }
+  ]
+}

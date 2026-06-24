@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "websites",
+  "name": "Websites",
+  "status": "published",
+  "displayOrder": 10,
+  "featured": false,
+  "headline": "Small Business Website Design for Vaughan Companies",
+  "shortDescription": "Simple business website design that helps customers find your services, contact details, and brand online.",
+  "body": [
+    "A website gives customers a convenient way to understand your company, find your services, and contact you.",
+    "The process includes clarifying the goal, gathering information, organizing content, structuring the pages, and building a practical site."
+  ],
+  "capabilities": [
+    "Home page design",
+    "Extra page design",
+    "Website structure planning",
+    "Maintenance and management by contract"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 5000,
+    "currency": "CAD",
+    "unitLabel": "per setup",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-websites.png",
+    "alt": "Responsive business website displayed on several devices.",
+    "prompt": "A laptop, tablet, and smartphone arranged together, each displaying the same small business website layout with abstract service cards and navigation blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Small Business Website Design in Vaughan | Mr. Sign and Print",
+    "description": "Simple, professional website design for small businesses in Vaughan and the GTA. Represent your business online as well as your signs do in person. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "type-setting"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    }
+  ]
+}

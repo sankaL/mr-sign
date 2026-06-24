@@ -3,14 +3,14 @@ import {
   getRelatedServices,
   type CategorySlug,
 } from "@mrsign/content";
-import { ArrowLeft, ArrowRight, Check, FileText, Phone } from "lucide-react";
+import { ArrowLeft, Check, FileText, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicService } from "@/lib/public-services";
 import { buildServiceSchema } from "@/lib/seo";
-import { primaryActions, siteContact } from "@/lib/site";
+import { siteContact } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
 import { PricingSummary } from "./pricing-summary";
@@ -37,7 +37,6 @@ export async function ServiceDetailPage({
     categorySlug: service.categorySlug,
     serviceSlug: service.slug,
   });
-  const quoteHref = `${primaryActions.quote.href}?category=${service.categorySlug}&service=${service.slug}`;
   const serviceSchema = buildServiceSchema(service);
 
   return (
@@ -75,18 +74,18 @@ export async function ServiceDetailPage({
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={quoteHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
-                >
-                  Request a quote
-                  <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-                </Link>
-                <Link
                   href={siteContact.phoneHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#151515] focus-visible:bg-white focus-visible:!text-[#151515] active:scale-[0.98]"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
                 >
                   Call the shop
                   <Phone className="h-4 w-4" strokeWidth={2.5} />
+                </Link>
+                <Link
+                  href={siteContact.emailHref}
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#151515] focus-visible:bg-white focus-visible:!text-[#151515] active:scale-[0.98]"
+                >
+                  Email details
+                  <Mail className="h-4 w-4" strokeWidth={2.5} />
                 </Link>
               </div>
             </div>
@@ -170,7 +169,7 @@ export async function ServiceDetailPage({
                   Related services
                 </p>
                 <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
-                  Often quoted together
+                  Often paired together
                 </h2>
                 <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
                   These services are commonly part of the same sign, print, or
@@ -189,7 +188,9 @@ export async function ServiceDetailPage({
           </section>
         ) : null}
 
-        <CtaSection title={`Ready to quote ${service.name.toLowerCase()}?`} />
+        <CtaSection
+          title={`Need current pricing for ${service.name.toLowerCase()}?`}
+        />
       </main>
     </SiteShell>
   );

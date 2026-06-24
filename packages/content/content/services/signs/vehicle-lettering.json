@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "vehicle-lettering",
+  "name": "Vehicle Lettering",
+  "status": "published",
+  "displayOrder": 16,
+  "featured": true,
+  "headline": "Vehicle Lettering That Works While You Drive",
+  "shortDescription": "Vinyl vehicle lettering for cars, vans, trucks, cube vans, doors, rear panels, and curved surfaces.",
+  "body": [
+    "Vehicle lettering turns a car, van, or truck into a moving sign while it is parked or driving.",
+    "Layouts can be built for doors, side panels, rear doors, curved panels, pickup trucks, mini vans, trucks, and cube vans."
+  ],
+  "capabilities": [
+    "Passenger car and pickup door lettering",
+    "Van, truck, and cube van lettering packages",
+    "One-colour and two-colour vinyl layouts",
+    "Side, rear, and curved panel lettering"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 9500,
+    "currency": "CAD",
+    "unitLabel": "per door set",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-vehicle-lettering.png",
+    "alt": "Service van with vinyl lettering and business graphics.",
+    "prompt": "A white service van with full-colour vinyl lettering layout across the side door and rear panel, using abstract business graphics and no readable text. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Vehicle Lettering in Vaughan | Mr. Sign and Print",
+    "description": "Custom vinyl vehicle lettering and graphics for cars, vans, and trucks in Vaughan and the GTA. Turn your vehicle into a moving billboard. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "magnetic-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    }
+  ]
+}

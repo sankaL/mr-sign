@@ -1,0 +1,49 @@
+{
+  "categorySlug": "design",
+  "slug": "electronic-signs",
+  "name": "Electronic Signs",
+  "status": "published",
+  "displayOrder": 1,
+  "featured": false,
+  "headline": "Electronic Sign Design That Keeps Your Message Fresh",
+  "shortDescription": "Design and setup support for programmable electronic signs, LED displays, and changeable digital messages.",
+  "body": [
+    "Electronic signs need clear layouts that stay readable at distance and work within the limits of the display system.",
+    "We help prepare message graphics, text layouts, static screens, and update-ready designs for digital sign use."
+  ],
+  "capabilities": [
+    "Graphic and text layout for LED message boards",
+    "Animated and static content design",
+    "Formatting for common electronic sign systems",
+    "Content updates and revisions"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/design-electronic-signs.png",
+    "alt": "Outdoor LED electronic message board on a pylon sign.",
+    "prompt": "An outdoor programmable LED sign mounted on a pylon at a commercial plaza entrance, displaying bright abstract amber-on-black message blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Electronic Sign Design in Vaughan | Mr. Sign and Print",
+    "description": "Custom design and setup for programmable electronic LED signs in Vaughan and the GTA. We create the graphics so your sign looks sharp. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "plastic-lawn-signs",
+  "name": "Plastic Lawn Signs",
+  "status": "published",
+  "displayOrder": 4,
+  "featured": false,
+  "headline": "Plastic Lawn Signs for Local Advertising",
+  "shortDescription": "Two-sided plastic lawn sign bags with wire frames for contractors, real estate, campaigns, and local advertising.",
+  "body": [
+    "Plastic lawn signs are made for outdoor placement and local visibility, with printed bags mounted on wire frames.",
+    "They are a flexible low-cost option for neighbourhood campaigns, service businesses, contractors, garage sales, and real estate promotion."
+  ],
+  "capabilities": [
+    "Two-sided printed lawn sign bags",
+    "Wire frames for quick outdoor placement",
+    "Neighbourhood, contractor, campaign, and garage sale use",
+    "Small starter batches and larger quantity runs"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 28000,
+    "currency": "CAD",
+    "unitLabel": "per starter batch",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-plastic-lawn-signs.png",
+    "alt": "Corrugated plastic lawn signs staked into grass.",
+    "prompt": "A row of 18 by 24 inch corrugated plastic lawn signs staked into a neat front lawn on a residential street, with bold abstract blocks instead of readable text. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Plastic Lawn Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom corrugated plastic lawn signs for businesses, real estate, and events in Vaughan and the GTA. Affordable, weatherproof, and fast. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "real-estate-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "t-frame-site-signs"
+    }
+  ]
+}

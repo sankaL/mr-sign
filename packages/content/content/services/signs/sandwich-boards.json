@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "sandwich-boards",
+  "name": "Sandwich Boards",
+  "status": "published",
+  "displayOrder": 8,
+  "featured": false,
+  "headline": "Sandwich Board Signs for Sidewalk Visibility",
+  "shortDescription": "Portable sidewalk signs with metal or wood frames for restaurants, retail shops, and street-level promotions.",
+  "body": [
+    "Sandwich boards are portable signs that can be brought in and out each day for sidewalk visibility.",
+    "Metal frames are lighter and support replaceable inserts, while wooden boards are heavier and more resistant to wind."
+  ],
+  "capabilities": [
+    "Metal A-frame sandwich boards",
+    "Wooden board options",
+    "Replaceable inserts",
+    "Sidewalk promotions for restaurants and retail"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 12500,
+    "currency": "CAD",
+    "unitLabel": "per sign package",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-sandwich-boards.png",
+    "alt": "A-frame sandwich board sign on a sidewalk.",
+    "prompt": "An A-frame sandwich board sign placed on a sidewalk outside a cafe, with bold abstract chalk-style graphic blocks on a dark panel. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Sandwich Board Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom A-frame sandwich board signs for restaurants, retailers, and events in Vaughan and the GTA. Portable and eye-catching. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "changeable-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vertical-stands-outdoor"
+    }
+  ]
+}

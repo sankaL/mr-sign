@@ -1,0 +1,49 @@
+{
+  "categorySlug": "design",
+  "slug": "engraving-plaque",
+  "name": "Engraving (Plaque)",
+  "status": "published",
+  "displayOrder": 3,
+  "featured": false,
+  "headline": "Custom Engraved Plaques for Awards and Recognition",
+  "shortDescription": "Engraved plaques for awards, recognition, dedications, offices, memorials, and professional displays.",
+  "body": [
+    "Engraved plaques create a permanent and professional display for names, awards, dedications, and recognition.",
+    "Material, backing, size, layout, and mounting can be chosen to match the use and location."
+  ],
+  "capabilities": [
+    "Brass, aluminum, and acrylic plaque options",
+    "Custom engraved text and logos",
+    "Wood, metal, and acrylic backing options",
+    "Wall-mount and desk-mount configurations"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/design-engraving-plaque.png",
+    "alt": "Engraved bronze plaque mounted on a wood backing.",
+    "prompt": "A close-up of a polished brass engraved plaque mounted on a dark walnut backing, with abstract dedication lines and a small emblem shape. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Engraved Plaques in Vaughan | Mr. Sign and Print",
+    "description": "Custom engraved plaques for awards, dedications, and professional recognition in Vaughan and the GTA. Quality materials and clean engraving. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "cut-out-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plate-directory-board"
+    },
+    {
+      "categorySlug": "design",
+      "serviceSlug": "logos"
+    }
+  ]
+}

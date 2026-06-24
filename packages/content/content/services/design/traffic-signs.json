@@ -1,0 +1,50 @@
+{
+  "categorySlug": "design",
+  "slug": "traffic-signs",
+  "name": "Traffic Signs",
+  "status": "published",
+  "displayOrder": 4,
+  "featured": false,
+  "headline": "Custom Traffic and Regulatory Signs for Private Properties",
+  "shortDescription": "Custom aluminum traffic, parking, and regulatory signs for private properties and commercial sites.",
+  "body": [
+    "Traffic signs help direct vehicles and pedestrians on private properties, parking lots, industrial sites, and business locations.",
+    "Options include printed aluminum signs, blank panels, posts, and common parking or directional formats."
+  ],
+  "capabilities": [
+    "Traffic and parking signs",
+    "Aluminum sign panels",
+    "Post and hardware options",
+    "Private property and directional signs"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 5500,
+    "currency": "CAD",
+    "unitLabel": "per sign",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/design-traffic-signs.png",
+    "alt": "Stack of custom aluminum traffic signs.",
+    "prompt": "A row of freshly made custom aluminum regulatory signs lined up in a print shop, using abstract warning symbols, arrows, and colour panels. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Traffic Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom traffic and parking signs for private properties and commercial sites in Vaughan and the GTA. Reflective, durable aluminum. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plate-directory-board"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "t-frame-site-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    }
+  ]
+}

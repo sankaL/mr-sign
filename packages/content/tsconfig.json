@@ -10,10 +10,11 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
+    "resolveJsonModule": true,
     "outDir": "dist",
     "rootDir": ".",
     "noEmit": true,
     "ignoreDeprecations": "6.0"
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"]
+  "include": ["content/**/*.json", "src/**/*.ts", "tests/**/*.ts"]
 }

@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "t-frame-site-signs",
+  "name": "T-Frame / Site Signs",
+  "status": "published",
+  "displayOrder": 10,
+  "featured": false,
+  "headline": "T-Frame and Site Signs for Construction Visibility",
+  "shortDescription": "Large job site and construction signs with plywood, coroplast, aluminum, or custom frame options.",
+  "body": [
+    "T-frame and site signs are built for construction projects, developments, property entrances, and heavy-duty outdoor messages.",
+    "They can use plywood backgrounds, coroplast panels, metallic frames, legs, extensions, and changeable letter components depending on the job."
+  ],
+  "capabilities": [
+    "Construction and development site signs",
+    "Plywood and coroplast backgrounds",
+    "A-frame and T-frame structures",
+    "Legs, inserts, and extension options"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 15000,
+    "currency": "CAD",
+    "unitLabel": "per background panel",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-t-frame-site-signs.png",
+    "alt": "T-frame construction site sign at a project entrance.",
+    "prompt": "A T-frame construction site sign planted at the entrance of a commercial project, featuring abstract builder branding and colour blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "T-Frame and Site Signs in Vaughan | Mr. Sign and Print",
+    "description": "Large-format T-frame and construction site signs for builders and developers in Vaughan and the GTA. Professionally printed. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plastic-lawn-signs"
+    }
+  ]
+}

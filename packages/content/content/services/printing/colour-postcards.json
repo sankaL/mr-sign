@@ -1,0 +1,50 @@
+{
+  "categorySlug": "printing",
+  "slug": "colour-postcards",
+  "name": "Colour Postcards",
+  "status": "published",
+  "displayOrder": 7,
+  "featured": false,
+  "headline": "Full-Colour Postcards for Promotions and Direct Mail",
+  "shortDescription": "Full-colour postcards for direct mail, promotions, real estate, events, and compact handouts.",
+  "body": [
+    "Colour postcards are useful for direct mail, leave-behinds, announcements, promotions, event reminders, and real estate campaigns.",
+    "They can be produced in multiple sizes with single-sided or double-sided colour layouts."
+  ],
+  "capabilities": [
+    "Multiple postcard sizes",
+    "Single-sided and double-sided colour printing",
+    "Direct mail and event promotion use",
+    "Real estate and local business marketing"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 9500,
+    "currency": "CAD",
+    "unitLabel": "per starter batch",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/printing-colour-postcards.png",
+    "alt": "Glossy full-colour postcards arranged in a fan.",
+    "prompt": "A collection of full-colour glossy postcards arranged in a fan on a light surface, each with different abstract promotional image blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Colour Postcards in Vaughan | Mr. Sign and Print",
+    "description": "Full-colour printed postcards for direct mail, promotions, and events in Vaughan and the GTA. High-gloss finish, fast turnaround. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    }
+  ]
+}

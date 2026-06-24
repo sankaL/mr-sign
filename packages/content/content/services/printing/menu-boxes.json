@@ -1,0 +1,49 @@
+{
+  "categorySlug": "printing",
+  "slug": "menu-boxes",
+  "name": "Menu Boxes",
+  "status": "published",
+  "displayOrder": 8,
+  "featured": false,
+  "headline": "Printed Restaurant Menus for Daily Use",
+  "shortDescription": "Printed menu materials for restaurants, cafes, takeout counters, and food service businesses.",
+  "body": [
+    "Printed menus need to be easy to read, durable enough for daily handling, and visually consistent with the restaurant brand.",
+    "We can produce flat, folded, laminated, and full-colour menu pieces for food service settings."
+  ],
+  "capabilities": [
+    "Full-colour restaurant menus",
+    "Laminated menu options",
+    "Folded and flat menu layouts",
+    "Restaurant, cafe, and food service use"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/printing-menu-boxes.png",
+    "alt": "Full-colour printed restaurant menus.",
+    "prompt": "A stack of folded full-colour printed restaurant menus fanned out on a restaurant table, with abstract food photography blocks and brand colour panels. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Printed Restaurant Menus in Vaughan | Mr. Sign and Print",
+    "description": "Custom printed menus for restaurants and cafes in Vaughan and the GTA. Full-colour, laminated, and built for daily use. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "full-colour-brochures"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "flyers"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    }
+  ]
+}

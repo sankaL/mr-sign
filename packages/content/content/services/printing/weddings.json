@@ -1,0 +1,49 @@
+{
+  "categorySlug": "printing",
+  "slug": "weddings",
+  "name": "Weddings",
+  "status": "published",
+  "displayOrder": 12,
+  "featured": false,
+  "headline": "Wedding Printing for Invitations, Programs, and Menus",
+  "shortDescription": "Wedding print pieces for invitations, RSVP cards, programs, menus, signage, and coordinated event stationery.",
+  "body": [
+    "Wedding printing brings the invitation, ceremony, reception, and guest information into one coordinated visual style.",
+    "Pieces can include invitations, RSVP cards, programs, menus, table items, and other printed materials for the day."
+  ],
+  "capabilities": [
+    "Save the date cards and invitations",
+    "RSVP cards and envelopes",
+    "Programs and printed menus",
+    "Coordinated print suites"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/printing-weddings.png",
+    "alt": "Printed wedding suite arranged on linen.",
+    "prompt": "A complete printed wedding suite arranged on soft cream linen: save the date card, invitation, RSVP card, envelopes, and subtle floral accent. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Wedding Printing in Vaughan | Mr. Sign and Print",
+    "description": "Beautiful printed wedding suites including invitations, RSVP cards, programs, and more in Vaughan and the GTA. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "invitations"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "banner",
+  "name": "Banner",
+  "status": "published",
+  "displayOrder": 3,
+  "featured": true,
+  "headline": "Custom Vinyl Banners for Promotions and Events",
+  "shortDescription": "Rollable vinyl banners for events, storefront promotions, fences, openings, and temporary outdoor messages.",
+  "body": [
+    "Banners are easy to install, easy to store, and available in a wide range of sizes, colours, and material thicknesses.",
+    "They are a practical choice for sales, openings, events, trade shows, and temporary outdoor advertising."
+  ],
+  "capabilities": [
+    "Indoor and outdoor vinyl banner production",
+    "Common stocked banner heights",
+    "Grommet and hanging options",
+    "Temporary promotions, events, and fence signage"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 500,
+    "currency": "CAD",
+    "unitLabel": "per sq ft",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-banner.png",
+    "alt": "Large vinyl banner with bold promotional graphics.",
+    "prompt": "A large vibrant vinyl banner hanging on a storefront fence outside a commercial plaza, with bold abstract graphics and colour blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Banners in Vaughan | Mr. Sign and Print",
+    "description": "Custom vinyl banners in any size for events, promotions, and outdoor advertising in Vaughan and the GTA. Fast turnaround. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "t-frame-site-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plastic-lawn-signs"
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 ## SEO
 
 - **Page Title:** Graphic Design Services in Vaughan | Mr. Sign and Print
-- **Meta Description:** Logos, websites, silk screens, engraving, T-shirt graphics, and more. Professional design services for Vaughan businesses from Mr. Sign and Print. Request a quote.
+- **Meta Description:** Logos, websites, silk screens, engraving, T-shirt graphics, and more. Professional design services for Vaughan businesses from Mr. Sign and Print. Contact the shop for pricing.
 - **URL:** /design
 - **Social Sharing Title:** Graphic Design Services in Vaughan | Mr. Sign and Print
 - **Social Sharing Description:** Need a logo, a website, or custom graphic design? Mr. Sign and Print offers in-house design services for businesses across Vaughan and the GTA.
@@ -129,7 +129,7 @@
 Not sure where to start with your design project? We are happy to talk it through with you. Reach out and tell us what you have in mind.
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 - Contact Us (links to /contact)
 
 ---
@@ -143,7 +143,7 @@ Not sure where to start with your design project? We are happy to talk it throug
 ## /design/electronic-signs
 
 **Page Title:** Electronic Sign Design in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom design and setup for programmable electronic LED signs in Vaughan and the GTA. We create the graphics so your sign looks sharp. Request a quote.
+**Meta Description:** Custom design and setup for programmable electronic LED signs in Vaughan and the GTA. We create the graphics so your sign looks sharp. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Design > Electronic Signs
@@ -165,10 +165,10 @@ We design and format graphics and messages for electronic signs so your display 
 - Content updates and revisions
 - Pairing with physical sign installation where needed
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=electronic-signs)
+- Contact the Shop (links to /contact?service=electronic-signs)
 - Call Us: (416) 512-9353
 
 **Related Services:** Illuminated Boxes (Signs), Channel Letters (Signs), Logos
@@ -178,7 +178,7 @@ We design and format graphics and messages for electronic signs so your display 
 ## /design/taxi-roof-signs
 
 **Page Title:** Taxi Roof Signs in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom-designed and produced illuminated taxi roof signs in Vaughan and the GTA. Clear branding, built for continuous use. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom-designed and produced illuminated taxi roof signs in Vaughan and the GTA. Clear branding, built for continuous use. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Design > Taxi's Roof Signs
@@ -200,10 +200,10 @@ We serve taxi operators and transportation companies across Vaughan and the GTA.
 - Durable construction for continuous vehicle use
 - Production of replacement panels
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=taxi-roof-signs)
+- Contact the Shop (links to /contact?service=taxi-roof-signs)
 - Call Us: (416) 512-9353
 
 **Related Services:** Vehicle Lettering (Signs), Magnetic Signs (Signs), Vinyl Cutting (Signs)
@@ -213,7 +213,7 @@ We serve taxi operators and transportation companies across Vaughan and the GTA.
 ## /design/engraving-plaque
 
 **Page Title:** Custom Engraved Plaques in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom engraved plaques for awards, dedications, and professional recognition in Vaughan and the GTA. Quality materials and clean engraving. Request a quote.
+**Meta Description:** Custom engraved plaques for awards, dedications, and professional recognition in Vaughan and the GTA. Quality materials and clean engraving. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Design > Engraving (Plaque)
@@ -235,10 +235,10 @@ We design and produce custom engraved plaques in a range of materials and styles
 - Wall-mount and desk-mount configurations
 - Memorial, award, dedication, and directional plaques
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=engraving-plaque)
+- Contact the Shop (links to /contact?service=engraving-plaque)
 - Call Us: (416) 512-9353
 
 **Related Services:** Cut-out Letters (Signs), Plate Directory Board (Signs), Logos
@@ -248,7 +248,7 @@ We design and produce custom engraved plaques in a range of materials and styles
 ## /design/traffic-signs
 
 **Page Title:** Custom Traffic Signs in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom traffic and parking signs for private properties and commercial sites in Vaughan and the GTA. Reflective, durable aluminum. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom traffic and parking signs for private properties and commercial sites in Vaughan and the GTA. Reflective, durable aluminum. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Design > Traffic Signs
@@ -272,10 +272,10 @@ We serve property managers, contractors, businesses, and organizations across Va
 - Aluminum panel construction for durability
 - Post and hardware options available
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=traffic-signs)
+- Contact the Shop (links to /contact?service=traffic-signs)
 - Call Us: (416) 512-9353
 
 **Related Services:** Plate Directory Board (Signs), T-Frame / Site Signs (Signs), Coroplast (Signs)
@@ -285,7 +285,7 @@ We serve property managers, contractors, businesses, and organizations across Va
 ## /design/logos
 
 **Page Title:** Logo Design in Vaughan | Mr. Sign and Print
-**Meta Description:** Professional logo design for small businesses in Vaughan and the GTA. We deliver print-ready and digital files so your logo works everywhere. Request a quote.
+**Meta Description:** Professional logo design for small businesses in Vaughan and the GTA. We deliver print-ready and digital files so your logo works everywhere. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Design > Logos
@@ -308,10 +308,10 @@ We deliver files in formats ready for print, signage, and the web, so you can us
 - Print-ready files for signs, cards, and other materials
 - Branding guidance on colour and font choices
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=logos)
+- Contact the Shop (links to /contact?service=logos)
 - Call Us: (416) 512-9353
 
 **Related Services:** Websites, Type Setting, Business Cards (Printing)
@@ -321,7 +321,7 @@ We deliver files in formats ready for print, signage, and the web, so you can us
 ## /design/t-shirts-caps
 
 **Page Title:** Custom T-Shirts and Caps in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom logo printing on T-shirts, polo shirts, and caps for businesses and events in Vaughan and the GTA. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom logo printing on T-shirts, polo shirts, and caps for businesses and events in Vaughan and the GTA. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Design > T-Shirts and Caps
@@ -341,10 +341,10 @@ Uniformed staff, event giveaways, team gear, or promotional merchandise -- brand
 - Small and bulk quantity orders
 - Multiple garment colour and style options
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=t-shirts-caps)
+- Contact the Shop (links to /contact?service=t-shirts-caps)
 - Call Us: (416) 512-9353
 
 **Related Services:** Silk Screens, Logos, Magnetic (Fridge)
@@ -354,7 +354,7 @@ Uniformed staff, event giveaways, team gear, or promotional merchandise -- brand
 ## /design/magnetic-fridge
 
 **Page Title:** Custom Fridge Magnets in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom business fridge magnets for promotions and brand awareness in Vaughan and the GTA. Printed in full colour. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom business fridge magnets for promotions and brand awareness in Vaughan and the GTA. Printed in full colour. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Design > Magnetic (Fridge)
@@ -376,10 +376,10 @@ We design and produce custom full-colour fridge magnets for businesses across Va
 - Glossy finish for vivid colour reproduction
 - Bulk pricing available for large orders
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=magnetic-fridge)
+- Contact the Shop (links to /contact?service=magnetic-fridge)
 - Call Us: (416) 512-9353
 
 **Related Services:** Business Cards (Printing), T-Shirts and Caps, Logos
@@ -389,7 +389,7 @@ We design and produce custom full-colour fridge magnets for businesses across Va
 ## /design/type-setting
 
 **Page Title:** Professional Typesetting in Vaughan | Mr. Sign and Print
-**Meta Description:** Professional typesetting for signs, menus, publications, and print materials in Vaughan and the GTA. Clean, readable, and production-ready. Request a quote.
+**Meta Description:** Professional typesetting for signs, menus, publications, and print materials in Vaughan and the GTA. Clean, readable, and production-ready. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Design > Type Setting
@@ -411,10 +411,10 @@ We handle professional typesetting for signs, menus, brochures, advertisements, 
 - Font selection and spacing
 - Production-ready files for print and sign fabrication
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=type-setting)
+- Contact the Shop (links to /contact?service=type-setting)
 - Call Us: (416) 512-9353
 
 **Related Services:** Logos, Silk Screens, Full Colour Brochures (Printing)
@@ -424,7 +424,7 @@ We handle professional typesetting for signs, menus, brochures, advertisements, 
 ## /design/silk-screens
 
 **Page Title:** Silk Screen Printing in Vaughan | Mr. Sign and Print
-**Meta Description:** Silk screen printing for T-shirts, apparel, bags, and promotional materials in Vaughan and the GTA. Bold, durable results. Request a quote from Mr. Sign and Print.
+**Meta Description:** Silk screen printing for T-shirts, apparel, bags, and promotional materials in Vaughan and the GTA. Bold, durable results. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Design > Silk Screens
@@ -447,10 +447,10 @@ We set up and run silk screen printing jobs for businesses, organizations, and e
 - Exact Pantone colour matching available
 - Preparation of screens from your artwork or our design
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=silk-screens)
+- Contact the Shop (links to /contact?service=silk-screens)
 - Call Us: (416) 512-9353
 
 **Related Services:** T-Shirts and Caps, Logos, Vinyl Cutting (Signs)
@@ -460,7 +460,7 @@ We set up and run silk screen printing jobs for businesses, organizations, and e
 ## /design/websites
 
 **Page Title:** Small Business Website Design in Vaughan | Mr. Sign and Print
-**Meta Description:** Simple, professional website design for small businesses in Vaughan and the GTA. Represent your business online as well as your signs do in person. Request a quote.
+**Meta Description:** Simple, professional website design for small businesses in Vaughan and the GTA. Represent your business online as well as your signs do in person. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Design > Websites
@@ -478,15 +478,15 @@ We are the same team that designs your signs and prints your materials, so we kn
 **What We Can Do:**
 - Simple 3 to 6 page business websites
 - Mobile-friendly responsive design
-- Contact forms and click-to-call integration
+- Click-to-call and direct-contact links
 - Google Maps integration
 - Basic SEO setup so local customers can find you
 - Consistent branding with your existing signs and print materials
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=websites)
+- Contact the Shop (links to /contact?service=websites)
 - Call Us: (416) 512-9353
 
 **Related Services:** Logos, Type Setting, Business Cards (Printing)
@@ -500,6 +500,6 @@ We are the same team that designs your signs and prints your materials, so we kn
 **Copy:** Have a design project in mind? Tell us what you are working on and we will help you bring it to life.
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 - View All Design Services (links to /design)
 - Contact Us (links to /contact)

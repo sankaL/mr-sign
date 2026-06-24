@@ -1,0 +1,49 @@
+{
+  "categorySlug": "printing",
+  "slug": "invoices",
+  "name": "Invoices",
+  "status": "published",
+  "displayOrder": 4,
+  "featured": false,
+  "headline": "Custom Invoice Books and Business Forms",
+  "shortDescription": "Custom invoice books and business forms prepared for daily business use.",
+  "body": [
+    "Invoice books and forms keep customer, job, and payment details organized in a format your team can use every day.",
+    "Layouts can include your business information, line-item areas, notes, numbering needs, and contact details."
+  ],
+  "capabilities": [
+    "Invoice books and business forms",
+    "Professional header and line-item layouts",
+    "Single-sheet and booklet options",
+    "Custom business information and branding"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/printing-invoices.png",
+    "alt": "Printed invoice booklet on a desk.",
+    "prompt": "A printed invoice booklet with a professional header and line-item table on a tidy desk beside a pen, with abstract placeholder text lines. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Invoice Books in Vaughan | Mr. Sign and Print",
+    "description": "Custom-printed invoice booklets and business forms in Vaughan and the GTA. Professional, NCR, and single-sheet options. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "stamps"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "business-cards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    }
+  ]
+}

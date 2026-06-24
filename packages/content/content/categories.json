@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "signs",
+    "name": "Signs",
+    "route": "/signs",
+    "eyebrow": "Custom signs",
+    "headline": "Custom Signs Built for Your Business",
+    "subheadline": "We design, produce, and install a wide range of custom signage for businesses throughout Vaughan and the Greater Toronto Area.",
+    "description": "Storefront visibility, banners, boards, vehicle graphics, lettering, and custom sign work for Vaughan and the GTA.",
+    "gridHeading": "Our Sign Services",
+    "gridSubheading": "Browse all of our sign products below. Click any service to learn more or Contact the shop directly.",
+    "ctaCopy": "Not sure which sign is right for your project? Get in touch and we will help you figure it out.",
+    "seo": {
+      "title": "Custom Signs in Vaughan | Mr. Sign and Print",
+      "description": "Shop custom signs in Vaughan and the GTA. Channel letters, banners, vehicle lettering, lawn signs, awnings, neon, and more. Call or email the shop today.",
+      "socialTitle": "Custom Signs in Vaughan | Mr. Sign and Print",
+      "socialDescription": "From illuminated channel letters to coroplast lawn signs, Mr. Sign and Print creates professional signage for businesses across Vaughan and the GTA."
+    },
+    "image": {
+      "src": "/images/generated/signs-hero.png",
+      "alt": "Outdoor signage installed along a commercial street in Vaughan.",
+      "prompt": "A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. Include a storefront with channel letters, a sandwich board on the sidewalk, and a work vehicle with vinyl lettering in the background. Modern local sign shop aesthetic, crisp daylight, no readable text, no logos, no watermarks."
+    },
+    "displayOrder": 1
+  },
+  {
+    "slug": "printing",
+    "name": "Printing",
+    "route": "/printing",
+    "eyebrow": "Printing services",
+    "headline": "Professional Printing for Vaughan Businesses",
+    "subheadline": "From business cards to large-format prints, we produce quality printed materials for businesses and events of all sizes.",
+    "description": "Business cards, flyers, brochures, menus, invoices, invitations, stamps, and large format printing.",
+    "gridHeading": "Our Printing Services",
+    "gridSubheading": "Browse all of our printing products below. Whether you need 50 business cards or 5,000 flyers, we are ready to help.",
+    "ctaCopy": "Need a print job done right in Vaughan? Tell us what you need and we will take it from there.",
+    "seo": {
+      "title": "Printing Services in Vaughan | Mr. Sign and Print",
+      "description": "Business cards, brochures, flyers, banners, invitations, and more. Professional printing services in Vaughan and the GTA from Mr. Sign and Print. Contact the shop for current pricing.",
+      "socialTitle": "Printing Services in Vaughan | Mr. Sign and Print",
+      "socialDescription": "From business cards and full-colour brochures to large-format printing and event invitations, Mr. Sign and Print handles all your printing needs in Vaughan and the GTA."
+    },
+    "image": {
+      "src": "/images/generated/printing-hero.png",
+      "alt": "Fresh printed marketing materials arranged on a clean surface.",
+      "prompt": "A bright clean flat-lay photo of printed marketing materials arranged on a white work surface. Include fanned business cards, an open tri-fold brochure, a flyer, and a colour postcard. Professional print-shop finish, subtle blue red yellow brand accents, no readable text, no logos, no watermarks."
+    },
+    "displayOrder": 2
+  },
+  {
+    "slug": "design",
+    "name": "Design",
+    "route": "/design",
+    "eyebrow": "Design services",
+    "headline": "In-House Design Services for Vaughan Businesses",
+    "subheadline": "From logo design and websites to silk screens and engraving, we have the creative and technical skills to bring your brand to life.",
+    "description": "Logo design, production artwork, typesetting, engraving layouts, apparel graphics, and website design.",
+    "gridHeading": "Our Design Services",
+    "gridSubheading": "Browse our design capabilities below. Not sure what you need? Contact us and we will help you figure out the best solution for your project.",
+    "ctaCopy": "Not sure where to start with your design project? We are happy to talk it through with you.",
+    "seo": {
+      "title": "Graphic Design Services in Vaughan | Mr. Sign and Print",
+      "description": "Logos, websites, silk screens, engraving, T-shirt graphics, and more. Professional design services for Vaughan businesses from Mr. Sign and Print. Contact the shop for current pricing.",
+      "socialTitle": "Graphic Design Services in Vaughan | Mr. Sign and Print",
+      "socialDescription": "Need a logo, a website, or custom graphic design? Mr. Sign and Print offers in-house design services for businesses across Vaughan and the GTA."
+    },
+    "image": {
+      "src": "/images/generated/design-hero.png",
+      "alt": "Designer workstation with print proofs and logo artwork in progress.",
+      "prompt": "A designer workstation photographed from slightly above. On the monitor is a logo concept in progress with abstract shapes only, beside printed colour proofs, a colour fan, a sketching pad, and a ruler. Creative but professional sign-and-print production setting, no readable text, no logos, no watermarks."
+    },
+    "displayOrder": 3
+  }
+]

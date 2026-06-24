@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "coroplast",
+  "name": "Coroplast",
+  "status": "published",
+  "displayOrder": 9,
+  "featured": false,
+  "headline": "Coroplast Signs for Fast, Durable Outdoor Messaging",
+  "shortDescription": "Temporary indoor and outdoor coroplast signs for campaigns, events, job sites, and local promotions.",
+  "body": [
+    "Coroplast is a lightweight waterproof material commonly used for temporary indoor and outdoor signs.",
+    "Small quantities can be produced with vinyl lettering, while larger quantities can be produced with screen printing when the job calls for it."
+  ],
+  "capabilities": [
+    "Temporary indoor and outdoor signs",
+    "Vinyl lettering for small quantities",
+    "Screen printing for larger quantities",
+    "Common sheet and thickness options"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 3500,
+    "currency": "CAD",
+    "unitLabel": "minimum order",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-coroplast.png",
+    "alt": "Stack of freshly printed coroplast signs.",
+    "prompt": "A stack of freshly printed coroplast signs in bright colours leaning against a print shop wall, with one panel facing forward using abstract promotional shapes. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Coroplast Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom coroplast signs for businesses and events in Vaughan and the GTA. Lightweight, waterproof, and affordable. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plastic-lawn-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "real-estate-signs"
+    }
+  ]
+}

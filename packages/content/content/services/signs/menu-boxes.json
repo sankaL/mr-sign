@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "menu-boxes",
+  "name": "Menu Boxes",
+  "status": "published",
+  "displayOrder": 17,
+  "featured": false,
+  "headline": "Outdoor Menu Boxes for Restaurants and Food Service",
+  "shortDescription": "Outdoor menu display boxes for restaurants, takeout counters, cafes, patios, and service windows.",
+  "body": [
+    "Menu boxes protect and present menu information outside a restaurant, cafe, or service window.",
+    "They can be illuminated or non-illuminated depending on the location, hours, and visibility needs."
+  ],
+  "capabilities": [
+    "Illuminated and non-illuminated display boxes",
+    "Weather-protected menu display",
+    "Restaurant entry and patio use",
+    "Menu panel replacement support"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-menu-boxes.png",
+    "alt": "Outdoor restaurant menu display box.",
+    "prompt": "An illuminated outdoor menu display box mounted beside a restaurant entrance, with sealed frame and abstract menu blocks behind glass. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Outdoor Menu Boxes in Vaughan | Mr. Sign and Print",
+    "description": "Custom outdoor menu display boxes for restaurants in Vaughan and the GTA. Backlit and non-illuminated options. Contact Mr. Sign and Print for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "changeable-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "sandwich-boards"
+    }
+  ]
+}

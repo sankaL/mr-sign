@@ -1,0 +1,50 @@
+{
+  "categorySlug": "signs",
+  "slug": "vinyl-cutting",
+  "name": "Vinyl Cutting",
+  "status": "published",
+  "displayOrder": 18,
+  "featured": false,
+  "headline": "Precision Vinyl Cutting for Lettering and Decals",
+  "shortDescription": "Custom vinyl letters, logos, decals, and shapes cut for windows, vehicles, walls, and sign panels.",
+  "body": [
+    "Vinyl cutting turns line artwork into clean letters, logos, and shapes that can be weeded, masked, and applied.",
+    "It is used for windows, signs, vehicles, walls, and other smooth surfaces where crisp lettering is needed."
+  ],
+  "capabilities": [
+    "Vinyl letters, logos, and decals",
+    "Cutting, peeling, masking, and application support",
+    "Window, wall, and vehicle applications",
+    "Small and large letter heights"
+  ],
+  "pricing": {
+    "type": "startingFrom",
+    "amountCents": 2500,
+    "currency": "CAD",
+    "unitLabel": "minimum order",
+    "label": "Base service price"
+  },
+  "image": {
+    "src": "/images/generated/signs-vinyl-cutting.png",
+    "alt": "Vinyl cutter producing a logo decal.",
+    "prompt": "A vinyl cutter in action with a spool of red vinyl feeding through the machine and a freshly cut abstract logo decal visible on the cutting mat. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Vinyl Cutting in Vaughan | Mr. Sign and Print",
+    "description": "Precision vinyl cutting for lettering, logos, decals, and graphics in Vaughan and the GTA. Mr. Sign and Print delivers clean, professional results. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vehicle-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "magnetic-signs"
+    }
+  ]
+}

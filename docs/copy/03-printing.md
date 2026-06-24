@@ -6,7 +6,7 @@
 ## SEO
 
 - **Page Title:** Printing Services in Vaughan | Mr. Sign and Print
-- **Meta Description:** Business cards, brochures, flyers, banners, invitations, and more. Professional printing services in Vaughan and the GTA from Mr. Sign and Print. Request a quote.
+- **Meta Description:** Business cards, brochures, flyers, banners, invitations, and more. Professional printing services in Vaughan and the GTA from Mr. Sign and Print. Contact the shop for pricing.
 - **URL:** /printing
 - **Social Sharing Title:** Printing Services in Vaughan | Mr. Sign and Print
 - **Social Sharing Description:** From business cards and full-colour brochures to large-format printing and event invitations, Mr. Sign and Print handles all your printing needs in Vaughan and the GTA.
@@ -145,7 +145,7 @@
 Need a print job done right in Vaughan? Tell us what you need and we will take it from there.
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 - Contact Us (links to /contact)
 
 ---
@@ -159,7 +159,7 @@ Need a print job done right in Vaughan? Tell us what you need and we will take i
 ## /printing/brochures
 
 **Page Title:** Custom Brochures in Vaughan | Mr. Sign and Print
-**Meta Description:** Professionally printed brochures for Vaughan businesses. Tri-fold, bi-fold, and custom formats available. Request a quote from Mr. Sign and Print.
+**Meta Description:** Professionally printed brochures for Vaughan businesses. Tri-fold, bi-fold, and custom formats available. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Brochures
@@ -181,10 +181,10 @@ We print brochures in a range of sizes and fold styles for businesses across Vau
 - Custom sizes
 - Short and long run quantities
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=brochures)
+- Contact the Shop (links to /contact?service=brochures)
 - Call Us: (416) 512-9353
 
 **Related Services:** Flyers, Full Colour Brochures, Colour Postcards
@@ -194,7 +194,7 @@ We print brochures in a range of sizes and fold styles for businesses across Vau
 ## /printing/invitations
 
 **Page Title:** Custom Printed Invitations in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom-printed invitations for corporate events, grand openings, and celebrations in Vaughan and the GTA. Professional quality, fast turnaround. Request a quote.
+**Meta Description:** Custom-printed invitations for corporate events, grand openings, and celebrations in Vaughan and the GTA. Professional quality, fast turnaround. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Printing > Invitations
@@ -216,10 +216,10 @@ We serve businesses and event organizers across Vaughan and the Greater Toronto 
 - Custom sizes and finishing options
 - Small and large quantity runs
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=invitations)
+- Contact the Shop (links to /contact?service=invitations)
 - Call Us: (416) 512-9353
 
 **Related Services:** Weddings, Colour Postcards, Brochures
@@ -229,7 +229,7 @@ We serve businesses and event organizers across Vaughan and the Greater Toronto 
 ## /printing/business-cards
 
 **Page Title:** Business Cards in Vaughan | Mr. Sign and Print
-**Meta Description:** Professionally printed business cards in Vaughan and the GTA. Matte, gloss, and premium finishes. Request a quote from Mr. Sign and Print.
+**Meta Description:** Professionally printed business cards in Vaughan and the GTA. Matte, gloss, and premium finishes. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Business Cards
@@ -255,7 +255,7 @@ We offer a range of paper stocks and finishes so you get the look and feel that 
 **Pricing:** Starting from [confirm with business]
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=business-cards)
+- Contact the Shop (links to /contact?service=business-cards)
 - Call Us: (416) 512-9353
 
 **Related Services:** Colour Business Cards, Flyers, Colour Postcards
@@ -265,7 +265,7 @@ We offer a range of paper stocks and finishes so you get the look and feel that 
 ## /printing/invoices
 
 **Page Title:** Custom Invoice Books in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom-printed invoice booklets and business forms in Vaughan and the GTA. Professional, NCR, and single-sheet options. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom-printed invoice booklets and business forms in Vaughan and the GTA. Professional, NCR, and single-sheet options. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Invoices
@@ -287,10 +287,10 @@ We print carbonless (NCR) duplicate and triplicate invoice books and single-shee
 - Standard page sizes and custom formats
 - Sequential numbering available
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=invoices)
+- Contact the Shop (links to /contact?service=invoices)
 - Call Us: (416) 512-9353
 
 **Related Services:** Stamps, Business Cards, Brochures
@@ -300,7 +300,7 @@ We print carbonless (NCR) duplicate and triplicate invoice books and single-shee
 ## /printing/colour-business-cards
 
 **Page Title:** Colour Business Cards in Vaughan | Mr. Sign and Print
-**Meta Description:** Full-colour business cards that make an impact. Printed in Vaughan for businesses across the GTA. Premium stock and finishes available. Request a quote.
+**Meta Description:** Full-colour business cards that make an impact. Printed in Vaughan for businesses across the GTA. Premium stock and finishes available. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Printing > Colour Business Cards
@@ -325,7 +325,7 @@ We produce full-colour business cards for professionals across Vaughan and the G
 **Pricing:** Starting from [confirm with business]
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=colour-business-cards)
+- Contact the Shop (links to /contact?service=colour-business-cards)
 - Call Us: (416) 512-9353
 
 **Related Services:** Business Cards, Colour Postcards, Flyers
@@ -335,7 +335,7 @@ We produce full-colour business cards for professionals across Vaughan and the G
 ## /printing/large-format-printing
 
 **Page Title:** Large Format Printing in Vaughan | Mr. Sign and Print
-**Meta Description:** Vivid large-format printing for banners, posters, displays, and signage in Vaughan and the GTA. Any size, full colour. Request a quote from Mr. Sign and Print.
+**Meta Description:** Vivid large-format printing for banners, posters, displays, and signage in Vaughan and the GTA. Any size, full colour. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Large Format Printing
@@ -358,10 +358,10 @@ We serve businesses, event organizers, and marketing teams across Vaughan and th
 - Photo-quality resolution at large sizes
 - Custom sizes to fit any application
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=large-format-printing)
+- Contact the Shop (links to /contact?service=large-format-printing)
 - Call Us: (416) 512-9353
 
 **Related Services:** Banners (Signs), Full Colour Brochures, Colour Postcards
@@ -371,7 +371,7 @@ We serve businesses, event organizers, and marketing teams across Vaughan and th
 ## /printing/colour-postcards
 
 **Page Title:** Colour Postcards in Vaughan | Mr. Sign and Print
-**Meta Description:** Full-colour printed postcards for direct mail, promotions, and events in Vaughan and the GTA. High-gloss finish, fast turnaround. Request a quote.
+**Meta Description:** Full-colour printed postcards for direct mail, promotions, and events in Vaughan and the GTA. High-gloss finish, fast turnaround. Contact the shop for pricing.
 
 ### Breadcrumb
 Home > Printing > Colour Postcards
@@ -391,10 +391,10 @@ A postcard is direct, personal, and impossible to miss. It does not require some
 - High-quality card stock
 - Direct mail-ready printing with blank address areas
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=colour-postcards)
+- Contact the Shop (links to /contact?service=colour-postcards)
 - Call Us: (416) 512-9353
 
 **Related Services:** Flyers, Business Cards, Brochures
@@ -404,7 +404,7 @@ A postcard is direct, personal, and impossible to miss. It does not require some
 ## /printing/menu-boxes
 
 **Page Title:** Printed Restaurant Menus in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom printed menus for restaurants and cafes in Vaughan and the GTA. Full-colour, laminated, and built for daily use. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom printed menus for restaurants and cafes in Vaughan and the GTA. Full-colour, laminated, and built for daily use. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Menu Boxes
@@ -426,10 +426,10 @@ We print restaurant menus, cafe menus, drink lists, and specials inserts for foo
 - Gloss and soft-touch matte finish options
 - Custom sizes to fit your table and branding
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=menu-boxes)
+- Contact the Shop (links to /contact?service=menu-boxes)
 - Call Us: (416) 512-9353
 
 **Related Services:** Full Colour Brochures, Flyers, Colour Postcards
@@ -439,7 +439,7 @@ We print restaurant menus, cafe menus, drink lists, and specials inserts for foo
 ## /printing/full-colour-brochures
 
 **Page Title:** Full Colour Brochures in Vaughan | Mr. Sign and Print
-**Meta Description:** Full-colour brochures with rich photography and bold design for Vaughan businesses. Multiple sizes and fold options. Request a quote from Mr. Sign and Print.
+**Meta Description:** Full-colour brochures with rich photography and bold design for Vaughan businesses. Multiple sizes and fold options. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Full Colour Brochures
@@ -461,10 +461,10 @@ We produce full-colour brochures for professional services, real estate, healthc
 - High-quality photo reproduction
 - Small and large print runs
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=full-colour-brochures)
+- Contact the Shop (links to /contact?service=full-colour-brochures)
 - Call Us: (416) 512-9353
 
 **Related Services:** Brochures, Colour Postcards, Flyers
@@ -474,7 +474,7 @@ We produce full-colour brochures for professional services, real estate, healthc
 ## /printing/stamps
 
 **Page Title:** Custom Rubber Stamps in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom self-inking and traditional rubber stamps for businesses in Vaughan and the GTA. Address stamps, logo stamps, and more. Request a quote from Mr. Sign and Print.
+**Meta Description:** Custom self-inking and traditional rubber stamps for businesses in Vaughan and the GTA. Address stamps, logo stamps, and more. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Stamps
@@ -496,10 +496,10 @@ We produce custom rubber stamps for businesses, professionals, and organizations
 - Multiple ink colour options
 - Quick production and turnaround
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=stamps)
+- Contact the Shop (links to /contact?service=stamps)
 - Call Us: (416) 512-9353
 
 **Related Services:** Business Cards, Invoices, Brochures
@@ -509,7 +509,7 @@ We produce custom rubber stamps for businesses, professionals, and organizations
 ## /printing/flyers
 
 **Page Title:** Custom Flyers in Vaughan | Mr. Sign and Print
-**Meta Description:** Full-colour printed flyers for promotions, events, and businesses in Vaughan and the GTA. Fast turnaround, competitive pricing. Request a quote from Mr. Sign and Print.
+**Meta Description:** Full-colour printed flyers for promotions, events, and businesses in Vaughan and the GTA. Fast turnaround, competitive pricing. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Flyers
@@ -531,10 +531,10 @@ Whether you need 100 or 10,000, we can produce them quickly and at a price that 
 - Gloss or matte finish
 - Fast turnaround for time-sensitive promotions
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=flyers)
+- Contact the Shop (links to /contact?service=flyers)
 - Call Us: (416) 512-9353
 
 **Related Services:** Colour Postcards, Brochures, Business Cards
@@ -544,7 +544,7 @@ Whether you need 100 or 10,000, we can produce them quickly and at a price that 
 ## /printing/weddings
 
 **Page Title:** Wedding Printing in Vaughan | Mr. Sign and Print
-**Meta Description:** Beautiful printed wedding suites including invitations, RSVP cards, programs, and more in Vaughan and the GTA. Request a quote from Mr. Sign and Print.
+**Meta Description:** Beautiful printed wedding suites including invitations, RSVP cards, programs, and more in Vaughan and the GTA. Contact the shop for pricing from Mr. Sign and Print.
 
 ### Breadcrumb
 Home > Printing > Weddings
@@ -568,10 +568,10 @@ We work with couples and event planners across Vaughan and the Greater Toronto A
 - Thank you cards
 - Full-colour printing on premium card stock
 
-**Pricing:** Request Quote
+**Pricing:** Contact for Pricing
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote?service=weddings)
+- Contact the Shop (links to /contact?service=weddings)
 - Call Us: (416) 512-9353
 
 **Related Services:** Invitations, Colour Postcards, Brochures
@@ -585,6 +585,6 @@ We work with couples and event planners across Vaughan and the Greater Toronto A
 **Copy:** Looking for print work in Vaughan? We handle everything from design to delivery. Get in touch and let us know what you need.
 
 **CTA Buttons:**
-- Request a Quote (links to /request-quote)
+- Contact the Shop (links to /contact)
 - View All Printing Services (links to /printing)
 - Contact Us (links to /contact)

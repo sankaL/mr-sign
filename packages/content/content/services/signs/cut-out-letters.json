@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "cut-out-letters",
+  "name": "Cut-out Letters",
+  "status": "published",
+  "displayOrder": 11,
+  "featured": false,
+  "headline": "Dimensional Cut-Out Letters for Walls and Storefronts",
+  "shortDescription": "Dimensional cut-out letters for storefronts, office walls, lobbies, reception areas, and display surfaces.",
+  "body": [
+    "Cut-out letters create a dimensional look for walls, storefronts, reception areas, and professional interiors.",
+    "They can be produced in materials such as metal, acrylic, and PVC, with mounting selected for the surface and location."
+  ],
+  "capabilities": [
+    "Metal, acrylic, and PVC letters",
+    "Interior lobby and boardroom signage",
+    "Exterior storefront lettering",
+    "Flush-mounted and spaced installations"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-cut-out-letters.png",
+    "alt": "Metal dimensional letters mounted on an interior wall.",
+    "prompt": "Large metallic dimensional cut-out letters mounted flush against a polished stone wall inside a corporate lobby, shot close enough to show depth and shadow. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Cut-Out Letter Signs in Vaughan | Mr. Sign and Print",
+    "description": "Dimensional cut-out letters in metal, acrylic, and PVC for storefronts and offices in Vaughan and the GTA. Premium signage, custom-built. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "plate-directory-board"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    }
+  ]
+}

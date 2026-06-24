@@ -218,10 +218,8 @@ export function buildServiceSchema(service: ServiceDetail) {
       "@type": "Offer",
       priceCurrency: service.pricing.currency,
       availability: "https://schema.org/InStock",
-      url: canonicalUrl(
-        `/request-quote?category=${service.categorySlug}&service=${service.slug}`,
-      ),
-      description: service.pricing.publicLabel,
+      url: canonicalUrl("/contact"),
+      description: service.pricing.label,
     },
   };
 }

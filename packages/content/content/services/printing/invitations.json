@@ -1,0 +1,49 @@
+{
+  "categorySlug": "printing",
+  "slug": "invitations",
+  "name": "Invitations",
+  "status": "published",
+  "displayOrder": 2,
+  "featured": false,
+  "headline": "Custom Invitations Printed for Any Occasion",
+  "shortDescription": "Custom printed invitations for events, openings, celebrations, announcements, and business occasions.",
+  "body": [
+    "Invitations can be produced for corporate events, celebrations, grand openings, private events, and announcements.",
+    "We can help match the print format, stock, finish, and quantity to the tone of the occasion."
+  ],
+  "capabilities": [
+    "Single-panel and folded invitation cards",
+    "Full-colour printing on quality card stock",
+    "Matching envelope options",
+    "Small and large quantity runs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/printing-invitations.png",
+    "alt": "Printed event invitation card with matching envelope.",
+    "prompt": "A printed event invitation card alongside a matching envelope on a neutral linen surface, with elegant abstract layout blocks and a small decorative element. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Custom Printed Invitations in Vaughan | Mr. Sign and Print",
+    "description": "Custom-printed invitations for corporate events, grand openings, and celebrations in Vaughan and the GTA. Professional quality, fast turnaround. Contact the shop for current pricing."
+  },
+  "related": [
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "weddings"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "colour-postcards"
+    },
+    {
+      "categorySlug": "printing",
+      "serviceSlug": "brochures"
+    }
+  ]
+}
