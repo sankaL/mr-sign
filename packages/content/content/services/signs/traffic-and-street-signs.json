@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "traffic-and-street-signs",
+  "name": "Traffic and Street Signs",
+  "status": "published",
+  "displayOrder": 110,
+  "featured": false,
+  "headline": "Traffic and Street Signs for Private Properties",
+  "shortDescription": "Traffic, parking, street-style, and regulatory signs for private properties, plazas, and commercial sites.",
+  "body": [
+    "Traffic and street signs help direct drivers and pedestrians on private roads, parking lots, plazas, and commercial properties.",
+    "We produce durable sign panels for directional, parking, caution, and property-control needs."
+  ],
+  "capabilities": [
+    "Traffic and parking signs",
+    "Street-style property signs",
+    "Directional and regulatory panels",
+    "Durable outdoor materials"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-traffic-street-signs.png",
+    "alt": "Custom traffic and street-style signs arranged in a sign shop.",
+    "prompt": "A row of custom traffic and street-style signs arranged in a sign shop, abstract arrows and symbols only, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Traffic and Street Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom traffic signs, parking signs, and street-style signs for private properties and commercial sites in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "directional-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "t-frame-site-signs"
+    }
+  ]
+}

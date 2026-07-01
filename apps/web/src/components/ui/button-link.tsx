@@ -12,7 +12,7 @@ const variants = {
     "border-[#E51B23] bg-[#E51B23] !text-white hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white",
   secondary:
     "border-[#CCFF00] bg-[#CCFF00] !text-[#151515] hover:bg-white hover:!text-[#151515] focus-visible:bg-white focus-visible:!text-[#151515]",
-  dark: "border-[#151515] bg-[#151515] !text-white hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white",
+  dark: "border-[#151515] bg-[#151515] !text-white hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white",
 };
 
 export function ButtonLink({

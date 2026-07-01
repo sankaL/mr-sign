@@ -36,10 +36,13 @@ function jsonFiles(directory: URL): string[] {
 
 test("catalog exposes the MVP categories and services from JSON", () => {
   assert.equal(serviceCategories.length, 3);
-  assert.equal(services.length, 42);
+  assert.equal(services.length, 47);
   assert.deepEqual(
     serviceCategories.map((category) => category.slug),
-    ["signs", "printing", "design"],
+    ["signs", "printing", "services"],
+  );
+  assert.ok(
+    !serviceCategories.some((category) => String(category.slug) === "design"),
   );
 });
 
@@ -104,7 +107,7 @@ test("related service references resolve", () => {
 test("image asset references are complete", () => {
   const assets = getAllImageAssets();
 
-  assert.equal(assets.length, 46);
+  assert.equal(assets.length, 51);
 
   for (const asset of assets) {
     assert.match(asset.path, /^\/images\/generated\/[a-z0-9-]+\.png$/);

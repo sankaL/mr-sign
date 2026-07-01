@@ -18,7 +18,7 @@ export default function NotFound() {
             </h1>
             <p className="mt-4 max-w-2xl text-sm font-semibold leading-6 text-[#151515]/66">
               Browse the public service pages or contact the shop directly for
-              signs, printing, and design support.
+              signs, printing, manufacturing, and services.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">

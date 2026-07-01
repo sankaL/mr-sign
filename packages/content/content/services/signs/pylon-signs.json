@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "pylon-signs",
+  "name": "Pylon Signs",
+  "status": "published",
+  "displayOrder": 107,
+  "featured": true,
+  "headline": "Pylon Signs for Roadside Business Visibility",
+  "shortDescription": "Freestanding pylon signs for plazas, commercial properties, multi-tenant buildings, and roadside business visibility.",
+  "body": [
+    "Pylon signs help customers see a property from the road and identify businesses before they reach the entrance.",
+    "We support pylon sign faces, tenant panels, illumination, replacement graphics, and service work."
+  ],
+  "capabilities": [
+    "Freestanding pylon sign faces",
+    "Multi-tenant plaza panels",
+    "Illuminated pylon graphics",
+    "Replacement and service support"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-pylon-signs.png",
+    "alt": "Freestanding pylon sign at the entrance to a commercial plaza.",
+    "prompt": "A freestanding pylon sign at a commercial plaza entrance, clean blank tenant panels with abstract colour blocks, bright daylight, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Pylon Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom pylon signs, tenant panels, and roadside business signage for plazas and commercial properties in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "led-signs"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "sign-repairs"
+    }
+  ]
+}

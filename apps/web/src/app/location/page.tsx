@@ -44,7 +44,7 @@ export default function LocationPage() {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     href={siteContact.directionsUrl}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1936D4] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0B1F55] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
                   >
                     Get directions
                     <Navigation
@@ -93,14 +93,14 @@ export default function LocationPage() {
               <div className="grid gap-2.5 rounded-2xl border border-[#151515]/10 bg-white p-4">
                 <Link
                   href={siteContact.phoneHref}
-                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#1936D4]"
+                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#0B1F55]"
                 >
                   <Phone className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.phone} or {siteContact.secondaryPhone}
                 </Link>
                 <Link
                   href={siteContact.emailHref}
-                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#1936D4]"
+                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#0B1F55]"
                 >
                   <Mail className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.email}

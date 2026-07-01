@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "teardrop-flags",
+  "name": "Teardrop & Flags",
+  "status": "published",
+  "displayOrder": 109,
+  "featured": false,
+  "headline": "Teardrop Flags for Events and Outdoor Promotions",
+  "shortDescription": "Teardrop flags, feather flags, and promotional flag signs for outdoor events, storefronts, and high-traffic areas.",
+  "body": [
+    "Teardrop and flag signs create motion and height for temporary promotions, events, openings, and roadside visibility.",
+    "We help prepare flag graphics and produce portable signage that can move with your business or event."
+  ],
+  "capabilities": [
+    "Teardrop and feather flag graphics",
+    "Outdoor promotional signs",
+    "Portable event signage",
+    "Single or multiple flag layouts"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-teardrop-flags.png",
+    "alt": "Teardrop flag signs displayed outside a storefront.",
+    "prompt": "Several teardrop flag signs outside a storefront, with bold abstract graphics and no readable text, clear daylight, local sign shop style, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Teardrop Flags in Vaughan | Mr. Sign and Print",
+    "description": "Teardrop flags, feather flags, and portable promotional flag signs for businesses and events in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "fabric-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vertical-stands-outdoor"
+    }
+  ]
+}

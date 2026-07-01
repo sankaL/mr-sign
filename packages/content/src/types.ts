@@ -1,4 +1,4 @@
-export type CategorySlug = "signs" | "printing" | "design";
+export type CategorySlug = "signs" | "printing" | "services";
 
 export type PricingType =
   | "fixed"

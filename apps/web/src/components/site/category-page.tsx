@@ -1,11 +1,7 @@
 import { getCategory, type CategorySlug } from "@mrsign/content";
-import { Mail, Phone } from "lucide-react";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicServices } from "@/lib/public-services";
-import { primaryActions } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
 import { ServiceTeaserCard } from "./service-teaser-card";
@@ -27,34 +23,18 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
   return (
     <SiteShell>
       <main>
-        <section className="bg-[#1936D4] px-5 py-10 text-white md:px-10 md:py-14">
+        <section className="bg-[#0B1F55] px-5 py-10 text-white md:px-10 md:py-14">
           <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div className="max-w-3xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
-                {category.eyebrow}
-              </p>
-              <h1 className="mt-3 text-[clamp(2.25rem,5vw,4.25rem)] font-black uppercase leading-[0.92] tracking-tight">
+              <h1 className="text-[clamp(2.35rem,5vw,4.5rem)] font-black uppercase leading-[0.92] tracking-normal">
                 {category.headline}
               </h1>
               <p className="mt-4 max-w-[62ch] text-sm font-semibold leading-6 text-white/82 md:text-base md:leading-7">
                 {category.subheadline}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href={primaryActions.call.href}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-                >
-                  {primaryActions.call.label}
-                  <Phone className="h-4 w-4" strokeWidth={2.5} />
-                </Link>
-                <Link
-                  href={primaryActions.email.href}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/35 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4] active:scale-[0.98]"
-                >
-                  {primaryActions.email.label}
-                  <Mail className="h-4 w-4" strokeWidth={2.5} />
-                </Link>
-              </div>
+              <p className="mt-3 max-w-[62ch] text-xs font-semibold leading-5 text-white/62 md:text-sm md:leading-6">
+                {category.description}
+              </p>
             </div>
 
             <ContentImage
@@ -69,10 +49,7 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
         <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
           <div className="mx-auto max-w-[1440px]">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                {category.name}
-              </p>
-              <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
+              <h2 className="max-w-4xl text-[clamp(2rem,4vw,3.35rem)] font-black uppercase leading-[0.95] tracking-normal">
                 {category.gridHeading}
               </h2>
               <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
@@ -91,10 +68,6 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
             </div>
           </div>
         </section>
-
-        <CtaSection
-          title={`Need current pricing for ${category.name.toLowerCase()} work?`}
-        />
       </main>
     </SiteShell>
   );

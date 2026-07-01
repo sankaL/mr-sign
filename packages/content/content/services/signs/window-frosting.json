@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "window-frosting",
+  "name": "Window Frosting",
+  "status": "published",
+  "displayOrder": 112,
+  "featured": false,
+  "headline": "Window Frosting for Privacy and Interior Branding",
+  "shortDescription": "Frosted window film, privacy graphics, etched-glass effects, and branded window treatments for offices and storefronts.",
+  "body": [
+    "Window frosting adds privacy while keeping rooms bright and professional.",
+    "We cut and install frosted vinyl film for office glass, meeting rooms, storefronts, doors, and branded interior panels."
+  ],
+  "capabilities": [
+    "Frosted privacy film",
+    "Etched-glass vinyl effects",
+    "Office and storefront windows",
+    "Custom cut patterns and branding"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-window-frosting.png",
+    "alt": "Frosted privacy film installed on office glass.",
+    "prompt": "Office glass panels with frosted privacy film and abstract cut patterns, bright clean interior, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Window Frosting in Vaughan | Mr. Sign and Print",
+    "description": "Window frosting, privacy film, and etched-glass vinyl graphics for offices and storefronts in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "indoor-wall-graphics"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "vinyl-graphic-replacement"
+    }
+  ]
+}

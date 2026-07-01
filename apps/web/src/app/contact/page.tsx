@@ -38,21 +38,21 @@ export default function ContactPage() {
               <div className="grid gap-3">
                 <Link
                   href={siteContact.phoneHref}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#1936D4] hover:text-[#1936D4]"
+                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
                 >
                   <Phone className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.phone} or {siteContact.secondaryPhone}
                 </Link>
                 <Link
                   href={siteContact.emailHref}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#1936D4] hover:text-[#1936D4]"
+                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
                 >
                   <Mail className="h-4 w-4 text-[#E51B23]" />
                   {siteContact.email}
                 </Link>
                 <Link
                   href={siteContact.directionsUrl}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#1936D4] hover:text-[#1936D4]"
+                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
                 >
                   <Navigation className="h-4 w-4 text-[#E51B23]" />
                   Get directions
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     Address
                   </p>
                   <p className="mt-3 flex gap-3 text-sm font-bold leading-6 text-[#151515]/70">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#1936D4]" />
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#0B1F55]" />
                     {siteContact.address}
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     ))}
                   </div>
                   <p className="mt-3 flex items-center gap-2 text-xs font-black text-[#151515]">
-                    <Clock className="h-4 w-4 text-[#1936D4]" />
+                    <Clock className="h-4 w-4 text-[#0B1F55]" />
                     Call ahead for holiday hours.
                   </p>
                 </div>

@@ -5,7 +5,7 @@ type SignagePanelProps = {
 };
 
 const accentStyles = {
-  blue: "bg-[#1936D4] text-white border-white/40",
+  blue: "bg-[#0B1F55] text-white border-white/40",
   red: "bg-[#E51B23] text-white border-white/40",
   yellow: "bg-[#CCFF00] text-[#151515] border-[#151515]/15",
 };

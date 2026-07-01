@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "vehicle-lettering-and-wraps",
+  "name": "Vehicle Lettering and Wraps",
+  "status": "published",
+  "displayOrder": 111,
+  "featured": true,
+  "headline": "Vehicle Lettering and Wraps for Business Fleets",
+  "shortDescription": "Vehicle lettering, partial wraps, decals, and graphics for cars, vans, trucks, cube vans, and work fleets.",
+  "body": [
+    "Vehicle lettering and wraps turn cars, vans, trucks, and cube vans into moving business signs.",
+    "We prepare vinyl graphics for doors, side panels, rear panels, curved areas, and fleet branding needs."
+  ],
+  "capabilities": [
+    "Vehicle lettering packages",
+    "Partial wraps and business graphics",
+    "Door, side, and rear panel decals",
+    "Car, van, truck, and cube van applications"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-vehicle-lettering-wraps.png",
+    "alt": "Work van with vinyl lettering and partial wrap graphics.",
+    "prompt": "A white work van with bold vinyl lettering and partial wrap graphics in abstract blocks, parked outside a sign shop, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Vehicle Lettering and Wraps in Vaughan | Mr. Sign and Print",
+    "description": "Vehicle lettering, partial wraps, decals, and work fleet graphics for cars, vans, and trucks in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "magnetic-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "vinyl-graphic-replacement"
+    }
+  ]
+}

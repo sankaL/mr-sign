@@ -80,7 +80,7 @@ export function GoogleMapEmbed({
       ) : null}
       <Link
         href={siteContact.directionsUrl}
-        className="absolute bottom-4 left-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#151515] px-4 py-2 text-xs font-black uppercase tracking-wide !text-white shadow-lg transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
+        className="absolute bottom-4 left-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#151515] px-4 py-2 text-xs font-black uppercase tracking-wide !text-white shadow-lg transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white active:scale-[0.98]"
       >
         {linkLabel}
         <ExternalLink className="h-4 w-4" strokeWidth={2.5} />

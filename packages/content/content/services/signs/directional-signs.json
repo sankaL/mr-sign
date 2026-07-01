@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "directional-signs",
+  "name": "Directional Signs",
+  "status": "published",
+  "displayOrder": 102,
+  "featured": false,
+  "headline": "Directional Signs for Clear Wayfinding",
+  "shortDescription": "Indoor and outdoor directional signs for plazas, offices, parking areas, events, and private properties.",
+  "body": [
+    "Directional signs make it easier for customers, visitors, drivers, and staff to find entrances, exits, units, parking, and service areas.",
+    "We produce practical wayfinding signs that can be mounted on walls, posts, windows, counters, and site fixtures."
+  ],
+  "capabilities": [
+    "Indoor and outdoor wayfinding",
+    "Parking and entrance signs",
+    "Arrow and unit-direction layouts",
+    "Rigid panels, decals, and post-mounted signs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-directional-signs.png",
+    "alt": "Set of directional signs with arrows mounted in a commercial space.",
+    "prompt": "A clean commercial corridor with several mounted directional sign panels showing abstract arrow shapes and blank wayfinding blocks. Authentic sign shop visual, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Directional Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom directional signs and wayfinding signs for offices, plazas, parking lots, and private properties in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "traffic-and-street-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "reception-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    }
+  ]
+}

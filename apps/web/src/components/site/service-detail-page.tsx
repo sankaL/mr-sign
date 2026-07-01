@@ -13,7 +13,6 @@ import { buildServiceSchema } from "@/lib/seo";
 import { siteContact } from "@/lib/site";
 
 import { ContentImage } from "./content-image";
-import { PricingSummary } from "./pricing-summary";
 import { ServiceTeaserCard } from "./service-teaser-card";
 import { SiteShell } from "./site-shell";
 
@@ -75,7 +74,7 @@ export async function ServiceDetailPage({
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href={siteContact.phoneHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white active:scale-[0.98]"
                 >
                   Call the shop
                   <Phone className="h-4 w-4" strokeWidth={2.5} />
@@ -103,7 +102,7 @@ export async function ServiceDetailPage({
           <div className="mx-auto max-w-[1152px]">
             {/* Section header */}
             <div className="mb-10 flex items-center gap-3 md:mb-14">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1936D4] text-white">
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0B1F55] text-white">
                 <FileText className="h-3.5 w-3.5" strokeWidth={2.5} />
               </span>
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
@@ -151,12 +150,35 @@ export async function ServiceDetailPage({
                 )}
               </div>
 
-              {/* Pricing card */}
-              <div className="lg:sticky lg:top-8 lg:self-start">
-                <div className="rounded-2xl border border-[#151515]/8 bg-white/60 p-6 shadow-[0_2px_24px_rgba(21,21,21,0.05)] backdrop-blur-sm md:p-8">
-                  <PricingSummary pricing={service.pricing} />
+              <aside className="rounded-2xl border border-[#151515]/10 bg-white p-6 md:p-8 lg:sticky lg:top-8 lg:self-start">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
+                  Contact the shop
+                </p>
+                <h2 className="mt-3 text-2xl font-black uppercase leading-tight">
+                  Call or email for current details.
+                </h2>
+                <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/66">
+                  Share the product or service, size, quantity, material,
+                  timing, and location details so the team can guide the next
+                  step.
+                </p>
+                <div className="mt-6 grid gap-3">
+                  <Link
+                    href={siteContact.phoneHref}
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white active:scale-[0.98]"
+                  >
+                    Call the shop
+                    <Phone className="h-4 w-4" strokeWidth={2.5} />
+                  </Link>
+                  <Link
+                    href={siteContact.emailHref}
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#151515]/15 px-5 py-3 text-xs font-black uppercase tracking-wide text-[#151515] transition-colors hover:bg-[#151515] hover:!text-white active:scale-[0.98]"
+                  >
+                    Email details
+                    <Mail className="h-4 w-4" strokeWidth={2.5} />
+                  </Link>
                 </div>
-              </div>
+              </aside>
             </div>
           </div>
         </section>
@@ -173,7 +195,7 @@ export async function ServiceDetailPage({
                 </h2>
                 <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
                   These services are commonly part of the same sign, print, or
-                  design conversation.
+                  service conversation.
                 </p>
               </div>
               <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -188,9 +210,7 @@ export async function ServiceDetailPage({
           </section>
         ) : null}
 
-        <CtaSection
-          title={`Need current pricing for ${service.name.toLowerCase()}?`}
-        />
+        <CtaSection />
       </main>
     </SiteShell>
   );

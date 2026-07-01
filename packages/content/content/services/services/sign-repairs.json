@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "sign-repairs",
+  "name": "Sign Repairs",
+  "status": "published",
+  "displayOrder": 1,
+  "featured": false,
+  "headline": "Sign Repairs for Existing Business Signs",
+  "shortDescription": "Repair support for damaged, aging, loose, faded, or non-working business signs.",
+  "body": [
+    "Existing signs can become loose, faded, cracked, damaged, or unreliable over time.",
+    "We inspect and repair many common sign issues so businesses can keep their storefront or property signage presentable."
+  ],
+  "capabilities": [
+    "Damaged sign repair",
+    "Loose panel and face support",
+    "Existing sign troubleshooting",
+    "Repair guidance for storefront signs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-sign-repairs.png",
+    "alt": "Opened sign cabinet being repaired on a shop workbench.",
+    "prompt": "An opened sign cabinet on a shop workbench with hand tools and replacement parts arranged neatly, sign repair context, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Sign Repairs in Vaughan | Mr. Sign and Print",
+    "description": "Sign repair service for damaged, aging, loose, faded, or non-working business signs in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "services",
+      "serviceSlug": "led-lighting-replacement"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "electrical-troubleshooting"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "emergency-sign-service"
+    }
+  ]
+}

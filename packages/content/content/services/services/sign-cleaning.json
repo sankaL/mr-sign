@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "sign-cleaning",
+  "name": "Sign Cleaning",
+  "status": "published",
+  "displayOrder": 4,
+  "featured": false,
+  "headline": "Sign Cleaning for Brighter Storefronts",
+  "shortDescription": "Cleaning support for sign faces, panels, letters, and visible surfaces that have collected dirt or weathering.",
+  "body": [
+    "Outdoor signs collect dust, road film, weather marks, and general wear.",
+    "We provide sign cleaning support so existing signage looks more presentable from the street and sidewalk."
+  ],
+  "capabilities": [
+    "Sign face cleaning",
+    "Panel and letter surface cleaning",
+    "Storefront sign refresh",
+    "Maintenance support for existing signs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-sign-cleaning.png",
+    "alt": "Sign face being cleaned with shop cloths and maintenance tools nearby.",
+    "prompt": "A sign face panel being cleaned on a shop bench with microfiber cloths, mild cleaning tools, and bright workshop light, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Sign Cleaning in Vaughan | Mr. Sign and Print",
+    "description": "Sign cleaning and sign surface refresh support for storefront and business signs in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "services",
+      "serviceSlug": "vinyl-graphic-replacement"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "sign-repairs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "reception-signs"
+    }
+  ]
+}

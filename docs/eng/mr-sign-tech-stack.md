@@ -4,38 +4,38 @@
 
 This document summarizes the current technology stack for the Mr. Sign and Print website redesign MVP after the product scope was simplified to a static public website.
 
-The MVP supports service browsing, pricing guidance, direct phone/email contact, location discovery, gallery browsing, SEO metadata, and repository-managed JSON content. It does not include online submissions, an admin portal, authentication, a database, or transactional email.
+The MVP supports service browsing, direct phone/email contact, location discovery, gallery browsing, SEO metadata, and repository-managed JSON content. Public pages do not show pricing amounts. It does not include online submissions, an admin portal, authentication, a database, or transactional email.
 
 ## 2. Confirmed Decisions
 
-| Area | Decision |
-|---|---|
-| App architecture | Static public website |
-| Framework | Next.js static export |
-| Language | TypeScript |
-| UI | React components |
-| Styling | Tailwind CSS |
-| Icons | Lucide React |
-| Animation | Motion |
-| Content source | JSON files in `packages/content/content/` |
-| Images | Static assets in `apps/web/public/` |
-| Hosting | Static Docker/Railway-compatible deployment |
-| Database | Not used |
-| Authentication | Not used |
-| Transactional email | Not used |
-| Online forms | Not used |
-| Analytics | Not required for MVP unless added later |
+| Area                | Decision                                    |
+| ------------------- | ------------------------------------------- |
+| App architecture    | Static public website                       |
+| Framework           | Next.js static export                       |
+| Language            | TypeScript                                  |
+| UI                  | React components                            |
+| Styling             | Tailwind CSS                                |
+| Icons               | Lucide React                                |
+| Animation           | Motion                                      |
+| Content source      | JSON files in `packages/content/content/`   |
+| Images              | Static assets in `apps/web/public/`         |
+| Hosting             | Static Docker/Railway-compatible deployment |
+| Database            | Not used                                    |
+| Authentication      | Not used                                    |
+| Transactional email | Not used                                    |
+| Online forms        | Not used                                    |
+| Analytics           | Not required for MVP unless added later     |
 
 ## 3. Current Monorepo Structure
 
-| Path | Purpose |
-|---|---|
-| `apps/web` | Static Next.js public website |
-| `packages/content` | JSON-backed service, category, site, and SEO content helpers |
-| `packages/content/content/site.json` | Contact details, navigation, primary actions, and page copy |
-| `packages/content/content/categories.json` | Top-level category content |
-| `packages/content/content/services/*/*.json` | One editable JSON file per service |
-| `docs` | Product, engineering, copy, decisions, and task records |
+| Path                                         | Purpose                                                      |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| `apps/web`                                   | Static Next.js public website                                |
+| `packages/content`                           | JSON-backed service, category, site, and SEO content helpers |
+| `packages/content/content/site.json`         | Contact details, navigation, primary actions, and page copy  |
+| `packages/content/content/categories.json`   | Top-level category content                                   |
+| `packages/content/content/services/*/*.json` | One editable JSON file per service                           |
+| `docs`                                       | Product, engineering, copy, decisions, and task records      |
 
 ## 4. Runtime Model
 
@@ -79,20 +79,24 @@ The content package validates:
 
 ## 6. Public Routes
 
-| Route | Purpose |
-|---|---|
-| `/` | Home page |
-| `/signs` | Signs category page |
-| `/signs/[serviceSlug]` | Signs service detail page |
-| `/printing` | Printing category page |
-| `/printing/[serviceSlug]` | Printing service detail page |
-| `/design` | Design category page |
-| `/design/[serviceSlug]` | Design service detail page |
-| `/gallery` | Visual service gallery |
-| `/location` | Address, hours, map, and directions |
-| `/contact` | Phone, email, address, hours, and direct-contact guidance |
-| `/request-quote` | Static compatibility page for customers with old links |
-| `/order-online` | Static compatibility page for customers with old links |
+| Route                     | Purpose                                                   |
+| ------------------------- | --------------------------------------------------------- |
+| `/`                       | Home page                                                 |
+| `/signs`                  | Signs category page                                       |
+| `/signs/[serviceSlug]`    | Signs service detail page                                 |
+| `/printing`               | Printing category page                                    |
+| `/printing/[serviceSlug]` | Printing service detail page                              |
+| `/services`               | Sign maintenance and services category page               |
+| `/services/[serviceSlug]` | Services detail page                                      |
+| `/about-us`               | Static company and service-area page                      |
+| `/faqs`                   | Static frequently asked questions page                    |
+| `/gallery`                | Visual service gallery                                    |
+| `/location`               | Address, hours, map, and directions                       |
+| `/contact`                | Phone, email, address, hours, and direct-contact guidance |
+| `/request-quote`          | Static compatibility page for customers with old links    |
+| `/order-online`           | Static compatibility page for customers with old links    |
+| `/design`                 | Hidden noindex compatibility page that points to Services |
+| `/design/[serviceSlug]`   | Hidden noindex compatibility pages that point to Services |
 
 ## 7. Removed Stack Elements
 

@@ -9,7 +9,7 @@ export const metadata = buildContentPageMetadata(homePage);
 
 export default function HomePage() {
   return (
-    <div className="min-h-[100dvh] bg-[#1936D4]">
+    <div className="min-h-[100dvh] bg-[#0B1F55]">
       <SiteNav variant="blue" />
       <main>
         <HomeHero />

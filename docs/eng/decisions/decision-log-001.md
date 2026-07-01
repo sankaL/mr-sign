@@ -118,3 +118,20 @@ Impact:
 - `/request-quote` and `/order-online` remain only as static compatibility pages without submission forms.
 - Railway deploys no longer run migrations or database bootstrap commands.
 - Prior full-stack, auth, database, and admin decisions are superseded for the MVP.
+
+## 2026-06-24: Replace public Design category with Services and remove public pricing amounts
+
+Decision: The public site should use Signs, Printing, and Services as its active top-level service categories. Services is focused on sign maintenance, including repairs, LED and lighting replacement, electrical troubleshooting, cleaning, vinyl and graphic replacement, and emergency sign service. Public pages should not show pricing amounts.
+
+Rationale:
+
+- Client feedback clarified that signs are almost all of the business and that Design should not be promoted as a public category.
+- Sign maintenance is a clearer public category for the requested service work.
+- Customers should contact the shop directly for current pricing because project price depends on size, material, quantity, timing, access, and service needs.
+
+Impact:
+
+- `/services` and `/services/[serviceSlug]` are active public routes.
+- `/design` and `/design/[serviceSlug]` remain hidden noindex compatibility routes that point users to Services.
+- Signs, Printing, and service detail pages render descriptions and contact paths instead of public pricing summaries.
+- JSON content may retain internal pricing fields for future reference, but public UI and service schema do not expose pricing amounts.

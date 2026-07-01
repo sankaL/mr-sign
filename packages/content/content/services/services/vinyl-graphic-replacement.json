@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "vinyl-graphic-replacement",
+  "name": "Vinyl and Graphic Replacement",
+  "status": "published",
+  "displayOrder": 5,
+  "featured": false,
+  "headline": "Vinyl and Graphic Replacement for Existing Signs",
+  "shortDescription": "Replacement vinyl, decals, sign faces, and graphics for signs that need updated names, hours, branding, or visuals.",
+  "body": [
+    "Business names, hours, services, and graphics change over time, and many signs can be refreshed without replacing everything.",
+    "We replace vinyl and graphics on compatible sign surfaces, vehicles, windows, panels, and storefront applications."
+  ],
+  "capabilities": [
+    "Replacement vinyl graphics",
+    "Updated decals and lettering",
+    "Window, vehicle, and panel refreshes",
+    "Graphic removal and replacement planning"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-vinyl-graphic-replacement.png",
+    "alt": "Replacement vinyl graphics being prepared on a sign shop table.",
+    "prompt": "Fresh vinyl graphics and decals being prepared on a sign shop table with squeegee and application tape, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Vinyl and Graphic Replacement in Vaughan | Mr. Sign and Print",
+    "description": "Replacement vinyl graphics, decals, lettering, and sign face updates for existing signs in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vehicle-lettering-and-wraps"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-frosting"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-lettering"
+    }
+  ]
+}

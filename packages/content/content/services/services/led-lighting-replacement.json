@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "led-lighting-replacement",
+  "name": "LED and Lighting Replacement",
+  "status": "published",
+  "displayOrder": 2,
+  "featured": false,
+  "headline": "LED and Lighting Replacement for Signs",
+  "shortDescription": "LED modules, sign lighting, and illumination replacement for business signs that are dim, uneven, or not lighting properly.",
+  "body": [
+    "Lighting issues can make even a good sign look tired or hard to read after dark.",
+    "We replace LED modules and sign lighting components where appropriate so illuminated signs look consistent again."
+  ],
+  "capabilities": [
+    "LED module replacement",
+    "Illuminated sign lighting service",
+    "Dim or uneven light troubleshooting",
+    "Lighting refresh for existing signs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-led-lighting-replacement.png",
+    "alt": "LED sign modules arranged for replacement inside a sign cabinet.",
+    "prompt": "Bright LED sign modules and wiring inside an opened illuminated sign cabinet, replacement lighting service, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "LED and Lighting Replacement in Vaughan | Mr. Sign and Print",
+    "description": "LED module and sign lighting replacement for illuminated signs in Vaughan and the Greater Toronto Area."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "led-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "electrical-troubleshooting"
+    }
+  ]
+}

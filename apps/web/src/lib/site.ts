@@ -1,6 +1,8 @@
 import {
+  aboutPage,
   businessHours,
   contactPage,
+  faqsPage,
   galleryPage,
   homePage,
   locationPage,
@@ -25,8 +27,10 @@ import {
 } from "lucide-react";
 
 export {
+  aboutPage,
   businessHours,
   contactPage,
+  faqsPage,
   galleryPage,
   homePage,
   locationPage,
@@ -37,11 +41,11 @@ export {
 };
 
 export const primaryNavigation = publicNavigation.filter((item) =>
-  ["/signs", "/printing", "/design"].includes(item.href),
+  ["/signs", "/printing", "/services"].includes(item.href),
 );
 
 export const secondaryNavigation = publicNavigation.filter((item) =>
-  ["/gallery", "/location", "/contact"].includes(item.href),
+  ["/gallery", "/about-us", "/contact"].includes(item.href),
 );
 
 export type ServiceCategory = {
@@ -69,11 +73,15 @@ const categoryDecor = {
     icon: Printer,
     samples: ["Business Cards", "Flyers", "Large Format"],
   },
-  design: {
-    cta: "Explore design",
+  services: {
+    cta: "Explore services",
     accent: "red",
     icon: Brush,
-    samples: ["Logos", "Type Setting", "Silk Screens"],
+    samples: [
+      "Sign Repairs",
+      "LED and Lighting Replacement",
+      "Emergency Sign Service",
+    ],
   },
 } as const;
 

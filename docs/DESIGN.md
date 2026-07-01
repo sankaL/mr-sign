@@ -9,11 +9,11 @@ Mr. Sign and Print should feel like a modernized local sign shop: loud, practica
 - **Motion:** 5/10. Use tactile hover states and steady card motion, never cinematic distraction.
 - **Mood:** Bright shop-floor utility with high street visibility.
 
-The first screen must signal the business immediately: Signs, Printing, Design, Mr. Sign and Print, Vaughan/GTA service, and a direct-contact path.
+The first screen must signal the business immediately: Signs first, secondary Printing, Services, Mr. Sign and Print, GTA service, all in-house manufacturing, and a direct-contact path.
 
 ## 2. Color Palette
 
-- **Sign Blue** (`#1936D4`): Primary hero background and strong brand field.
+- **Sign Navy** (`#0B1F55`): Primary hero background, navigation, page headers, and strong brand field.
 - **Legacy Red** (`#E51B23`): Primary CTA emphasis and section labels.
 - **Print Yellow** (`#FFF200`): Badges, stickers, labels, and high-visibility signage moments.
 - **Warm Shop White** (`#FFFAF0`): Main lower-page canvas.
@@ -39,7 +39,7 @@ Rules:
 
 Copy rules:
 
-- Prefer concrete terms: `Storefront Signs`, `Rush Print Jobs`, `Design Support`, `Call the Shop`, `Email Us`.
+- Prefer concrete terms: `Storefront Signs`, `Rush Print Jobs`, `Sign Maintenance`, `Call the Shop`, `Email Us`.
 - Avoid vague marketing language such as "elevate", "seamless", "next-gen", "unleash", and "transform your brand".
 - Do not imply unsupported flows: no online payment, file upload, customer account, ecommerce checkout, or online submission language.
 
@@ -54,8 +54,8 @@ Copy rules:
 
 ### Hero
 
-- Hero uses a full-viewport blue grid field with oversized stacked type.
-- The headline stack should read as `SIGNS / PRINTING / DESIGN`.
+- Hero uses a full-viewport navy grid field with oversized stacked type.
+- The headline stack should make `SIGNS` dominant, with `PRINTING` and `SERVICES` secondary.
 - Asymmetry is required. Do not center all three headline lines on the same axis.
 - Use production-adjacent imagery: signage, print materials, storefronts, work surfaces, and design review.
 - Badge and CTA copy should route toward phone, email, services, or location.
@@ -107,7 +107,7 @@ Public content comes from JSON files in `packages/content/content/`.
 
 - Site details: `site.json`
 - Categories: `categories.json`
-- Services: one JSON file per service under `services/{signs,printing,design}/`
+- Services: one JSON file per service under `services/{signs,printing,services}/`
 
 Do not add data models for carts, checkout, uploaded artwork, accounts, online submissions, admin users, or payment unless the product requirements change.
 

@@ -43,7 +43,7 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
         <div
           className={
             isBlue
-              ? "absolute left-4 right-4 top-[4.75rem] rounded-[1.75rem] border border-white/20 bg-[#1028A8]/95 p-4 text-white shadow-[0_18px_40px_rgba(13,31,143,0.35)] backdrop-blur"
+              ? "absolute left-4 right-4 top-[4.75rem] rounded-[1.75rem] border border-white/20 bg-[#061437]/95 p-4 text-white shadow-[0_18px_40px_rgba(13,31,143,0.35)] backdrop-blur"
               : "absolute left-4 right-4 top-[4.75rem] rounded-[1.75rem] border border-[#151515]/10 bg-[#FFFAF0]/95 p-4 text-[#151515] shadow-[0_18px_40px_rgba(21,21,21,0.14)] backdrop-blur"
           }
         >
@@ -54,8 +54,8 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
                 href={item.href}
                 className={
                   isBlue
-                    ? "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-white hover:!text-[#1936D4] focus-visible:bg-white focus-visible:!text-[#1936D4]"
-                    : "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white"
+                    ? "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-white hover:!text-[#0B1F55] focus-visible:bg-white focus-visible:!text-[#0B1F55]"
+                    : "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white"
                 }
                 onClick={closeNavigation}
               >

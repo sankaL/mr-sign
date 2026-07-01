@@ -21,7 +21,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
       <div className="flex flex-col justify-between gap-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#1936D4] text-white">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0B1F55] text-white">
               <Icon className="h-5 w-5" />
             </span>
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#E51B23]">
@@ -47,7 +47,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         </div>
         <Link
           href={service.href}
-          className="inline-flex min-h-11 w-fit items-center justify-center rounded-full bg-[#151515] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#1936D4] hover:!text-white focus-visible:bg-[#1936D4] focus-visible:!text-white active:scale-[0.98]"
+          className="inline-flex min-h-11 w-fit items-center justify-center rounded-full bg-[#151515] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white active:scale-[0.98]"
         >
           {service.cta}
         </Link>

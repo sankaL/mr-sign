@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     default: "Mr. Sign and Print",
     template: "%s | Mr. Sign and Print",
   },
-  description: "Signs, printing, and design services for Vaughan and the GTA.",
+  description:
+    "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
   applicationName: "Mr. Sign and Print",
   authors: [{ name: "Mr. Sign and Print" }],
   alternates: {
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Mr. Sign and Print",
-    description: "Signs, printing, and design services for Vaughan and the GTA.",
+    description:
+      "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
     url: siteUrl,
     siteName: "Mr. Sign and Print",
     images: [
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
         url: assetUrl(),
         width: 1200,
         height: 630,
-        alt: "Mr. Sign and Print custom signs, printing, and design in Vaughan",
+        alt: "Mr. Sign and Print custom signs, printing, and services in Vaughan",
       },
     ],
     locale: "en_CA",
@@ -45,7 +47,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mr. Sign and Print",
-    description: "Signs, printing, and design services for Vaughan and the GTA.",
+    description:
+      "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
     images: [assetUrl()],
   },
   robots: {

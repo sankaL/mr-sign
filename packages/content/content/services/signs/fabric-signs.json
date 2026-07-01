@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "fabric-signs",
+  "name": "Fabric Signs",
+  "status": "published",
+  "displayOrder": 103,
+  "featured": false,
+  "headline": "Fabric Signs for Events, Displays, and Interiors",
+  "shortDescription": "Fabric signage for trade shows, retail displays, indoor walls, backdrops, and promotional environments.",
+  "body": [
+    "Fabric signs are light, flexible, and useful for displays that need a softer finish than rigid panels.",
+    "We can produce fabric-based display graphics for events, interiors, and temporary promotional installations."
+  ],
+  "capabilities": [
+    "Fabric display graphics",
+    "Event and trade-show backdrops",
+    "Indoor promotional signage",
+    "Lightweight display materials"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-fabric-signs.png",
+    "alt": "Fabric display sign stretched across an indoor promotional frame.",
+    "prompt": "A fabric display sign stretched on a clean indoor frame with bold abstract colour fields, shop-floor display feel, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Fabric Signs in Vaughan | Mr. Sign and Print",
+    "description": "Fabric signs, display graphics, and event backdrops for businesses in Vaughan and the Greater Toronto Area."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "indoor-wall-graphics"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "teardrop-flags"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "led-signs",
+  "name": "LED Signs",
+  "status": "published",
+  "displayOrder": 105,
+  "featured": false,
+  "headline": "LED Signs Built for High Visibility",
+  "shortDescription": "LED signage for storefronts, illuminated displays, cabinets, and high-visibility business identification.",
+  "body": [
+    "LED signs help businesses stay visible after dark and give storefronts a stronger street presence.",
+    "We manufacture and service LED sign solutions that can support illuminated boxes, channel letters, and custom sign builds."
+  ],
+  "capabilities": [
+    "LED illuminated sign builds",
+    "LED modules and lighting layouts",
+    "Storefront and cabinet sign applications",
+    "Integration with new or existing signs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-led-signs.png",
+    "alt": "LED modules glowing inside an illuminated sign cabinet.",
+    "prompt": "Close view of LED modules glowing inside an opened illuminated sign cabinet on a shop bench, navy and white accents, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "LED Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom LED signs, illuminated sign builds, and LED sign service for businesses in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "led-lighting-replacement"
+    }
+  ]
+}

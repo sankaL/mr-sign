@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "builders-signs",
+  "name": "Builders Signs",
+  "status": "published",
+  "displayOrder": 101,
+  "featured": false,
+  "headline": "Builders Signs for Construction and Development Sites",
+  "shortDescription": "Large site signs for builders, contractors, property managers, and development projects.",
+  "body": [
+    "Builders signs help identify construction sites, promote new developments, and keep project information visible from the road.",
+    "We manufacture durable outdoor panels for job sites, sales centres, fencing, and temporary construction signage."
+  ],
+  "capabilities": [
+    "Construction site signs",
+    "Development and sales-centre boards",
+    "Fence-mounted outdoor panels",
+    "Weather-ready rigid sign materials"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-builders-signs.png",
+    "alt": "Large construction site sign mounted near a job site fence.",
+    "prompt": "A wide construction site sign mounted beside a clean job site fence, with bold abstract blocks and no readable text. Authentic sign shop production, crisp daylight, navy red yellow accents, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Builders Signs in Vaughan | Mr. Sign and Print",
+    "description": "Builders signs and construction site signs for contractors, developers, and property projects in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "t-frame-site-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "coroplast"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "banner"
+    }
+  ]
+}

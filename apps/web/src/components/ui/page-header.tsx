@@ -14,7 +14,7 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <section className="bg-[#1936D4] px-5 py-10 text-white md:px-10 md:py-14">
+    <section className="bg-[#0B1F55] px-5 py-10 text-white md:px-10 md:py-14">
       <div className="mx-auto max-w-[1440px]">
         <div>
           <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">

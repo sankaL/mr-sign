@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "indoor-wall-graphics",
+  "name": "Indoor Wall Graphics",
+  "status": "published",
+  "displayOrder": 104,
+  "featured": false,
+  "headline": "Indoor Wall Graphics for Offices and Retail Spaces",
+  "shortDescription": "Custom wall graphics, murals, vinyl lettering, and interior branding for business environments.",
+  "body": [
+    "Indoor wall graphics turn plain walls into branded surfaces for offices, showrooms, retail spaces, and reception areas.",
+    "We prepare and install vinyl graphics that fit the space, surface, and viewing distance."
+  ],
+  "capabilities": [
+    "Interior vinyl wall graphics",
+    "Office and retail wall branding",
+    "Large wall lettering",
+    "Surface-ready production artwork"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-indoor-wall-graphics.png",
+    "alt": "Large indoor wall graphic installed in a modern office reception area.",
+    "prompt": "A modern office reception wall with a large abstract vinyl wall graphic being smoothed into place, no readable text, no logos, professional sign installation feel, no watermarks."
+  },
+  "seo": {
+    "title": "Indoor Wall Graphics in Vaughan | Mr. Sign and Print",
+    "description": "Custom indoor wall graphics, vinyl lettering, and interior branding for offices and retail spaces in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "reception-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "vinyl-cutting"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "window-frosting"
+    }
+  ]
+}

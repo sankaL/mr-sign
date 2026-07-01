@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "reception-signs",
+  "name": "Reception Signs",
+  "status": "published",
+  "displayOrder": 108,
+  "featured": false,
+  "headline": "Reception Signs for Offices and Front Desks",
+  "shortDescription": "Lobby, front desk, and reception-area signs for offices, clinics, showrooms, and business interiors.",
+  "body": [
+    "Reception signs give customers a clear first impression as soon as they enter your space.",
+    "We manufacture wall-mounted reception signs, dimensional letters, acrylic panels, and interior branding pieces."
+  ],
+  "capabilities": [
+    "Lobby and front desk signs",
+    "Dimensional letters and acrylic panels",
+    "Interior business branding",
+    "Wall-mounted sign installation"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-reception-signs.png",
+    "alt": "Dimensional reception sign mounted on an office lobby wall.",
+    "prompt": "A polished office lobby wall with dimensional acrylic reception signage using abstract shapes and no readable text, professional interior sign installation, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Reception Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom reception signs, lobby signs, and interior business signs for offices and commercial spaces in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "push-through-signs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "indoor-wall-graphics"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "cut-out-letters"
+    }
+  ]
+}

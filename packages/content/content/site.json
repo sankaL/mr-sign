@@ -15,7 +15,7 @@
     "postalCode": "L4K 5X5",
     "country": "Canada",
     "shortAddress": "399 Four Valley Dr. Unit 3, Vaughan",
-    "serviceArea": "Vaughan, Concord, and the GTA",
+    "serviceArea": "the Greater Toronto Area",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5",
     "mapsEmbedUrl": "https://www.google.com/maps?q=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5&output=embed",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=399%20Four%20Valley%20Dr%20Unit%203%20Vaughan%20Ontario%20L4K%205X5"
@@ -60,16 +60,16 @@
       "label": "Printing"
     },
     {
-      "href": "/design",
-      "label": "Design"
+      "href": "/services",
+      "label": "Services"
     },
     {
       "href": "/gallery",
       "label": "Gallery"
     },
     {
-      "href": "/location",
-      "label": "Location"
+      "href": "/about-us",
+      "label": "About Us"
     },
     {
       "href": "/contact",
@@ -102,14 +102,14 @@
     "home": {
       "route": "/",
       "seo": {
-        "title": "Mr. Sign and Print | Custom Signs, Printing & Design in Vaughan",
-        "description": "Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, and graphic design. Serving the GTA since 2000. Call or email the shop today.",
+        "title": "Mr. Sign and Print | Custom Signs, Printing & Services in Vaughan",
+        "description": "Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, in-house manufacturing, and sign services. Serving the GTA since 1998.",
         "socialTitle": "Mr. Sign and Print - Custom Signs & Printing in Vaughan",
-        "socialDescription": "From channel letters and vehicle lettering to business cards and banners, we bring your brand to life. Based in Vaughan, serving the entire GTA."
+        "socialDescription": "From channel lettering and illuminated signs to banners, vehicle lettering, large format printing, and sign maintenance. Based in Vaughan, serving the GTA."
       },
       "eyebrow": "Mr. Sign and Print | Vaughan, Ontario",
-      "headline": "Your Neighbourhood Sign and Print Shop in Vaughan",
-      "subheadline": "From custom signs and banners to business cards and graphic design, Mr. Sign and Print has been helping local businesses stand out since 2000.",
+      "headline": "Custom Signs, Printing, and Services in Vaughan",
+      "subheadline": "All in-house manufacturing for signs, selected print jobs, and sign services across the Greater Toronto Area since 1998.",
       "image": {
         "path": "/images/generated/home-hero.png",
         "alt": "Finished sign and print work arranged in a Vaughan sign shop setting.",
@@ -120,9 +120,9 @@
       "route": "/location",
       "seo": {
         "title": "Find Us in Vaughan | Mr. Sign and Print - Sign and Print Shop",
-        "description": "Visit Mr. Sign and Print at 399 Four Valley Dr., Unit 3, Vaughan, Ontario. View our hours, get directions, and contact us. Serving Vaughan and the GTA since 2000.",
+        "description": "Visit Mr. Sign and Print at 399 Four Valley Dr., Unit 3, Vaughan, Ontario. View our hours, get directions, and contact us. Serving the GTA since 1998.",
         "socialTitle": "Find Mr. Sign and Print in Vaughan, Ontario",
-        "socialDescription": "Located at 399 Four Valley Dr., Unit 3, Vaughan. Call, get directions, or email the shop. Serving the GTA since 2000."
+        "socialDescription": "Located at 399 Four Valley Dr., Unit 3, Vaughan. Call, get directions, or email the shop. Serving the GTA since 1998."
       },
       "eyebrow": "Location",
       "headline": "Visit Us in Vaughan",
@@ -132,9 +132,9 @@
       "route": "/contact",
       "seo": {
         "title": "Contact Us | Mr. Sign and Print - Vaughan Sign and Print Shop",
-        "description": "Get in touch with Mr. Sign and Print in Vaughan. Call, email, or visit the shop with questions about signs, printing, and design services.",
+        "description": "Get in touch with Mr. Sign and Print in Vaughan. Call, email, or visit the shop with questions about signs, printing, manufacturing, and services.",
         "socialTitle": "Contact Mr. Sign and Print | Vaughan Sign and Print Shop",
-        "socialDescription": "Questions about signs, printing, or design services in Vaughan and the GTA? Reach out and our team will get back to you quickly."
+        "socialDescription": "Questions about signs, printing, manufacturing, or services in Vaughan and the GTA? Reach out and our team will help."
       },
       "eyebrow": "Contact",
       "headline": "Get in Touch",
@@ -143,20 +143,44 @@
     "gallery": {
       "route": "/gallery",
       "seo": {
-        "title": "Gallery | Mr. Sign and Print - Signs, Printing & Design Work",
-        "description": "Browse a project-style gallery of Mr. Sign and Print services, including signs, printing, and design work for Vaughan and the GTA.",
+        "title": "Gallery | Mr. Sign and Print - Signs, Printing & Service Work",
+        "description": "Browse a project-style gallery of Mr. Sign and Print services, including signs, printing, manufacturing, and sign service work for Vaughan and the GTA.",
         "socialTitle": "Mr. Sign and Print Gallery",
-        "socialDescription": "A visual gallery of sign, print, and design services available from Mr. Sign and Print in Vaughan."
+        "socialDescription": "A visual gallery of signs, printing, manufacturing, and services available from Mr. Sign and Print in Vaughan."
       },
       "eyebrow": "Gallery",
       "headline": "A Visual Look at What We Make",
-      "subheadline": "Explore representative sign, print, and design work from across the services we offer to businesses in Vaughan and the GTA."
+      "subheadline": "Explore representative sign, print, manufacturing, and service work from across the products we offer to businesses in Vaughan and the GTA."
+    },
+    "about": {
+      "route": "/about-us",
+      "seo": {
+        "title": "About Us | Mr. Sign and Print - Vaughan Sign Shop",
+        "description": "Learn about Mr. Sign and Print, a Vaughan sign shop providing signs, printing, manufacturing, and services across the GTA since 1998.",
+        "socialTitle": "About Mr. Sign and Print",
+        "socialDescription": "A Vaughan sign shop providing signs, printing, manufacturing, and services across the GTA since 1998."
+      },
+      "eyebrow": "About Us",
+      "headline": "Serving the GTA Since 1998",
+      "subheadline": "Mr. Sign and Print is a Vaughan shop focused on signs, in-house manufacturing, selected printing, and practical sign services for local businesses."
+    },
+    "faqs": {
+      "route": "/faqs",
+      "seo": {
+        "title": "FAQs | Mr. Sign and Print - Vaughan Sign and Print Shop",
+        "description": "Frequently asked questions about contacting Mr. Sign and Print for signs, printing, manufacturing, and sign services in Vaughan and the GTA.",
+        "socialTitle": "Mr. Sign and Print FAQs",
+        "socialDescription": "Answers about signs, printing, service work, timing, artwork, and contacting the Vaughan shop."
+      },
+      "eyebrow": "FAQs",
+      "headline": "Questions Before You Call",
+      "subheadline": "Quick answers about signs, printing, service work, artwork, timing, and how to contact the shop."
     },
     "pricingContact": {
       "route": "/request-quote",
       "seo": {
         "title": "Project Pricing Contact | Mr. Sign and Print - Vaughan Sign and Print Shop",
-        "description": "Call or email Mr. Sign and Print in Vaughan for current pricing on signs, printing, and design services."
+        "description": "Call or email Mr. Sign and Print in Vaughan for current pricing on signs, printing, manufacturing, and services."
       },
       "eyebrow": "Project pricing",
       "headline": "Contact the Shop for Current Pricing",

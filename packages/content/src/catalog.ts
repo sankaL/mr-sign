@@ -12,7 +12,11 @@ export function getCategory(categorySlug: CategorySlug) {
 export function getServicesByCategory(categorySlug: CategorySlug) {
   return services
     .filter((service) => service.categorySlug === categorySlug)
-    .sort((a, b) => a.displayOrder - b.displayOrder);
+    .sort((a, b) =>
+      categorySlug === "signs"
+        ? a.name.localeCompare(b.name)
+        : a.displayOrder - b.displayOrder || a.name.localeCompare(b.name),
+    );
 }
 
 export function getService(categorySlug: CategorySlug, serviceSlug: string) {
@@ -59,9 +63,9 @@ export function getGalleryServices() {
     getService("signs", "sandwich-boards"),
     getService("printing", "brochures"),
     getService("printing", "large-format-printing"),
-    getService("design", "logos"),
-    getService("design", "silk-screens"),
-    getService("design", "websites"),
+    getService("services", "sign-repairs"),
+    getService("services", "led-lighting-replacement"),
+    getService("services", "vinyl-graphic-replacement"),
     getService("signs", "window-lettering"),
   ].filter(isServiceDetail);
 }

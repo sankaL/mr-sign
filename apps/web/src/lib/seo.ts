@@ -15,7 +15,7 @@ export const defaultSocialImage = "/social/default-social.png";
 export const categorySocialImages: Record<CategorySlug, string> = {
   signs: "/social/signs-social.png",
   printing: "/social/printing-social.png",
-  design: "/social/design-social.png",
+  services: "/social/services-social.png",
 };
 
 export const siteUrl = normalizeSiteUrl(
@@ -112,7 +112,7 @@ export function buildCategoryMetadata(categorySlug: CategorySlug) {
       seo: {
         title: `${categorySlug} | Mr. Sign and Print`,
         description:
-          "Signs, printing, and design services for Vaughan and the GTA.",
+          "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
       },
     });
   }
@@ -135,7 +135,7 @@ export function buildServiceMetadata(
       seo: {
         title: `${fallbackTitle} | Mr. Sign and Print`,
         description:
-          "Signs, printing, and design services for Vaughan and the GTA.",
+          "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
       },
     });
   }
@@ -213,13 +213,6 @@ export function buildServiceSchema(service: ServiceDetail) {
         postalCode: siteContact.postalCode,
         addressCountry: siteContact.country,
       },
-    },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: service.pricing.currency,
-      availability: "https://schema.org/InStock",
-      url: canonicalUrl("/contact"),
-      description: service.pricing.label,
     },
   };
 }

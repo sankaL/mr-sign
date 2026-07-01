@@ -1,0 +1,49 @@
+{
+  "categorySlug": "signs",
+  "slug": "push-through-signs",
+  "name": "Push Through Signs",
+  "status": "published",
+  "displayOrder": 106,
+  "featured": false,
+  "headline": "Push Through Signs with Dimensional Detail",
+  "shortDescription": "Dimensional push-through acrylic signs for illuminated storefronts, reception areas, and premium business signage.",
+  "body": [
+    "Push through signs use dimensional lettering or shapes that sit proud of the sign face for a stronger, more polished finish.",
+    "They are commonly used for illuminated storefront signs, lobby signs, and business identity signs that need more depth."
+  ],
+  "capabilities": [
+    "Push-through acrylic lettering",
+    "Illuminated sign faces",
+    "Dimensional sign construction",
+    "Storefront and reception applications"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
+  },
+  "image": {
+    "src": "/images/generated/signs-push-through-signs.png",
+    "alt": "Dimensional push-through sign face with acrylic letters.",
+    "prompt": "A close view of a dimensional push-through acrylic sign face on a workbench, raised translucent letter shapes without readable text, premium sign fabrication, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Push Through Signs in Vaughan | Mr. Sign and Print",
+    "description": "Custom push through signs and dimensional illuminated signs for businesses in Vaughan and the Greater Toronto Area."
+  },
+  "related": [
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "channel-letters"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "illuminated-boxes"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "reception-signs"
+    }
+  ]
+}

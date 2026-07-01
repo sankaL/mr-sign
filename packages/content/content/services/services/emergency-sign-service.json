@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "emergency-sign-service",
+  "name": "Emergency Sign Service",
+  "status": "published",
+  "displayOrder": 6,
+  "featured": false,
+  "headline": "Emergency Sign Service When Something Needs Attention",
+  "shortDescription": "Urgent sign service support for damaged, unsafe, dark, loose, or time-sensitive sign issues.",
+  "body": [
+    "Some sign problems need attention quickly, especially when a sign is dark, damaged, loose, or affecting business visibility.",
+    "Call the shop with the sign type, location, photos if available, and timing needs so we can guide the next step."
+  ],
+  "capabilities": [
+    "Urgent sign service guidance",
+    "Damaged or loose sign review",
+    "Lighting outage support",
+    "Time-sensitive service coordination"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-emergency-sign-service.png",
+    "alt": "Urgent sign repair tools prepared beside an illuminated sign panel.",
+    "prompt": "A compact sign service kit with tools, LED modules, safety cones, and an illuminated sign panel on a shop bench, urgent maintenance feel, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Emergency Sign Service in Vaughan | Mr. Sign and Print",
+    "description": "Emergency sign service support for damaged, dark, loose, or time-sensitive sign issues in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "services",
+      "serviceSlug": "sign-repairs"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "led-lighting-replacement"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "electrical-troubleshooting"
+    }
+  ]
+}

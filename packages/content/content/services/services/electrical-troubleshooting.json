@@ -1,0 +1,49 @@
+{
+  "categorySlug": "services",
+  "slug": "electrical-troubleshooting",
+  "name": "Electrical Troubleshooting",
+  "status": "published",
+  "displayOrder": 3,
+  "featured": false,
+  "headline": "Electrical Troubleshooting for Sign Lighting",
+  "shortDescription": "Troubleshooting support for illuminated signs with power, wiring, flickering, or lighting issues.",
+  "body": [
+    "When an illuminated sign flickers, loses sections, or stops lighting, the issue may be in the components, wiring, or power path.",
+    "We help identify practical next steps for electrical and lighting problems related to sign systems."
+  ],
+  "capabilities": [
+    "Illuminated sign troubleshooting",
+    "Power and lighting issue review",
+    "Flickering or partial outage support",
+    "Coordination for repair needs"
+  ],
+  "pricing": {
+    "type": "contactForPricing",
+    "currency": "CAD",
+    "label": "Contact for current pricing",
+    "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
+  },
+  "image": {
+    "src": "/images/generated/services-electrical-troubleshooting.png",
+    "alt": "Electrical testing tools beside an illuminated sign component.",
+    "prompt": "Electrical testing tools beside sign lighting components and wiring on a clean workbench, practical troubleshooting scene, no readable text, no logos, no watermarks."
+  },
+  "seo": {
+    "title": "Sign Electrical Troubleshooting in Vaughan | Mr. Sign and Print",
+    "description": "Electrical troubleshooting for illuminated sign power, wiring, flickering, and lighting issues in Vaughan and the GTA."
+  },
+  "related": [
+    {
+      "categorySlug": "services",
+      "serviceSlug": "led-lighting-replacement"
+    },
+    {
+      "categorySlug": "services",
+      "serviceSlug": "sign-repairs"
+    },
+    {
+      "categorySlug": "signs",
+      "serviceSlug": "pylon-signs"
+    }
+  ]
+}

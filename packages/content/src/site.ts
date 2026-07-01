@@ -24,6 +24,8 @@ type SiteJson = {
     location: PageContent;
     contact: PageContent;
     gallery: PageContent;
+    about: PageContent;
+    faqs: PageContent;
     pricingContact: PageContent;
   };
 };
@@ -54,4 +56,6 @@ export const homePage = normalizePage(site.pages.home);
 export const locationPage = normalizePage(site.pages.location);
 export const contactPage = normalizePage(site.pages.contact);
 export const galleryPage = normalizePage(site.pages.gallery);
+export const aboutPage = normalizePage(site.pages.about);
+export const faqsPage = normalizePage(site.pages.faqs);
 export const pricingContactPage = normalizePage(site.pages.pricingContact);
