@@ -96,8 +96,9 @@
 
 ## Bugs
 
-| Task number | Task | Task status | Comments | Updated date |
-| ----------- | ---- | ----------- | -------- | ------------ |
+| Task number | Task                                      | Task status | Comments                                                                                                    | Updated date |
+| ----------- | ----------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------- | ------------ |
+| B-01        | Fix client hydration mismatch on HTML tag | Done        | Added suppressHydrationWarning to html element to prevent browser extensions from causing hydration errors. | 2026-07-01   |
 
 ---
 
