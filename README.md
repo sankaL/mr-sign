@@ -16,14 +16,14 @@ The site focuses on service browsing, pricing guidance, direct phone/email conta
 
 ## Workspace
 
-| Path | Purpose |
-|---|---|
-| `apps/web/` | Static Next.js public website |
-| `packages/content/` | JSON content and typed catalog helpers |
-| `packages/content/content/site.json` | Business contact details, navigation, page copy |
-| `packages/content/content/categories.json` | Top-level service category copy |
-| `packages/content/content/services/` | One JSON file per service |
-| `docs/` | Product, engineering, copy, decisions, and task records |
+| Path                                       | Purpose                                                 |
+| ------------------------------------------ | ------------------------------------------------------- |
+| `apps/web/`                                | Static Next.js public website                           |
+| `packages/content/`                        | JSON content and typed catalog helpers                  |
+| `packages/content/content/site.json`       | Business contact details, navigation, page copy         |
+| `packages/content/content/categories.json` | Top-level service category copy                         |
+| `packages/content/content/services/`       | One JSON file per service                               |
+| `docs/`                                    | Product, engineering, copy, decisions, and task records |
 
 ## Local Development
 
@@ -108,10 +108,12 @@ corepack pnpm build
 
 ## Environment
 
-Only one environment variable is normally needed:
+Only one environment variable is normally needed. For the current Railway demo:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://mrsignandprint.net
+NEXT_PUBLIC_SITE_URL=https://web-production-170be.up.railway.app
 ```
+
+Change this to `https://mrsignandprint.net` only after that custom domain serves the deployed site and its public assets.
 
 For local Docker Compose, `APP_PORT` can also be set.

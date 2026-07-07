@@ -12,6 +12,9 @@ import {
   socialImageForRoute,
 } from "./seo";
 
+const productionSiteUrl = "https://web-production-170be.up.railway.app";
+const socialAssetVersion = "?v=20260707";
+
 type ImageDescriptor = {
   url: string;
   secureUrl: string;
@@ -47,12 +50,12 @@ test("content metadata emits complete Open Graph and Twitter image descriptors",
 
   assert.equal(openGraph.title, homePage.seo.socialTitle);
   assert.equal((openGraph as { type?: string }).type, "website");
-  assert.equal(openGraph.url, "https://mrsignandprint.net/");
+  assert.equal(openGraph.url, `${productionSiteUrl}/`);
   assert.equal(openGraph.siteName, "Mr. Sign and Print");
   assert.equal(openGraph.locale, "en_CA");
   assert.deepEqual(openGraphImage, {
-    url: "https://mrsignandprint.net/social/default-social.png",
-    secureUrl: "https://mrsignandprint.net/social/default-social.png",
+    url: `${productionSiteUrl}/social/default-social.png${socialAssetVersion}`,
+    secureUrl: `${productionSiteUrl}/social/default-social.png${socialAssetVersion}`,
     alt: defaultSocialImage.alt,
     type: "image/png",
     width: 1200,
@@ -78,15 +81,15 @@ test("category and service metadata use their matching social cards", () => {
 
   assert.equal(
     categoryImage.url,
-    "https://mrsignandprint.net/social/signs-social.png",
+    `${productionSiteUrl}/social/signs-social.png${socialAssetVersion}`,
   );
   assert.equal(
     serviceImage.url,
-    "https://mrsignandprint.net/social/printing-social.png",
+    `${productionSiteUrl}/social/printing-social.png${socialAssetVersion}`,
   );
   assert.equal(
     getOpenGraph(serviceMetadata).url,
-    `https://mrsignandprint.net${service.route}`,
+    `${productionSiteUrl}${service.route}`,
   );
 });
 
@@ -100,7 +103,7 @@ test("route-based fallbacks retain category-specific previews", () => {
 
   assert.equal(
     image.url,
-    "https://mrsignandprint.net/social/services-social.png",
+    `${productionSiteUrl}/social/services-social.png${socialAssetVersion}`,
   );
   assert.equal(socialImageForRoute("/about-us"), defaultSocialImage);
   assert.equal(

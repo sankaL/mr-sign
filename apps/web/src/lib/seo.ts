@@ -9,7 +9,8 @@ import {
 } from "@mrsign/content";
 import type { Metadata } from "next";
 
-export const productionSiteUrl = "https://mrsignandprint.net";
+export const productionSiteUrl = "https://web-production-170be.up.railway.app";
+export const socialAssetVersion = "20260707";
 export type SocialImage = {
   path: `/social/${string}.png`;
   alt: string;
@@ -81,6 +82,12 @@ export function assetUrl(path: string = defaultSocialImage.path) {
   return new URL(path, metadataBase).toString();
 }
 
+export function socialAssetUrl(image: SocialImage = defaultSocialImage) {
+  const url = new URL(image.path, metadataBase);
+  url.searchParams.set("v", socialAssetVersion);
+  return url.toString();
+}
+
 export function socialImageForRoute(route: string) {
   const categorySlug = (
     Object.keys(categorySocialImages) as CategorySlug[]
@@ -98,7 +105,7 @@ export function buildPageMetadata({
   const socialTitle = seo.socialTitle ?? seo.title;
   const socialDescription = seo.socialDescription ?? description;
   const imageDescriptor = image ?? defaultSocialImage;
-  const socialImageUrl = assetUrl(imageDescriptor.path);
+  const socialImageUrl = socialAssetUrl(imageDescriptor);
   const canonical = canonicalUrl(route);
 
   return {

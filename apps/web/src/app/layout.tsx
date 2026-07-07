@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { Libre_Baskerville, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 
-import { assetUrl, defaultSocialImage, metadataBase, siteUrl } from "@/lib/seo";
+import {
+  defaultSocialImage,
+  metadataBase,
+  siteUrl,
+  socialAssetUrl,
+  socialAssetVersion,
+} from "@/lib/seo";
 
 import "./globals.css";
 
@@ -19,7 +25,8 @@ const serif = Libre_Baskerville({
   display: "swap",
 });
 
-const defaultSocialImageUrl = assetUrl(defaultSocialImage.path);
+const defaultSocialImageUrl = socialAssetUrl(defaultSocialImage);
+const versionedIcon = (path: string) => `${path}?v=${socialAssetVersion}`;
 
 export const metadata: Metadata = {
   metadataBase,
@@ -37,11 +44,24 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: versionedIcon("/favicon.ico"), sizes: "any" },
+      {
+        url: versionedIcon("/icon-32.png"),
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: versionedIcon("/icon-192.png"),
+        sizes: "192x192",
+        type: "image/png",
+      },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [
+      {
+        url: versionedIcon("/apple-touch-icon.png"),
+        sizes: "180x180",
+      },
+    ],
   },
   openGraph: {
     title: "Mr. Sign and Print",
