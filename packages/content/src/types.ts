@@ -144,6 +144,10 @@ export type PageContent = {
   image?: GeneratedImageAsset;
 };
 
+export type HomePageContent = PageContent & {
+  featuredImages: GeneratedImageAsset[];
+};
+
 export type SiteContact = {
   businessName: string;
   phone: string;

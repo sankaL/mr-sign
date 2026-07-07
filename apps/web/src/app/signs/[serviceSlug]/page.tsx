@@ -13,6 +13,8 @@ type ServicePageProps = {
   }>;
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getPublicStaticServiceParams("signs");
 }

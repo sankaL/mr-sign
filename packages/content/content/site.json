@@ -102,19 +102,41 @@
     "home": {
       "route": "/",
       "seo": {
-        "title": "Mr. Sign and Print | Custom Signs, Printing & Services in Vaughan",
-        "description": "Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, in-house manufacturing, and sign services. Serving the GTA since 1998.",
-        "socialTitle": "Mr. Sign and Print - Custom Signs & Printing in Vaughan",
-        "socialDescription": "From channel lettering and illuminated signs to banners, vehicle lettering, large format printing, and sign maintenance. Based in Vaughan, serving the GTA."
+        "title": "Mr. Sign and Print | Custom Signs in Vaughan",
+        "description": "Custom signs designed, manufactured, and installed in Vaughan for businesses across the GTA. Selected printing and sign services are also available.",
+        "socialTitle": "Mr. Sign and Print - Custom Signs in Vaughan",
+        "socialDescription": "Custom signage, selected printing, and professional installation for businesses in Vaughan, Concord, and across the GTA."
       },
-      "eyebrow": "Mr. Sign and Print | Vaughan, Ontario",
-      "headline": "Custom Signs, Printing, and Services in Vaughan",
-      "subheadline": "All in-house manufacturing for signs, selected print jobs, and sign services across the Greater Toronto Area since 1998.",
+      "eyebrow": "Custom signs. Expertly made.",
+      "headline": "Signs That Shape Attention.",
+      "subheadline": "Custom signage, printing, and professional installation that elevates your brand and leaves a lasting impression in Vaughan, Concord, and across the GTA.",
       "image": {
-        "path": "/images/generated/home-hero.png",
-        "alt": "Finished sign and print work arranged in a Vaughan sign shop setting.",
-        "prompt": "A wide-format editorial photo for a local sign and print shop website. Show a Vaughan-area storefront with illuminated channel letters above the entrance, a cleanly lettered white work vehicle parked outside, and a few print samples visible near the door. Authentic small business production feel, bright practical daylight, blue red and yellow accents, no readable text, no logos, no watermarks."
-      }
+        "path": "/images/generated/home-reference-northfield-dental.png",
+        "alt": "The illuminated Northfield Dental channel-letter sign on a contemporary dark commercial facade at blue hour.",
+        "prompt": "A wide premium architectural photograph of a contemporary charcoal-black Northfield Dental storefront at blue hour, with a large illuminated tooth emblem and crisp NORTHFIELD DENTAL channel letters above warm interior glazing."
+      },
+      "featuredImages": [
+        {
+          "path": "/images/generated/home-reference-sport-clips-channel-letters.png",
+          "alt": "Illuminated red and white Sport Clips channel letters mounted on a dark storefront at dusk.",
+          "prompt": "A square premium architectural photograph of illuminated SPORTCLIPS channel letters in red and white with a HAIRCUTS panel, mounted on a charcoal storefront fascia at blue hour."
+        },
+        {
+          "path": "/images/generated/home-reference-copper-branch-round-sign.png",
+          "alt": "An illuminated Copper Branch round sign mounted on a dark brick storefront at dusk.",
+          "prompt": "A square premium architectural photograph of an illuminated COPPER BRANCH round cabinet sign with a branching tree emblem, mounted on a richly textured dark brick storefront at blue hour."
+        },
+        {
+          "path": "/images/generated/home-editorial-printing.png",
+          "alt": "Coordinated printed business cards, brochures, flyers, and presentation folders in navy and amber.",
+          "prompt": "Premium print-shop flat lay of coordinated business cards, brochure, flyer, and presentation folder on a warm-white paper surface with abstract navy typography blocks and muted amber rules."
+        },
+        {
+          "path": "/images/generated/home-editorial-maintenance.png",
+          "alt": "An open illuminated sign cabinet and organized repair tools on a workshop bench.",
+          "prompt": "Authentic sign-maintenance workbench with an open illuminated sign cabinet, LED modules, testing meter, wiring tools, vinyl squeegee, and neatly arranged replacement parts."
+        }
+      ]
     },
     "location": {
       "route": "/location",
@@ -175,16 +197,6 @@
       "eyebrow": "FAQs",
       "headline": "Questions Before You Call",
       "subheadline": "Quick answers about signs, printing, service work, artwork, timing, and how to contact the shop."
-    },
-    "pricingContact": {
-      "route": "/request-quote",
-      "seo": {
-        "title": "Project Pricing Contact | Mr. Sign and Print - Vaughan Sign and Print Shop",
-        "description": "Call or email Mr. Sign and Print in Vaughan for current pricing on signs, printing, manufacturing, and services."
-      },
-      "eyebrow": "Project pricing",
-      "headline": "Contact the Shop for Current Pricing",
-      "subheadline": "Online submissions are not used on this site. Call or email the shop with your service, size, quantity, timing, and artwork details."
     }
   }
 }

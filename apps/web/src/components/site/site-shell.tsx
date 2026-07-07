@@ -10,9 +10,9 @@ type SiteShellProps = {
 
 export function SiteShell({ children, navVariant = "light" }: SiteShellProps) {
   return (
-    <div className="min-h-[100dvh] bg-[#FFFAF0] text-[#151515]">
+    <div className="min-h-[100dvh] bg-[var(--canvas)] text-[var(--ink)]">
       <SiteNav variant={navVariant} />
-      {children}
+      <div id="main-content">{children}</div>
       <SiteFooter />
     </div>
   );

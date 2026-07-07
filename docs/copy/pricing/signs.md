@@ -85,12 +85,6 @@ Channel Letters pricing - For Neon Illumination
 
 ---
 
-## Changeable Letters
-
-_No URL / No content available._
-
----
-
 ## Coroplast Signs
 
 The most commonly used temporary signs for indoor and outdoor.  
@@ -295,47 +289,6 @@ _Pricing depends on number of letters, their size, length of curves, number of b
 
 ---
 
-## Plates / Directory Boards
-
-### Name Plates
-
-Names engraved, silk screened, or vinyl lettered on a large variety of materials (PVC, Plastic, Aluminum, etc.)  
-Used as single personnel or company identification on walls or doors.
-
-**Directory Boards:** A combination of name plates together; used as multi-directional personnel or company identification on wall or as a free-standing sign.
-
-_Max 2 lines - $10.00 extra per additional line. Prices include vinyl lettering. Engraving is extra depending on number of characters._
-
-#### Single Name Plates
-
-| Height | Width     | Plastic | PVC    | Acrylic |
-| ------ | --------- | ------- | ------ | ------- |
-| 2"     | Up to 12" | $45.00  | $40.00 | $45.00  |
-| 2"     | Up to 16" | $55.00  | $50.00 | $55.00  |
-| 2"     | Up to 24" | $65.00  | $60.00 | $65.00  |
-| 3"     | Up to 12" | $55.00  | $50.00 | $55.00  |
-| 3"     | Up to 16" | $65.00  | $60.00 | $65.00  |
-| 3"     | Up to 24" | $75.00  | $70.00 | $75.00  |
-| 4"     | Up to 12" | $65.00  | $60.00 | $65.00  |
-| 4"     | Up to 16" | $75.00  | $70.00 | $75.00  |
-| 4"     | Up to 24" | $85.00  | $80.00 | $85.00  |
-
-_Add $10.00 per inch height increase. Different materials come in different colors._
-
-#### System Board (Aluminum, 3 colors: Clear Satin, Bronze, Black Anodized)
-
-_Prices include end caps, single mounting, vinyl lettering (max 2 lines; $10.00 extra per line)._
-
-| Face Width  | Up to 12" | Up to 16" | Up to 24" | Extra Plate Mounting Hardware |
-| ----------- | --------- | --------- | --------- | ----------------------------- |
-| 3/4" face   | $55.00    | $60.00    | $70.00    | +$15.00/plate                 |
-| 1-1/4" face | $65.00    | $70.00    | $80.00    | +$20.00/plate                 |
-| 2-1/4" face | $75.00    | $80.00    | $90.00    | +$25.00/plate                 |
-| 3-1/4" face | $85.00    | $90.00    | $100.00   | +$30.00/plate                 |
-| 4-1/4" face | $95.00    | $100.00   | $110.00   | +$35.00/plate                 |
-
----
-
 ## Plastic Lawn Signs
 
 Two-sided printed bags mounted on a wire frame. Ideal for outdoor use.
@@ -509,81 +462,6 @@ _Two metallic legs as bases included for Large models._
 
 **Step Stakes:** Arc welded galvanized wire. Easy installation of coroplast signs. Most economic stand for election, real estate, and business signage.  
 Price: $5.00/frame
-
----
-
-## Vehicle Lettering
-
-_Advertise for Free While Driving_
-
-### Passenger Car and Pick-Up Truck
-
-Two doors, max: 12"x30"
-
-- Two lines, one color: $95.00
-- Two colors: $125.00
-- Extra line: $20.00
-
-### Mini Van
-
-**S - Two sides** (max 18"x72")
-
-- Two lines, one color: $270.00
-- Two colors: $325.00
-- Extra line: $40.00
-
-**V - Curve Parts** (max 6"x72")
-
-- One line, one color, both sides: $80.00
-
-**B - Back, both doors** (max 18"x48")
-
-- Two lines, one color: $90.00
-- Extra line: $30.00
-
-**Back, one door** (max 18"x24")
-
-- Two lines, one color: $60.00
-- Extra line: $20.00
-
-### Truck
-
-**S - Two sides** (max 18"x96")
-
-- Two lines, one color: $360.00
-- Two colors: $385.00
-- Extra line: $60.00
-
-**V - Curve Parts** (max 6"x96")
-
-- One line, one color, both sides: $120.00
-
-**B - Back, both doors** (max 18"x60")
-
-- Two lines, one color: $120.00
-- Extra line: $40.00
-
-**Back, one door** (max 18"x30")
-
-- Two lines, one color: $80.00
-- Extra line: $30.00
-
-### Cube Van
-
-**S - Two sides** (max 24"x120")
-
-- Two lines, one color: $600.00
-- Two colors: $695.00
-- Extra line: $120.00
-
-**V - Curve Parts** (max 12"x120")
-
-- One line, one color, both sides: $300.00
-
-**B - Back, both doors** (max 24"x72")
-
-- Two lines, one color: $180.00
-- Extra line: $60.00
 
 ---
 

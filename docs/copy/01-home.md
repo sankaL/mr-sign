@@ -9,7 +9,7 @@
 - **Meta Description:** Mr. Sign and Print is Vaughan's trusted sign shop for custom signs, printing, and graphic design. Serving the GTA since 2000. Contact the shop for pricing today.
 - **URL:** /
 - **Social Sharing Title:** Mr. Sign and Print -- Custom Signs & Printing in Vaughan, Ontario
-- **Social Sharing Description:** From channel letters and vehicle lettering to business cards and banners, we bring your brand to life. Based in Vaughan, serving the entire GTA.
+- **Social Sharing Description:** From channel letters and illuminated signs to business cards and banners, we bring your brand to life. Based in Vaughan, serving the entire GTA.
 - **Social Sharing Image:** Storefront or a bold collage of sign and print work (see image description in Hero section below)
 
 ---
@@ -35,7 +35,7 @@
 
 **Layout:** Full-width banner with a background image or a bold split layout (image left, text right on desktop; stacked on mobile). Overlay a semi-transparent dark layer over the image so the white text reads clearly. The headline should be large and immediately visible above the fold.
 
-**Image Description:** A wide-format photo showing a variety of finished sign and print work in a Vaughan-area setting. Ideal shot: a storefront with an illuminated channel letter sign above the entrance, with a branded vehicle (vehicle lettering) parked outside. Alternatively, a high-quality flat-lay of finished printed materials including business cards, a banner, and a coroplast lawn sign arranged on a clean surface.
+**Image Description:** A wide-format photo showing a variety of finished sign and print work in a Vaughan-area setting. Ideal shot: a storefront with an illuminated channel letter sign above the entrance and a sandwich board near the entry. Alternatively, use a high-quality flat-lay of finished printed materials including business cards, a banner, and a coroplast lawn sign arranged on a clean surface.
 
 ### Headline
 Your Neighbourhood Sign and Print Shop in Vaughan
@@ -71,7 +71,7 @@ Proudly serving Vaughan, Concord, and the entire Greater Toronto Area.
 **Card Title:** Signs
 
 **Card Description:**
-From illuminated channel letters and awnings to vehicle lettering and coroplast lawn signs, we build and install custom signage that puts your business in front of the right people.
+From illuminated channel letters and awnings to banners and coroplast lawn signs, we build and install custom signage that puts your business in front of the right people.
 
 **Card CTA Button:** Explore Signs (links to /signs)
 
@@ -193,10 +193,10 @@ Each highlight: a simple flat-line icon above a short label and one-line descrip
 - **Description:** Illuminated channel letters for storefronts and commercial buildings. Built to last.
 - **Link:** /signs/channel-letters
 
-**Featured Service 2: Vehicle Lettering**
-- **Image Description:** A white cargo van with a full vinyl vehicle lettering wrap showing a business name, phone number, and logo on the side panel.
-- **Description:** Turn your vehicle into a moving billboard. Vinyl lettering for cars, vans, and trucks.
-- **Link:** /signs/vehicle-lettering
+**Featured Service 2: Illuminated Boxes**
+- **Image Description:** A wall-mounted illuminated sign box glowing against a dark storefront facade at dusk.
+- **Description:** Illuminated sign boxes for storefronts, plazas, and commercial entrances.
+- **Link:** /signs/illuminated-boxes
 
 **Featured Service 3: Business Cards**
 - **Image Description:** A close-up of a freshly printed stack of business cards fanned out on a clean white surface, showing crisp full-colour printing.

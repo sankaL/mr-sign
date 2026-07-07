@@ -135,3 +135,36 @@ Impact:
 - `/design` and `/design/[serviceSlug]` remain hidden noindex compatibility routes that point users to Services.
 - Signs, Printing, and service detail pages render descriptions and contact paths instead of public pricing summaries.
 - JSON content may retain internal pricing fields for future reference, but public UI and service schema do not expose pricing amounts.
+
+## 2026-07-01: Replace the signage-board visual identity with an editorial reference system
+
+Decision: The supplied July 2026 reference image is the primary visual source of truth for the public site. All public routes use a warm-white, paper-white, deep-navy, cool-gray, and muted-amber system with editorial serif headings, restrained radii, fine borders, generous spacing, and image-led composition.
+
+Rationale:
+
+- The client requested close visual fidelity to the supplied minimal professional template.
+- A shared editorial system lets the static page families remain consistent across all generated routes.
+- The previous neon, red, yellow, pill-heavy, and oversized-uppercase direction conflicts with the approved reference.
+- A dedicated generated homepage image suite provides coherent architectural, vehicle, print, and maintenance imagery without third-party branding.
+
+Impact:
+
+- `docs/DESIGN.md` now defines the editorial system and supersedes the prior signage-board styling guidance.
+- The shared navigation, page headers, cards, CTA, contact strip, footer, category template, service-detail template, gallery, and utility pages use the new visual language.
+- Home content exposes a typed featured-image collection and catalog tests validate all referenced files.
+- Copy, routes, static architecture, SEO, and direct-contact guardrails remain unchanged.
+
+## 2026-07-03: Remove project pricing compatibility routes
+
+Decision: Remove the `/request-quote` and `/order-online` compatibility pages. The navigation's Project Pricing button now links directly to `/contact`.
+
+Rationale:
+
+- The dedicated pricing page duplicates the direct-contact guidance already provided by the Contact page.
+- A direct Contact link gives visitors one clear destination for pricing questions.
+
+Impact:
+
+- `/request-quote` and `/order-online` are no longer generated public routes.
+- Project Pricing remains as navigation CTA copy but opens the Contact page.
+- Pricing compatibility content and its standalone copy guide are removed.

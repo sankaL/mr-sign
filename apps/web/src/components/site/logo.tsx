@@ -4,17 +4,13 @@ export function BrandLogo() {
   return (
     <Link
       href="/"
-      className="flex min-h-11 items-center gap-1"
+      className="group flex min-h-11 items-center gap-2 text-[var(--ink)]"
       aria-label="Mr. Sign and Print home"
     >
-      <span className="relative rounded-2xl rounded-bl-sm bg-white px-3 py-1.5 text-xs font-black tracking-tight text-[#151515] shadow-sm md:text-sm">
+      <span className="text-xl font-black tracking-[-0.06em] md:text-[1.65rem]">
         MR. SIGN
-        <span
-          className="absolute -bottom-1.5 left-0 h-3 w-3 bg-white"
-          style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
-        />
       </span>
-      <span className="rounded-full border-[1.5px] border-white bg-[#CCFF00] px-3 py-1.5 text-xs font-black text-[#151515] shadow-sm md:text-sm">
+      <span className="rounded-[0.2rem] border border-[var(--ink)] px-2 py-1 text-[0.58rem] font-extrabold tracking-[0.16em] transition-colors group-hover:bg-[var(--ink)] group-hover:text-white">
         PRINT
       </span>
     </Link>

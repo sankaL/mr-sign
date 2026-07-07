@@ -3,10 +3,11 @@ import {
   getRelatedServices,
   type CategorySlug,
 } from "@mrsign/content";
-import { ArrowLeft, Check, FileText, Mail, Phone } from "lucide-react";
+import { ArrowLeft, Check, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ButtonLink } from "@/components/ui/button-link";
 import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicService } from "@/lib/public-services";
 import { buildServiceSchema } from "@/lib/seo";
@@ -43,162 +44,125 @@ export async function ServiceDetailPage({
       <main>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(serviceSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        <section className="bg-[#151515] px-5 py-6 text-white md:px-10 md:py-8">
-          <div className="mx-auto max-w-[1440px]">
+
+        <section className="border-b border-[var(--line)] bg-[var(--canvas)] py-8 md:py-12">
+          <div className="site-container">
             <Link
               href={category.route}
-              className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wide text-white/70 transition-colors hover:text-[#CCFF00]"
+              className="inline-flex min-h-11 items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-[0.07em] text-[var(--body-copy)] transition-colors hover:text-[var(--accent-amber)]"
             >
-              <ArrowLeft className="h-4 w-4" strokeWidth={2.5} />
+              <ArrowLeft className="h-4 w-4" strokeWidth={1.8} />
               Back to {category.name}
             </Link>
+
+            <div className="mt-7 grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+              <div className="max-w-3xl">
+                <p className="eyebrow">{category.name}</p>
+                <h1 className="display-title mt-4">{service.headline}</h1>
+                <p className="body-copy mt-6 max-w-[60ch]">
+                  {service.shortDescription}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <ButtonLink href={siteContact.phoneHref}>
+                    Call the shop
+                  </ButtonLink>
+                  <ButtonLink href={siteContact.emailHref} variant="secondary">
+                    Email details
+                  </ButtonLink>
+                </div>
+              </div>
+
+              <ContentImage
+                asset={service.image}
+                priority
+                className="aspect-[16/10] rounded-[0.8rem] border border-[var(--line)] bg-white shadow-[0_24px_65px_rgba(7,26,58,0.1)]"
+                imageClassName="h-full w-full object-cover"
+                sizes="(min-width: 1024px) 52vw, 100vw"
+              />
+            </div>
           </div>
         </section>
 
-        <section className="bg-[#151515] px-5 pb-10 text-white md:px-10 md:pb-14">
-          <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#CCFF00]">
-                {category.name}
+        <section className="section-space bg-white">
+          <div className="site-container grid gap-14 lg:grid-cols-[1fr_0.68fr] lg:gap-20">
+            <article>
+              <p className="eyebrow">Service details</p>
+              <div className="mt-6 grid gap-5">
+                {service.body.map((paragraph, index) => (
+                  <p
+                    key={paragraph}
+                    className={
+                      index === 0
+                        ? "font-display border-l-2 border-[var(--accent-amber)] pl-5 text-xl leading-8 text-[var(--ink)]"
+                        : "body-copy text-base"
+                    }
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {service.capabilities.length > 0 ? (
+                <div className="mt-12 border-t border-[var(--line)] pt-9">
+                  <p className="eyebrow">What we handle</p>
+                  <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                    {service.capabilities.map((capability) => (
+                      <li
+                        key={capability}
+                        className="flex items-start gap-3 text-sm font-semibold leading-6 text-[var(--body-copy)]"
+                      >
+                        <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[var(--accent-amber)] text-[var(--accent-amber)]">
+                          <Check className="h-3 w-3" strokeWidth={2.4} />
+                        </span>
+                        {capability}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </article>
+
+            <aside className="editorial-panel h-fit p-6 lg:sticky lg:top-28 md:p-8">
+              <p className="eyebrow">Contact the shop</p>
+              <h2 className="font-display mt-3 text-2xl leading-tight tracking-[-0.03em] text-[var(--ink)]">
+                Call or email for current details.
+              </h2>
+              <p className="body-copy mt-4">
+                Share the product or service, size, quantity, material, timing,
+                and location details so the team can guide the next step.
               </p>
-              <h1 className="mt-3 text-[clamp(2.1rem,5vw,4rem)] font-black uppercase leading-[0.92] tracking-tight">
-                {service.headline}
-              </h1>
-              <p className="mt-4 max-w-[62ch] text-sm font-semibold leading-6 text-white/78 md:text-base md:leading-7">
-                {service.shortDescription}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-7 grid gap-3">
                 <Link
                   href={siteContact.phoneHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white active:scale-[0.98]"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.45rem] bg-[var(--ink)] px-5 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] !text-white transition-transform hover:-translate-y-0.5 hover:!text-white"
                 >
                   Call the shop
-                  <Phone className="h-4 w-4" strokeWidth={2.5} />
+                  <Phone className="h-4 w-4" />
                 </Link>
                 <Link
                   href={siteContact.emailHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:!text-[#151515] focus-visible:bg-white focus-visible:!text-[#151515] active:scale-[0.98]"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.45rem] border border-[var(--line)] px-5 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] text-[var(--ink)] transition-colors hover:border-[var(--ink)]"
                 >
                   Email details
-                  <Mail className="h-4 w-4" strokeWidth={2.5} />
+                  <Mail className="h-4 w-4" />
                 </Link>
               </div>
-            </div>
-
-            <ContentImage
-              asset={service.image}
-              priority
-              className="aspect-[16/11] rounded-[2rem] border border-white/12 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
-              sizes="(min-width: 1024px) 48vw, 100vw"
-            />
-          </div>
-        </section>
-
-        <section className="bg-[#FFFAF0] px-5 py-16 md:px-10 md:py-24">
-          <div className="mx-auto max-w-[1152px]">
-            {/* Section header */}
-            <div className="mb-10 flex items-center gap-3 md:mb-14">
-              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0B1F55] text-white">
-                <FileText className="h-3.5 w-3.5" strokeWidth={2.5} />
-              </span>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                Service details
-              </p>
-            </div>
-
-            <div className="grid gap-12 lg:grid-cols-[1fr_0.72fr] lg:gap-16">
-              {/* Body text */}
-              <div>
-                <div className="grid gap-5">
-                  {service.body.map((paragraph, i) => (
-                    <p
-                      key={paragraph}
-                      className={
-                        i === 0
-                          ? "border-l-2 border-[#CCFF00] pl-5 text-base font-semibold leading-7 text-[#151515]/80 md:text-[1.05rem]"
-                          : "text-sm font-semibold leading-7 text-[#151515]/60 md:text-base"
-                      }
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-
-                {service.capabilities.length > 0 && (
-                  <div className="mt-10">
-                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                      What we handle
-                    </p>
-                    <ul className="mt-5 grid gap-3">
-                      {service.capabilities.map((capability) => (
-                        <li
-                          key={capability}
-                          className="flex items-start gap-3 text-sm font-semibold leading-6 text-[#151515]/75"
-                        >
-                          <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[#151515] shadow-[0_0_0_3px_rgba(204,255,0,0.18)]">
-                            <Check className="h-3 w-3" strokeWidth={3} />
-                          </span>
-                          {capability}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              <aside className="rounded-2xl border border-[#151515]/10 bg-white p-6 md:p-8 lg:sticky lg:top-8 lg:self-start">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  Contact the shop
-                </p>
-                <h2 className="mt-3 text-2xl font-black uppercase leading-tight">
-                  Call or email for current details.
-                </h2>
-                <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/66">
-                  Share the product or service, size, quantity, material,
-                  timing, and location details so the team can guide the next
-                  step.
-                </p>
-                <div className="mt-6 grid gap-3">
-                  <Link
-                    href={siteContact.phoneHref}
-                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white active:scale-[0.98]"
-                  >
-                    Call the shop
-                    <Phone className="h-4 w-4" strokeWidth={2.5} />
-                  </Link>
-                  <Link
-                    href={siteContact.emailHref}
-                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#151515]/15 px-5 py-3 text-xs font-black uppercase tracking-wide text-[#151515] transition-colors hover:bg-[#151515] hover:!text-white active:scale-[0.98]"
-                  >
-                    Email details
-                    <Mail className="h-4 w-4" strokeWidth={2.5} />
-                  </Link>
-                </div>
-              </aside>
-            </div>
+            </aside>
           </div>
         </section>
 
         {related.length > 0 ? (
-          <section className="bg-white px-5 py-10 md:px-10 md:py-14">
-            <div className="mx-auto max-w-[1440px]">
-              <div className="max-w-3xl">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  Related services
-                </p>
-                <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
-                  Often paired together
-                </h2>
-                <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
-                  These services are commonly part of the same sign, print, or
-                  service conversation.
-                </p>
-              </div>
-              <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <section className="section-space border-t border-[var(--line)] bg-[var(--canvas)]">
+            <div className="site-container">
+              <p className="eyebrow">Related services</p>
+              <h2 className="section-title mt-3">Often paired together</h2>
+              <p className="body-copy mt-4 max-w-3xl">
+                These services are commonly part of the same sign, print, or
+                service conversation.
+              </p>
+              <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {related.map((relatedService) => (
                   <ServiceTeaserCard
                     key={relatedService.route}

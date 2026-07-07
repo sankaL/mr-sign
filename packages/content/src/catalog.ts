@@ -77,6 +77,7 @@ export function getServiceRoute(reference: ServiceReference) {
 export function getAllImageAssets() {
   return [
     ...(homePage.image ? [homePage.image] : []),
+    ...homePage.featuredImages,
     ...serviceCategories.map((category) => category.image),
     ...services.map((service) => service.image),
   ];

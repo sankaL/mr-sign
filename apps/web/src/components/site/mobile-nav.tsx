@@ -10,28 +10,15 @@ import {
   secondaryNavigation,
 } from "@/lib/site";
 
-type MobileNavProps = {
-  variant?: "blue" | "light";
-};
-
-export function MobileNav({ variant = "blue" }: MobileNavProps) {
+export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const isBlue = variant === "blue";
   const navigationItems = [...primaryNavigation, ...secondaryNavigation];
 
-  const closeNavigation = () => {
-    setIsOpen(false);
-  };
-
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
-        className={
-          isBlue
-            ? "inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
-            : "inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#151515]/20 text-[#151515] transition-colors hover:bg-[#151515]/5 active:scale-[0.98]"
-        }
+        className="inline-flex h-11 w-11 items-center justify-center rounded-[0.45rem] border border-[var(--line)] text-[var(--ink)] transition-colors hover:border-[var(--ink)] hover:bg-[var(--ink)] hover:text-white active:scale-[0.98]"
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((current) => !current)}
@@ -40,24 +27,14 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
       </button>
 
       {isOpen ? (
-        <div
-          className={
-            isBlue
-              ? "absolute left-4 right-4 top-[4.75rem] rounded-[1.75rem] border border-white/20 bg-[#061437]/95 p-4 text-white shadow-[0_18px_40px_rgba(13,31,143,0.35)] backdrop-blur"
-              : "absolute left-4 right-4 top-[4.75rem] rounded-[1.75rem] border border-[#151515]/10 bg-[#FFFAF0]/95 p-4 text-[#151515] shadow-[0_18px_40px_rgba(21,21,21,0.14)] backdrop-blur"
-          }
-        >
+        <div className="absolute left-0 right-0 top-full border-b border-[var(--line)] bg-white p-5 text-[var(--ink)] shadow-[0_20px_45px_rgba(7,26,58,0.12)]">
           <div className="grid gap-1">
             {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={
-                  isBlue
-                    ? "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-white hover:!text-[#0B1F55] focus-visible:bg-white focus-visible:!text-[#0B1F55]"
-                    : "min-h-11 rounded-full px-4 py-3 text-sm font-black uppercase tracking-wide transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white"
-                }
-                onClick={closeNavigation}
+                className="min-h-11 border-b border-[var(--line)] px-2 py-3 text-sm font-bold transition-colors hover:text-[var(--accent-amber)]"
+                onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
@@ -65,8 +42,8 @@ export function MobileNav({ variant = "blue" }: MobileNavProps) {
           </div>
           <Link
             href={primaryActions.call.href}
-            className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-sm font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#C9455A] hover:!text-white focus-visible:bg-[#C9455A] focus-visible:!text-white active:scale-[0.98]"
-            onClick={closeNavigation}
+            className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-[0.45rem] bg-[var(--ink)] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.06em] !text-white transition-transform hover:-translate-y-0.5 hover:!text-white active:translate-y-0"
+            onClick={() => setIsOpen(false)}
           >
             {primaryActions.call.label}
           </Link>

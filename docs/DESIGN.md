@@ -1,147 +1,133 @@
-# Design System: Mr. Sign and Print Static Site
+# Design System: Mr. Sign and Print Editorial Site
 
-## 1. Visual Theme
+## 1. Direction
 
-Mr. Sign and Print should feel like a modernized local sign shop: loud, practical, confident, and built around direct phone, email, and shop-visit contact. The interface borrows from commercial signage, print proofs, vinyl decals, and storefront graphics.
+The public site uses a quiet editorial system inspired by premium architectural and professional-service websites. The interface should feel precise, local, established, and image-led.
 
-- **Density:** 5/10. Enough service content to feel useful, but not crowded.
-- **Variance:** 7/10. Use asymmetric headline stacking, angled image tiles, and energetic badge elements.
-- **Motion:** 5/10. Use tactile hover states and steady card motion, never cinematic distraction.
-- **Mood:** Bright shop-floor utility with high street visibility.
+- Density: 3/10. Keep layouts open and easy to scan.
+- Variance: 4/10. Use controlled overlaps and varied image ratios without visual noise.
+- Motion: 2/10. Motion supports interaction only.
+- Mood: Warm white paper, deep navy ink, and restrained amber details.
 
-The first screen must signal the business immediately: Signs first, secondary Printing, Services, Mr. Sign and Print, GTA service, all in-house manufacturing, and a direct-contact path.
+The supplied July 2026 homepage reference is the primary visual source of truth. Do not reintroduce the former bright signage-board style.
 
-## 2. Color Palette
+## 2. Color
 
-- **Sign Navy** (`#0B1F55`): Primary hero background, navigation, page headers, and strong brand field.
-- **Legacy Red** (`#E51B23`): Primary CTA emphasis and section labels.
-- **Print Yellow** (`#FFF200`): Badges, stickers, labels, and high-visibility signage moments.
-- **Warm Shop White** (`#FFFAF0`): Main lower-page canvas.
-- **Paper White** (`#FFFFFF`): Nav logo chips, service card interiors, and content surfaces.
-- **Ink Charcoal** (`#151515`): Primary dark text and linework.
-- **Shop Steel** (`#D8DDE3`): Secondary borders and muted dividers.
-- **Shadow Blue** (`#0D1F8F`): Dimensional display-type shadow on blue backgrounds.
+- Canvas: `#FCFBF8`
+- Paper: `#FFFFFF`
+- Ink navy: `#071A3A`
+- Amber: `#D48318`
+- Body copy: `#566174`
+- Border: `#DCE1E8`
+- Soft neutral: `#F2F3F3`
 
 Rules:
 
-- Keep the palette commercial and brand-led, not gradient-led.
-- Do not introduce purple, violet, cyan neon, or generic startup blues.
-- Red and yellow should be accents, not large competing backgrounds.
-- Do not use soft beige luxury palettes.
+- Ink navy is the dominant text and CTA color.
+- Amber is limited to eyebrows, selected words, arrows, icons, and the CTA button inside the navy banner.
+- Most sections use canvas or paper backgrounds.
+- Do not use neon lime, bright red, saturated yellow, pure black sections, purple, or gradients.
+- Borders are fine and cool gray. Shadows are subtle navy-tinted depth cues.
 
 ## 3. Typography
 
-- **Display:** Use a condensed, heavy sans direction. Current implementation uses `"Arial Black", Impact, sans-serif`.
-- **Body:** Use a clean grotesk or system sans with practical readability.
-- **Display behavior:** Headlines use uppercase, heavy weight, tight leading, and stable responsive sizing.
-- **Body behavior:** Copy should stay concise, service-specific, and direct-contact oriented.
-- **Metadata:** Contact details, labels, and production notes should be bold, small, and scannable.
+- Display: Libre Baskerville through `next/font`.
+- Body and interface: Manrope through `next/font`.
+- Large headings use sentence case, normal serif weight, tight tracking, and balanced line wrapping.
+- Body text uses medium sans-serif weight, generous line height, and a maximum readable width near 60 characters.
+- Eyebrows use small uppercase sans-serif text with amber color and controlled tracking.
+- Avoid oversized condensed uppercase headlines.
 
-Copy rules:
+## 4. Layout
 
-- Prefer concrete terms: `Storefront Signs`, `Rush Print Jobs`, `Sign Maintenance`, `Call the Shop`, `Email Us`.
-- Avoid vague marketing language such as "elevate", "seamless", "next-gen", "unleash", and "transform your brand".
-- Do not imply unsupported flows: no online payment, file upload, customer account, ecommerce checkout, or online submission language.
+- Shared content width: `1280px` maximum.
+- Page gutters: `20px` mobile and `40px` from tablet upward.
+- Main section spacing: approximately `72px` to `112px`.
+- Desktop hero: editorial copy on the left and a large fixed-ratio image on the right.
+- Cards use stable image ratios, `8px` to `14px` radii, and open internal spacing.
+- Full-width bands remain flat. Do not wrap whole sections in decorative containers.
+- Mobile layouts collapse to one or two columns without horizontal scrolling.
 
-## 4. Components
+## 5. Shared Components
 
 ### Navigation
 
-- Logo is built as two physical chips: white `MR. SIGN` speech-tag plus yellow `PRINT` pill.
-- Desktop nav uses compact pill links with translucent borders.
-- Mobile should preserve the phone CTA first.
-- Minimum tap target: `44px`.
+- Sticky white header with a fine bottom border.
+- Simplified navy wordmark and outlined PRINT tag.
+- Desktop links are plain text with an amber active underline.
+- Project pricing uses a compact rectangular navy button.
+- Mobile uses a white full-width menu below the header.
 
-### Hero
+### Buttons
 
-- Hero uses a full-viewport navy grid field with oversized stacked type.
-- The headline stack should make `SIGNS` dominant, with `PRINTING` and `SERVICES` secondary.
-- Asymmetry is required. Do not center all three headline lines on the same axis.
-- Use production-adjacent imagery: signage, print materials, storefronts, work surfaces, and design review.
-- Badge and CTA copy should route toward phone, email, services, or location.
-
-### Buttons and Links
-
-- Primary CTA: red or blue filled pill, uppercase, bold, direct.
-- Secondary CTA: white outline pill on blue, or charcoal text on warm white.
-- Hover states may invert fill and text colors.
-- Active state should feel tactile with `scale(0.98)`.
-- No glowing shadows, custom cursors, or decorative gradient text.
+- Primary: navy fill, white text, rectangular `7px` radius.
+- Secondary: transparent or white surface with a cool gray border.
+- Accent: amber fill inside navy CTA sections.
+- Buttons use direct labels and a small directional arrow.
+- Hover motion is limited to a subtle upward translation.
 
 ### Cards
 
-- Cards can be rounded and expressive because the site is signage-inspired.
-- Service cards should include a concrete service title, one production-specific sentence, supporting imagery, and a view-service path.
-- Avoid nested cards.
-- Use borders and shadows sparingly.
+- Cards use one border, one paper surface, and a restrained shadow.
+- Images lead the hierarchy.
+- Do not use nested cards, 3D tilt, large pills, or decorative badges.
 
-### Imagery
+### CTA and Footer
 
-- Use authentic shop, signage, print, and storefront images.
-- Avoid abstract stock photos, blurry city lights, and unrelated office lifestyle imagery.
-- Decorative images should use `alt=""`.
-- Meaningful service images need plain descriptive alt text.
+- CTA banners use a navy field, amber eyebrow, serif heading, and amber primary action.
+- The footer stays white.
+- Contact details form a thin divided row above the compact footer columns.
 
-## 5. Layout
+## 6. Page Families
 
-- Use Tailwind utility classes with TypeScript React components.
-- Keep max content width around `1440px` for hero/nav and `1152px` for service content.
-- Use CSS Grid for service sections and responsive layouts.
-- Mobile below `768px` collapses to one column.
-- Prevent horizontal scroll at every breakpoint.
-- Hero and service sections should be full-width bands, not page sections inside outer cards.
-- Use stable aspect ratios for fixed-format tiles and badges.
+### Home
 
-## 6. Motion
+- Split hero with a large generated facade image and two overlapping project cards.
+- Divided credibility row below the copy.
+- Bordered service icon tiles.
+- Four image-led featured service cards.
+- Factual proof strip using existing business claims.
+- Navy CTA banner, contact row, and white footer.
 
-- Use `motion/react` for card and hero interactions.
-- Animate only `transform` and `opacity`.
-- Floating cards should move slowly with `easeInOut`.
-- Hover rotations may settle angled cards back to zero degrees.
-- Badge spin may loop slowly and must remain readable.
-- Respect reduced-motion preferences in future production work.
+### Categories
 
-## 7. Content Model
+- Split light hero with category copy and one large image.
+- Open service grid with one optional prominent card.
+- Shared direct-contact CTA.
 
-Public content comes from JSON files in `packages/content/content/`.
+### Service Details
 
-- Site details: `site.json`
-- Categories: `categories.json`
-- Services: one JSON file per service under `services/{signs,printing,services}/`
+- Light split hero, serif heading, and large service image.
+- Long-form content and capabilities remain open and readable.
+- Contact panel may become sticky on desktop.
+- Related services use the shared card system.
 
-Do not add data models for carts, checkout, uploaded artwork, accounts, online submissions, admin users, or payment unless the product requirements change.
+### Utility Pages
 
-## 8. Accessibility
+- About, FAQs, Contact, Location, pricing contact, compatibility routes, and 404 use the same page header, typography, borders, and CTA language.
+- Gallery uses a responsive project grid rather than an accordion interaction.
 
-- Maintain high text contrast on blue, red, yellow, and image overlays.
-- Links that call or email must use `tel:` and `mailto:` hrefs.
-- Decorative SVG arrows should not receive focus.
-- Images with business meaning need descriptive alt text.
-- Body text should never drop below `14px`; primary readable text should be `16px` or larger.
-- Touch targets must be at least `44px`.
-- Check mobile widths for headline overflow, rotated tile collisions, and badge overlap.
+## 7. Imagery
 
-## 9. Anti-Patterns
+- Home imagery uses the generated editorial suite in `apps/web/public/images/generated/home-editorial-*.png`.
+- Category and service pages may reuse their existing managed images.
+- Use consistent fixed ratios and `object-cover` crops.
+- Meaningful images require descriptive alt text.
+- Avoid readable third-party branding, unrelated stock photography, or abstract decorative imagery.
 
-Never use:
+## 8. Interaction and Accessibility
 
-- Purple gradients, neon glow shadows, or generic tech-startup visuals.
-- Fake dashboards, wallets, token points, crypto handles, or social profile cards.
-- Generic placeholder company names such as Acme, Nexus, or John Doe.
-- Unsupported ecommerce language: cart, checkout, account, upload portal, online payment.
-- Online submission language unless the product requirements change.
-- AI copywriting cliches: elevate, unleash, seamless, next-gen, revolutionary.
-- Emoji in production UI.
-- Pure black as the dominant surface color.
-- Centered hero layouts where every headline line shares the same axis.
-- Decorative blobs, bokeh orbs, or abstract gradient backgrounds.
-- Broken image links or unrelated stock photos.
+- Minimum touch target: `44px`.
+- Every interactive element requires a visible focus state.
+- Use semantic sections, headings, navigation, lists, and links.
+- Respect `prefers-reduced-motion`.
+- Animate only transforms and opacity.
+- Maintain readable contrast and prevent horizontal overflow at `320px`.
+- The shared skip link targets the public content wrapper.
 
-## 10. Current Implementation Notes
+## 9. Product Guardrails
 
-- Framework: Next.js static export.
-- Styling: Tailwind CSS.
-- Content: JSON-backed `@mrsign/content` package.
-- Runtime dependencies: `motion`, `lucide-react`, `react`, `react-dom`.
-- Build command: `corepack pnpm --filter @mrsign/web build`.
-- Dev command: `corepack pnpm --filter @mrsign/web dev`.
+- Public CTAs route to phone, email, location, or service browsing.
+- Do not imply online submission, file upload, payment, checkout, customer accounts, or inventory.
+- Do not add fabricated testimonials, clients, ratings, metrics, or project claims.
+- JSON in `packages/content/content/` remains the content source of truth.

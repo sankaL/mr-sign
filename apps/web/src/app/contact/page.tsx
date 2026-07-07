@@ -1,14 +1,35 @@
-import Link from "next/link";
 import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
+import Link from "next/link";
 
 import { GoogleMapEmbed } from "@/components/site/google-map-embed";
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
-import { businessHours, contactPage, siteContact } from "@/lib/site";
 import { buildContentPageMetadata } from "@/lib/seo";
+import { businessHours, contactPage, siteContact } from "@/lib/site";
 
 export const metadata = buildContentPageMetadata(contactPage);
+
+const contactLinks = [
+  {
+    icon: Phone,
+    eyebrow: "Phone",
+    label: `${siteContact.phone} or ${siteContact.secondaryPhone}`,
+    href: siteContact.phoneHref,
+  },
+  {
+    icon: Mail,
+    eyebrow: "Email",
+    label: siteContact.email,
+    href: siteContact.emailHref,
+  },
+  {
+    icon: Navigation,
+    eyebrow: "Visit",
+    label: "Get directions",
+    href: siteContact.directionsUrl,
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -19,80 +40,71 @@ export default function ContactPage() {
           title={contactPage.headline}
           description={contactPage.subheadline}
         />
-        <section className="px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="grid content-start gap-5">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  Reach us directly
-                </p>
-                <h2 className="mt-2 text-2xl font-black uppercase leading-tight md:text-3xl">
-                  Call, email, or visit the Vaughan shop.
-                </h2>
-                <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/66">
-                  Share the service, size, quantity, timing, and artwork details
-                  when you contact the shop so the team can guide the next step.
-                </p>
-              </div>
 
-              <div className="grid gap-3">
-                <Link
-                  href={siteContact.phoneHref}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
-                >
-                  <Phone className="h-4 w-4 text-[#E51B23]" />
-                  {siteContact.phone} or {siteContact.secondaryPhone}
-                </Link>
-                <Link
-                  href={siteContact.emailHref}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
-                >
-                  <Mail className="h-4 w-4 text-[#E51B23]" />
-                  {siteContact.email}
-                </Link>
-                <Link
-                  href={siteContact.directionsUrl}
-                  className="flex items-center gap-3 rounded-lg border border-[#151515]/10 bg-white px-4 py-3 text-sm font-black transition-colors hover:border-[#0B1F55] hover:text-[#0B1F55]"
-                >
-                  <Navigation className="h-4 w-4 text-[#E51B23]" />
-                  Get directions
-                </Link>
+        <section className="section-space bg-white">
+          <div className="site-container grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <aside className="self-start">
+              <div className="pb-7">
+                <p className="eyebrow">Direct contact</p>
+                <h2 className="font-display mt-3 max-w-[12ch] text-3xl leading-tight tracking-[-0.035em] text-[var(--ink)]">
+                  Call, email, or come by.
+                </h2>
               </div>
-            </div>
+              <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+                {contactLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="group flex min-h-24 items-center gap-4 py-5 text-[var(--ink)] transition-colors hover:text-[var(--accent-amber)]"
+                    >
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[var(--line)] text-[var(--accent-amber)] transition-transform duration-200 group-hover:-translate-y-0.5">
+                        <Icon className="h-5 w-5" strokeWidth={1.6} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--body-copy)]/65">
+                          {item.eyebrow}
+                        </span>
+                        <span className="mt-1 block text-sm font-bold leading-6">
+                          {item.label}
+                        </span>
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </aside>
 
             <div className="grid gap-5">
               <GoogleMapEmbed
                 title="Google map showing Mr. Sign and Print at 399 Four Valley Dr. Unit 3 in Vaughan"
-                className="min-h-72"
+                className="min-h-80 rounded-[0.75rem]"
               />
 
-              <div className="grid gap-5 rounded-2xl border border-[#151515]/10 bg-white p-5 md:grid-cols-2">
+              <div className="editorial-panel grid gap-7 p-6 md:grid-cols-2 md:p-8">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                    Address
-                  </p>
-                  <p className="mt-3 flex gap-3 text-sm font-bold leading-6 text-[#151515]/70">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#0B1F55]" />
+                  <p className="eyebrow">Address</p>
+                  <p className="mt-4 flex gap-3 text-sm font-semibold leading-6 text-[var(--body-copy)]">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ink)]" />
                     {siteContact.address}
                   </p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                    Hours
-                  </p>
-                  <div className="mt-3 grid gap-1.5">
+                  <p className="eyebrow">Hours</p>
+                  <div className="mt-4 grid gap-2">
                     {businessHours.map((item) => (
                       <p
                         key={item.day}
-                        className="flex justify-between gap-4 text-xs font-bold text-[#151515]/68"
+                        className="flex justify-between gap-4 text-xs font-semibold text-[var(--body-copy)]"
                       >
                         <span>{item.day}</span>
                         <span className="text-right">{item.hours}</span>
                       </p>
                     ))}
                   </div>
-                  <p className="mt-3 flex items-center gap-2 text-xs font-black text-[#151515]">
-                    <Clock className="h-4 w-4 text-[#0B1F55]" />
+                  <p className="mt-4 flex items-center gap-2 text-xs font-bold text-[var(--ink)]">
+                    <Clock className="h-4 w-4" />
                     Call ahead for holiday hours.
                   </p>
                 </div>

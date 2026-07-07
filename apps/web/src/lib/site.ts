@@ -8,7 +8,6 @@ import {
   locationPage,
   primaryActions,
   publicNavigation,
-  pricingContactPage,
   serviceCategories as contentCategories,
   siteContact,
 } from "@mrsign/content";
@@ -36,7 +35,6 @@ export {
   locationPage,
   primaryActions,
   publicNavigation,
-  pricingContactPage,
   siteContact,
 };
 

@@ -20,8 +20,8 @@ export default function GalleryPage() {
           title={galleryPage.headline}
           description={galleryPage.subheadline}
         />
-        <section className="bg-[#FFFAF0] px-5 py-10 md:px-5 md:py-14 flex justify-center">
-          <div className="w-full">
+        <section className="section-space bg-white">
+          <div className="site-container">
             <ImageGallery services={galleryServices} />
           </div>
         </section>

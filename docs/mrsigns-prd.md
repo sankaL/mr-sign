@@ -138,7 +138,6 @@ The redesigned website uses Signs, Printing, and Services as public top-level se
 | T-Frame/Site Signs          |
 | Teardrop & Flags            |
 | Traffic and Street Signs    |
-| Vehicle Lettering and Wraps |
 | Vertical stands-Indoor      |
 | Vertical stands-Outdoor     |
 | Vinyl Cutting               |

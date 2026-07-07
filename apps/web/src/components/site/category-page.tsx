@@ -1,6 +1,7 @@
 import { getCategory, type CategorySlug } from "@mrsign/content";
 import { notFound } from "next/navigation";
 
+import { CtaSection } from "@/components/ui/cta-section";
 import { getPublicServices } from "@/lib/public-services";
 
 import { ContentImage } from "./content-image";
@@ -19,45 +20,41 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
   }
 
   const services = await getPublicServices(categorySlug);
+  const isSignsCategory = categorySlug === "signs";
 
   return (
     <SiteShell>
       <main>
-        <section className="bg-[#0B1F55] px-5 py-10 text-white md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <section className="border-b border-[var(--line)] bg-[var(--canvas)] py-14 md:py-20">
+          <div className="site-container grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div className="max-w-3xl">
-              <h1 className="text-[clamp(2.35rem,5vw,4.5rem)] font-black uppercase leading-[0.92] tracking-normal">
-                {category.headline}
-              </h1>
-              <p className="mt-4 max-w-[62ch] text-sm font-semibold leading-6 text-white/82 md:text-base md:leading-7">
+              <p className="eyebrow">{category.eyebrow}</p>
+              <h1 className="display-title mt-4">{category.headline}</h1>
+              <p className="body-copy mt-6 max-w-[60ch]">
                 {category.subheadline}
               </p>
-              <p className="mt-3 max-w-[62ch] text-xs font-semibold leading-5 text-white/62 md:text-sm md:leading-6">
-                {category.description}
-              </p>
+              {!isSignsCategory &&
+              categorySlug !== "services" &&
+              category.description ? (
+                <p className="mt-4 max-w-[60ch] text-sm font-medium leading-7 text-[var(--body-copy)]/80">
+                  {category.description}
+                </p>
+              ) : null}
             </div>
 
             <ContentImage
               asset={category.image}
               priority
-              className="aspect-[16/11] rounded-[2rem] border border-white/20 shadow-[0_24px_70px_rgba(13,31,143,0.28)]"
-              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="aspect-[16/10] rounded-[0.8rem] border border-[var(--line)] bg-white shadow-[0_24px_65px_rgba(7,26,58,0.1)]"
+              imageClassName="h-full w-full object-cover"
+              sizes="(min-width: 1024px) 52vw, 100vw"
             />
           </div>
         </section>
 
-        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto max-w-[1440px]">
-            <div>
-              <h2 className="max-w-4xl text-[clamp(2rem,4vw,3.35rem)] font-black uppercase leading-[0.95] tracking-normal">
-                {category.gridHeading}
-              </h2>
-              <p className="mt-4 max-w-3xl text-sm font-semibold leading-6 text-[#151515]/66">
-                {category.gridSubheading}
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <section className="section-space bg-white">
+          <div className="site-container">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
                 <ServiceTeaserCard
                   key={service.route}
@@ -68,6 +65,8 @@ export async function CategoryPage({ categorySlug }: CategoryPageProps) {
             </div>
           </div>
         </section>
+
+        <CtaSection title={category.ctaCopy} />
       </main>
     </SiteShell>
   );

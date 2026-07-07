@@ -3,11 +3,19 @@ import Link from "next/link";
 
 import { SiteShell } from "@/components/site/site-shell";
 import { PageHeader } from "@/components/ui/page-header";
+import { buildCategoryMetadata } from "@/lib/seo";
 
+const servicesMetadata = buildCategoryMetadata("services");
 export const metadata: Metadata = {
-  title: "Services | Mr. Sign and Print",
+  ...servicesMetadata,
+  title: {
+    absolute: "Services | Mr. Sign and Print",
+  },
   description:
     "This old section now points customers to the Services page for sign maintenance and support.",
+  alternates: {
+    canonical: "/services",
+  },
   robots: {
     index: false,
     follow: true,
@@ -25,7 +33,7 @@ export default function DesignCompatibilityPage() {
         >
           <Link
             href="/services"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white active:scale-[0.98]"
+            className="inline-flex min-h-11 items-center justify-center rounded-[0.45rem] bg-[var(--ink)] px-5 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] !text-white transition-transform hover:-translate-y-0.5 hover:!text-white active:translate-y-0"
           >
             Browse services
           </Link>

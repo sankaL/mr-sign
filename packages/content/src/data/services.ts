@@ -13,7 +13,6 @@ import printingWeddingsJson from "../../content/services/printing/weddings.json"
 import signsAwningsJson from "../../content/services/signs/awnings.json";
 import signsBannerJson from "../../content/services/signs/banner.json";
 import signsBuildersSignsJson from "../../content/services/signs/builders-signs.json";
-import signsChangeableLettersJson from "../../content/services/signs/changeable-letters.json";
 import signsChannelLettersJson from "../../content/services/signs/channel-letters.json";
 import signsCoroplastJson from "../../content/services/signs/coroplast.json";
 import signsCutOutLettersJson from "../../content/services/signs/cut-out-letters.json";
@@ -26,7 +25,6 @@ import signsMagneticSignsJson from "../../content/services/signs/magnetic-signs.
 import signsMenuBoxesJson from "../../content/services/signs/menu-boxes.json";
 import signsNeonJson from "../../content/services/signs/neon.json";
 import signsPlasticLawnSignsJson from "../../content/services/signs/plastic-lawn-signs.json";
-import signsPlateDirectoryBoardJson from "../../content/services/signs/plate-directory-board.json";
 import signsPushThroughSignsJson from "../../content/services/signs/push-through-signs.json";
 import signsPylonSignsJson from "../../content/services/signs/pylon-signs.json";
 import signsRealEstateSignsJson from "../../content/services/signs/real-estate-signs.json";
@@ -35,8 +33,6 @@ import signsSandwichBoardsJson from "../../content/services/signs/sandwich-board
 import signsTFrameSiteSignsJson from "../../content/services/signs/t-frame-site-signs.json";
 import signsTeardropFlagsJson from "../../content/services/signs/teardrop-flags.json";
 import signsTrafficAndStreetSignsJson from "../../content/services/signs/traffic-and-street-signs.json";
-import signsVehicleLetteringJson from "../../content/services/signs/vehicle-lettering.json";
-import signsVehicleLetteringAndWrapsJson from "../../content/services/signs/vehicle-lettering-and-wraps.json";
 import signsVerticalStandsIndoorJson from "../../content/services/signs/vertical-stands-indoor.json";
 import signsVerticalStandsOutdoorJson from "../../content/services/signs/vertical-stands-outdoor.json";
 import signsVinylCuttingJson from "../../content/services/signs/vinyl-cutting.json";
@@ -83,7 +79,6 @@ const serviceJson = [
   signsAwningsJson,
   signsBannerJson,
   signsBuildersSignsJson,
-  signsChangeableLettersJson,
   signsChannelLettersJson,
   signsCoroplastJson,
   signsCutOutLettersJson,
@@ -96,7 +91,6 @@ const serviceJson = [
   signsMenuBoxesJson,
   signsNeonJson,
   signsPlasticLawnSignsJson,
-  signsPlateDirectoryBoardJson,
   signsPushThroughSignsJson,
   signsPylonSignsJson,
   signsRealEstateSignsJson,
@@ -105,8 +99,6 @@ const serviceJson = [
   signsTFrameSiteSignsJson,
   signsTeardropFlagsJson,
   signsTrafficAndStreetSignsJson,
-  signsVehicleLetteringJson,
-  signsVehicleLetteringAndWrapsJson,
   signsVerticalStandsIndoorJson,
   signsVerticalStandsOutdoorJson,
   signsVinylCuttingJson,

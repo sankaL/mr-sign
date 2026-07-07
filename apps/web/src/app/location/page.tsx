@@ -1,12 +1,13 @@
+import { Clock, Mail, Phone } from "lucide-react";
 import Link from "next/link";
-import { Clock, Mail, Navigation, Phone } from "lucide-react";
 
 import { GoogleMapEmbed } from "@/components/site/google-map-embed";
 import { SiteShell } from "@/components/site/site-shell";
+import { ButtonLink } from "@/components/ui/button-link";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
-import { businessHours, locationPage, siteContact } from "@/lib/site";
 import { buildContentPageMetadata, buildLocalBusinessSchema } from "@/lib/seo";
+import { businessHours, locationPage, siteContact } from "@/lib/site";
 
 export const metadata = buildContentPageMetadata(locationPage);
 
@@ -27,55 +28,37 @@ export default function LocationPage() {
           title={locationPage.headline}
           description={locationPage.subheadline}
         />
-        <section className="px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="grid content-start gap-5">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  Address
-                </p>
-                <h2 className="mt-3 text-2xl font-black uppercase leading-tight md:text-3xl">
-                  {siteContact.address}
-                </h2>
-                <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/65">
-                  We serve {siteContact.serviceArea}. Call ahead for current
-                  pricing, pickup details, and production questions.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Link
-                    href={siteContact.directionsUrl}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#0B1F55] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-                  >
-                    Get directions
-                    <Navigation
-                      className="h-4 w-4 !text-white"
-                      strokeWidth={2.5}
-                    />
-                  </Link>
-                  <Link
-                    href={siteContact.phoneHref}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#151515]/15 px-5 py-3 text-xs font-black uppercase tracking-wide text-[#151515] transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-                  >
-                    Call now
-                    <Phone className="h-4 w-4" strokeWidth={2.5} />
-                  </Link>
-                </div>
+
+        <section className="section-space bg-white">
+          <div className="site-container grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="eyebrow">Address</p>
+              <h2 className="section-title mt-3">{siteContact.address}</h2>
+              <p className="body-copy mt-5">
+                We serve {siteContact.serviceArea}. Call ahead for current
+                pricing, pickup details, and production questions.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <ButtonLink href={siteContact.directionsUrl}>
+                  Get directions
+                </ButtonLink>
+                <ButtonLink href={siteContact.phoneHref} variant="secondary">
+                  Call now
+                </ButtonLink>
               </div>
 
-              <div className="border-t border-[#151515]/10 pt-5">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                  Hours
-                </p>
-                <div className="mt-4 grid gap-2">
+              <div className="mt-10 border-t border-[var(--line)] pt-8">
+                <p className="eyebrow">Hours</p>
+                <div className="mt-5 divide-y divide-[var(--line)]">
                   {businessHours.map((item) => (
                     <div
                       key={item.day}
-                      className="flex items-center justify-between gap-4 border-b border-[#151515]/8 pb-2 last:border-b-0 last:pb-0"
+                      className="flex items-center justify-between gap-4 py-3"
                     >
-                      <span className="text-sm font-black uppercase tracking-wide">
+                      <span className="text-xs font-extrabold uppercase tracking-[0.06em] text-[var(--ink)]">
                         {item.day}
                       </span>
-                      <span className="text-right text-sm font-bold text-[#151515]/66">
+                      <span className="text-right text-sm font-medium text-[var(--body-copy)]">
                         {item.hours}
                       </span>
                     </div>
@@ -87,32 +70,33 @@ export default function LocationPage() {
             <div className="grid gap-5">
               <GoogleMapEmbed
                 title="Google map showing Mr. Sign and Print at 399 Four Valley Dr. Unit 3 in Vaughan"
-                className="min-h-72"
+                className="min-h-[28rem] rounded-[0.75rem]"
               />
 
-              <div className="grid gap-2.5 rounded-2xl border border-[#151515]/10 bg-white p-4">
+              <div className="editorial-panel grid gap-4 p-5 sm:grid-cols-3">
                 <Link
                   href={siteContact.phoneHref}
-                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#0B1F55]"
+                  className="flex items-center gap-3 text-sm font-bold text-[var(--ink)] transition-colors hover:text-[var(--accent-amber)]"
                 >
-                  <Phone className="h-4 w-4 text-[#E51B23]" />
-                  {siteContact.phone} or {siteContact.secondaryPhone}
+                  <Phone className="h-4 w-4" />
+                  {siteContact.phone}
                 </Link>
                 <Link
                   href={siteContact.emailHref}
-                  className="flex items-center gap-3 text-sm font-black transition-colors hover:text-[#0B1F55]"
+                  className="flex items-center gap-3 text-sm font-bold text-[var(--ink)] transition-colors hover:text-[var(--accent-amber)]"
                 >
-                  <Mail className="h-4 w-4 text-[#E51B23]" />
+                  <Mail className="h-4 w-4" />
                   {siteContact.email}
                 </Link>
-                <p className="flex items-center gap-3 text-sm font-black">
-                  <Clock className="h-4 w-4 text-[#E51B23]" />
-                  Monday to Friday, 9:00 AM to 5:00 PM
+                <p className="flex items-center gap-3 text-sm font-bold text-[var(--ink)]">
+                  <Clock className="h-4 w-4" />
+                  Mon–Fri, 9 AM–5 PM
                 </p>
               </div>
             </div>
           </div>
         </section>
+
         <CtaSection
           title="Planning a pickup or shop visit?"
           description={`Call ahead or get directions to ${siteContact.shortAddress}.`}

@@ -6,7 +6,7 @@
 ## SEO
 
 - **Page Title:** Custom Signs in Vaughan | Mr. Sign and Print
-- **Meta Description:** Shop custom signs in Vaughan and the GTA. Channel letters, banners, vehicle lettering, lawn signs, awnings, neon, and more. Contact the shop for pricing today.
+- **Meta Description:** Shop custom signs in Vaughan and the GTA. Channel letters, banners, lawn signs, awnings, neon, and more. Contact the shop for pricing today.
 - **URL:** /signs
 - **Social Sharing Title:** Custom Signs in Vaughan | Mr. Sign and Print
 - **Social Sharing Description:** From illuminated channel letters to coroplast lawn signs, Mr. Sign and Print creates professional signage for businesses across Vaughan and the GTA.
@@ -19,7 +19,7 @@
 
 **Layout:** A full-width banner below the main navigation. Not as tall as the homepage hero. This is a page-header style strip. Dark background with white text on the left, and a relevant image on the right (or full bleed with text overlay).
 
-**Image Description:** A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. The image should include a storefront with channel letters, a sandwich board on the sidewalk, and a vehicle with lettering visible in the background.
+**Image Description:** A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. The image should include a storefront with channel letters and a sandwich board on the sidewalk.
 
 **Headline:** Custom Signs Built for Your Business
 
@@ -51,15 +51,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 2. Plate Directory Board
-
-**Icon/Image Description:** A photo of a black-framed multi-tenant directory board mounted in a building lobby, with individual name plates for each suite or business listed.
-**Short Description:** Professional directory boards for office buildings, plazas, and multi-tenant properties. Keeps visitors and clients on track.
-**CTA:** View Details
-
----
-
-### 3. Banner
+### 2. Banner
 
 **Icon/Image Description:** A large, vibrant vinyl banner hung on a storefront or chain-link fence, printed with bold text and colourful graphics promoting a grand opening or sale.
 **Short Description:** Custom vinyl banners in any size for events, promotions, trade shows, and outdoor advertising.
@@ -67,7 +59,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 4. Plastic Lawn Signs
+### 3. Plastic Lawn Signs
 
 **Icon/Image Description:** A row of 18x24 inch corrugated plastic lawn signs staked into a front lawn on a residential street, featuring bold text and contact info for a local business.
 **Short Description:** Lightweight, weather-resistant plastic lawn signs ideal for real estate, construction, and local advertising.
@@ -75,7 +67,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 5. Channel Letters
+### 4. Channel Letters
 
 **Icon/Image Description:** A close-up night-time photo of bright red LED-illuminated channel letters spelling out a business name on a dark brick facade.
 **Short Description:** Custom illuminated channel letters for commercial storefronts and plazas. Front-lit, back-lit, or halo-lit options available.
@@ -83,7 +75,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 6. Real Estate Signs
+### 5. Real Estate Signs
 
 **Icon/Image Description:** A professionally installed real estate post sign in front of a detached home in a Vaughan neighbourhood, featuring a clean design with a realtor's branding and contact info.
 **Short Description:** Custom real estate signs and frames for agents and brokers across Vaughan and the GTA.
@@ -91,15 +83,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 7. Changeable Letters
-
-**Icon/Image Description:** A black outdoor reader board sign with removable white letters, positioned outside a church or school, displaying a community message.
-**Short Description:** Manual changeable letter signs for businesses, schools, and community organizations. Update your message anytime.
-**CTA:** View Details
-
----
-
-### 8. Sandwich Boards
+### 6. Sandwich Boards
 
 **Icon/Image Description:** An A-frame sandwich board sign placed on a sidewalk outside a cafe, painted with a daily special written in chalk on a dark background.
 **Short Description:** Portable A-frame sandwich board signs for sidewalk advertising and promotions. Perfect for restaurants and retail shops.
@@ -107,7 +91,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 9. Coroplast
+### 7. Coroplast
 
 **Icon/Image Description:** A stack of freshly printed coroplast signs in bright colours, leaning against a wall in a print shop. One sign faces forward showing a bold promotional message.
 **Short Description:** Lightweight, waterproof coroplast signs for temporary or semi-permanent outdoor use. A cost-effective choice for campaigns and events.
@@ -115,7 +99,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 10. T-Frame / Site Signs
+### 8. T-Frame / Site Signs
 
 **Icon/Image Description:** A T-frame site sign planted at the entrance of a construction site, featuring the builder's logo, project name, and contact details.
 **Short Description:** Large-format T-frame and site signs for construction projects, developments, and commercial properties.
@@ -123,7 +107,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 11. Cut-out Letters
+### 9. Cut-out Letters
 
 **Icon/Image Description:** A set of large metallic dimensional cut-out letters mounted flush against a polished stone or brushed metal wall inside a corporate lobby.
 **Short Description:** Dimensional cut-out letters in metal, acrylic, or PVC. A premium look for lobbies, boardrooms, and storefronts.
@@ -131,7 +115,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 12. Vertical Stands (Indoor)
+### 10. Vertical Stands (Indoor)
 
 **Icon/Image Description:** A sleek silver retractable banner stand set up inside a conference room, displaying a company banner with a trade show-style layout.
 **Short Description:** Indoor vertical banner stands for trade shows, events, lobbies, and in-store promotions.
@@ -139,7 +123,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 13. Illuminated Boxes
+### 11. Illuminated Boxes
 
 **Icon/Image Description:** A square backlit lightbox sign mounted on the exterior wall of a commercial unit in a plaza, glowing brightly with a business logo at night.
 **Short Description:** Backlit illuminated sign boxes for storefronts, plazas, and interior branding. Custom-built to your specifications.
@@ -147,7 +131,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 14. Vertical Stands (Outdoor)
+### 12. Vertical Stands (Outdoor)
 
 **Icon/Image Description:** A double-sided outdoor banner stand positioned at the entrance of an outdoor market or plaza, featuring a full-colour graphic and business info.
 **Short Description:** Durable outdoor vertical banner stands designed to handle Canadian weather. Great for seasonal promotions and events.
@@ -155,7 +139,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 15. Magnetic Signs
+### 13. Magnetic Signs
 
 **Icon/Image Description:** Two matching magnetic signs mounted on the front doors of a white SUV, displaying a business logo, phone number, and website in bold text.
 **Short Description:** Custom magnetic vehicle signs you can put on and take off as needed. A flexible and affordable option for business promotion.
@@ -163,15 +147,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 16. Vehicle Lettering
-
-**Icon/Image Description:** A white service van with a full-colour vinyl lettering layout across the side door and rear panel, showing a company name, phone number, and logo.
-**Short Description:** Turn any vehicle into a moving advertisement. Vinyl lettering and graphics for cars, vans, trucks, and trailers.
-**CTA:** View Details
-
----
-
-### 17. Menu Boxes
+### 14. Menu Boxes
 
 **Icon/Image Description:** An illuminated outdoor menu box mounted beside the entrance of a restaurant, displaying printed menu panels inside a weather-sealed frame.
 **Short Description:** Backlit and non-illuminated outdoor menu boxes for restaurants and food service businesses. Protect and display your menu professionally.
@@ -179,7 +155,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 18. Vinyl Cutting
+### 15. Vinyl Cutting
 
 **Icon/Image Description:** A vinyl cutter in action, with a spool of red vinyl feeding through the machine and a freshly cut logo design visible on the cutting mat.
 **Short Description:** Precision vinyl cutting for lettering, logos, decals, and graphics. Suitable for windows, walls, vehicles, and more.
@@ -187,7 +163,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 19. Neon
+### 16. Neon
 
 **Icon/Image Description:** A vibrant neon sign glowing in orange and pink lettering inside the window of a Vaughan-area business or cafe, creating a warm and eye-catching display at night.
 **Short Description:** Custom neon signs for storefronts, restaurants, and interior spaces. Classic appeal with lasting impact.
@@ -195,7 +171,7 @@ Each card below represents one entry in the grid.
 
 ---
 
-### 20. Window Lettering
+### 17. Window Lettering
 
 **Icon/Image Description:** A large retail storefront window with vinyl lettering applied directly to the glass, showing business hours, a logo, and a promotional message in clean white lettering.
 **Short Description:** Professional vinyl window lettering for storefronts, offices, and retail locations. A clean, affordable alternative to painted glass.
@@ -256,41 +232,6 @@ We work with quality fabric and metal materials built to hold up through Canadia
 - Call Us: (416) 512-9353
 
 **Related Services:** Channel Letters, Window Lettering, Illuminated Boxes
-
----
-
-## /signs/plate-directory-board
-
-**Page Title:** Directory Boards in Vaughan | Mr. Sign and Print
-**Meta Description:** Professional plate directory boards for office buildings and commercial plazas in Vaughan and the GTA. Custom-built. Contact the shop for pricing today.
-
-### Breadcrumb
-Home > Signs > Plate Directory Board
-
-### Hero
-**Image Description:** A clean, modern directory board mounted in a well-lit commercial building lobby. The board has a dark metal frame with brushed aluminum name plates for multiple tenants listed alphabetically.
-
-**Headline:** Directory Boards for Office Buildings and Plazas
-
-**Body Copy:**
-Give visitors a professional first impression the moment they walk through your door. Our custom plate directory boards are built for multi-tenant office buildings, commercial plazas, and professional suites in Vaughan and the surrounding area.
-
-We build boards to fit your space, your number of tenants, and your style. Whether you need a simple acrylic wall-mount or a large backlit lobby display, we can build it.
-
-**What We Can Do:**
-- Multi-tenant lobby directory boards
-- Acrylic, aluminum, and metal plate options
-- Custom sizing to fit any wall space
-- Easy-to-update modular plate systems
-- Interior and exterior directory signage
-
-**Pricing:** Contact for Pricing
-
-**CTA Buttons:**
-- Contact the Shop (links to /contact?service=plate-directory-board)
-- Call Us: (416) 512-9353
-
-**Related Services:** Cut-out Letters, Illuminated Boxes, Vertical Stands (Indoor)
 
 ---
 
@@ -435,41 +376,6 @@ Whether you need a one-off sign for a new listing or a bulk order for your team,
 
 ---
 
-## /signs/changeable-letters
-
-**Page Title:** Changeable Letter Signs in Vaughan | Mr. Sign and Print
-**Meta Description:** Manual changeable letter signs for businesses, schools, and community organizations in Vaughan and the GTA. Update your message anytime. Contact the shop for pricing.
-
-### Breadcrumb
-Home > Signs > Changeable Letters
-
-### Hero
-**Image Description:** A black outdoor reader board sign with white removable letters, mounted on a post at the entrance to a church or community centre. The sign displays a welcoming event message.
-
-**Headline:** Changeable Letter Signs -- Update Your Message Anytime
-
-**Body Copy:**
-When your message changes often, a changeable letter sign is the practical solution. Swap out letters to promote events, specials, hours, or announcements -- no reprinting required.
-
-These signs work well for churches, schools, community centres, restaurants, and small businesses that want flexibility at a low ongoing cost.
-
-**What We Can Do:**
-- Indoor and outdoor changeable letter sign cases
-- Portable and permanently mounted options
-- Backlit and non-lit versions
-- Replacement letter sets
-- Custom sizes to fit your space
-
-**Pricing:** Contact for Pricing
-
-**CTA Buttons:**
-- Contact the Shop (links to /contact?service=changeable-letters)
-- Call Us: (416) 512-9353
-
-**Related Services:** Sandwich Boards, Menu Boxes, Plate Directory Board
-
----
-
 ## /signs/sandwich-boards
 
 **Page Title:** Sandwich Board Signs in Vaughan | Mr. Sign and Print
@@ -501,7 +407,7 @@ We build custom A-frame signs in wood, aluminum, and plastic composite. Whether 
 - Contact the Shop (links to /contact?service=sandwich-boards)
 - Call Us: (416) 512-9353
 
-**Related Services:** Banners, Changeable Letters, Vertical Stands (Outdoor)
+**Related Services:** Banners, Teardrop & Flags, Vertical Stands (Outdoor)
 
 ---
 
@@ -606,7 +512,7 @@ We cut custom letters from aluminum, acrylic, PVC, and other materials to match 
 - Contact the Shop (links to /contact?service=cut-out-letters)
 - Call Us: (416) 512-9353
 
-**Related Services:** Channel Letters, Plate Directory Board, Vinyl Cutting
+**Related Services:** Channel Letters, Reception Signs, Vinyl Cutting
 
 ---
 
@@ -641,7 +547,7 @@ We print the banners and supply the stands. One stop, one shop.
 - Contact the Shop (links to /contact?service=vertical-stands-indoor)
 - Call Us: (416) 512-9353
 
-**Related Services:** Vertical Stands (Outdoor), Banners, Plate Directory Board
+**Related Services:** Vertical Stands (Outdoor), Banners, Reception Signs
 
 ---
 
@@ -746,42 +652,7 @@ We print high-quality magnetic signs that stick firmly to your vehicle door and 
 - Contact the Shop (links to /contact?service=magnetic-signs)
 - Call Us: (416) 512-9353
 
-**Related Services:** Vehicle Lettering, Vinyl Cutting, Real Estate Signs
-
----
-
-## /signs/vehicle-lettering
-
-**Page Title:** Vehicle Lettering in Vaughan | Mr. Sign and Print
-**Meta Description:** Custom vinyl vehicle lettering and graphics for cars, vans, and trucks in Vaughan and the GTA. Turn your vehicle into a moving billboard. Contact the shop for pricing.
-
-### Breadcrumb
-Home > Signs > Vehicle Lettering
-
-### Hero
-**Image Description:** A white cargo van with a full-colour vinyl lettering wrap applied to both side panels and the rear door. The design includes a business logo, tagline, phone number, and website URL in a clean, professional layout.
-
-**Headline:** Vehicle Lettering That Turns Every Drive Into an Ad
-
-**Body Copy:**
-Your vehicle is one of the most powerful marketing tools you already own. Vehicle lettering from Mr. Sign and Print turns any car, van, truck, or trailer into a professional, branded, rolling advertisement that works for you everywhere you drive.
-
-We serve businesses across Vaughan, Concord, Woodbridge, and the entire GTA. Whether you want a simple phone number on the door or a full graphic design package, we have you covered.
-
-**What We Can Do:**
-- Vinyl cut lettering (phone numbers, business names, URLs)
-- Partial and full vinyl wraps with graphics
-- Single and fleet vehicle packages
-- Cars, vans, trucks, SUVs, and trailers
-- Weather-resistant and UV-stable vinyl materials
-
-**Pricing:** Contact for Pricing
-
-**CTA Buttons:**
-- Contact the Shop (links to /contact?service=vehicle-lettering)
-- Call Us: (416) 512-9353
-
-**Related Services:** Magnetic Signs, Vinyl Cutting, Banners
+**Related Services:** Window Lettering, Vinyl Cutting, Real Estate Signs
 
 ---
 
@@ -816,7 +687,7 @@ We build and supply custom menu boxes for restaurants and food service businesse
 - Contact the Shop (links to /contact?service=menu-boxes)
 - Call Us: (416) 512-9353
 
-**Related Services:** Illuminated Boxes, Changeable Letters, Sandwich Boards
+**Related Services:** Illuminated Boxes, Pylon Signs, Sandwich Boards
 
 ---
 
@@ -851,7 +722,7 @@ We cut any shape, font, or logo you need -- from simple text to complex graphics
 - Contact the Shop (links to /contact?service=vinyl-cutting)
 - Call Us: (416) 512-9353
 
-**Related Services:** Window Lettering, Vehicle Lettering, Magnetic Signs
+**Related Services:** Window Lettering, Indoor Wall Graphics, Magnetic Signs
 
 ---
 

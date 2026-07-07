@@ -50,26 +50,24 @@ export default function FaqsPage() {
           title={faqsPage.headline}
           description={faqsPage.subheadline}
         />
-        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <section className="section-space bg-white">
+          <div className="site-container grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                Contact
-              </p>
-              <h2 className="mt-3 text-2xl font-black uppercase leading-tight md:text-3xl">
+              <p className="eyebrow">Contact</p>
+              <h2 className="section-title mt-3">
                 Talk to the shop for current pricing and timing.
               </h2>
               <div className="mt-6 grid gap-3">
                 <Link
                   href={siteContact.phoneHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-[0.45rem] bg-[var(--ink)] px-5 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] !text-white transition-transform hover:-translate-y-0.5 hover:!text-white"
                 >
                   <Phone className="h-4 w-4" strokeWidth={2.5} />
                   {siteContact.phone}
                 </Link>
                 <Link
                   href={siteContact.emailHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#151515]/15 px-5 py-3 text-xs font-black uppercase tracking-wide text-[#151515] transition-colors hover:bg-[#151515] hover:!text-white"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-[0.45rem] border border-[var(--line)] px-5 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] text-[var(--ink)] transition-colors hover:border-[var(--ink)]"
                 >
                   <Mail className="h-4 w-4" strokeWidth={2.5} />
                   {siteContact.email}
@@ -77,16 +75,16 @@ export default function FaqsPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
               {faqs.map((item) => (
                 <article
                   key={item.question}
-                  className="rounded-2xl border border-[#151515]/10 bg-white p-5"
+                  className="grid gap-3 py-6 md:grid-cols-[0.8fr_1.2fr] md:gap-8"
                 >
-                  <h3 className="text-base font-black uppercase leading-tight">
+                  <h3 className="font-display text-base leading-snug text-[var(--ink)]">
                     {item.question}
                   </h3>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/66">
+                  <p className="text-sm font-medium leading-6 text-[var(--body-copy)]">
                     {item.answer}
                   </p>
                 </article>

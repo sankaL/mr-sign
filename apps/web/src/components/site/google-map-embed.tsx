@@ -45,7 +45,7 @@ export function GoogleMapEmbed({
   return (
     <div
       className={cn(
-        "relative min-h-64 overflow-hidden rounded-[2rem] border border-[#151515]/10 bg-[#E8F2FF] shadow-sm",
+        "relative min-h-64 overflow-hidden rounded-[0.75rem] border border-[var(--line)] bg-[var(--soft)] shadow-[0_16px_40px_rgba(7,26,58,0.06)]",
         className,
       )}
     >
@@ -66,13 +66,13 @@ export function GoogleMapEmbed({
         }}
       />
       {showFallback ? (
-        <div className="absolute inset-0 z-10 grid place-items-center bg-[#FFFAF0] px-6 text-center">
+        <div className="absolute inset-0 z-10 grid place-items-center bg-[var(--canvas)] px-6 text-center">
           <div className="max-w-sm">
-            <MapPin className="mx-auto h-7 w-7 text-[#E51B23]" />
-            <p className="mt-3 text-sm font-black uppercase tracking-wide text-[#151515]">
+            <MapPin className="mx-auto h-7 w-7 text-[var(--accent-amber)]" />
+            <p className="font-display mt-3 text-base text-[var(--ink)]">
               Map preview unavailable
             </p>
-            <p className="mt-2 text-sm font-semibold leading-5 text-[#151515]/70">
+            <p className="mt-2 text-sm font-medium leading-5 text-[var(--body-copy)]">
               Open Google Maps for directions to {siteContact.shortAddress}.
             </p>
           </div>
@@ -80,7 +80,7 @@ export function GoogleMapEmbed({
       ) : null}
       <Link
         href={siteContact.directionsUrl}
-        className="absolute bottom-4 left-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#151515] px-4 py-2 text-xs font-black uppercase tracking-wide !text-white shadow-lg transition-colors hover:bg-[#0B1F55] hover:!text-white focus-visible:bg-[#0B1F55] focus-visible:!text-white active:scale-[0.98]"
+        className="absolute bottom-4 left-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-[0.45rem] bg-[var(--ink)] px-4 py-2 text-[0.68rem] font-extrabold uppercase tracking-[0.06em] !text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:!text-white active:translate-y-0"
       >
         {linkLabel}
         <ExternalLink className="h-4 w-4" strokeWidth={2.5} />

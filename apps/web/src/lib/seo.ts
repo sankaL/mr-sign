@@ -3,7 +3,6 @@ import {
   getCategory,
   siteContact,
   type CategorySlug,
-  type GeneratedImageAsset,
   type PageContent,
   type SeoContent,
   type ServiceDetail,
@@ -11,11 +10,50 @@ import {
 import type { Metadata } from "next";
 
 export const productionSiteUrl = "https://mrsignandprint.net";
-export const defaultSocialImage = "/social/default-social.png";
-export const categorySocialImages: Record<CategorySlug, string> = {
-  signs: "/social/signs-social.png",
-  printing: "/social/printing-social.png",
-  services: "/social/services-social.png",
+export type SocialImage = {
+  path: `/social/${string}.png`;
+  alt: string;
+  width: 1200;
+  height: 630;
+  type: "image/png";
+};
+
+export const socialImages: Record<"default" | CategorySlug, SocialImage> = {
+  default: {
+    path: "/social/default-social.png",
+    alt: "Mr. Sign and Print custom signs for businesses in Vaughan",
+    width: 1200,
+    height: 630,
+    type: "image/png",
+  },
+  signs: {
+    path: "/social/signs-social.png",
+    alt: "Custom illuminated signs built by Mr. Sign and Print",
+    width: 1200,
+    height: 630,
+    type: "image/png",
+  },
+  printing: {
+    path: "/social/printing-social.png",
+    alt: "Professional printed materials from Mr. Sign and Print",
+    width: 1200,
+    height: 630,
+    type: "image/png",
+  },
+  services: {
+    path: "/social/services-social.png",
+    alt: "Sign maintenance and repair services from Mr. Sign and Print",
+    width: 1200,
+    height: 630,
+    type: "image/png",
+  },
+};
+
+export const defaultSocialImage = socialImages.default;
+export const categorySocialImages: Record<CategorySlug, SocialImage> = {
+  signs: socialImages.signs,
+  printing: socialImages.printing,
+  services: socialImages.services,
 };
 
 export const siteUrl = normalizeSiteUrl(
@@ -27,7 +65,7 @@ export const metadataBase = new URL(siteUrl);
 type PageMetadataInput = {
   route: string;
   seo: SeoContent;
-  image?: GeneratedImageAsset | string;
+  image?: SocialImage;
 };
 
 function normalizeSiteUrl(url: string) {
@@ -39,13 +77,16 @@ export function canonicalUrl(route = "/") {
   return new URL(pathname, metadataBase).toString();
 }
 
-export function assetUrl(path = defaultSocialImage) {
+export function assetUrl(path: string = defaultSocialImage.path) {
   return new URL(path, metadataBase).toString();
 }
 
-function imagePath(image?: GeneratedImageAsset | string) {
-  if (!image) return defaultSocialImage;
-  return typeof image === "string" ? image : image.path;
+export function socialImageForRoute(route: string) {
+  const categorySlug = (
+    Object.keys(categorySocialImages) as CategorySlug[]
+  ).find((slug) => route === `/${slug}` || route.startsWith(`/${slug}/`));
+
+  return categorySlug ? categorySocialImages[categorySlug] : defaultSocialImage;
 }
 
 export function buildPageMetadata({
@@ -56,7 +97,8 @@ export function buildPageMetadata({
   const description = seo.description;
   const socialTitle = seo.socialTitle ?? seo.title;
   const socialDescription = seo.socialDescription ?? description;
-  const socialImage = assetUrl(imagePath(image));
+  const imageDescriptor = image ?? defaultSocialImage;
+  const socialImageUrl = assetUrl(imageDescriptor.path);
   const canonical = canonicalUrl(route);
 
   return {
@@ -74,10 +116,12 @@ export function buildPageMetadata({
       siteName: siteContact.businessName,
       images: [
         {
-          url: socialImage,
-          width: 1200,
-          height: 630,
-          alt: socialTitle,
+          url: socialImageUrl,
+          secureUrl: socialImageUrl,
+          width: imageDescriptor.width,
+          height: imageDescriptor.height,
+          type: imageDescriptor.type,
+          alt: imageDescriptor.alt,
         },
       ],
       locale: "en_CA",
@@ -87,19 +131,28 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title: socialTitle,
       description: socialDescription,
-      images: [socialImage],
+      images: [
+        {
+          url: socialImageUrl,
+          secureUrl: socialImageUrl,
+          width: imageDescriptor.width,
+          height: imageDescriptor.height,
+          type: imageDescriptor.type,
+          alt: imageDescriptor.alt,
+        },
+      ],
     },
   };
 }
 
 export function buildContentPageMetadata(
   page: PageContent,
-  image?: GeneratedImageAsset | string,
+  image: SocialImage = defaultSocialImage,
 ) {
   return buildPageMetadata({
     route: page.route,
     seo: page.seo,
-    image: image ?? page.image,
+    image,
   });
 }
 
@@ -137,13 +190,14 @@ export function buildServiceMetadata(
         description:
           "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
       },
+      image: socialImageForRoute(route),
     });
   }
 
   return buildPageMetadata({
     route: service.route,
     seo: service.seo,
-    image: service.image,
+    image: categorySocialImages[service.categorySlug],
   });
 }
 
@@ -154,7 +208,7 @@ export function buildLocalBusinessSchema() {
     "@id": `${canonicalUrl("/")}#local-business`,
     name: siteContact.businessName,
     url: canonicalUrl("/"),
-    image: assetUrl(defaultSocialImage),
+    image: assetUrl(defaultSocialImage.path),
     telephone: siteContact.phone,
     email: siteContact.email,
     address: {

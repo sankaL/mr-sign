@@ -6,20 +6,20 @@
     "eyebrow": "Signs",
     "headline": "Custom Signs Built for Your Business",
     "subheadline": "We design, manufacture, and install a wide range of custom signage for businesses throughout Vaughan and the Greater Toronto Area",
-    "description": "All in-house manufacturing for storefront signs, illuminated signs, vehicle graphics, banners, wall graphics, and custom sign work across the GTA.",
+    "description": "All in-house manufacturing for storefront signs, illuminated signs, banners, wall graphics, and custom sign work across the GTA.",
     "gridHeading": "Browse all our sign products and services.",
     "gridSubheading": "Short descriptions are included below so you can quickly find the right sign type before calling or emailing the shop.",
     "ctaCopy": "Not sure which sign is right for your project? Get in touch and we will help you figure it out.",
     "seo": {
       "title": "Custom Signs in Vaughan | Mr. Sign and Print",
-      "description": "Shop custom signs in Vaughan and the GTA. Channel letters, banners, vehicle lettering, lawn signs, awnings, neon, and more. Call or email the shop today.",
+      "description": "Shop custom signs in Vaughan and the GTA. Channel letters, banners, lawn signs, awnings, neon, and more. Call or email the shop today.",
       "socialTitle": "Custom Signs in Vaughan | Mr. Sign and Print",
       "socialDescription": "From illuminated channel letters to coroplast lawn signs, Mr. Sign and Print creates professional signage for businesses across Vaughan and the GTA."
     },
     "image": {
       "src": "/images/generated/signs-hero.png",
       "alt": "Outdoor signage installed along a commercial street in Vaughan.",
-      "prompt": "A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. Include a storefront with channel letters, a sandwich board on the sidewalk, and a work vehicle with vinyl lettering in the background. Modern local sign shop aesthetic, crisp daylight, no readable text, no logos, no watermarks."
+      "prompt": "A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. Include a storefront with channel letters, a sandwich board on the sidewalk, and a work vehicle in the background. Modern local sign shop aesthetic, crisp daylight, no readable text, no logos, no watermarks."
     },
     "displayOrder": 1
   },
@@ -29,8 +29,8 @@
     "route": "/printing",
     "eyebrow": "Printing",
     "headline": "Professional printing for your businesses",
-    "subheadline": "Experts in large format printing.",
-    "description": "We design and print business cards, posters, flyers, brochures, and more.",
+    "subheadline": "Experts in large format printing. We design and print business cards, posters, flyers, brochures, and more.",
+    "description": "",
     "gridHeading": "Browse all our printing products and services.",
     "gridSubheading": "Descriptions are included on this page so you can compare print options before contacting the shop.",
     "ctaCopy": "Need a print job done right in Vaughan? Tell us what you need and we will take it from there.",

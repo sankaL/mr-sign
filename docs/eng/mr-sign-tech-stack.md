@@ -93,8 +93,6 @@ The content package validates:
 | `/gallery`                | Visual service gallery                                    |
 | `/location`               | Address, hours, map, and directions                       |
 | `/contact`                | Phone, email, address, hours, and direct-contact guidance |
-| `/request-quote`          | Static compatibility page for customers with old links    |
-| `/order-online`           | Static compatibility page for customers with old links    |
 | `/design`                 | Hidden noindex compatibility page that points to Services |
 | `/design/[serviceSlug]`   | Hidden noindex compatibility pages that point to Services |
 

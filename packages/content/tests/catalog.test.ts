@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
 
 import {
   getAllImageAssets,
   getCategory,
   getRelatedServices,
+  homePage,
   serviceCategories,
   services,
 } from "../src/index";
@@ -36,7 +37,7 @@ function jsonFiles(directory: URL): string[] {
 
 test("catalog exposes the MVP categories and services from JSON", () => {
   assert.equal(serviceCategories.length, 3);
-  assert.equal(services.length, 47);
+  assert.equal(services.length, 46);
   assert.deepEqual(
     serviceCategories.map((category) => category.slug),
     ["signs", "printing", "services"],
@@ -107,12 +108,19 @@ test("related service references resolve", () => {
 test("image asset references are complete", () => {
   const assets = getAllImageAssets();
 
-  assert.equal(assets.length, 51);
+  assert.equal(homePage.featuredImages.length, 4);
+  assert.equal(assets.length, 54);
 
   for (const asset of assets) {
     assert.match(asset.path, /^\/images\/generated\/[a-z0-9-]+\.png$/);
     assert.ok(asset.alt.length > 10);
     assert.ok(asset.prompt.length > 40);
+    assert.ok(
+      existsSync(
+        new URL(`../../../apps/web/public${asset.path}`, import.meta.url),
+      ),
+      asset.path,
+    );
   }
 });
 

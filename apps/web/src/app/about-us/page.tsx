@@ -1,10 +1,9 @@
-import { Factory, MapPin, Phone, Wrench } from "lucide-react";
-import Link from "next/link";
+import { Factory, MapPin, Wrench } from "lucide-react";
 
 import { SiteShell } from "@/components/site/site-shell";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
-import { aboutPage, siteContact } from "@/lib/site";
+import { aboutPage } from "@/lib/site";
 import { buildContentPageMetadata } from "@/lib/seo";
 
 export const metadata = buildContentPageMetadata(aboutPage);
@@ -39,49 +38,29 @@ export default function AboutUsPage() {
           title={aboutPage.headline}
           description={aboutPage.subheadline}
         />
-        <section className="bg-[#FFFAF0] px-5 py-10 md:px-10 md:py-14">
-          <div className="mx-auto grid max-w-[1152px] gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#E51B23]">
-                Vaughan shop
-              </p>
-              <h2 className="mt-3 text-2xl font-black uppercase leading-tight md:text-3xl">
-                Providing signs, printing, manufacturing, and services across
-                the GTA.
-              </h2>
-              <p className="mt-4 text-sm font-semibold leading-6 text-[#151515]/68">
-                Customers can call, email, or visit the shop to talk through the
-                product, size, material, timing, installation, and service
-                details for their project.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href={siteContact.phoneHref}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E51B23] px-5 py-3 text-xs font-black uppercase tracking-wide !text-white transition-colors hover:bg-[#151515] hover:!text-white focus-visible:bg-[#151515] focus-visible:!text-white active:scale-[0.98]"
-                >
-                  Call the shop
-                  <Phone className="h-4 w-4" strokeWidth={2.5} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {highlights.map((item) => {
+        <section className="section-space bg-white">
+          <div className="site-container">
+            <div className="grid overflow-hidden border-y border-[var(--line)] md:grid-cols-3">
+              {highlights.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
                   <article
                     key={item.title}
-                    className="rounded-2xl border border-[#151515]/10 bg-white p-5"
+                    className="group border-b border-[var(--line)] p-7 last:border-b-0 md:min-h-72 md:border-r md:border-b-0 md:p-9 md:last:border-r-0 lg:min-h-80 lg:p-11"
                   >
-                    <Icon
-                      className="h-5 w-5 text-[#E51B23]"
-                      strokeWidth={2.5}
-                    />
-                    <h3 className="mt-4 text-lg font-black uppercase leading-tight">
+                    <div className="flex items-center justify-between gap-5">
+                      <span className="text-[0.65rem] font-extrabold tracking-[0.16em] text-[var(--body-copy)]/60">
+                        0{index + 1}
+                      </span>
+                      <span className="grid h-12 w-12 place-items-center rounded-full border border-[var(--line)] text-[var(--accent-amber)] transition-transform duration-200 group-hover:-translate-y-1">
+                        <Icon className="h-5 w-5" strokeWidth={1.6} />
+                      </span>
+                    </div>
+                    <h3 className="font-display mt-12 max-w-[13ch] text-2xl leading-tight tracking-[-0.025em] text-[var(--ink)] lg:text-[1.75rem]">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm font-semibold leading-6 text-[#151515]/65">
+                    <p className="mt-4 max-w-[34ch] text-sm font-medium leading-7 text-[var(--body-copy)]">
                       {item.description}
                     </p>
                   </article>

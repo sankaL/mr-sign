@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
+import { Libre_Baskerville, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 
-import { assetUrl, metadataBase, siteUrl } from "@/lib/seo";
+import { assetUrl, defaultSocialImage, metadataBase, siteUrl } from "@/lib/seo";
 
 import "./globals.css";
+
+const sans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const serif = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const defaultSocialImageUrl = assetUrl(defaultSocialImage.path);
 
 export const metadata: Metadata = {
   metadataBase,
@@ -35,10 +51,12 @@ export const metadata: Metadata = {
     siteName: "Mr. Sign and Print",
     images: [
       {
-        url: assetUrl(),
-        width: 1200,
-        height: 630,
-        alt: "Mr. Sign and Print custom signs, printing, and services in Vaughan",
+        url: defaultSocialImageUrl,
+        secureUrl: defaultSocialImageUrl,
+        width: defaultSocialImage.width,
+        height: defaultSocialImage.height,
+        type: defaultSocialImage.type,
+        alt: defaultSocialImage.alt,
       },
     ],
     locale: "en_CA",
@@ -49,7 +67,16 @@ export const metadata: Metadata = {
     title: "Mr. Sign and Print",
     description:
       "Signs, printing, manufacturing, and services for Vaughan and the GTA.",
-    images: [assetUrl()],
+    images: [
+      {
+        url: defaultSocialImageUrl,
+        secureUrl: defaultSocialImageUrl,
+        width: defaultSocialImage.width,
+        height: defaultSocialImage.height,
+        type: defaultSocialImage.type,
+        alt: defaultSocialImage.alt,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -71,7 +98,15 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body
+        className={`${sans.variable} ${serif.variable}`}
+        suppressHydrationWarning
+      >
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

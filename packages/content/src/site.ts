@@ -2,6 +2,7 @@ import siteJson from "../content/site.json";
 import type {
   BusinessHour,
   GeneratedImageAsset,
+  HomePageContent,
   NavigationItem,
   PageContent,
   SiteAction,
@@ -20,13 +21,12 @@ type SiteJson = {
     directions: SiteAction;
   };
   pages: {
-    home: PageContent;
+    home: HomePageContent;
     location: PageContent;
     contact: PageContent;
     gallery: PageContent;
     about: PageContent;
     faqs: PageContent;
-    pricingContact: PageContent;
   };
 };
 
@@ -45,6 +45,17 @@ function normalizePage(page: PageContent): PageContent {
   };
 }
 
+function normalizeHomePage(page: HomePageContent): HomePageContent {
+  return {
+    ...normalizePage(page),
+    featuredImages: page.featuredImages.map((image) => ({
+      path: image.path,
+      alt: image.alt,
+      prompt: image.prompt,
+    })),
+  } as HomePageContent;
+}
+
 const site = siteJson as SiteJson;
 
 export const siteContact = site.siteContact;
@@ -52,10 +63,9 @@ export const businessHours = site.businessHours;
 export const publicNavigation = site.publicNavigation;
 export const primaryActions = site.primaryActions;
 
-export const homePage = normalizePage(site.pages.home);
+export const homePage = normalizeHomePage(site.pages.home);
 export const locationPage = normalizePage(site.pages.location);
 export const contactPage = normalizePage(site.pages.contact);
 export const galleryPage = normalizePage(site.pages.gallery);
 export const aboutPage = normalizePage(site.pages.about);
 export const faqsPage = normalizePage(site.pages.faqs);
-export const pricingContactPage = normalizePage(site.pages.pricingContact);

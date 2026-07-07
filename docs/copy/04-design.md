@@ -206,7 +206,7 @@ We serve taxi operators and transportation companies across Vaughan and the GTA.
 - Contact the Shop (links to /contact?service=taxi-roof-signs)
 - Call Us: (416) 512-9353
 
-**Related Services:** Vehicle Lettering (Signs), Magnetic Signs (Signs), Vinyl Cutting (Signs)
+**Related Services:** Window Lettering (Signs), Magnetic Signs (Signs), Vinyl Cutting (Signs)
 
 ---
 
@@ -241,7 +241,7 @@ We design and produce custom engraved plaques in a range of materials and styles
 - Contact the Shop (links to /contact?service=engraving-plaque)
 - Call Us: (416) 512-9353
 
-**Related Services:** Cut-out Letters (Signs), Plate Directory Board (Signs), Logos
+**Related Services:** Cut-out Letters (Signs), Reception Signs (Signs), Logos
 
 ---
 
@@ -278,7 +278,7 @@ We serve property managers, contractors, businesses, and organizations across Va
 - Contact the Shop (links to /contact?service=traffic-signs)
 - Call Us: (416) 512-9353
 
-**Related Services:** Plate Directory Board (Signs), T-Frame / Site Signs (Signs), Coroplast (Signs)
+**Related Services:** Directional Signs (Signs), T-Frame / Site Signs (Signs), Coroplast (Signs)
 
 ---
 
