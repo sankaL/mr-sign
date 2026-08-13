@@ -9,7 +9,7 @@ import {
 } from "@mrsign/content";
 import type { Metadata } from "next";
 
-export const productionSiteUrl = "https://web-production-170be.up.railway.app";
+export const productionSiteUrl = "https://www.mrsignandprint.ca";
 export const socialAssetVersion = "20260707";
 export type SocialImage = {
   path: `/social/${string}.png`;

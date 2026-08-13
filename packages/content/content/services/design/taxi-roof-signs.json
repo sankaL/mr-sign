@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/design-taxi-roof-signs.png",
+    "src": "/images/generated/design-taxi-roof-signs.webp",
     "alt": "Backlit taxi roof sign mounted on a cab.",
     "prompt": "A well-lit taxi at a street corner at night, with an illuminated roof sign showing abstract company-name blocks on a coloured background. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

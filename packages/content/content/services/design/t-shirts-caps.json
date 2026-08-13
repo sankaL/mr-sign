@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/design-t-shirts-caps.png",
+    "src": "/images/generated/design-t-shirts-caps.webp",
     "alt": "Printed T-shirts and embroidered cap with company logo.",
     "prompt": "A flat-lay of two printed T-shirts and a matching embroidered cap on a clean white surface, with abstract company logo marks on the chest and cap. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

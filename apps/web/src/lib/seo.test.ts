@@ -12,7 +12,7 @@ import {
   socialImageForRoute,
 } from "./seo";
 
-const productionSiteUrl = "https://web-production-170be.up.railway.app";
+const productionSiteUrl = "https://www.mrsignandprint.ca";
 const socialAssetVersion = "?v=20260707";
 
 type ImageDescriptor = {

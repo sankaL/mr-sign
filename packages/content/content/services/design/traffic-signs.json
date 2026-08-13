@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/design-traffic-signs.png",
+    "src": "/images/generated/design-traffic-signs.webp",
     "alt": "Stack of custom aluminum traffic signs.",
     "prompt": "A row of freshly made custom aluminum regulatory signs lined up in a print shop, using abstract warning symbols, arrows, and colour panels. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

@@ -62,7 +62,9 @@ export function HomeHero() {
               return (
                 <div
                   key={item.title}
-                  className="border-[var(--line)] px-3 py-5 first:pl-0 odd:border-r sm:border-r sm:last:border-r-0 lg:odd:border-r lg:even:border-r-0 xl:border-r xl:odd:border-r xl:last:border-r-0"
+                  className={`border-[var(--line)] px-3 py-5 first:pl-0 odd:border-r sm:border-r sm:last:border-r-0 lg:odd:border-r lg:even:border-r-0 xl:border-r xl:odd:border-r xl:last:border-r-0 ${
+                    item.title === "All In House" ? "xl:border-l" : ""
+                  }`}
                 >
                   <Icon
                     className="h-5 w-5 text-[var(--accent-amber)]"

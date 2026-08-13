@@ -114,6 +114,12 @@ Only one environment variable is normally needed. For the current Railway demo:
 NEXT_PUBLIC_SITE_URL=https://web-production-170be.up.railway.app
 ```
 
-Change this to `https://mrsignandprint.net` only after that custom domain serves the deployed site and its public assets.
+For a production-domain build, set this to `https://www.mrsignandprint.ca`.
+
+The production export includes an Apache/LiteSpeed `.htaccess` file that keeps
+`www.mrsignandprint.ca` as the canonical host, redirects the `.com` alias to the
+canonical host, and preserves the legacy `.html` URLs with permanent redirects.
+The `.net` alias will follow the same redirect after it is attached to this web
+root or forwarded by its current administrator.
 
 For local Docker Compose, `APP_PORT` can also be set.

@@ -1,0 +1,20 @@
+Options -MultiViews
+
+RewriteEngine On
+
+# Preserve the legacy public URLs with one-hop permanent redirects.
+RewriteRule ^index\.html$ https://www.mrsignandprint.ca/ [R=301,L]
+RewriteRule ^signs\.html$ https://www.mrsignandprint.ca/signs/ [R=301,L]
+RewriteRule ^printing\.html$ https://www.mrsignandprint.ca/printing/ [R=301,L]
+RewriteRule ^design\.html$ https://www.mrsignandprint.ca/design/ [R=301,L]
+RewriteRule ^location\.html$ https://www.mrsignandprint.ca/location/ [R=301,L]
+RewriteRule ^orderonline\.html$ https://www.mrsignandprint.ca/contact/ [R=301,L]
+RewriteRule ^quote\.html$ https://www.mrsignandprint.ca/contact/ [R=301,L]
+
+# Serve one HTTPS canonical host. This redirects .com immediately and .net if
+# that domain is later attached to this web root.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.mrsignandprint\.ca$ [NC]
+RewriteRule ^ https://www.mrsignandprint.ca%{REQUEST_URI} [R=301,L,NE]
+
+ErrorDocument 404 /404.html

@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/design-silk-screens.png",
+    "src": "/images/generated/design-silk-screens.webp",
     "alt": "Silk screen printing setup applying ink to a T-shirt.",
     "prompt": "A silk screen printing setup in a workshop, with a squeegee pulling ink across a screen frame onto a white T-shirt and a sharp abstract logo impression. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },
