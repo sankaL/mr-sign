@@ -112,7 +112,7 @@ test("image asset references are complete", () => {
   assert.equal(assets.length, 54);
 
   for (const asset of assets) {
-    assert.match(asset.path, /^\/images\/generated\/[a-z0-9-]+\.png$/);
+    assert.match(asset.path, /^\/images\/generated\/[a-z0-9-]+\.webp$/);
     assert.ok(asset.alt.length > 10);
     assert.ok(asset.prompt.length > 40);
     assert.ok(

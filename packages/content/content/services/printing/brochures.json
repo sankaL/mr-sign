@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/printing-brochures.png",
+    "src": "/images/generated/printing-brochures.webp",
     "alt": "Tri-fold brochure printed on glossy stock.",
     "prompt": "A tri-fold brochure for a fictional local business, open on a clean surface to show polished interior panels with abstract text blocks, icons, and a small image area. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

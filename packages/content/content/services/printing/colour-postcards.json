@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/printing-colour-postcards.png",
+    "src": "/images/generated/printing-colour-postcards.webp",
     "alt": "Glossy full-colour postcards arranged in a fan.",
     "prompt": "A collection of full-colour glossy postcards arranged in a fan on a light surface, each with different abstract promotional image blocks. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

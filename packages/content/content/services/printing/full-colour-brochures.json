@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/printing-full-colour-brochures.png",
+    "src": "/images/generated/printing-full-colour-brochures.webp",
     "alt": "Folded full-colour brochure with full-bleed photography.",
     "prompt": "A folded full-colour brochure opened to show vibrant full-bleed photography blocks inside, with a bold graphic cover nearby. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

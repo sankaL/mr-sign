@@ -25,7 +25,7 @@
     "label": "Base service price"
   },
   "image": {
-    "src": "/images/generated/printing-flyers.png",
+    "src": "/images/generated/printing-flyers.webp",
     "alt": "Stack of freshly printed single-page flyers.",
     "prompt": "A small stack of freshly printed single-page flyers, each showing bold abstract promotional shapes and bright colour blocks for a local business. Authentic sign-and-print shop visual, professional lighting, practical production detail, no readable text, no logos, no watermarks."
   },

@@ -24,7 +24,7 @@
     "notes": "Call or email the shop with sign type, access details, photos if available, and timing needs."
   },
   "image": {
-    "src": "/images/generated/services-sign-cleaning.png",
+    "src": "/images/generated/services-sign-cleaning.webp",
     "alt": "Sign face being cleaned with shop cloths and maintenance tools nearby.",
     "prompt": "A sign face panel being cleaned on a shop bench with microfiber cloths, mild cleaning tools, and bright workshop light, no readable text, no logos, no watermarks."
   },

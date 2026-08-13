@@ -24,7 +24,7 @@
     "notes": "Call or email the shop with size, quantity, material, and timing details for current pricing."
   },
   "image": {
-    "src": "/images/generated/signs-traffic-street-signs.png",
+    "src": "/images/generated/signs-traffic-street-signs.webp",
     "alt": "Custom traffic and street-style signs arranged in a sign shop.",
     "prompt": "A row of custom traffic and street-style signs arranged in a sign shop, abstract arrows and symbols only, no readable text, no logos, no watermarks."
   },

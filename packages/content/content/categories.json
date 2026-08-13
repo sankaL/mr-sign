@@ -17,7 +17,7 @@
       "socialDescription": "From illuminated channel letters to coroplast lawn signs, Mr. Sign and Print creates professional signage for businesses across Vaughan and the GTA."
     },
     "image": {
-      "src": "/images/generated/signs-hero.png",
+      "src": "/images/generated/signs-hero.webp",
       "alt": "Outdoor signage installed along a commercial street in Vaughan.",
       "prompt": "A wide-format photo showing a variety of outdoor signage installed on a commercial street in the Vaughan area. Include a storefront with channel letters, a sandwich board on the sidewalk, and a work vehicle in the background. Modern local sign shop aesthetic, crisp daylight, no readable text, no logos, no watermarks."
     },
@@ -41,7 +41,7 @@
       "socialDescription": "From business cards and full-colour brochures to large-format printing and event invitations, Mr. Sign and Print handles all your printing needs in Vaughan and the GTA."
     },
     "image": {
-      "src": "/images/generated/printing-hero.png",
+      "src": "/images/generated/printing-hero.webp",
       "alt": "Fresh printed marketing materials arranged on a clean surface.",
       "prompt": "A bright clean flat-lay photo of printed marketing materials arranged on a white work surface. Include fanned business cards, an open tri-fold brochure, a flyer, and a colour postcard. Professional print-shop finish, subtle blue red yellow brand accents, no readable text, no logos, no watermarks."
     },
@@ -65,7 +65,7 @@
       "socialDescription": "Mr. Sign and Print handles repairs, lighting replacement, cleaning, vinyl replacement, and emergency service for business signs across the GTA."
     },
     "image": {
-      "src": "/images/generated/services-hero.png",
+      "src": "/images/generated/services-hero.webp",
       "alt": "Sign maintenance tools and illuminated sign parts arranged on a shop workbench.",
       "prompt": "A bright local sign shop workbench with an illuminated sign cabinet opened for service, LED modules, wiring tools, vinyl squeegee, microfiber cloth, and replacement graphics arranged neatly. Authentic editorial photography, navy white red and yellow accents, no readable text, no logos, no watermarks."
     },

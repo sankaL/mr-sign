@@ -42,7 +42,7 @@ export type PublicPricing =
   | ContactForPricing;
 
 export type GeneratedImageAsset = {
-  path: `/images/generated/${string}.png`;
+  path: `/images/generated/${string}.${"png" | "webp"}`;
   alt: string;
   prompt: string;
 };
@@ -62,7 +62,7 @@ export type ServiceReference = {
 export type ServiceStatus = "published" | "draft";
 
 export type JsonImageAsset = {
-  src: `/images/generated/${string}.png`;
+  src: `/images/generated/${string}.${"png" | "webp"}`;
   alt: string;
   prompt: string;
 };
